@@ -57,6 +57,14 @@ OPERATIONS
         estado_senha ( ss ) := novo_status
     END ;
 
+    atualizar_dono ( ss , novo_vaqueiro ) =
+    PRE
+        ss : dom ( dono_senha ) &
+        novo_vaqueiro : VAQUEIROS
+    THEN
+        dono_senha ( ss ) := novo_vaqueiro
+    END ;
+
     registrar_valeu_boi ( ss , novo_status ) =
     PRE
         ss : dom ( estado_senha ) &
@@ -74,5 +82,18 @@ OPERATIONS
         bois_corridos ( ss ) < BOIS_PARA_CLASSIFICAR
     THEN
         bois_corridos ( ss ) := bois_corridos ( ss ) + 1
+    END ;
+
+    preparar_disputa =
+    BEGIN
+        /* Pega todas as senhas classificadas e sobrescreve o status delas para na_espera */
+        estado_senha := estado_senha <+ ( dom ( estado_senha |> { classificada } ) * { na_espera } )
+    END ;
+
+    finalizar_torneio =
+    BEGIN
+        /* Transforma quem sobreviveu na espera em campeão */
+        estado_senha := estado_senha <+ ( dom ( estado_senha |> { na_espera } ) * { campea } )
     END
+
 END

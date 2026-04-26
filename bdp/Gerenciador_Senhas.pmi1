@@ -1,13 +1,18 @@
 THEORY BalanceX IS
-Gerenciador_Senhas,25,0,0,22,0,0,0;
+Gerenciador_Senhas,38,0,0,28,0,2,0;
 Initialisation,5,0,0,5,0,0,0;
 Operation_atualizar_status,3,0,0,2,0,0,0;
 Operation_cadastrar_senha,7,0,0,6,0,0,0;
+Operation_finalizar_torneio,3,0,0,0,0,1,0;
 Operation_incrementar_boi,3,0,0,2,0,0,0;
+Operation_preparar_disputa,3,0,0,0,0,1,0;
+Operation_registrar_valeu_boi,5,0,0,4,0,0,0;
 WellDefinednessInvariant,4,0,0,4,0,0,0;
 WellDefinednessPrecondition_cadastrar_senha,1,0,0,1,0,0,0;
 WellDefinednessPrecondition_incrementar_boi,1,0,0,1,0,0,0;
-WellDefinedness_incrementar_boi,1,0,0,1,0,0,0
+WellDefinednessPrecondition_registrar_valeu_boi,1,0,0,1,0,0,0;
+WellDefinedness_incrementar_boi,1,0,0,1,0,0,0;
+WellDefinedness_registrar_valeu_boi,1,0,0,1,0,0,0
 END
 &
 THEORY ProofState IS
@@ -18,7 +23,20 @@ Proved(0);
 Proved(0);
 Proved(0);
 Proved(0);
+Proved(0);
+Proved(0);
 Unproved;
+Proved(2);
+Unproved;
+Unproved;
+Proved(2);
+Unproved;
+Unproved;
+Proved(0);
+Proved(0);
+Unproved;
+Proved(0);
+Proved(0);
 Proved(0);
 Proved(0);
 Unproved;
@@ -46,7 +64,20 @@ pr;
 pr;
 pr;
 pr;
+pr;
+pr;
 ?;
+pr;
+?;
+?;
+pr;
+?;
+?;
+pr;
+pr;
+?;
+pr;
+pr;
 pr;
 pr;
 ?;
@@ -74,7 +105,20 @@ Force(0),?;
 Force(0),?;
 Force(0),?;
 Force(0),?;
+Force(0),?;
+Force(0),?;
 Force(0),(?; 0; 1; 2; 3);
+Force(2),(?; 0; 1);
+Force(0),(?; 0; 1; 2; 3);
+Force(0),(?; 0; 1; 2; 3);
+Force(2),(?; 0; 1);
+Force(0),(?; 0; 1; 2; 3);
+Force(0),(?; 0; 1; 2; 3);
+Force(0),?;
+Force(0),?;
+Force(0),(?; 0; 1; 2; 3);
+Force(0),?;
+Force(0),?;
 Force(0),?;
 Force(0),?;
 Force(0),(?; 0; 1; 2; 3);
@@ -95,13 +139,18 @@ Force(0),?
 END
 &
 THEORY Status IS
-Gerenciador_Senhas,25,0,22,0,0,0;
+Gerenciador_Senhas,38,0,30,0,0,0;
 Initialisation,5,0,5,0,0,0;
 Operation_atualizar_status,3,0,2,0,0,0;
 Operation_cadastrar_senha,7,0,6,0,0,0;
+Operation_finalizar_torneio,3,0,1,0,0,0;
 Operation_incrementar_boi,3,0,2,0,0,0;
+Operation_preparar_disputa,3,0,1,0,0,0;
+Operation_registrar_valeu_boi,5,0,4,0,0,0;
 WellDefinednessInvariant,4,0,4,0,0,0;
 WellDefinednessPrecondition_cadastrar_senha,1,0,1,0,0,0;
 WellDefinednessPrecondition_incrementar_boi,1,0,1,0,0,0;
-WellDefinedness_incrementar_boi,1,0,1,0,0,0
+WellDefinednessPrecondition_registrar_valeu_boi,1,0,1,0,0,0;
+WellDefinedness_incrementar_boi,1,0,1,0,0,0;
+WellDefinedness_registrar_valeu_boi,1,0,1,0,0,0
 END

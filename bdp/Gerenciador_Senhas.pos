@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0" author="pmi2Pos">
+<Proof_Obligations version="1.0" xmlns="https://www.atelierb.eu/Formats/pog" author="pmi2Pos">
 <Proof_Obligation>
 <Tag>Initialisation</Tag>
 <Simple_Goal status="Proved">
@@ -70,6 +70,25 @@
 </Simple_Goal>
 </Proof_Obligation>
 <Proof_Obligation>
+<Tag>Operation_atualizar_dono</Tag>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State methodList="pr" passList="Force(0),?" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State methodList="pr" passList="Force(0),?" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State methodList="pr" passList="Force(0),?" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State methodList="pr" passList="Force(0),?" proofState="Proved(0)"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
 <Tag>Operation_registrar_valeu_boi</Tag>
 <Simple_Goal status="Proved">
 <Tag>Invariant is preserved</Tag>
@@ -89,7 +108,7 @@
 </Simple_Goal>
 <Simple_Goal status="Unproved">
 <Tag>Invariant is preserved</Tag>
-<Proof_State methodList="?" passList="Force(0),(?; 0)" proofState="Unproved"/>
+<Proof_State methodList="?" passList="Force(0),(?; 0; 1; 2; 3)" proofState="Unproved"/>
 </Simple_Goal>
 </Proof_Obligation>
 <Proof_Obligation>
@@ -101,6 +120,36 @@
 <Simple_Goal status="Proved">
 <Tag>Invariant is preserved</Tag>
 <Proof_State methodList="pr" passList="Force(0),?" proofState="Proved(0)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State methodList="?" passList="Force(0),(?; 0; 1; 2; 3)" proofState="Unproved"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_preparar_disputa</Tag>
+<Simple_Goal status="Unproved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State methodList="?" passList="Force(0),(?; 0; 1; 2; 3)" proofState="Unproved"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State methodList="pr" passList="Force(2),(?; 0; 1)" proofState="Proved(2)"/>
+</Simple_Goal>
+<Simple_Goal status="Unproved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State methodList="?" passList="Force(0),(?; 0; 1; 2; 3)" proofState="Unproved"/>
+</Simple_Goal>
+</Proof_Obligation>
+<Proof_Obligation>
+<Tag>Operation_finalizar_torneio</Tag>
+<Simple_Goal status="Unproved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State methodList="?" passList="Force(0),(?; 0; 1; 2; 3)" proofState="Unproved"/>
+</Simple_Goal>
+<Simple_Goal status="Proved">
+<Tag>Invariant is preserved</Tag>
+<Proof_State methodList="pr" passList="Force(2),(?; 0; 1)" proofState="Proved(2)"/>
 </Simple_Goal>
 <Simple_Goal status="Unproved">
 <Tag>Invariant is preserved</Tag>

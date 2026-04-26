@@ -95,29 +95,38 @@ THEORY ListConstraintsX IS
 END
 &
 THEORY ListOperationsX IS
-  Internal_List_Operations(Machine(Gerenciador_Senhas))==(cadastrar_senha,atualizar_status,registrar_valeu_boi,incrementar_boi);
-  List_Operations(Machine(Gerenciador_Senhas))==(cadastrar_senha,atualizar_status,registrar_valeu_boi,incrementar_boi)
+  Internal_List_Operations(Machine(Gerenciador_Senhas))==(cadastrar_senha,atualizar_status,atualizar_dono,registrar_valeu_boi,incrementar_boi,preparar_disputa,finalizar_torneio);
+  List_Operations(Machine(Gerenciador_Senhas))==(cadastrar_senha,atualizar_status,atualizar_dono,registrar_valeu_boi,incrementar_boi,preparar_disputa,finalizar_torneio)
 END
 &
 THEORY ListInputX IS
   List_Input(Machine(Gerenciador_Senhas),cadastrar_senha)==(vv,ss);
   List_Input(Machine(Gerenciador_Senhas),atualizar_status)==(ss,novo_status);
+  List_Input(Machine(Gerenciador_Senhas),atualizar_dono)==(ss,novo_vaqueiro);
   List_Input(Machine(Gerenciador_Senhas),registrar_valeu_boi)==(ss,novo_status);
-  List_Input(Machine(Gerenciador_Senhas),incrementar_boi)==(ss)
+  List_Input(Machine(Gerenciador_Senhas),incrementar_boi)==(ss);
+  List_Input(Machine(Gerenciador_Senhas),preparar_disputa)==(?);
+  List_Input(Machine(Gerenciador_Senhas),finalizar_torneio)==(?)
 END
 &
 THEORY ListOutputX IS
   List_Output(Machine(Gerenciador_Senhas),cadastrar_senha)==(?);
   List_Output(Machine(Gerenciador_Senhas),atualizar_status)==(?);
+  List_Output(Machine(Gerenciador_Senhas),atualizar_dono)==(?);
   List_Output(Machine(Gerenciador_Senhas),registrar_valeu_boi)==(?);
-  List_Output(Machine(Gerenciador_Senhas),incrementar_boi)==(?)
+  List_Output(Machine(Gerenciador_Senhas),incrementar_boi)==(?);
+  List_Output(Machine(Gerenciador_Senhas),preparar_disputa)==(?);
+  List_Output(Machine(Gerenciador_Senhas),finalizar_torneio)==(?)
 END
 &
 THEORY ListHeaderX IS
   List_Header(Machine(Gerenciador_Senhas),cadastrar_senha)==(cadastrar_senha(vv,ss));
   List_Header(Machine(Gerenciador_Senhas),atualizar_status)==(atualizar_status(ss,novo_status));
+  List_Header(Machine(Gerenciador_Senhas),atualizar_dono)==(atualizar_dono(ss,novo_vaqueiro));
   List_Header(Machine(Gerenciador_Senhas),registrar_valeu_boi)==(registrar_valeu_boi(ss,novo_status));
-  List_Header(Machine(Gerenciador_Senhas),incrementar_boi)==(incrementar_boi(ss))
+  List_Header(Machine(Gerenciador_Senhas),incrementar_boi)==(incrementar_boi(ss));
+  List_Header(Machine(Gerenciador_Senhas),preparar_disputa)==(preparar_disputa);
+  List_Header(Machine(Gerenciador_Senhas),finalizar_torneio)==(finalizar_torneio)
 END
 &
 THEORY ListOperationGuardX END
@@ -125,19 +134,28 @@ THEORY ListOperationGuardX END
 THEORY ListPreconditionX IS
   List_Precondition(Machine(Gerenciador_Senhas),cadastrar_senha)==(vv: VAQUEIROS & ss: SENHAS & ss/:dom(dono_senha) & card(dom(dono_senha))<LIMITE_SENHAS);
   List_Precondition(Machine(Gerenciador_Senhas),atualizar_status)==(ss: dom(estado_senha) & novo_status: STATUS_SENHA);
+  List_Precondition(Machine(Gerenciador_Senhas),atualizar_dono)==(ss: dom(dono_senha) & novo_vaqueiro: VAQUEIROS);
   List_Precondition(Machine(Gerenciador_Senhas),registrar_valeu_boi)==(ss: dom(estado_senha) & ss: dom(bois_corridos) & bois_corridos(ss)<BOIS_PARA_CLASSIFICAR & novo_status: STATUS_SENHA);
-  List_Precondition(Machine(Gerenciador_Senhas),incrementar_boi)==(ss: dom(bois_corridos) & bois_corridos(ss)<BOIS_PARA_CLASSIFICAR)
+  List_Precondition(Machine(Gerenciador_Senhas),incrementar_boi)==(ss: dom(bois_corridos) & bois_corridos(ss)<BOIS_PARA_CLASSIFICAR);
+  List_Precondition(Machine(Gerenciador_Senhas),preparar_disputa)==(btrue);
+  List_Precondition(Machine(Gerenciador_Senhas),finalizar_torneio)==(btrue)
 END
 &
 THEORY ListSubstitutionX IS
+  Expanded_List_Substitution(Machine(Gerenciador_Senhas),finalizar_torneio)==(btrue | estado_senha:=estado_senha<+dom(estado_senha|>{na_espera})*{campea});
+  Expanded_List_Substitution(Machine(Gerenciador_Senhas),preparar_disputa)==(btrue | estado_senha:=estado_senha<+dom(estado_senha|>{classificada})*{na_espera});
   Expanded_List_Substitution(Machine(Gerenciador_Senhas),incrementar_boi)==(ss: dom(bois_corridos) & bois_corridos(ss)<BOIS_PARA_CLASSIFICAR | bois_corridos:=bois_corridos<+{ss|->bois_corridos(ss)+1});
   Expanded_List_Substitution(Machine(Gerenciador_Senhas),registrar_valeu_boi)==(ss: dom(estado_senha) & ss: dom(bois_corridos) & bois_corridos(ss)<BOIS_PARA_CLASSIFICAR & novo_status: STATUS_SENHA | bois_corridos,estado_senha:=bois_corridos<+{ss|->bois_corridos(ss)+1},estado_senha<+{ss|->novo_status});
+  Expanded_List_Substitution(Machine(Gerenciador_Senhas),atualizar_dono)==(ss: dom(dono_senha) & novo_vaqueiro: VAQUEIROS | dono_senha:=dono_senha<+{ss|->novo_vaqueiro});
   Expanded_List_Substitution(Machine(Gerenciador_Senhas),atualizar_status)==(ss: dom(estado_senha) & novo_status: STATUS_SENHA | estado_senha:=estado_senha<+{ss|->novo_status});
   Expanded_List_Substitution(Machine(Gerenciador_Senhas),cadastrar_senha)==(vv: VAQUEIROS & ss: SENHAS & ss/:dom(dono_senha) & card(dom(dono_senha))<LIMITE_SENHAS | dono_senha,estado_senha,bois_corridos:=dono_senha<+{ss|->vv},estado_senha<+{ss|->na_espera},bois_corridos<+{ss|->0});
   List_Substitution(Machine(Gerenciador_Senhas),cadastrar_senha)==(dono_senha(ss):=vv || estado_senha(ss):=na_espera || bois_corridos(ss):=0);
   List_Substitution(Machine(Gerenciador_Senhas),atualizar_status)==(estado_senha(ss):=novo_status);
+  List_Substitution(Machine(Gerenciador_Senhas),atualizar_dono)==(dono_senha(ss):=novo_vaqueiro);
   List_Substitution(Machine(Gerenciador_Senhas),registrar_valeu_boi)==(bois_corridos(ss):=bois_corridos(ss)+1 || estado_senha(ss):=novo_status);
-  List_Substitution(Machine(Gerenciador_Senhas),incrementar_boi)==(bois_corridos(ss):=bois_corridos(ss)+1)
+  List_Substitution(Machine(Gerenciador_Senhas),incrementar_boi)==(bois_corridos(ss):=bois_corridos(ss)+1);
+  List_Substitution(Machine(Gerenciador_Senhas),preparar_disputa)==(estado_senha:=estado_senha<+dom(estado_senha|>{classificada})*{na_espera});
+  List_Substitution(Machine(Gerenciador_Senhas),finalizar_torneio)==(estado_senha:=estado_senha<+dom(estado_senha|>{na_espera})*{campea})
 END
 &
 THEORY ListConstantsX IS
@@ -190,12 +208,15 @@ END
 THEORY ListANYVarX IS
   List_ANY_Var(Machine(Gerenciador_Senhas),cadastrar_senha)==(?);
   List_ANY_Var(Machine(Gerenciador_Senhas),atualizar_status)==(?);
+  List_ANY_Var(Machine(Gerenciador_Senhas),atualizar_dono)==(?);
   List_ANY_Var(Machine(Gerenciador_Senhas),registrar_valeu_boi)==(?);
-  List_ANY_Var(Machine(Gerenciador_Senhas),incrementar_boi)==(?)
+  List_ANY_Var(Machine(Gerenciador_Senhas),incrementar_boi)==(?);
+  List_ANY_Var(Machine(Gerenciador_Senhas),preparar_disputa)==(?);
+  List_ANY_Var(Machine(Gerenciador_Senhas),finalizar_torneio)==(?)
 END
 &
 THEORY ListOfIdsX IS
-  List_Of_Ids(Machine(Gerenciador_Senhas)) == (? | ? | bois_corridos,estado_senha,dono_senha | ? | cadastrar_senha,atualizar_status,registrar_valeu_boi,incrementar_boi | ? | seen(Machine(Contexto_Vaquejada)) | ? | Gerenciador_Senhas);
+  List_Of_Ids(Machine(Gerenciador_Senhas)) == (? | ? | bois_corridos,estado_senha,dono_senha | ? | cadastrar_senha,atualizar_status,atualizar_dono,registrar_valeu_boi,incrementar_boi,preparar_disputa,finalizar_torneio | ? | seen(Machine(Contexto_Vaquejada)) | ? | Gerenciador_Senhas);
   List_Of_HiddenCst_Ids(Machine(Gerenciador_Senhas)) == (? | ?);
   List_Of_VisibleCst_Ids(Machine(Gerenciador_Senhas)) == (?);
   List_Of_VisibleVar_Ids(Machine(Gerenciador_Senhas)) == (? | ?);
@@ -212,7 +233,7 @@ THEORY VariablesEnvX IS
 END
 &
 THEORY OperationsEnvX IS
-  Operations(Machine(Gerenciador_Senhas)) == (Type(incrementar_boi) == Cst(No_type,atype(SENHAS,?,?));Type(registrar_valeu_boi) == Cst(No_type,atype(SENHAS,?,?)*etype(STATUS_SENHA,?,?));Type(atualizar_status) == Cst(No_type,atype(SENHAS,?,?)*etype(STATUS_SENHA,?,?));Type(cadastrar_senha) == Cst(No_type,atype(VAQUEIROS,?,?)*atype(SENHAS,?,?)))
+  Operations(Machine(Gerenciador_Senhas)) == (Type(finalizar_torneio) == Cst(No_type,No_type);Type(preparar_disputa) == Cst(No_type,No_type);Type(incrementar_boi) == Cst(No_type,atype(SENHAS,?,?));Type(registrar_valeu_boi) == Cst(No_type,atype(SENHAS,?,?)*etype(STATUS_SENHA,?,?));Type(atualizar_dono) == Cst(No_type,atype(SENHAS,?,?)*atype(VAQUEIROS,?,?));Type(atualizar_status) == Cst(No_type,atype(SENHAS,?,?)*etype(STATUS_SENHA,?,?));Type(cadastrar_senha) == Cst(No_type,atype(VAQUEIROS,?,?)*atype(SENHAS,?,?)))
 END
 &
 THEORY TCIntRdX IS
