@@ -1,0 +1,92 @@
+THEORY ProofList IS
+_f(1) & _f(2) & _f(3) & _f(11) & _f(16) & _f(25) & _f(33) & _f(34) & WellDefinedness_correr_boi_classificacao.2,(_f(40) & _f(63) => _f(64));
+_f(1) & _f(2) & _f(3) & _f(11) & _f(16) & _f(25) & _f(33) & _f(34) & WellDefinedness_correr_boi_classificacao.1,(_f(40) & _f(63) => _f(42));
+_f(1) & _f(2) & _f(3) & _f(11) & WellDefinednessPrecondition_correr_boi_classificacao.1,(_f(16) & _f(25) & _f(60) => _f(62));
+_f(1) & _f(2) & _f(3) & _f(11) & WellDefinednessPrecondition_chamar_para_pista.2,(_f(25) & _f(26) & _f(60) => _f(59));
+_f(1) & _f(2) & _f(3) & _f(11) & WellDefinednessPrecondition_chamar_para_pista.1,(_f(25) & _f(60) => _f(62));
+_f(1) & _f(2) & _f(3) & _f(11) & WellDefinednessPrecondition_comprar_senha.1,(_f(12) & _f(13) & _f(14) & _f(60) => _f(61));
+_f(1) & _f(2) & _f(3) & WellDefinednessInvariant.1,(_f(57) & _f(58) => _f(59));
+_f(1) & _f(2) & _f(3) & _f(11) & _f(16) & _f(25) & _f(33) & _f(34) & Operation_correr_boi_classificacao.7,(_f(40) & _f(50) & _f(42) & _f(43) & _f(51) & _f(18) & _f(46) & _f(52) & _f(48) & _f(53) & _f(9) => _f(24));
+_f(1) & _f(2) & _f(3) & _f(11) & _f(16) & _f(25) & _f(33) & _f(34) & Operation_correr_boi_classificacao.6,(_f(40) & _f(50) & _f(55) => _f(43));
+_f(1) & _f(2) & _f(3) & _f(11) & _f(16) & _f(25) & _f(33) & _f(34) & Operation_correr_boi_classificacao.5,(_f(40) & _f(50) & _f(55) => _f(42));
+_f(1) & _f(2) & _f(3) & _f(11) & _f(16) & _f(25) & _f(33) & _f(34) & Operation_correr_boi_classificacao.4,(_f(40) & _f(41) & _f(42) & _f(43) & _f(44) & _f(45) & _f(46) & _f(47) & _f(48) & _f(49) & _f(9) => _f(56));
+_f(1) & _f(2) & _f(3) & _f(11) & _f(16) & _f(25) & _f(33) & _f(34) & Operation_correr_boi_classificacao.3,(_f(40) & _f(41) & _f(55) => _f(43));
+_f(1) & _f(2) & _f(3) & _f(11) & _f(16) & _f(25) & _f(33) & _f(34) & Operation_correr_boi_classificacao.2,(_f(40) & _f(41) & _f(55) => _f(42));
+_f(1) & _f(2) & _f(3) & _f(11) & _f(16) & _f(25) & _f(33) & _f(34) & Operation_correr_boi_classificacao.1,(_f(35) & _f(36) & _f(37) & _f(38) & _f(39) & _f(9) => _f(54));
+_f(1) & _f(2) & _f(3) & _f(11) & _f(25) & _f(26) & _f(27) & Operation_chamar_para_pista.1,(_f(28) & _f(29) & _f(30) & _f(31) & _f(9) => _f(32));
+_f(1) & _f(2) & _f(3) & _f(11) & _f(12) & _f(13) & _f(14) & _f(15) & _f(16) & Operation_comprar_senha.1,(_f(17) & _f(18) & _f(19) & _f(20) & _f(21) & _f(22) & _f(23) & _f(9) => _f(24));
+_f(1) & _f(2) & _f(3) & Initialisation.1,(_f(4) & _f(5) & _f(6) & _f(7) & _f(8) & _f(9) => _f(10))
+END
+&
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+VAQUEIROS: FIN(INTEGER) & not(VAQUEIROS = {}) & SENHAS: FIN(INTEGER) & not(SENHAS = {}) & ((1..3)*{FASES}): FIN(NATURAL*{FASES})& not(((1..3)*{FASES}) = {}) & ((1..5)*{STATUS_SENHA}): FIN(NATURAL*{STATUS_SENHA})& not(((1..5)*{STATUS_SENHA}) = {}) & ((1..2)*{JULGAMENTO}): FIN(NATURAL*{JULGAMENTO})& not(((1..2)*{JULGAMENTO}) = {}) & ((LIMITE_SENHAS) : ((NAT-{0}))) & ((LIMITE_SENHAS) = (100)) & ((BOIS_PARA_CLASSIFICAR) : ((NAT-{0}))) & ((BOIS_PARA_CLASSIFICAR) = (3));
+((dono_senha) : (((SENHAS) +-> (VAQUEIROS)))) & ((estado_senha) : (((SENHAS) +-> (((1..5)*{STATUS_SENHA}))))) & ((bois_corridos) : (((SENHAS) +-> (NAT)))) & ((dom(estado_senha)) = (dom(dono_senha))) & ((dom(bois_corridos)) = (dom(dono_senha))) & (card(dom(dono_senha)) <= LIMITE_SENHAS) & !(ss).(((((ss) : (dom(estado_senha))) & (((estado_senha )(ss)) = ((3|->STATUS_SENHA)))) => ((((bois_corridos )(ss)) = (BOIS_PARA_CLASSIFICAR)))));
+(({}) : (((SENHAS) +-> (VAQUEIROS))));
+(({}) : (((SENHAS) +-> (((1..5)*{STATUS_SENHA})))));
+(({}) : (((SENHAS) +-> (NAT))));
+(card(dom({})) <= LIMITE_SENHAS);
+!(ss).(((((ss) : (dom({}))) & ((({} )(ss)) = ((3|->STATUS_SENHA)))) => (((({} )(ss)) = (BOIS_PARA_CLASSIFICAR)))));
+"Invariant is preserved";
+(card((({}) |> (({(2|->STATUS_SENHA)})))) <= 1);
+((fase_atual) : (((1..3)*{FASES}))) & (card(((estado_senha) |> (({(2|->STATUS_SENHA)})))) <= 1);
+((vv) : (VAQUEIROS));
+((ss) : (SENHAS));
+not(((ss) : (dom(dono_senha))));
+(card(dom(dono_senha)) +1 <= LIMITE_SENHAS);
+((fase_atual) = ((1|->FASES)));
+((((dono_senha) <+ (({((ss) |-> (vv))})))) : (((SENHAS) +-> (VAQUEIROS))));
+((((estado_senha) <+ (({((ss) |-> ((1|->STATUS_SENHA)))})))) : (((SENHAS) +-> (((1..5)*{STATUS_SENHA})))));
+((((bois_corridos) <+ (({((ss) |-> (0))})))) : (((SENHAS) +-> (NAT))));
+((dom(((estado_senha) <+ (({((ss) |-> ((1|->STATUS_SENHA)))}))))) = (dom(((dono_senha) <+ (({((ss) |-> (vv))}))))));
+((dom(((bois_corridos) <+ (({((ss) |-> (0))}))))) = (dom(((dono_senha) <+ (({((ss) |-> (vv))}))))));
+(card(dom(((dono_senha) <+ (({((ss) |-> (vv))}))))) <= LIMITE_SENHAS);
+!(ss$1).(((((ss$1) : (dom(((estado_senha) <+ (({((ss) |-> ((1|->STATUS_SENHA)))})))))) & (((((estado_senha) <+ (({((ss) |-> ((1|->STATUS_SENHA)))}))) )(ss$1)) = ((3|->STATUS_SENHA)))) => ((((((bois_corridos) <+ (({((ss) |-> (0))}))) )(ss$1)) = (BOIS_PARA_CLASSIFICAR)))));
+(card(((((estado_senha) <+ (({((ss) |-> ((1|->STATUS_SENHA)))})))) |> (({(2|->STATUS_SENHA)})))) <= 1);
+((ss) : (dom(estado_senha)));
+(((estado_senha )(ss)) = ((1|->STATUS_SENHA)));
+((card(((estado_senha) |> (({(2|->STATUS_SENHA)}))))) = (0));
+(((2|->STATUS_SENHA)) : (((1..5)*{STATUS_SENHA})));
+((((estado_senha) <+ (({((ss) |-> ((2|->STATUS_SENHA)))})))) : (((SENHAS) +-> (((1..5)*{STATUS_SENHA})))));
+((dom(((estado_senha) <+ (({((ss) |-> ((2|->STATUS_SENHA)))}))))) = (dom(dono_senha)));
+!(ss$1).(((((ss$1) : (dom(((estado_senha) <+ (({((ss) |-> ((2|->STATUS_SENHA)))})))))) & (((((estado_senha) <+ (({((ss) |-> ((2|->STATUS_SENHA)))}))) )(ss$1)) = ((3|->STATUS_SENHA)))) => ((((bois_corridos )(ss$1)) = (BOIS_PARA_CLASSIFICAR)))));
+(card(((((estado_senha) <+ (({((ss) |-> ((2|->STATUS_SENHA)))})))) |> (({(2|->STATUS_SENHA)})))) <= 1);
+(((estado_senha )(ss)) = ((2|->STATUS_SENHA)));
+((julgamento) : (((1..2)*{JULGAMENTO})));
+((julgamento) = ((2|->JULGAMENTO)));
+(((4|->STATUS_SENHA)) : (((1..5)*{STATUS_SENHA})));
+((((estado_senha) <+ (({((ss) |-> ((4|->STATUS_SENHA)))})))) : (((SENHAS) +-> (((1..5)*{STATUS_SENHA})))));
+((dom(((estado_senha) <+ (({((ss) |-> ((4|->STATUS_SENHA)))}))))) = (dom(dono_senha)));
+!(ss$1).(((((ss$1) : (dom(((estado_senha) <+ (({((ss) |-> ((4|->STATUS_SENHA)))})))))) & (((((estado_senha) <+ (({((ss) |-> ((4|->STATUS_SENHA)))}))) )(ss$1)) = ((3|->STATUS_SENHA)))) => ((((bois_corridos )(ss$1)) = (BOIS_PARA_CLASSIFICAR)))));
+not(((julgamento) = ((2|->JULGAMENTO))));
+((((bois_corridos )(ss) + 1)) = (BOIS_PARA_CLASSIFICAR));
+((ss) : (dom(bois_corridos)));
+((bois_corridos )(ss) +1 <= BOIS_PARA_CLASSIFICAR);
+(((3|->STATUS_SENHA)) : (((1..5)*{STATUS_SENHA})));
+((((estado_senha) <+ (({((ss) |-> ((3|->STATUS_SENHA)))})))) : (((SENHAS) +-> (((1..5)*{STATUS_SENHA})))));
+((((bois_corridos) <+ (({((ss) |-> (((bois_corridos )(ss) + 1)))})))) : (((SENHAS) +-> (NAT))));
+((dom(((estado_senha) <+ (({((ss) |-> ((3|->STATUS_SENHA)))}))))) = (dom(dono_senha)));
+((dom(((bois_corridos) <+ (({((ss) |-> (((bois_corridos )(ss) + 1)))}))))) = (dom(dono_senha)));
+!(ss$1).(((((ss$1) : (dom(((estado_senha) <+ (({((ss) |-> ((3|->STATUS_SENHA)))})))))) & (((((estado_senha) <+ (({((ss) |-> ((3|->STATUS_SENHA)))}))) )(ss$1)) = ((3|->STATUS_SENHA)))) => ((((((bois_corridos) <+ (({((ss) |-> (((bois_corridos )(ss) + 1)))}))) )(ss$1)) = (BOIS_PARA_CLASSIFICAR)))));
+not(((((bois_corridos )(ss) + 1)) = (BOIS_PARA_CLASSIFICAR)));
+(((1|->STATUS_SENHA)) : (((1..5)*{STATUS_SENHA})));
+((dom(((estado_senha) <+ (({((ss) |-> ((1|->STATUS_SENHA)))}))))) = (dom(dono_senha)));
+!(ss$1).(((((ss$1) : (dom(((estado_senha) <+ (({((ss) |-> ((1|->STATUS_SENHA)))})))))) & (((((estado_senha) <+ (({((ss) |-> ((1|->STATUS_SENHA)))}))) )(ss$1)) = ((3|->STATUS_SENHA)))) => ((((((bois_corridos) <+ (({((ss) |-> (((bois_corridos )(ss) + 1)))}))) )(ss$1)) = (BOIS_PARA_CLASSIFICAR)))));
+(card(((((estado_senha) <+ (({((ss) |-> ((4|->STATUS_SENHA)))})))) |> (({(2|->STATUS_SENHA)})))) <= 1);
+"Precondition predicate";
+(card(((((estado_senha) <+ (({((ss) |-> ((3|->STATUS_SENHA)))})))) |> (({(2|->STATUS_SENHA)})))) <= 1);
+((fase_atual) : (((1..3)*{FASES})));
+"Invariant is well defined";
+((((estado_senha) |> (({(2|->STATUS_SENHA)})))) : (FIN(((estado_senha) |> (({(2|->STATUS_SENHA)}))))));
+"Operation precondition is well defined";
+((dom(dono_senha)) : (FIN(dom(dono_senha))));
+((estado_senha) : (((dom(estado_senha)) +-> (ran(estado_senha)))));
+"Operation is well defined";
+((bois_corridos) : (((dom(bois_corridos)) +-> (ran(bois_corridos)))))
+END
+&
+THEORY EnumerateX IS
+FASES == {classificacao,disputa,encerrado};
+JULGAMENTO == {valeu_boi,zero_boi};
+STATUS_SENHA == {na_espera,na_pista,classificada,eliminada,campea}
+END

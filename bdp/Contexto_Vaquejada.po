@@ -1,0 +1,11 @@
+THEORY ProofList
+END
+&
+THEORY Formulas
+END
+&
+THEORY EnumerateX IS
+FASES == {classificacao,disputa,encerrado};
+JULGAMENTO == {valeu_boi,zero_boi};
+STATUS_SENHA == {na_espera,na_pista,classificada,eliminada,campea}
+END
