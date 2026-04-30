@@ -1,8 +1,4 @@
-﻿/* Gerenciador_Senhas
- * Author: kaio
- * Creation date: 25/04/2026
- */
-MACHINE
+﻿MACHINE
     Gerenciador_Senhas
 
 SEES
@@ -11,62 +7,72 @@ SEES
 ABSTRACT_VARIABLES
     dono_senha ,
     estado_senha ,
-    bois_corridos
+    bois_corridos ,
+    categoria_vaqueiro /* Mapeia o vaqueiro a uma categoria única */
 
 INVARIANT
-    /* Tipagem básica */
     dono_senha : SENHAS +-> VAQUEIROS &
     estado_senha : SENHAS +-> STATUS_SENHA &
     bois_corridos : SENHAS +-> NAT &
+    categoria_vaqueiro : VAQUEIROS +-> CATEGORIAS &
 
-    /* Sincronia de domínios: Quem tem dono, tem status e contador */
     dom ( estado_senha ) = dom ( dono_senha ) &
     dom ( bois_corridos ) = dom ( dono_senha ) &
 
-    /* Limite máximo do torneio */
+    /* Todo dono de senha deve ter uma categoria definida */
+    ran ( dono_senha ) <: dom ( categoria_vaqueiro ) &
+
     card ( dom ( dono_senha ) ) <= LIMITE_SENHAS &
 
-    /* Regra rígida: Senha classificada OBRIGATORIAMENTE tem a quantidade certa de bois corridos */
     ! ( ss ) . ( ss : dom ( estado_senha ) & estado_senha ( ss ) = classificada => bois_corridos ( ss ) = BOIS_PARA_CLASSIFICAR )
 
 INITIALISATION
     dono_senha := {} ||
     estado_senha := {} ||
-    bois_corridos := {}
+    bois_corridos := {} ||
+    categoria_vaqueiro := {}
 
 OPERATIONS
-    /* Operações de mutação de baixo nível (CRUD) */
-
-    cadastrar_senha ( vv , ss ) =
+    /* Agora recebe a categoria no momento da compra */
+    cadastrar_senha ( vv , ss , cat ) =
     PRE
-        vv : VAQUEIROS &
-        ss : SENHAS &
+        vv : NAT1 & ss : NAT1 & cat : CATEGORIAS &
         ss /: dom ( dono_senha ) &
-        card ( dom ( dono_senha ) ) < LIMITE_SENHAS
+        card ( dom ( dono_senha ) ) < LIMITE_SENHAS &
+        /* Se o vaqueiro já tem cadastro, a categoria informada DEVE ser igual à dele */
+        ( vv : dom ( categoria_vaqueiro ) => categoria_vaqueiro ( vv ) = cat )
     THEN
         dono_senha ( ss ) := vv ||
         estado_senha ( ss ) := na_espera ||
-        bois_corridos ( ss ) := 0
+        bois_corridos ( ss ) := 0 ||
+        categoria_vaqueiro ( vv ) := cat
     END ;
 
     atualizar_status ( ss , novo_status ) =
     PRE
+        ss : NAT1 &
         ss : dom ( estado_senha ) &
         novo_status : STATUS_SENHA
     THEN
         estado_senha ( ss ) := novo_status
     END ;
 
-    atualizar_dono ( ss , novo_vaqueiro ) =
+    /* Garante que a transferência mantém a integridade das categorias */
+    atualizar_dono ( ss , novo_vaqueiro , cat ) =
     PRE
+        ss : NAT1 & novo_vaqueiro : NAT1 & cat : CATEGORIAS &
         ss : dom ( dono_senha ) &
-        novo_vaqueiro : VAQUEIROS
+        cat = categoria_vaqueiro ( dono_senha ( ss ) ) & /* Pega a categoria atual da senha */
+        /* O novo vaqueiro não pode ser de outra categoria */
+        ( novo_vaqueiro : dom ( categoria_vaqueiro ) => categoria_vaqueiro ( novo_vaqueiro ) = cat )
     THEN
-        dono_senha ( ss ) := novo_vaqueiro
+        dono_senha ( ss ) := novo_vaqueiro ||
+        categoria_vaqueiro ( novo_vaqueiro ) := cat
     END ;
 
     registrar_valeu_boi ( ss , novo_status ) =
     PRE
+        ss : NAT1 &
         ss : dom ( estado_senha ) &
         ss : dom ( bois_corridos ) &
         bois_corridos ( ss ) < BOIS_PARA_CLASSIFICAR &
@@ -78,6 +84,7 @@ OPERATIONS
 
     incrementar_boi ( ss ) =
     PRE
+        ss : NAT1 &
         ss : dom ( bois_corridos ) &
         bois_corridos ( ss ) < BOIS_PARA_CLASSIFICAR
     THEN
@@ -86,14 +93,11 @@ OPERATIONS
 
     preparar_disputa =
     BEGIN
-        /* Pega todas as senhas classificadas e sobrescreve o status delas para na_espera */
         estado_senha := estado_senha <+ ( dom ( estado_senha |> { classificada } ) * { na_espera } )
     END ;
 
     finalizar_torneio =
     BEGIN
-        /* Transforma quem sobreviveu na espera em campeão */
         estado_senha := estado_senha <+ ( dom ( estado_senha |> { na_espera } ) * { campea } )
     END
-
 END
