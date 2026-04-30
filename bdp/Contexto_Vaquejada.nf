@@ -110,27 +110,26 @@ THEORY ListPreconditionX END
 THEORY ListSubstitutionX END
 &
 THEORY ListConstantsX IS
-  List_Valuable_Constants(Machine(Contexto_Vaquejada))==(LIMITE_SENHAS,BOIS_PARA_CLASSIFICAR);
+  List_Valuable_Constants(Machine(Contexto_Vaquejada))==(LIMITE_SENHAS,BOIS_PARA_CLASSIFICAR,VAQUEIROS,SENHAS);
   Inherited_List_Constants(Machine(Contexto_Vaquejada))==(?);
-  List_Constants(Machine(Contexto_Vaquejada))==(LIMITE_SENHAS,BOIS_PARA_CLASSIFICAR)
+  List_Constants(Machine(Contexto_Vaquejada))==(LIMITE_SENHAS,BOIS_PARA_CLASSIFICAR,VAQUEIROS,SENHAS)
 END
 &
 THEORY ListSetsX IS
-  Set_Definition(Machine(Contexto_Vaquejada),VAQUEIROS)==(?);
+  Set_Definition(Machine(Contexto_Vaquejada),FASES)==({classificacao,disputa,encerrado});
   Context_List_Enumerated(Machine(Contexto_Vaquejada))==(?);
   Context_List_Defered(Machine(Contexto_Vaquejada))==(?);
   Context_List_Sets(Machine(Contexto_Vaquejada))==(?);
-  List_Valuable_Sets(Machine(Contexto_Vaquejada))==(VAQUEIROS,SENHAS);
+  List_Valuable_Sets(Machine(Contexto_Vaquejada))==(?);
   Inherited_List_Enumerated(Machine(Contexto_Vaquejada))==(?);
   Inherited_List_Defered(Machine(Contexto_Vaquejada))==(?);
   Inherited_List_Sets(Machine(Contexto_Vaquejada))==(?);
-  List_Enumerated(Machine(Contexto_Vaquejada))==(FASES,STATUS_SENHA,JULGAMENTO);
-  List_Defered(Machine(Contexto_Vaquejada))==(VAQUEIROS,SENHAS);
-  List_Sets(Machine(Contexto_Vaquejada))==(VAQUEIROS,SENHAS,FASES,STATUS_SENHA,JULGAMENTO);
-  Set_Definition(Machine(Contexto_Vaquejada),SENHAS)==(?);
-  Set_Definition(Machine(Contexto_Vaquejada),FASES)==({classificacao,disputa,encerrado});
+  List_Enumerated(Machine(Contexto_Vaquejada))==(FASES,STATUS_SENHA,JULGAMENTO,CATEGORIAS);
+  List_Defered(Machine(Contexto_Vaquejada))==(?);
+  List_Sets(Machine(Contexto_Vaquejada))==(FASES,STATUS_SENHA,JULGAMENTO,CATEGORIAS);
   Set_Definition(Machine(Contexto_Vaquejada),STATUS_SENHA)==({na_espera,na_pista,classificada,eliminada,campea});
-  Set_Definition(Machine(Contexto_Vaquejada),JULGAMENTO)==({valeu_boi,zero_boi})
+  Set_Definition(Machine(Contexto_Vaquejada),JULGAMENTO)==({valeu_boi,zero_boi,retorno});
+  Set_Definition(Machine(Contexto_Vaquejada),CATEGORIAS)==({profissional,amador})
 END
 &
 THEORY ListHiddenConstantsX IS
@@ -144,7 +143,7 @@ THEORY ListPropertiesX IS
   Abstract_List_Properties(Machine(Contexto_Vaquejada))==(btrue);
   Context_List_Properties(Machine(Contexto_Vaquejada))==(btrue);
   Inherited_List_Properties(Machine(Contexto_Vaquejada))==(btrue);
-  List_Properties(Machine(Contexto_Vaquejada))==(LIMITE_SENHAS: NAT1 & LIMITE_SENHAS = 100 & BOIS_PARA_CLASSIFICAR: NAT1 & BOIS_PARA_CLASSIFICAR = 3 & VAQUEIROS: FIN(INTEGER) & not(VAQUEIROS = {}) & SENHAS: FIN(INTEGER) & not(SENHAS = {}) & FASES: FIN(INTEGER) & not(FASES = {}) & STATUS_SENHA: FIN(INTEGER) & not(STATUS_SENHA = {}) & JULGAMENTO: FIN(INTEGER) & not(JULGAMENTO = {}))
+  List_Properties(Machine(Contexto_Vaquejada))==(LIMITE_SENHAS: NAT1 & LIMITE_SENHAS = 100 & BOIS_PARA_CLASSIFICAR: NAT1 & BOIS_PARA_CLASSIFICAR = 3 & VAQUEIROS = NAT1 & SENHAS = NAT1 & FASES: FIN(INTEGER) & not(FASES = {}) & STATUS_SENHA: FIN(INTEGER) & not(STATUS_SENHA = {}) & JULGAMENTO: FIN(INTEGER) & not(JULGAMENTO = {}) & CATEGORIAS: FIN(INTEGER) & not(CATEGORIAS = {}))
 END
 &
 THEORY ListSeenInfoX END
@@ -152,19 +151,19 @@ THEORY ListSeenInfoX END
 THEORY ListANYVarX END
 &
 THEORY ListOfIdsX IS
-  List_Of_Ids(Machine(Contexto_Vaquejada)) == (LIMITE_SENHAS,BOIS_PARA_CLASSIFICAR,VAQUEIROS,SENHAS,FASES,STATUS_SENHA,JULGAMENTO,classificacao,disputa,encerrado,na_espera,na_pista,classificada,eliminada,campea,valeu_boi,zero_boi | ? | ? | ? | ? | ? | ? | ? | Contexto_Vaquejada);
+  List_Of_Ids(Machine(Contexto_Vaquejada)) == (LIMITE_SENHAS,BOIS_PARA_CLASSIFICAR,VAQUEIROS,SENHAS,FASES,STATUS_SENHA,JULGAMENTO,CATEGORIAS,classificacao,disputa,encerrado,na_espera,na_pista,classificada,eliminada,campea,valeu_boi,zero_boi,retorno,profissional,amador | ? | ? | ? | ? | ? | ? | ? | Contexto_Vaquejada);
   List_Of_HiddenCst_Ids(Machine(Contexto_Vaquejada)) == (? | ?);
-  List_Of_VisibleCst_Ids(Machine(Contexto_Vaquejada)) == (LIMITE_SENHAS,BOIS_PARA_CLASSIFICAR);
+  List_Of_VisibleCst_Ids(Machine(Contexto_Vaquejada)) == (LIMITE_SENHAS,BOIS_PARA_CLASSIFICAR,VAQUEIROS,SENHAS);
   List_Of_VisibleVar_Ids(Machine(Contexto_Vaquejada)) == (? | ?);
   List_Of_Ids_SeenBNU(Machine(Contexto_Vaquejada)) == (?: ?)
 END
 &
 THEORY SetsEnvX IS
-  Sets(Machine(Contexto_Vaquejada)) == (Type(VAQUEIROS) == Cst(SetOf(atype(VAQUEIROS,"[VAQUEIROS","]VAQUEIROS")));Type(SENHAS) == Cst(SetOf(atype(SENHAS,"[SENHAS","]SENHAS")));Type(FASES) == Cst(SetOf(etype(FASES,0,2)));Type(STATUS_SENHA) == Cst(SetOf(etype(STATUS_SENHA,0,4)));Type(JULGAMENTO) == Cst(SetOf(etype(JULGAMENTO,0,1))))
+  Sets(Machine(Contexto_Vaquejada)) == (Type(FASES) == Cst(SetOf(etype(FASES,0,2)));Type(STATUS_SENHA) == Cst(SetOf(etype(STATUS_SENHA,0,4)));Type(JULGAMENTO) == Cst(SetOf(etype(JULGAMENTO,0,2)));Type(CATEGORIAS) == Cst(SetOf(etype(CATEGORIAS,0,1))))
 END
 &
 THEORY ConstantsEnvX IS
-  Constants(Machine(Contexto_Vaquejada)) == (Type(classificacao) == Cst(etype(FASES,0,2));Type(disputa) == Cst(etype(FASES,0,2));Type(encerrado) == Cst(etype(FASES,0,2));Type(na_espera) == Cst(etype(STATUS_SENHA,0,4));Type(na_pista) == Cst(etype(STATUS_SENHA,0,4));Type(classificada) == Cst(etype(STATUS_SENHA,0,4));Type(eliminada) == Cst(etype(STATUS_SENHA,0,4));Type(campea) == Cst(etype(STATUS_SENHA,0,4));Type(valeu_boi) == Cst(etype(JULGAMENTO,0,1));Type(zero_boi) == Cst(etype(JULGAMENTO,0,1));Type(LIMITE_SENHAS) == Cst(btype(INTEGER,?,?));Type(BOIS_PARA_CLASSIFICAR) == Cst(btype(INTEGER,?,?)))
+  Constants(Machine(Contexto_Vaquejada)) == (Type(classificacao) == Cst(etype(FASES,0,2));Type(disputa) == Cst(etype(FASES,0,2));Type(encerrado) == Cst(etype(FASES,0,2));Type(na_espera) == Cst(etype(STATUS_SENHA,0,4));Type(na_pista) == Cst(etype(STATUS_SENHA,0,4));Type(classificada) == Cst(etype(STATUS_SENHA,0,4));Type(eliminada) == Cst(etype(STATUS_SENHA,0,4));Type(campea) == Cst(etype(STATUS_SENHA,0,4));Type(valeu_boi) == Cst(etype(JULGAMENTO,0,2));Type(zero_boi) == Cst(etype(JULGAMENTO,0,2));Type(retorno) == Cst(etype(JULGAMENTO,0,2));Type(profissional) == Cst(etype(CATEGORIAS,0,1));Type(amador) == Cst(etype(CATEGORIAS,0,1));Type(LIMITE_SENHAS) == Cst(btype(INTEGER,?,?));Type(BOIS_PARA_CLASSIFICAR) == Cst(btype(INTEGER,?,?));Type(VAQUEIROS) == Cst(SetOf(btype(INTEGER,"[VAQUEIROS","]VAQUEIROS")));Type(SENHAS) == Cst(SetOf(btype(INTEGER,"[SENHAS","]SENHAS"))))
 END
 &
 THEORY TCIntRdX IS

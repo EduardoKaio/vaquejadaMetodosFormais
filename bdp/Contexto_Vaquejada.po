@@ -5,7 +5,8 @@ THEORY Formulas
 END
 &
 THEORY EnumerateX IS
+CATEGORIAS == {profissional,amador};
 FASES == {classificacao,disputa,encerrado};
-JULGAMENTO == {valeu_boi,zero_boi};
+JULGAMENTO == {valeu_boi,zero_boi,retorno};
 STATUS_SENHA == {na_espera,na_pista,classificada,eliminada,campea}
 END

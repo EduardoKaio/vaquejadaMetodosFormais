@@ -18,13 +18,7 @@
     </Define>
     <Define name="ctx" hash="0"/>
     <Define name="seext" hash="0"/>
-    <Define name="lprp" hash="10297341139300777803">
-        <Set>
-            <Id value="VAQUEIROS" typref="0"/>
-        </Set>
-        <Set>
-            <Id value="SENHAS" typref="0"/>
-        </Set>
+    <Define name="lprp" hash="628823103070047444">
         <Set>
             <Id value="FASES" typref="0"/>
             <Enumerated_Values>
@@ -48,6 +42,14 @@
             <Enumerated_Values>
                 <Id value="valeu_boi" typref="1"/>
                 <Id value="zero_boi" typref="1"/>
+                <Id value="retorno" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="CATEGORIAS" typref="0"/>
+            <Enumerated_Values>
+                <Id value="profissional" typref="1"/>
+                <Id value="amador" typref="1"/>
             </Enumerated_Values>
         </Set>
         <Exp_Comparison op=":">
@@ -66,19 +68,21 @@
             <Id value="BOIS_PARA_CLASSIFICAR" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada.bxml:1:3:1:4:1"/>
             <Integer_Literal value="3" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada.bxml:1:3:1:4:2"/>
         </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="VAQUEIROS" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada.bxml:1:3:1:5:1"/>
+            <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada.bxml:1:3:1:5:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="SENHAS" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada.bxml:1:3:1:6:1"/>
+            <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada.bxml:1:3:1:6:2"/>
+        </Exp_Comparison>
     </Define>
     <Define name="inprp" hash="0"/>
     <Define name="inext" hash="0"/>
     <Define name="inv" hash="0"/>
     <Define name="ass" hash="0"/>
     <Define name="cst" hash="0"/>
-    <Define name="sets" hash="15431399968627330583">
-        <Set>
-            <Id value="VAQUEIROS" typref="0"/>
-        </Set>
-        <Set>
-            <Id value="SENHAS" typref="0"/>
-        </Set>
+    <Define name="sets" hash="9916507797006102863">
         <Set>
             <Id value="FASES" typref="0"/>
             <Enumerated_Values>
@@ -102,6 +106,14 @@
             <Enumerated_Values>
                 <Id value="valeu_boi" typref="1"/>
                 <Id value="zero_boi" typref="1"/>
+                <Id value="retorno" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="CATEGORIAS" typref="0"/>
+            <Enumerated_Values>
+                <Id value="profissional" typref="1"/>
+                <Id value="amador" typref="1"/>
             </Enumerated_Values>
         </Set>
     </Define>

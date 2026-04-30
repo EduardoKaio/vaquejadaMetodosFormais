@@ -1,24 +1,24 @@
-/* Contexto_Vaquejada
- * Author: kaio
- * Creation date: 25/04/2026
- */
 MACHINE
     Contexto_Vaquejada
 
 SETS
-    VAQUEIROS;
-    SENHAS;
     FASES = {classificacao, disputa, encerrado};
     STATUS_SENHA = {na_espera, na_pista, classificada, eliminada, campea};
-    JULGAMENTO = {valeu_boi, zero_boi}
+    JULGAMENTO = {valeu_boi, zero_boi, retorno};
+    CATEGORIAS = {profissional, amador}        
 
 CONSTANTS
     LIMITE_SENHAS,
-    BOIS_PARA_CLASSIFICAR
+    BOIS_PARA_CLASSIFICAR,
+    VAQUEIROS,
+    SENHAS
 
 PROPERTIES
     LIMITE_SENHAS : NAT1 &
-    LIMITE_SENHAS = 100 & /* Exemplo de limite */
+    LIMITE_SENHAS = 100 & 
     BOIS_PARA_CLASSIFICAR : NAT1 &
-    BOIS_PARA_CLASSIFICAR = 3
+    BOIS_PARA_CLASSIFICAR = 3 &
+    
+    VAQUEIROS = NAT1 & 
+    SENHAS = NAT1
 END

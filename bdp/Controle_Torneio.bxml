@@ -2,80 +2,80 @@
 <Machine xmlns='https://www.atelierb.eu/Formats/bxml' version='1.0' name='Controle_Torneio' type='abstraction' position='true' semantic='true' b0check='false'>
 <Includes>
 <Attr>
-<Pos l='8' c='1' s='8'/>
+<Pos l='4' c='1' s='8'/>
 </Attr>
 <Referenced_Machine>
 <Attr>
-<Pos l='9' c='5' s='18'/>
+<Pos l='5' c='5' s='18'/>
 </Attr>
 <Name>Gerenciador_Senhas</Name>
 </Referenced_Machine>
 </Includes>
 <Sees>
 <Attr>
-<Pos l='11' c='1' s='4'/>
+<Pos l='7' c='1' s='4'/>
 </Attr>
 <Referenced_Machine>
 <Attr>
-<Pos l='12' c='5' s='18'/>
+<Pos l='8' c='5' s='18'/>
 </Attr>
 <Name>Contexto_Vaquejada</Name>
 </Referenced_Machine>
 </Sees>
 <Abstract_Variables>
 <Attr>
-<Pos l='14' c='1' s='18'/>
+<Pos l='10' c='1' s='18'/>
 </Attr>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='15' c='5' s='10'/>
+<Pos l='11' c='5' s='10'/>
 </Attr>
 </Id>
 </Abstract_Variables>
 <Invariant>
 <Attr>
-<Pos l='17' c='1' s='9'/>
+<Pos l='13' c='1' s='9'/>
 </Attr>
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='18' c='16' s='1'/>
+<Pos l='14' c='16' s='1'/>
 </Attr>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='18' c='5' s='10'/>
+<Pos l='14' c='5' s='10'/>
 </Attr>
 </Id>
 <Id value='FASES' typref='5'>
 <Attr>
-<Pos l='18' c='18' s='5'/>
+<Pos l='14' c='18' s='5'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='&lt;=i'>
 <Attr>
-<Pos l='21' c='38' s='2'/>
+<Pos l='16' c='38' s='2'/>
 </Attr>
 <Unary_Exp op='card' typref='1'>
 <Attr>
-<Pos l='21' c='5' s='4'/>
+<Pos l='16' c='5' s='4'/>
 </Attr>
 <Binary_Exp op='|&gt;' typref='6'>
 <Attr>
-<Pos l='21' c='23' s='2'/>
+<Pos l='16' c='23' s='2'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='21' c='10' s='12'/>
+<Pos l='16' c='10' s='12'/>
 </Attr>
 </Id>
 <Nary_Exp op='{' typref='7'>
 <Attr>
-<Pos l='21' c='26' s='1'/>
+<Pos l='16' c='26' s='1'/>
 </Attr>
 <Id value='na_pista' typref='8'>
 <Attr>
-<Pos l='21' c='27' s='8'/>
+<Pos l='16' c='27' s='8'/>
 </Attr>
 </Id>
 </Nary_Exp>
@@ -83,31 +83,71 @@
 </Unary_Exp>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='21' c='41' s='1'/>
+<Pos l='16' c='41' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='18' c='33' s='2'/>
+</Attr>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='18' c='13' s='1'/>
+</Attr>
+<Id value='campea' typref='8'>
+<Attr>
+<Pos l='18' c='6' s='6'/>
+</Attr>
+</Id>
+<Unary_Exp op='ran' typref='7'>
+<Attr>
+<Pos l='18' c='15' s='3'/>
+</Attr>
+<Id value='estado_senha' typref='6'>
+<Attr>
+<Pos l='18' c='19' s='12'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='18' c='47' s='1'/>
+</Attr>
+<Id value='fase_atual' typref='4'>
+<Attr>
+<Pos l='18' c='36' s='10'/>
+</Attr>
+</Id>
+<Id value='encerrado' typref='4'>
+<Attr>
+<Pos l='18' c='49' s='9'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Binary_Pred>
 </Nary_Pred>
 </Invariant>
 <Initialisation>
 <Attr>
-<Pos l='23' c='1' s='14'/>
+<Pos l='20' c='1' s='14'/>
 </Attr>
 <Assignement_Sub>
 <Attr>
-<Pos l='24' c='16' s='2'/>
+<Pos l='21' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='24' c='5' s='10'/>
+<Pos l='21' c='5' s='10'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='classificacao' typref='4'>
 <Attr>
-<Pos l='24' c='19' s='13'/>
+<Pos l='21' c='19' s='13'/>
 </Attr>
 </Id>
 </Values>
@@ -116,17 +156,22 @@
 <Operations>
 <Operation name='comprar_senha'>
 <Attr>
-<Pos l='28' c='5' s='13' endLine='37'/>
+<Pos l='24' c='5' s='13' endLine='33'/>
 </Attr>
 <Input_Parameters>
-<Id value='vv' typref='9'>
+<Id value='vv' typref='1'>
 <Attr>
-<Pos l='28' c='19' s='2'/>
+<Pos l='24' c='19' s='2'/>
 </Attr>
 </Id>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='28' c='23' s='2'/>
+<Pos l='24' c='23' s='2'/>
+</Attr>
+</Id>
+<Id value='cat' typref='9'>
+<Attr>
+<Pos l='24' c='27' s='3'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -134,117 +179,187 @@
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='30' c='12' s='1'/>
+<Pos l='26' c='12' s='1'/>
 </Attr>
-<Id value='vv' typref='9'>
+<Id value='vv' typref='1'>
 <Attr>
-<Pos l='30' c='9' s='2'/>
+<Pos l='26' c='9' s='2'/>
 </Attr>
 </Id>
-<Id value='VAQUEIROS' typref='11'>
+<Id value='NAT1' typref='2'>
 <Attr>
-<Pos l='30' c='14' s='9'/>
+<Pos l='26' c='14' s='4'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='31' c='12' s='1'/>
+<Pos l='26' c='24' s='1'/>
 </Attr>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='31' c='9' s='2'/>
+<Pos l='26' c='21' s='2'/>
 </Attr>
 </Id>
-<Id value='SENHAS' typref='12'>
+<Id value='NAT1' typref='2'>
 <Attr>
-<Pos l='31' c='14' s='6'/>
+<Pos l='26' c='26' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='26' c='37' s='1'/>
+</Attr>
+<Id value='cat' typref='9'>
+<Attr>
+<Pos l='26' c='33' s='3'/>
+</Attr>
+</Id>
+<Id value='CATEGORIAS' typref='10'>
+<Attr>
+<Pos l='26' c='39' s='10'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='/:'>
 <Attr>
-<Pos l='32' c='12' s='2'/>
+<Pos l='27' c='12' s='2'/>
 </Attr>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='32' c='9' s='2'/>
+<Pos l='27' c='9' s='2'/>
 </Attr>
 </Id>
-<Unary_Exp op='dom' typref='12'>
+<Unary_Exp op='dom' typref='2'>
 <Attr>
-<Pos l='32' c='15' s='3'/>
+<Pos l='27' c='15' s='3'/>
 </Attr>
-<Id value='dono_senha' typref='13'>
+<Id value='dono_senha' typref='11'>
 <Attr>
-<Pos l='32' c='19' s='10'/>
+<Pos l='27' c='19' s='10'/>
 </Attr>
 </Id>
 </Unary_Exp>
 </Exp_Comparison>
 <Exp_Comparison op='&lt;i'>
 <Attr>
-<Pos l='33' c='31' s='1'/>
+<Pos l='28' c='31' s='1'/>
 </Attr>
 <Unary_Exp op='card' typref='1'>
 <Attr>
-<Pos l='33' c='9' s='4'/>
+<Pos l='28' c='9' s='4'/>
 </Attr>
-<Unary_Exp op='dom' typref='12'>
+<Unary_Exp op='dom' typref='2'>
 <Attr>
-<Pos l='33' c='14' s='3'/>
+<Pos l='28' c='14' s='3'/>
 </Attr>
-<Id value='dono_senha' typref='13'>
+<Id value='dono_senha' typref='11'>
 <Attr>
-<Pos l='33' c='18' s='10'/>
+<Pos l='28' c='18' s='10'/>
 </Attr>
 </Id>
 </Unary_Exp>
 </Unary_Exp>
 <Id value='LIMITE_SENHAS' typref='1'>
 <Attr>
-<Pos l='33' c='33' s='13'/>
+<Pos l='28' c='33' s='13'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='34' c='20' s='1'/>
+<Pos l='29' c='20' s='1'/>
 </Attr>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='34' c='9' s='10'/>
+<Pos l='29' c='9' s='10'/>
 </Attr>
 </Id>
 <Id value='classificacao' typref='4'>
 <Attr>
-<Pos l='34' c='22' s='13'/>
+<Pos l='29' c='22' s='13'/>
 </Attr>
 </Id>
 </Exp_Comparison>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='30' c='39' s='2'/>
+</Attr>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='30' c='13' s='1'/>
+</Attr>
+<Id value='vv' typref='1'>
+<Attr>
+<Pos l='30' c='10' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='30' c='15' s='3'/>
+</Attr>
+<Id value='categoria_vaqueiro' typref='12'>
+<Attr>
+<Pos l='30' c='19' s='18'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='30' c='65' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='9'>
+<Attr>
+<Pos l='30' c='60' s='0'/>
+</Attr>
+<Id value='categoria_vaqueiro' typref='12'>
+<Attr>
+<Pos l='30' c='42' s='18'/>
+</Attr>
+</Id>
+<Id value='vv' typref='1'>
+<Attr>
+<Pos l='30' c='61' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Id value='cat' typref='9'>
+<Attr>
+<Pos l='30' c='67' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Binary_Pred>
 </Nary_Pred>
 </Precondition>
 <Body>
 <Operation_Call>
 <Attr>
-<Pos l='36' c='24' s='0'/>
+<Pos l='32' c='24' s='0'/>
 </Attr>
 <Name>
 <Id value='cadastrar_senha'>
 <Attr>
-<Pos l='36' c='9' s='15'/>
+<Pos l='32' c='9' s='15'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
-<Id value='vv' typref='9'>
+<Id value='vv' typref='1'>
 <Attr>
-<Pos l='36' c='25' s='2'/>
+<Pos l='32' c='25' s='2'/>
 </Attr>
 </Id>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='36' c='29' s='2'/>
+<Pos l='32' c='29' s='2'/>
+</Attr>
+</Id>
+<Id value='cat' typref='9'>
+<Attr>
+<Pos l='32' c='33' s='3'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -253,12 +368,12 @@
 </Operation>
 <Operation name='desistir_senha'>
 <Attr>
-<Pos l='39' c='5' s='14' endLine='46'/>
+<Pos l='35' c='5' s='14' endLine='43'/>
 </Attr>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='39' c='20' s='2'/>
+<Pos l='35' c='20' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -266,61 +381,76 @@
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='41' c='12' s='1'/>
+<Pos l='37' c='12' s='1'/>
 </Attr>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='41' c='9' s='2'/>
+<Pos l='37' c='9' s='2'/>
 </Attr>
 </Id>
-<Unary_Exp op='dom' typref='12'>
+<Id value='NAT1' typref='2'>
 <Attr>
-<Pos l='41' c='14' s='3'/>
+<Pos l='37' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='38' c='12' s='1'/>
+</Attr>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='38' c='9' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='38' c='14' s='3'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='41' c='18' s='12'/>
+<Pos l='38' c='18' s='12'/>
 </Attr>
 </Id>
 </Unary_Exp>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='42' c='26' s='1'/>
+<Pos l='39' c='26' s='1'/>
 </Attr>
 <Binary_Exp op='(' typref='8'>
 <Attr>
-<Pos l='42' c='21' s='0'/>
+<Pos l='39' c='21' s='0'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='42' c='9' s='12'/>
+<Pos l='39' c='9' s='12'/>
 </Attr>
 </Id>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='42' c='22' s='2'/>
+<Pos l='39' c='22' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
 <Id value='na_espera' typref='8'>
 <Attr>
-<Pos l='42' c='28' s='9'/>
+<Pos l='39' c='28' s='9'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='/='>
 <Attr>
-<Pos l='43' c='20' s='2'/>
+<Pos l='40' c='20' s='2'/>
 </Attr>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='43' c='9' s='10'/>
+<Pos l='40' c='9' s='10'/>
 </Attr>
 </Id>
 <Id value='encerrado' typref='4'>
 <Attr>
-<Pos l='43' c='23' s='9'/>
+<Pos l='40' c='23' s='9'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -329,24 +459,24 @@
 <Body>
 <Operation_Call>
 <Attr>
-<Pos l='45' c='25' s='0'/>
+<Pos l='42' c='25' s='0'/>
 </Attr>
 <Name>
 <Id value='atualizar_status'>
 <Attr>
-<Pos l='45' c='9' s='16'/>
+<Pos l='42' c='9' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='45' c='26' s='2'/>
+<Pos l='42' c='26' s='2'/>
 </Attr>
 </Id>
 <Id value='eliminada' typref='8'>
 <Attr>
-<Pos l='45' c='30' s='9'/>
+<Pos l='42' c='30' s='9'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -355,17 +485,17 @@
 </Operation>
 <Operation name='transferir_senha'>
 <Attr>
-<Pos l='48' c='5' s='16' endLine='56'/>
+<Pos l='45' c='5' s='16' endLine='55'/>
 </Attr>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='48' c='22' s='2'/>
+<Pos l='45' c='22' s='2'/>
 </Attr>
 </Id>
-<Id value='novo_vaqueiro' typref='9'>
+<Id value='novo_vaqueiro' typref='1'>
 <Attr>
-<Pos l='48' c='26' s='13'/>
+<Pos l='45' c='26' s='13'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -373,116 +503,226 @@
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='50' c='12' s='1'/>
+<Pos l='47' c='12' s='1'/>
 </Attr>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='50' c='9' s='2'/>
+<Pos l='47' c='9' s='2'/>
 </Attr>
 </Id>
-<Unary_Exp op='dom' typref='12'>
+<Id value='NAT1' typref='2'>
 <Attr>
-<Pos l='50' c='14' s='3'/>
+<Pos l='47' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='47' c='35' s='1'/>
+</Attr>
+<Id value='novo_vaqueiro' typref='1'>
+<Attr>
+<Pos l='47' c='21' s='13'/>
+</Attr>
+</Id>
+<Id value='NAT1' typref='2'>
+<Attr>
+<Pos l='47' c='37' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='48' c='12' s='1'/>
+</Attr>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='48' c='9' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='48' c='14' s='3'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='50' c='18' s='12'/>
+<Pos l='48' c='18' s='12'/>
 </Attr>
 </Id>
 </Unary_Exp>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='51' c='26' s='1'/>
+<Pos l='49' c='26' s='1'/>
 </Attr>
 <Binary_Exp op='(' typref='8'>
 <Attr>
-<Pos l='51' c='21' s='0'/>
+<Pos l='49' c='21' s='0'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='51' c='9' s='12'/>
+<Pos l='49' c='9' s='12'/>
 </Attr>
 </Id>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='51' c='22' s='2'/>
+<Pos l='49' c='22' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
 <Id value='na_espera' typref='8'>
 <Attr>
-<Pos l='51' c='28' s='9'/>
-</Attr>
-</Id>
-</Exp_Comparison>
-<Exp_Comparison op=':'>
-<Attr>
-<Pos l='52' c='23' s='1'/>
-</Attr>
-<Id value='novo_vaqueiro' typref='9'>
-<Attr>
-<Pos l='52' c='9' s='13'/>
-</Attr>
-</Id>
-<Id value='VAQUEIROS' typref='11'>
-<Attr>
-<Pos l='52' c='25' s='9'/>
+<Pos l='49' c='28' s='9'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='/='>
 <Attr>
-<Pos l='53' c='20' s='2'/>
+<Pos l='50' c='20' s='2'/>
 </Attr>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='53' c='9' s='10'/>
+<Pos l='50' c='9' s='10'/>
 </Attr>
 </Id>
 <Id value='encerrado' typref='4'>
 <Attr>
-<Pos l='53' c='23' s='9'/>
+<Pos l='50' c='23' s='9'/>
 </Attr>
 </Id>
 </Exp_Comparison>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='52' c='50' s='2'/>
+</Attr>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='52' c='24' s='1'/>
+</Attr>
+<Id value='novo_vaqueiro' typref='1'>
+<Attr>
+<Pos l='52' c='10' s='13'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='52' c='26' s='3'/>
+</Attr>
+<Id value='categoria_vaqueiro' typref='12'>
+<Attr>
+<Pos l='52' c='30' s='18'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='52' c='87' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='9'>
+<Attr>
+<Pos l='52' c='71' s='0'/>
+</Attr>
+<Id value='categoria_vaqueiro' typref='12'>
+<Attr>
+<Pos l='52' c='53' s='18'/>
+</Attr>
+</Id>
+<Id value='novo_vaqueiro' typref='1'>
+<Attr>
+<Pos l='52' c='72' s='13'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Binary_Exp op='(' typref='9'>
+<Attr>
+<Pos l='52' c='107' s='0'/>
+</Attr>
+<Id value='categoria_vaqueiro' typref='12'>
+<Attr>
+<Pos l='52' c='89' s='18'/>
+</Attr>
+</Id>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='52' c='118' s='0'/>
+</Attr>
+<Id value='dono_senha' typref='11'>
+<Attr>
+<Pos l='52' c='108' s='10'/>
+</Attr>
+</Id>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='52' c='119' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
 </Nary_Pred>
 </Precondition>
 <Body>
 <Operation_Call>
 <Attr>
-<Pos l='55' c='23' s='0'/>
+<Pos l='54' c='23' s='0'/>
 </Attr>
 <Name>
 <Id value='atualizar_dono'>
 <Attr>
-<Pos l='55' c='9' s='14'/>
+<Pos l='54' c='9' s='14'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='55' c='24' s='2'/>
+<Pos l='54' c='24' s='2'/>
 </Attr>
 </Id>
-<Id value='novo_vaqueiro' typref='9'>
+<Id value='novo_vaqueiro' typref='1'>
 <Attr>
-<Pos l='55' c='28' s='13'/>
+<Pos l='54' c='28' s='13'/>
 </Attr>
 </Id>
+<Binary_Exp op='(' typref='9'>
+<Attr>
+<Pos l='54' c='61' s='0'/>
+</Attr>
+<Id value='categoria_vaqueiro' typref='12'>
+<Attr>
+<Pos l='54' c='43' s='18'/>
+</Attr>
+</Id>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='54' c='72' s='0'/>
+</Attr>
+<Id value='dono_senha' typref='11'>
+<Attr>
+<Pos l='54' c='62' s='10'/>
+</Attr>
+</Id>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='54' c='73' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Binary_Exp>
 </Input_Parameters>
 </Operation_Call>
 </Body>
 </Operation>
 <Operation name='chamar_para_pista'>
 <Attr>
-<Pos l='60' c='5' s='17' endLine='67'/>
+<Pos l='57' c='5' s='17' endLine='65'/>
 </Attr>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='60' c='23' s='2'/>
+<Pos l='57' c='23' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -490,73 +730,88 @@
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='62' c='12' s='1'/>
+<Pos l='59' c='12' s='1'/>
 </Attr>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='62' c='9' s='2'/>
+<Pos l='59' c='9' s='2'/>
 </Attr>
 </Id>
-<Unary_Exp op='dom' typref='12'>
+<Id value='NAT1' typref='2'>
 <Attr>
-<Pos l='62' c='14' s='3'/>
+<Pos l='59' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='60' c='12' s='1'/>
+</Attr>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='60' c='9' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='60' c='14' s='3'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='62' c='18' s='12'/>
+<Pos l='60' c='18' s='12'/>
 </Attr>
 </Id>
 </Unary_Exp>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='63' c='26' s='1'/>
+<Pos l='61' c='26' s='1'/>
 </Attr>
 <Binary_Exp op='(' typref='8'>
 <Attr>
-<Pos l='63' c='21' s='0'/>
+<Pos l='61' c='21' s='0'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='63' c='9' s='12'/>
+<Pos l='61' c='9' s='12'/>
 </Attr>
 </Id>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='63' c='22' s='2'/>
+<Pos l='61' c='22' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
 <Id value='na_espera' typref='8'>
 <Attr>
-<Pos l='63' c='28' s='9'/>
+<Pos l='61' c='28' s='9'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='64' c='42' s='1'/>
+<Pos l='62' c='42' s='1'/>
 </Attr>
 <Unary_Exp op='card' typref='1'>
 <Attr>
-<Pos l='64' c='9' s='4'/>
+<Pos l='62' c='9' s='4'/>
 </Attr>
 <Binary_Exp op='|&gt;' typref='6'>
 <Attr>
-<Pos l='64' c='27' s='2'/>
+<Pos l='62' c='27' s='2'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='64' c='14' s='12'/>
+<Pos l='62' c='14' s='12'/>
 </Attr>
 </Id>
 <Nary_Exp op='{' typref='7'>
 <Attr>
-<Pos l='64' c='30' s='1'/>
+<Pos l='62' c='30' s='1'/>
 </Attr>
 <Id value='na_pista' typref='8'>
 <Attr>
-<Pos l='64' c='31' s='8'/>
+<Pos l='62' c='31' s='8'/>
 </Attr>
 </Id>
 </Nary_Exp>
@@ -564,7 +819,7 @@
 </Unary_Exp>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='64' c='44' s='1'/>
+<Pos l='62' c='44' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -573,24 +828,24 @@
 <Body>
 <Operation_Call>
 <Attr>
-<Pos l='66' c='25' s='0'/>
+<Pos l='64' c='25' s='0'/>
 </Attr>
 <Name>
 <Id value='atualizar_status'>
 <Attr>
-<Pos l='66' c='9' s='16'/>
+<Pos l='64' c='9' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='66' c='26' s='2'/>
+<Pos l='64' c='26' s='2'/>
 </Attr>
 </Id>
 <Id value='na_pista' typref='8'>
 <Attr>
-<Pos l='66' c='30' s='8'/>
+<Pos l='64' c='30' s='8'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -599,94 +854,109 @@
 </Operation>
 <Operation name='correr_boi_classificacao'>
 <Attr>
-<Pos l='71' c='5' s='24' endLine='89'/>
+<Pos l='67' c='5' s='24' endLine='88'/>
 </Attr>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='71' c='30' s='2'/>
+<Pos l='67' c='30' s='2'/>
 </Attr>
 </Id>
-<Id value='julgamento' typref='14'>
+<Id value='julgamento' typref='13'>
 <Attr>
-<Pos l='71' c='34' s='10'/>
+<Pos l='67' c='34' s='10'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Precondition>
 <Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='69' c='12' s='1'/>
+</Attr>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='69' c='9' s='2'/>
+</Attr>
+</Id>
+<Id value='NAT1' typref='2'>
+<Attr>
+<Pos l='69' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='73' c='20' s='1'/>
+<Pos l='70' c='20' s='1'/>
 </Attr>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='73' c='9' s='10'/>
+<Pos l='70' c='9' s='10'/>
 </Attr>
 </Id>
 <Id value='classificacao' typref='4'>
 <Attr>
-<Pos l='73' c='22' s='13'/>
+<Pos l='70' c='22' s='13'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='74' c='12' s='1'/>
+<Pos l='71' c='12' s='1'/>
 </Attr>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='74' c='9' s='2'/>
+<Pos l='71' c='9' s='2'/>
 </Attr>
 </Id>
-<Unary_Exp op='dom' typref='12'>
+<Unary_Exp op='dom' typref='2'>
 <Attr>
-<Pos l='74' c='14' s='3'/>
+<Pos l='71' c='14' s='3'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='74' c='18' s='12'/>
+<Pos l='71' c='18' s='12'/>
 </Attr>
 </Id>
 </Unary_Exp>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='75' c='26' s='1'/>
+<Pos l='72' c='26' s='1'/>
 </Attr>
 <Binary_Exp op='(' typref='8'>
 <Attr>
-<Pos l='75' c='21' s='0'/>
+<Pos l='72' c='21' s='0'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='75' c='9' s='12'/>
+<Pos l='72' c='9' s='12'/>
 </Attr>
 </Id>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='75' c='22' s='2'/>
+<Pos l='72' c='22' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
 <Id value='na_pista' typref='8'>
 <Attr>
-<Pos l='75' c='28' s='8'/>
+<Pos l='72' c='28' s='8'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='76' c='20' s='1'/>
+<Pos l='73' c='20' s='1'/>
 </Attr>
-<Id value='julgamento' typref='14'>
+<Id value='julgamento' typref='13'>
 <Attr>
-<Pos l='76' c='9' s='10'/>
+<Pos l='73' c='9' s='10'/>
 </Attr>
 </Id>
-<Id value='JULGAMENTO' typref='15'>
+<Id value='JULGAMENTO' typref='14'>
 <Attr>
-<Pos l='76' c='22' s='10'/>
+<Pos l='73' c='22' s='10'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -695,21 +965,21 @@
 <Body>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='78' c='9' s='2'/>
+<Pos l='75' c='9' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='78' c='23' s='1'/>
+<Pos l='75' c='23' s='1'/>
 </Attr>
-<Id value='julgamento' typref='14'>
+<Id value='julgamento' typref='13'>
 <Attr>
-<Pos l='78' c='12' s='10'/>
+<Pos l='75' c='12' s='10'/>
 </Attr>
 </Id>
-<Id value='zero_boi' typref='14'>
+<Id value='zero_boi' typref='13'>
 <Attr>
-<Pos l='78' c='25' s='8'/>
+<Pos l='75' c='25' s='8'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -717,24 +987,24 @@
 <Then>
 <Operation_Call>
 <Attr>
-<Pos l='79' c='29' s='0'/>
+<Pos l='76' c='29' s='0'/>
 </Attr>
 <Name>
 <Id value='atualizar_status'>
 <Attr>
-<Pos l='79' c='13' s='16'/>
+<Pos l='76' c='13' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='79' c='30' s='2'/>
+<Pos l='76' c='30' s='2'/>
 </Attr>
 </Id>
 <Id value='eliminada' typref='8'>
 <Attr>
-<Pos l='79' c='34' s='9'/>
+<Pos l='76' c='34' s='9'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -743,41 +1013,21 @@
 <Else>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='81' c='13' s='2'/>
+<Pos l='78' c='13' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='81' c='38' s='1'/>
+<Pos l='78' c='27' s='1'/>
 </Attr>
-<Binary_Exp op='+i' typref='1'>
+<Id value='julgamento' typref='13'>
 <Attr>
-<Pos l='81' c='34' s='1'/>
-</Attr>
-<Binary_Exp op='(' typref='1'>
-<Attr>
-<Pos l='81' c='29' s='0'/>
-</Attr>
-<Id value='bois_corridos' typref='16'>
-<Attr>
-<Pos l='81' c='16' s='13'/>
+<Pos l='78' c='16' s='10'/>
 </Attr>
 </Id>
-<Id value='ss' typref='10'>
+<Id value='retorno' typref='13'>
 <Attr>
-<Pos l='81' c='30' s='2'/>
-</Attr>
-</Id>
-</Binary_Exp>
-<Integer_Literal value='1' typref='1'>
-<Attr>
-<Pos l='81' c='36' s='1'/>
-</Attr>
-</Integer_Literal>
-</Binary_Exp>
-<Id value='BOIS_PARA_CLASSIFICAR' typref='1'>
-<Attr>
-<Pos l='81' c='40' s='21'/>
+<Pos l='78' c='29' s='7'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -785,24 +1035,92 @@
 <Then>
 <Operation_Call>
 <Attr>
-<Pos l='83' c='36' s='0'/>
+<Pos l='79' c='33' s='0'/>
 </Attr>
 <Name>
-<Id value='registrar_valeu_boi'>
+<Id value='atualizar_status'>
 <Attr>
-<Pos l='83' c='17' s='19'/>
+<Pos l='79' c='17' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='83' c='37' s='2'/>
+<Pos l='79' c='34' s='2'/>
+</Attr>
+</Id>
+<Id value='na_espera' typref='8'>
+<Attr>
+<Pos l='79' c='38' s='9'/>
+</Attr>
+</Id>
+</Input_Parameters>
+</Operation_Call>
+</Then>
+<Else>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='81' c='17' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='81' c='42' s='1'/>
+</Attr>
+<Binary_Exp op='+i' typref='1'>
+<Attr>
+<Pos l='81' c='38' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='81' c='33' s='0'/>
+</Attr>
+<Id value='bois_corridos' typref='11'>
+<Attr>
+<Pos l='81' c='20' s='13'/>
+</Attr>
+</Id>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='81' c='34' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='81' c='40' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Id value='BOIS_PARA_CLASSIFICAR' typref='1'>
+<Attr>
+<Pos l='81' c='44' s='21'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Operation_Call>
+<Attr>
+<Pos l='82' c='40' s='0'/>
+</Attr>
+<Name>
+<Id value='registrar_valeu_boi'>
+<Attr>
+<Pos l='82' c='21' s='19'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='82' c='41' s='2'/>
 </Attr>
 </Id>
 <Id value='classificada' typref='8'>
 <Attr>
-<Pos l='83' c='41' s='12'/>
+<Pos l='82' c='45' s='12'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -811,24 +1129,24 @@
 <Else>
 <Operation_Call>
 <Attr>
-<Pos l='86' c='36' s='0'/>
+<Pos l='84' c='40' s='0'/>
 </Attr>
 <Name>
 <Id value='registrar_valeu_boi'>
 <Attr>
-<Pos l='86' c='17' s='19'/>
+<Pos l='84' c='21' s='19'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='86' c='37' s='2'/>
+<Pos l='84' c='41' s='2'/>
 </Attr>
 </Id>
 <Id value='na_espera' typref='8'>
 <Attr>
-<Pos l='86' c='41' s='9'/>
+<Pos l='84' c='45' s='9'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -837,53 +1155,55 @@
 </If_Sub>
 </Else>
 </If_Sub>
+</Else>
+</If_Sub>
 </Body>
 </Operation>
 <Operation name='iniciar_disputa'>
 <Attr>
-<Pos l='93' c='5' s='15' endLine='102'/>
+<Pos l='90' c='5' s='15' endLine='98'/>
 </Attr>
 <Precondition>
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='95' c='20' s='1'/>
+<Pos l='92' c='20' s='1'/>
 </Attr>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='95' c='9' s='10'/>
+<Pos l='92' c='9' s='10'/>
 </Attr>
 </Id>
 <Id value='classificacao' typref='4'>
 <Attr>
-<Pos l='95' c='22' s='13'/>
+<Pos l='92' c='22' s='13'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='97' c='42' s='1'/>
+<Pos l='93' c='42' s='1'/>
 </Attr>
 <Unary_Exp op='card' typref='1'>
 <Attr>
-<Pos l='97' c='9' s='4'/>
+<Pos l='93' c='9' s='4'/>
 </Attr>
 <Binary_Exp op='|&gt;' typref='6'>
 <Attr>
-<Pos l='97' c='27' s='2'/>
+<Pos l='93' c='27' s='2'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='97' c='14' s='12'/>
+<Pos l='93' c='14' s='12'/>
 </Attr>
 </Id>
 <Nary_Exp op='{' typref='7'>
 <Attr>
-<Pos l='97' c='30' s='1'/>
+<Pos l='93' c='30' s='1'/>
 </Attr>
 <Id value='na_pista' typref='8'>
 <Attr>
-<Pos l='97' c='31' s='8'/>
+<Pos l='93' c='31' s='8'/>
 </Attr>
 </Id>
 </Nary_Exp>
@@ -891,34 +1211,34 @@
 </Unary_Exp>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='97' c='44' s='1'/>
+<Pos l='93' c='44' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='98' c='43' s='1'/>
+<Pos l='94' c='43' s='1'/>
 </Attr>
 <Unary_Exp op='card' typref='1'>
 <Attr>
-<Pos l='98' c='9' s='4'/>
+<Pos l='94' c='9' s='4'/>
 </Attr>
 <Binary_Exp op='|&gt;' typref='6'>
 <Attr>
-<Pos l='98' c='27' s='2'/>
+<Pos l='94' c='27' s='2'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='98' c='14' s='12'/>
+<Pos l='94' c='14' s='12'/>
 </Attr>
 </Id>
 <Nary_Exp op='{' typref='7'>
 <Attr>
-<Pos l='98' c='30' s='1'/>
+<Pos l='94' c='30' s='1'/>
 </Attr>
 <Id value='na_espera' typref='8'>
 <Attr>
-<Pos l='98' c='31' s='9'/>
+<Pos l='94' c='31' s='9'/>
 </Attr>
 </Id>
 </Nary_Exp>
@@ -926,7 +1246,7 @@
 </Unary_Exp>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='98' c='45' s='1'/>
+<Pos l='94' c='45' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -936,31 +1256,31 @@
 <Nary_Sub op='||'>
 <Assignement_Sub>
 <Attr>
-<Pos l='100' c='20' s='2'/>
+<Pos l='96' c='20' s='2'/>
 </Attr>
 <Variables>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='100' c='9' s='10'/>
+<Pos l='96' c='9' s='10'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='disputa' typref='4'>
 <Attr>
-<Pos l='100' c='23' s='7'/>
+<Pos l='96' c='23' s='7'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='101' c='9' s='16'/>
+<Pos l='97' c='9' s='16'/>
 </Attr>
 <Name>
 <Id value='preparar_disputa'>
 <Attr>
-<Pos l='101' c='9' s='16'/>
+<Pos l='97' c='9' s='16'/>
 </Attr>
 </Id>
 </Name>
@@ -970,94 +1290,109 @@
 </Operation>
 <Operation name='correr_boi_disputa'>
 <Attr>
-<Pos l='104' c='5' s='18' endLine='117'/>
+<Pos l='100' c='5' s='18' endLine='117'/>
 </Attr>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='104' c='24' s='2'/>
+<Pos l='100' c='24' s='2'/>
 </Attr>
 </Id>
-<Id value='julgamento' typref='14'>
+<Id value='julgamento' typref='13'>
 <Attr>
-<Pos l='104' c='28' s='10'/>
+<Pos l='100' c='28' s='10'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Precondition>
 <Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='102' c='12' s='1'/>
+</Attr>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='102' c='9' s='2'/>
+</Attr>
+</Id>
+<Id value='NAT1' typref='2'>
+<Attr>
+<Pos l='102' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='106' c='20' s='1'/>
+<Pos l='103' c='20' s='1'/>
 </Attr>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='106' c='9' s='10'/>
+<Pos l='103' c='9' s='10'/>
 </Attr>
 </Id>
 <Id value='disputa' typref='4'>
 <Attr>
-<Pos l='106' c='22' s='7'/>
+<Pos l='103' c='22' s='7'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='107' c='12' s='1'/>
+<Pos l='104' c='12' s='1'/>
 </Attr>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='107' c='9' s='2'/>
+<Pos l='104' c='9' s='2'/>
 </Attr>
 </Id>
-<Unary_Exp op='dom' typref='12'>
+<Unary_Exp op='dom' typref='2'>
 <Attr>
-<Pos l='107' c='14' s='3'/>
+<Pos l='104' c='14' s='3'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='107' c='18' s='12'/>
+<Pos l='104' c='18' s='12'/>
 </Attr>
 </Id>
 </Unary_Exp>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='108' c='26' s='1'/>
+<Pos l='105' c='26' s='1'/>
 </Attr>
 <Binary_Exp op='(' typref='8'>
 <Attr>
-<Pos l='108' c='21' s='0'/>
+<Pos l='105' c='21' s='0'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='108' c='9' s='12'/>
+<Pos l='105' c='9' s='12'/>
 </Attr>
 </Id>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='108' c='22' s='2'/>
+<Pos l='105' c='22' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
 <Id value='na_pista' typref='8'>
 <Attr>
-<Pos l='108' c='28' s='8'/>
+<Pos l='105' c='28' s='8'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='109' c='20' s='1'/>
+<Pos l='106' c='20' s='1'/>
 </Attr>
-<Id value='julgamento' typref='14'>
+<Id value='julgamento' typref='13'>
 <Attr>
-<Pos l='109' c='9' s='10'/>
+<Pos l='106' c='9' s='10'/>
 </Attr>
 </Id>
-<Id value='JULGAMENTO' typref='15'>
+<Id value='JULGAMENTO' typref='14'>
 <Attr>
-<Pos l='109' c='22' s='10'/>
+<Pos l='106' c='22' s='10'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -1066,21 +1401,21 @@
 <Body>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='111' c='9' s='2'/>
+<Pos l='108' c='9' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='111' c='23' s='1'/>
+<Pos l='108' c='23' s='1'/>
 </Attr>
-<Id value='julgamento' typref='14'>
+<Id value='julgamento' typref='13'>
 <Attr>
-<Pos l='111' c='12' s='10'/>
+<Pos l='108' c='12' s='10'/>
 </Attr>
 </Id>
-<Id value='zero_boi' typref='14'>
+<Id value='zero_boi' typref='13'>
 <Attr>
-<Pos l='111' c='25' s='8'/>
+<Pos l='108' c='25' s='8'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -1088,24 +1423,72 @@
 <Then>
 <Operation_Call>
 <Attr>
-<Pos l='112' c='29' s='0'/>
+<Pos l='109' c='29' s='0'/>
 </Attr>
 <Name>
 <Id value='atualizar_status'>
 <Attr>
-<Pos l='112' c='13' s='16'/>
+<Pos l='109' c='13' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='112' c='30' s='2'/>
+<Pos l='109' c='30' s='2'/>
 </Attr>
 </Id>
 <Id value='eliminada' typref='8'>
 <Attr>
-<Pos l='112' c='34' s='9'/>
+<Pos l='109' c='34' s='9'/>
+</Attr>
+</Id>
+</Input_Parameters>
+</Operation_Call>
+</Then>
+<Else>
+<If_Sub elseif='no'>
+<Attr>
+<Pos l='111' c='13' s='2'/>
+</Attr>
+<Condition>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='111' c='27' s='1'/>
+</Attr>
+<Id value='julgamento' typref='13'>
+<Attr>
+<Pos l='111' c='16' s='10'/>
+</Attr>
+</Id>
+<Id value='retorno' typref='13'>
+<Attr>
+<Pos l='111' c='29' s='7'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Condition>
+<Then>
+<Operation_Call>
+<Attr>
+<Pos l='112' c='33' s='0'/>
+</Attr>
+<Name>
+<Id value='atualizar_status'>
+<Attr>
+<Pos l='112' c='17' s='16'/>
+</Attr>
+</Id>
+</Name>
+<Input_Parameters>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='112' c='34' s='2'/>
+</Attr>
+</Id>
+<Id value='na_espera' typref='8'>
+<Attr>
+<Pos l='112' c='38' s='9'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -1114,35 +1497,37 @@
 <Else>
 <Operation_Call>
 <Attr>
-<Pos l='115' c='29' s='0'/>
+<Pos l='114' c='33' s='0'/>
 </Attr>
 <Name>
 <Id value='atualizar_status'>
 <Attr>
-<Pos l='115' c='13' s='16'/>
+<Pos l='114' c='17' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='115' c='30' s='2'/>
+<Pos l='114' c='34' s='2'/>
 </Attr>
 </Id>
 <Id value='na_espera' typref='8'>
 <Attr>
-<Pos l='115' c='34' s='9'/>
+<Pos l='114' c='38' s='9'/>
 </Attr>
 </Id>
 </Input_Parameters>
 </Operation_Call>
 </Else>
 </If_Sub>
+</Else>
+</If_Sub>
 </Body>
 </Operation>
 <Operation name='rachar_premio'>
 <Attr>
-<Pos l='119' c='5' s='13' endLine='129'/>
+<Pos l='119' c='5' s='13' endLine='127'/>
 </Attr>
 <Precondition>
 <Nary_Pred op='&amp;'>
@@ -1163,7 +1548,42 @@
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='123' c='42' s='1'/>
+<Pos l='122' c='42' s='1'/>
+</Attr>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='122' c='9' s='4'/>
+</Attr>
+<Binary_Exp op='|&gt;' typref='6'>
+<Attr>
+<Pos l='122' c='27' s='2'/>
+</Attr>
+<Id value='estado_senha' typref='6'>
+<Attr>
+<Pos l='122' c='14' s='12'/>
+</Attr>
+</Id>
+<Nary_Exp op='{' typref='7'>
+<Attr>
+<Pos l='122' c='30' s='1'/>
+</Attr>
+<Id value='na_pista' typref='8'>
+<Attr>
+<Pos l='122' c='31' s='8'/>
+</Attr>
+</Id>
+</Nary_Exp>
+</Binary_Exp>
+</Unary_Exp>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='122' c='44' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+<Exp_Comparison op='&gt;=i'>
+<Attr>
+<Pos l='123' c='43' s='2'/>
 </Attr>
 <Unary_Exp op='card' typref='1'>
 <Attr>
@@ -1182,44 +1602,9 @@
 <Attr>
 <Pos l='123' c='30' s='1'/>
 </Attr>
-<Id value='na_pista' typref='8'>
-<Attr>
-<Pos l='123' c='31' s='8'/>
-</Attr>
-</Id>
-</Nary_Exp>
-</Binary_Exp>
-</Unary_Exp>
-<Integer_Literal value='0' typref='1'>
-<Attr>
-<Pos l='123' c='44' s='1'/>
-</Attr>
-</Integer_Literal>
-</Exp_Comparison>
-<Exp_Comparison op='&gt;=i'>
-<Attr>
-<Pos l='125' c='43' s='2'/>
-</Attr>
-<Unary_Exp op='card' typref='1'>
-<Attr>
-<Pos l='125' c='9' s='4'/>
-</Attr>
-<Binary_Exp op='|&gt;' typref='6'>
-<Attr>
-<Pos l='125' c='27' s='2'/>
-</Attr>
-<Id value='estado_senha' typref='6'>
-<Attr>
-<Pos l='125' c='14' s='12'/>
-</Attr>
-</Id>
-<Nary_Exp op='{' typref='7'>
-<Attr>
-<Pos l='125' c='30' s='1'/>
-</Attr>
 <Id value='na_espera' typref='8'>
 <Attr>
-<Pos l='125' c='31' s='9'/>
+<Pos l='123' c='31' s='9'/>
 </Attr>
 </Id>
 </Nary_Exp>
@@ -1227,7 +1612,7 @@
 </Unary_Exp>
 <Integer_Literal value='2' typref='1'>
 <Attr>
-<Pos l='125' c='46' s='1'/>
+<Pos l='123' c='46' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -1237,31 +1622,31 @@
 <Nary_Sub op='||'>
 <Assignement_Sub>
 <Attr>
-<Pos l='127' c='20' s='2'/>
+<Pos l='125' c='20' s='2'/>
 </Attr>
 <Variables>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='127' c='9' s='10'/>
+<Pos l='125' c='9' s='10'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='encerrado' typref='4'>
 <Attr>
-<Pos l='127' c='23' s='9'/>
+<Pos l='125' c='23' s='9'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='128' c='9' s='17'/>
+<Pos l='126' c='9' s='17'/>
 </Attr>
 <Name>
 <Id value='finalizar_torneio'>
 <Attr>
-<Pos l='128' c='9' s='17'/>
+<Pos l='126' c='9' s='17'/>
 </Attr>
 </Id>
 </Name>
@@ -1271,49 +1656,49 @@
 </Operation>
 <Operation name='declarar_campeao_unico'>
 <Attr>
-<Pos l='131' c='5' s='22' endLine='140'/>
+<Pos l='129' c='5' s='22' endLine='137'/>
 </Attr>
 <Precondition>
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='133' c='20' s='1'/>
+<Pos l='131' c='20' s='1'/>
 </Attr>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='133' c='9' s='10'/>
+<Pos l='131' c='9' s='10'/>
 </Attr>
 </Id>
 <Id value='disputa' typref='4'>
 <Attr>
-<Pos l='133' c='22' s='7'/>
+<Pos l='131' c='22' s='7'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='134' c='42' s='1'/>
+<Pos l='132' c='42' s='1'/>
 </Attr>
 <Unary_Exp op='card' typref='1'>
 <Attr>
-<Pos l='134' c='9' s='4'/>
+<Pos l='132' c='9' s='4'/>
 </Attr>
 <Binary_Exp op='|&gt;' typref='6'>
 <Attr>
-<Pos l='134' c='27' s='2'/>
+<Pos l='132' c='27' s='2'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='134' c='14' s='12'/>
+<Pos l='132' c='14' s='12'/>
 </Attr>
 </Id>
 <Nary_Exp op='{' typref='7'>
 <Attr>
-<Pos l='134' c='30' s='1'/>
+<Pos l='132' c='30' s='1'/>
 </Attr>
 <Id value='na_pista' typref='8'>
 <Attr>
-<Pos l='134' c='31' s='8'/>
+<Pos l='132' c='31' s='8'/>
 </Attr>
 </Id>
 </Nary_Exp>
@@ -1321,34 +1706,34 @@
 </Unary_Exp>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='134' c='44' s='1'/>
+<Pos l='132' c='44' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='136' c='43' s='1'/>
+<Pos l='133' c='43' s='1'/>
 </Attr>
 <Unary_Exp op='card' typref='1'>
 <Attr>
-<Pos l='136' c='9' s='4'/>
+<Pos l='133' c='9' s='4'/>
 </Attr>
 <Binary_Exp op='|&gt;' typref='6'>
 <Attr>
-<Pos l='136' c='27' s='2'/>
+<Pos l='133' c='27' s='2'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='136' c='14' s='12'/>
+<Pos l='133' c='14' s='12'/>
 </Attr>
 </Id>
 <Nary_Exp op='{' typref='7'>
 <Attr>
-<Pos l='136' c='30' s='1'/>
+<Pos l='133' c='30' s='1'/>
 </Attr>
 <Id value='na_espera' typref='8'>
 <Attr>
-<Pos l='136' c='31' s='9'/>
+<Pos l='133' c='31' s='9'/>
 </Attr>
 </Id>
 </Nary_Exp>
@@ -1356,7 +1741,7 @@
 </Unary_Exp>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='136' c='45' s='1'/>
+<Pos l='133' c='45' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -1366,31 +1751,31 @@
 <Nary_Sub op='||'>
 <Assignement_Sub>
 <Attr>
-<Pos l='138' c='20' s='2'/>
+<Pos l='135' c='20' s='2'/>
 </Attr>
 <Variables>
 <Id value='fase_atual' typref='4'>
 <Attr>
-<Pos l='138' c='9' s='10'/>
+<Pos l='135' c='9' s='10'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='encerrado' typref='4'>
 <Attr>
-<Pos l='138' c='23' s='9'/>
+<Pos l='135' c='23' s='9'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='139' c='9' s='17'/>
+<Pos l='136' c='9' s='17'/>
 </Attr>
 <Name>
 <Id value='finalizar_torneio'>
 <Attr>
-<Pos l='139' c='9' s='17'/>
+<Pos l='136' c='9' s='17'/>
 </Attr>
 </Id>
 </Name>
@@ -1398,199 +1783,88 @@
 </Nary_Sub>
 </Body>
 </Operation>
-<Operation name='listar_classificados'>
-<Attr>
-<Pos l='146' c='5' s='7' endLine='150'/>
-</Attr>
-<Output_Parameters>
-<Id value='retorno' typref='12'>
-<Attr>
-<Pos l='146' c='5' s='7'/>
-</Attr>
-</Id>
-</Output_Parameters>
-<Body>
-<Assignement_Sub>
-<Attr>
-<Pos l='149' c='17' s='2'/>
-</Attr>
-<Variables>
-<Id value='retorno' typref='12'>
-<Attr>
-<Pos l='149' c='9' s='7'/>
-</Attr>
-</Id>
-</Variables>
-<Values>
-<Unary_Exp op='dom' typref='12'>
-<Attr>
-<Pos l='149' c='20' s='3'/>
-</Attr>
-<Binary_Exp op='|&gt;' typref='6'>
-<Attr>
-<Pos l='149' c='37' s='2'/>
-</Attr>
-<Id value='estado_senha' typref='6'>
-<Attr>
-<Pos l='149' c='24' s='12'/>
-</Attr>
-</Id>
-<Nary_Exp op='{' typref='7'>
-<Attr>
-<Pos l='149' c='40' s='1'/>
-</Attr>
-<Id value='classificada' typref='8'>
-<Attr>
-<Pos l='149' c='41' s='12'/>
-</Attr>
-</Id>
-</Nary_Exp>
-</Binary_Exp>
-</Unary_Exp>
-</Values>
-</Assignement_Sub>
-</Body>
-</Operation>
-<Operation name='listar_vivos_disputa'>
-<Attr>
-<Pos l='153' c='5' s='7' endLine='159'/>
-</Attr>
-<Output_Parameters>
-<Id value='retorno' typref='12'>
-<Attr>
-<Pos l='153' c='5' s='7'/>
-</Attr>
-</Id>
-</Output_Parameters>
-<Precondition>
-<Exp_Comparison op='='>
-<Attr>
-<Pos l='155' c='20' s='1'/>
-</Attr>
-<Id value='fase_atual' typref='4'>
-<Attr>
-<Pos l='155' c='9' s='10'/>
-</Attr>
-</Id>
-<Id value='disputa' typref='4'>
-<Attr>
-<Pos l='155' c='22' s='7'/>
-</Attr>
-</Id>
-</Exp_Comparison>
-</Precondition>
-<Body>
-<Assignement_Sub>
-<Attr>
-<Pos l='158' c='17' s='2'/>
-</Attr>
-<Variables>
-<Id value='retorno' typref='12'>
-<Attr>
-<Pos l='158' c='9' s='7'/>
-</Attr>
-</Id>
-</Variables>
-<Values>
-<Unary_Exp op='dom' typref='12'>
-<Attr>
-<Pos l='158' c='20' s='3'/>
-</Attr>
-<Binary_Exp op='|&gt;' typref='6'>
-<Attr>
-<Pos l='158' c='37' s='2'/>
-</Attr>
-<Id value='estado_senha' typref='6'>
-<Attr>
-<Pos l='158' c='24' s='12'/>
-</Attr>
-</Id>
-<Nary_Exp op='{' typref='7'>
-<Attr>
-<Pos l='158' c='40' s='1'/>
-</Attr>
-<Id value='na_espera' typref='8'>
-<Attr>
-<Pos l='158' c='41' s='9'/>
-</Attr>
-</Id>
-<Id value='na_pista' typref='8'>
-<Attr>
-<Pos l='158' c='52' s='8'/>
-</Attr>
-</Id>
-</Nary_Exp>
-</Binary_Exp>
-</Unary_Exp>
-</Values>
-</Assignement_Sub>
-</Body>
-</Operation>
 <Operation name='consultar_status_senha'>
 <Attr>
-<Pos l='162' c='5' s='7' endLine='167'/>
+<Pos l='143' c='5' s='3' endLine='149'/>
 </Attr>
 <Output_Parameters>
-<Id value='retorno' typref='8'>
+<Id value='res' typref='8'>
 <Attr>
-<Pos l='162' c='5' s='7'/>
+<Pos l='143' c='5' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='162' c='40' s='2'/>
+<Pos l='143' c='36' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Precondition>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='164' c='12' s='1'/>
+<Pos l='145' c='12' s='1'/>
 </Attr>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='164' c='9' s='2'/>
+<Pos l='145' c='9' s='2'/>
 </Attr>
 </Id>
-<Unary_Exp op='dom' typref='12'>
+<Id value='NAT1' typref='2'>
 <Attr>
-<Pos l='164' c='14' s='3'/>
+<Pos l='145' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='146' c='12' s='1'/>
+</Attr>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='146' c='9' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='146' c='14' s='3'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='164' c='18' s='12'/>
+<Pos l='146' c='18' s='12'/>
 </Attr>
 </Id>
 </Unary_Exp>
 </Exp_Comparison>
+</Nary_Pred>
 </Precondition>
 <Body>
 <Assignement_Sub>
 <Attr>
-<Pos l='166' c='17' s='2'/>
+<Pos l='148' c='13' s='2'/>
 </Attr>
 <Variables>
-<Id value='retorno' typref='8'>
+<Id value='res' typref='8'>
 <Attr>
-<Pos l='166' c='9' s='7'/>
+<Pos l='148' c='9' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='(' typref='8'>
 <Attr>
-<Pos l='166' c='32' s='0'/>
+<Pos l='148' c='28' s='0'/>
 </Attr>
 <Id value='estado_senha' typref='6'>
 <Attr>
-<Pos l='166' c='20' s='12'/>
+<Pos l='148' c='16' s='12'/>
 </Attr>
 </Id>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='166' c='33' s='2'/>
+<Pos l='148' c='29' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -1600,188 +1874,217 @@
 </Operation>
 <Operation name='consultar_dono'>
 <Attr>
-<Pos l='170' c='5' s='7' endLine='175'/>
+<Pos l='151' c='5' s='3' endLine='157'/>
 </Attr>
 <Output_Parameters>
-<Id value='retorno' typref='9'>
+<Id value='res' typref='1'>
 <Attr>
-<Pos l='170' c='5' s='7'/>
+<Pos l='151' c='5' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='170' c='32' s='2'/>
+<Pos l='151' c='28' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Precondition>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='172' c='12' s='1'/>
+<Pos l='153' c='12' s='1'/>
 </Attr>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='172' c='9' s='2'/>
+<Pos l='153' c='9' s='2'/>
 </Attr>
 </Id>
-<Unary_Exp op='dom' typref='12'>
+<Id value='NAT1' typref='2'>
 <Attr>
-<Pos l='172' c='14' s='3'/>
+<Pos l='153' c='14' s='4'/>
 </Attr>
-<Id value='dono_senha' typref='13'>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
 <Attr>
-<Pos l='172' c='18' s='10'/>
+<Pos l='154' c='12' s='1'/>
+</Attr>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='154' c='9' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='154' c='14' s='3'/>
+</Attr>
+<Id value='dono_senha' typref='11'>
+<Attr>
+<Pos l='154' c='18' s='10'/>
 </Attr>
 </Id>
 </Unary_Exp>
 </Exp_Comparison>
+</Nary_Pred>
 </Precondition>
 <Body>
 <Assignement_Sub>
 <Attr>
-<Pos l='174' c='17' s='2'/>
+<Pos l='156' c='13' s='2'/>
 </Attr>
 <Variables>
-<Id value='retorno' typref='9'>
+<Id value='res' typref='1'>
 <Attr>
-<Pos l='174' c='9' s='7'/>
+<Pos l='156' c='9' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='156' c='26' s='0'/>
+</Attr>
+<Id value='dono_senha' typref='11'>
+<Attr>
+<Pos l='156' c='16' s='10'/>
+</Attr>
+</Id>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='156' c='27' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Values>
+</Assignement_Sub>
+</Body>
+</Operation>
+<Operation name='consultar_categoria_vaqueiro'>
+<Attr>
+<Pos l='159' c='5' s='3' endLine='165'/>
+</Attr>
+<Output_Parameters>
+<Id value='res' typref='9'>
+<Attr>
+<Pos l='159' c='5' s='3'/>
+</Attr>
+</Id>
+</Output_Parameters>
+<Input_Parameters>
+<Id value='vv' typref='1'>
+<Attr>
+<Pos l='159' c='42' s='2'/>
+</Attr>
+</Id>
+</Input_Parameters>
+<Precondition>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='161' c='12' s='1'/>
+</Attr>
+<Id value='vv' typref='1'>
+<Attr>
+<Pos l='161' c='9' s='2'/>
+</Attr>
+</Id>
+<Id value='NAT1' typref='2'>
+<Attr>
+<Pos l='161' c='14' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='162' c='12' s='1'/>
+</Attr>
+<Id value='vv' typref='1'>
+<Attr>
+<Pos l='162' c='9' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='162' c='14' s='3'/>
+</Attr>
+<Id value='categoria_vaqueiro' typref='12'>
+<Attr>
+<Pos l='162' c='18' s='18'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+</Precondition>
+<Body>
+<Assignement_Sub>
+<Attr>
+<Pos l='164' c='13' s='2'/>
+</Attr>
+<Variables>
+<Id value='res' typref='9'>
+<Attr>
+<Pos l='164' c='9' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='(' typref='9'>
 <Attr>
-<Pos l='174' c='30' s='0'/>
+<Pos l='164' c='34' s='0'/>
 </Attr>
-<Id value='dono_senha' typref='13'>
+<Id value='categoria_vaqueiro' typref='12'>
 <Attr>
-<Pos l='174' c='20' s='10'/>
+<Pos l='164' c='16' s='18'/>
 </Attr>
 </Id>
-<Id value='ss' typref='10'>
+<Id value='vv' typref='1'>
 <Attr>
-<Pos l='174' c='31' s='2'/>
+<Pos l='164' c='35' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
-</Values>
-</Assignement_Sub>
-</Body>
-</Operation>
-<Operation name='listar_senhas_vaqueiro'>
-<Attr>
-<Pos l='177' c='5' s='7' endLine='183'/>
-</Attr>
-<Output_Parameters>
-<Id value='retorno' typref='12'>
-<Attr>
-<Pos l='177' c='5' s='7'/>
-</Attr>
-</Id>
-</Output_Parameters>
-<Input_Parameters>
-<Id value='vv' typref='9'>
-<Attr>
-<Pos l='177' c='40' s='2'/>
-</Attr>
-</Id>
-</Input_Parameters>
-<Precondition>
-<Exp_Comparison op=':'>
-<Attr>
-<Pos l='179' c='12' s='1'/>
-</Attr>
-<Id value='vv' typref='9'>
-<Attr>
-<Pos l='179' c='9' s='2'/>
-</Attr>
-</Id>
-<Id value='VAQUEIROS' typref='11'>
-<Attr>
-<Pos l='179' c='14' s='9'/>
-</Attr>
-</Id>
-</Exp_Comparison>
-</Precondition>
-<Body>
-<Assignement_Sub>
-<Attr>
-<Pos l='182' c='17' s='2'/>
-</Attr>
-<Variables>
-<Id value='retorno' typref='12'>
-<Attr>
-<Pos l='182' c='9' s='7'/>
-</Attr>
-</Id>
-</Variables>
-<Values>
-<Unary_Exp op='dom' typref='12'>
-<Attr>
-<Pos l='182' c='20' s='3'/>
-</Attr>
-<Binary_Exp op='|&gt;' typref='13'>
-<Attr>
-<Pos l='182' c='35' s='2'/>
-</Attr>
-<Id value='dono_senha' typref='13'>
-<Attr>
-<Pos l='182' c='24' s='10'/>
-</Attr>
-</Id>
-<Nary_Exp op='{' typref='11'>
-<Attr>
-<Pos l='182' c='38' s='1'/>
-</Attr>
-<Id value='vv' typref='9'>
-<Attr>
-<Pos l='182' c='39' s='2'/>
-</Attr>
-</Id>
-</Nary_Exp>
-</Binary_Exp>
-</Unary_Exp>
 </Values>
 </Assignement_Sub>
 </Body>
 </Operation>
 <Operation name='total_senhas_vendidas'>
 <Attr>
-<Pos l='185' c='5' s='7' endLine='189'/>
+<Pos l='167' c='5' s='3' endLine='170'/>
 </Attr>
 <Output_Parameters>
-<Id value='retorno' typref='1'>
+<Id value='res' typref='1'>
 <Attr>
-<Pos l='185' c='5' s='7'/>
+<Pos l='167' c='5' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
 <Body>
 <Assignement_Sub>
 <Attr>
-<Pos l='188' c='17' s='2'/>
+<Pos l='169' c='13' s='2'/>
 </Attr>
 <Variables>
-<Id value='retorno' typref='1'>
+<Id value='res' typref='1'>
 <Attr>
-<Pos l='188' c='9' s='7'/>
+<Pos l='169' c='9' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Unary_Exp op='card' typref='1'>
 <Attr>
-<Pos l='188' c='20' s='4'/>
+<Pos l='169' c='16' s='4'/>
 </Attr>
-<Unary_Exp op='dom' typref='12'>
+<Unary_Exp op='dom' typref='2'>
 <Attr>
-<Pos l='188' c='25' s='3'/>
+<Pos l='169' c='21' s='3'/>
 </Attr>
-<Id value='dono_senha' typref='13'>
+<Id value='dono_senha' typref='11'>
 <Attr>
-<Pos l='188' c='29' s='10'/>
+<Pos l='169' c='25' s='10'/>
 </Attr>
 </Id>
 </Unary_Exp>
@@ -1792,69 +2095,86 @@
 </Operation>
 <Operation name='consultar_bois_corridos'>
 <Attr>
-<Pos l='191' c='5' s='7' endLine='196'/>
+<Pos l='172' c='5' s='3' endLine='178'/>
 </Attr>
 <Output_Parameters>
-<Id value='retorno' typref='1'>
+<Id value='res' typref='1'>
 <Attr>
-<Pos l='191' c='5' s='7'/>
+<Pos l='172' c='5' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
 <Input_Parameters>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='191' c='41' s='2'/>
+<Pos l='172' c='37' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Precondition>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='193' c='12' s='1'/>
+<Pos l='174' c='12' s='1'/>
 </Attr>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='193' c='9' s='2'/>
+<Pos l='174' c='9' s='2'/>
 </Attr>
 </Id>
-<Unary_Exp op='dom' typref='12'>
+<Id value='NAT1' typref='2'>
 <Attr>
-<Pos l='193' c='14' s='3'/>
+<Pos l='174' c='14' s='4'/>
 </Attr>
-<Id value='bois_corridos' typref='16'>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
 <Attr>
-<Pos l='193' c='18' s='13'/>
+<Pos l='175' c='12' s='1'/>
+</Attr>
+<Id value='ss' typref='1'>
+<Attr>
+<Pos l='175' c='9' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='175' c='14' s='3'/>
+</Attr>
+<Id value='bois_corridos' typref='11'>
+<Attr>
+<Pos l='175' c='18' s='13'/>
 </Attr>
 </Id>
 </Unary_Exp>
 </Exp_Comparison>
+</Nary_Pred>
 </Precondition>
 <Body>
 <Assignement_Sub>
 <Attr>
-<Pos l='195' c='17' s='2'/>
+<Pos l='177' c='13' s='2'/>
 </Attr>
 <Variables>
-<Id value='retorno' typref='1'>
+<Id value='res' typref='1'>
 <Attr>
-<Pos l='195' c='9' s='7'/>
+<Pos l='177' c='9' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='195' c='33' s='0'/>
+<Pos l='177' c='29' s='0'/>
 </Attr>
-<Id value='bois_corridos' typref='16'>
+<Id value='bois_corridos' typref='11'>
 <Attr>
-<Pos l='195' c='20' s='13'/>
+<Pos l='177' c='16' s='13'/>
 </Attr>
 </Id>
-<Id value='ss' typref='10'>
+<Id value='ss' typref='1'>
 <Attr>
-<Pos l='195' c='34' s='2'/>
+<Pos l='177' c='30' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -1893,7 +2213,7 @@
 <Type id='6'>
 <Unary_Exp op='POW'>
 <Binary_Exp op='*'>
-<Id value='SENHAS'/>
+<Id value='INTEGER'/>
 <Id value='STATUS_SENHA'/>
 </Binary_Exp>
 </Unary_Exp>
@@ -1907,43 +2227,35 @@
 <Id value='STATUS_SENHA'/>
 </Type>
 <Type id='9'>
-<Id value='VAQUEIROS'/>
+<Id value='CATEGORIAS'/>
 </Type>
 <Type id='10'>
-<Id value='SENHAS'/>
+<Unary_Exp op='POW'>
+<Id value='CATEGORIAS'/>
+</Unary_Exp>
 </Type>
 <Type id='11'>
 <Unary_Exp op='POW'>
-<Id value='VAQUEIROS'/>
+<Binary_Exp op='*'>
+<Id value='INTEGER'/>
+<Id value='INTEGER'/>
+</Binary_Exp>
 </Unary_Exp>
 </Type>
 <Type id='12'>
 <Unary_Exp op='POW'>
-<Id value='SENHAS'/>
+<Binary_Exp op='*'>
+<Id value='INTEGER'/>
+<Id value='CATEGORIAS'/>
+</Binary_Exp>
 </Unary_Exp>
 </Type>
 <Type id='13'>
-<Unary_Exp op='POW'>
-<Binary_Exp op='*'>
-<Id value='SENHAS'/>
-<Id value='VAQUEIROS'/>
-</Binary_Exp>
-</Unary_Exp>
+<Id value='JULGAMENTO'/>
 </Type>
 <Type id='14'>
-<Id value='JULGAMENTO'/>
-</Type>
-<Type id='15'>
 <Unary_Exp op='POW'>
 <Id value='JULGAMENTO'/>
-</Unary_Exp>
-</Type>
-<Type id='16'>
-<Unary_Exp op='POW'>
-<Binary_Exp op='*'>
-<Id value='SENHAS'/>
-<Id value='INTEGER'/>
-</Binary_Exp>
 </Unary_Exp>
 </Type>
 </TypeInfos>
