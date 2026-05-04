@@ -2,7 +2,7 @@ MACHINE
     Contexto_Vaquejada
 
 SETS
-    FASES = { nao_iniciado, classificacao , disputa , encerrado } ;
+    FASES = { classificacao , disputa , encerrado } ;
     STATUS_SENHA = { na_espera , na_pista , classificada , eliminada , campea } ;
     JULGAMENTO = { valeu_boi , zero_boi , retorno }
 
