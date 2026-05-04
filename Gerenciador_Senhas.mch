@@ -109,6 +109,8 @@ atualizar_dono ( ss , novo_vaqueiro ) =
         & ss : NAT1
         & ss : dom ( dono_senha )
         & card ( dom ( dono_senha |> { novo_vaqueiro } ) ) < LIMITE_SENHAS_VAQUEIRO
+        & ss : dom(bois_corridos)
+        & bois_corridos(ss) = 0
     THEN
         dono_senha ( ss ) := novo_vaqueiro
     END ;
