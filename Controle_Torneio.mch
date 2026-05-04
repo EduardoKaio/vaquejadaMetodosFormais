@@ -10,7 +10,6 @@ SEES
 VARIABLES
     fase_atual
     , rodizio_atual
-    , boi_turno
     , idx_correndo
     , torneio_iniciado
     , ultimo_rodizio_iniciado
@@ -19,15 +18,15 @@ INVARIANT
     fase_atual : FASES
     & rodizio_atual : iseq ( NAT1 )
     & size ( rodizio_atual ) <= TAMANHO_RODIZIO
-    & boi_turno : 1 .. BOIS_PARA_CLASSIFICAR
     & idx_correndo : 1 .. TAMANHO_RODIZIO
     & torneio_iniciado : BOOL
     & ultimo_rodizio_iniciado : BOOL
+    /* Ninguém vira classificado sem ter a quantidade exata de bois */
+    & !(ss) . ( (ss : dom(estado_senha) & estado_senha(ss) = classificada) => (ss : dom(bois_corridos) & bois_corridos(ss) = BOIS_PARA_CLASSIFICAR) )
 
 INITIALISATION
     fase_atual := classificacao
     || rodizio_atual := []
-    || boi_turno := 1
     || idx_correndo := 1
     || torneio_iniciado := FALSE
     || ultimo_rodizio_iniciado := FALSE
@@ -89,7 +88,6 @@ iniciar_rodizio =
 	& ultimo_rodizio_iniciado = FALSE
     THEN
         rodizio_atual <-- extrair_lote_rodizio
-        || boi_turno := 1
         || idx_correndo := 1
         || torneio_iniciado := TRUE
     END ;
@@ -103,7 +101,6 @@ iniciar_ultimo_rodizio =
 	& size ( fila_geral ) <= TAMANHO_RODIZIO
     THEN
         rodizio_atual <-- extrair_lote_rodizio
-        || boi_turno := 1
         || idx_correndo := 1
         || ultimo_rodizio_iniciado := TRUE
     END ;
@@ -136,53 +133,40 @@ correr_boi_classificacao ( ss, jj ) =
         & jj : JULGAMENTO
         /* é obrigatório que a senha chamada já esteja na pista */
         & estado_senha ( rodizio_atual ( idx_correndo ) ) = na_pista
+        & rodizio_atual(idx_correndo) : dom(bois_corridos)
     THEN
 	registrar_julgamento_classificacao ( ss , jj )
 	||
-	IF jj = zero_boi THEN
+	IF jj = zero_boi 
+	   or (jj = valeu_boi & bois_corridos(ss) + 1 = BOIS_PARA_CLASSIFICAR)
+	THEN
 	    ANY novo_rodizio WHERE
 	        novo_rodizio = ( rodizio_atual /|\ ( idx_correndo - 1 ) ) ^ ( rodizio_atual \|/ idx_correndo )
 	    THEN
 	        IF novo_rodizio = [] THEN
 		    /* Todos foram eliminados */
-		    rodizio_atual := [] || idx_correndo := 1 || boi_turno := 1
+		    rodizio_atual := [] || idx_correndo := 1
 
     	        ELSIF idx_correndo > size ( novo_rodizio ) THEN
 		    /* O vaqueiro eliminado era o último da fila */
 		    idx_correndo := 1
-		    ||
-		    IF boi_turno < BOIS_PARA_CLASSIFICAR THEN
-		        /* Ainda tem bois para correr, atualiza a lista e avança o turno */
-		        rodizio_atual := novo_rodizio || boi_turno := boi_turno + 1
-		    ELSE
-		        /* Rodízio finalizado */
-		        rodizio_atual := [] || boi_turno := 1
-		    END
-
+		    || rodizio_atual := novo_rodizio
+		    
  	        ELSE
 		    /* O vaqueiro estava no meio da fila, apenas atualiza a lista (o de trás assume o índice) */
 		    rodizio_atual := novo_rodizio
 	        END
 	    END
 
-	    ELSIF jj = retorno THEN
-	    ANY novo_rodizio WHERE
-	        novo_rodizio = ( ( rodizio_atual /|\ ( idx_correndo - 1 ) ) ^ ( rodizio_atual \|/ idx_correndo ) ) <- ss
-	    THEN
-	        /* Atualiza a lista colocando o vaqueiro que teve retorno para o final do rodizio */
-	        rodizio_atual := novo_rodizio
-	    END
-
-	    ELSE
-	    IF idx_correndo < size ( rodizio_atual ) THEN
-	        /* Vaqueiro não era o último da fila, apenas passa para o próximo */
-	        idx_correndo := idx_correndo + 1
-	    ELSIF boi_turno < BOIS_PARA_CLASSIFICAR THEN
-	        /* Vaqueiro era o último da fila e a rodada do rodízio não era a última, inicia a próxima */
-	        idx_correndo := 1 || boi_turno := boi_turno + 1
-	    ELSE
-	        /* Vaqueiro era o último da fila e a rodada do rodízio era a última, finaliza o rodízio*/
-	        rodizio_atual := [] || idx_correndo := 1 || boi_turno := 1
+	ELSE
+	        /* Foi retorno, ele continua no rodízio! */
+                IF idx_correndo < size(rodizio_atual) THEN
+                    /* Não era o último, Apenas passamos a vez para o próximo da fila. */
+                    idx_correndo := idx_correndo + 1
+                ELSE
+                    /* Chegou no último da bateria, dá a volta para a próxima rodada! */
+                    idx_correndo := 1
+                END
 	    END
 	END
     END ;

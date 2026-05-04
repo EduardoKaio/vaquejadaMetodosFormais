@@ -141,7 +141,7 @@ registrar_julgamento_classificacao ( ss , jj ) =
             IF bois_corridos ( ss ) + 1 = BOIS_PARA_CLASSIFICAR THEN
                 estado_senha ( ss ) := classificada
                 ||
-                /* Insere o vaqueiro IMEDIATAMENTE na fila de disputa, já ordenado */
+                /* Insere o vaqueiro na fila de disputa, já ordenado */
                 ANY f1 , f2 WHERE
                     f1 : iseq ( NAT1 ) & f2 : iseq ( NAT1 )
                     & fila_disputa_atual = f1 ^ f2
@@ -170,8 +170,7 @@ processar_resultado_disputa ( jj ) =
                 /* Guarda o vaqueiro na memória da rodada caso precisemos reiniciar */
                 || eliminados_nesta_rodada := eliminados_nesta_rodada <- ss
             ELSIF jj = valeu_boi THEN
-                bois_corridos ( ss ) := bois_corridos ( ss ) + 1
-                || estado_senha ( ss ) := classificada /* Tira da pista e aguarda próxima rodada */
+                estado_senha ( ss ) := classificada /* Tira da pista e aguarda próxima rodada */
                 || fila_disputa_atual := fila_disputa_atual \|/ 1
                 || fila_disputa_proxima := fila_disputa_proxima <- ss
             ELSE
