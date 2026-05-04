@@ -1,11 +1,20 @@
-THEORY ProofList
+THEORY ProofList IS
+_f(1) & _f(2) & WellDefinednessProperties.2,(_f(3) & _f(4) & _f(5) & _f(6) => _f(8));
+_f(1) & _f(2) & WellDefinednessProperties.1,(_f(3) & _f(4) & _f(5) & _f(6) => _f(7))
 END
 &
-THEORY Formulas
+THEORY Formulas IS
+((NAT) = (((0) .. (2147483647)))) & ((INT) = (((-2147483647) .. (2147483647))));
+((1..3)*{FASES}): FIN(NATURAL*{FASES})& not(((1..3)*{FASES}) = {}) & ((1..5)*{STATUS_SENHA}): FIN(NATURAL*{STATUS_SENHA})& not(((1..5)*{STATUS_SENHA}) = {}) & ((1..3)*{JULGAMENTO}): FIN(NATURAL*{JULGAMENTO})& not(((1..3)*{JULGAMENTO}) = {});
+((TOTAL_SENHAS) : ((NAT-{0})));
+((TOTAL_SENHAS) = (20));
+((LIMITE_SENHAS_VAQUEIRO) : ((NAT-{0})));
+"Properties are well defined";
+not(((({1}\/{(TOTAL_SENHAS / 5)})) = ({})));
+((((({1}\/{(TOTAL_SENHAS / 5)})) /\ (NATURAL))) : (FIN(NATURAL)))
 END
 &
 THEORY EnumerateX IS
-CATEGORIAS == {profissional,amador};
 FASES == {classificacao,disputa,encerrado};
 JULGAMENTO == {valeu_boi,zero_boi,retorno};
 STATUS_SENHA == {na_espera,na_pista,classificada,eliminada,campea}

@@ -21,6 +21,8 @@ INVARIANT
     & fila_disputa_atual : iseq ( NAT1 )
     & fila_disputa_proxima : iseq ( NAT1 )
     & eliminados_nesta_rodada : iseq ( NAT1 )
+    /* Ninguém vira classificado sem ter a quantidade exata de bois */
+    & !(ss) . ( (ss : dom(estado_senha) & estado_senha(ss) = classificada) => (ss : dom(bois_corridos) & bois_corridos(ss) = BOIS_PARA_CLASSIFICAR) )
 
 INITIALISATION
     dono_senha := {}

@@ -21,9 +21,14 @@ INVARIANT
     & idx_correndo : 1 .. TAMANHO_RODIZIO
     & torneio_iniciado : BOOL
     & ultimo_rodizio_iniciado : BOOL
-    /* Ninguém vira classificado sem ter a quantidade exata de bois */
-    & !(ss) . ( (ss : dom(estado_senha) & estado_senha(ss) = classificada) => (ss : dom(bois_corridos) & bois_corridos(ss) = BOIS_PARA_CLASSIFICAR) )
-
+    /* Regra do Vencedor, qualquer senha campeã exige que o torneio esteja encerrado 
+       e que o vaqueiro tenha batido a cota de bois para classificação */
+    & !(ss) . (
+        ss : dom(estado_senha) & estado_senha(ss) = campea 
+        => 
+        fase_atual = encerrado & 
+        ss : dom(bois_corridos) & bois_corridos(ss) >= BOIS_PARA_CLASSIFICAR
+    )
 INITIALISATION
     fase_atual := classificacao
     || rodizio_atual := []
@@ -167,7 +172,6 @@ correr_boi_classificacao ( ss, jj ) =
                     /* Chegou no último da bateria, dá a volta para a próxima rodada! */
                     idx_correndo := 1
                 END
-	    END
 	END
     END ;
 
