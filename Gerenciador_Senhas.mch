@@ -118,7 +118,7 @@ atualizar_dono ( ss , novo_vaqueiro ) =
 lote <-- extrair_lote_rodizio =
     PRE size ( fila_geral ) > 0
     THEN
-        IF size ( fila_geral ) >= TAMANHO_RODIZIO THEN
+        IF size ( fila_geral ) > TAMANHO_RODIZIO THEN
             lote := fila_geral /|\ TAMANHO_RODIZIO
             || fila_geral := fila_geral \|/ TAMANHO_RODIZIO
         ELSE

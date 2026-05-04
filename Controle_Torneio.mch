@@ -85,7 +85,8 @@ iniciar_rodizio =
     	fase_atual = classificacao
         & rodizio_atual = []
         & size ( fila_geral ) > 0
-        & size ( fila_geral ) >= TAMANHO_RODIZIO
+        & size ( fila_geral ) > TAMANHO_RODIZIO
+	& ultimo_rodizio_iniciado = FALSE
     THEN
         rodizio_atual <-- extrair_lote_rodizio
         || boi_turno := 1
@@ -99,6 +100,7 @@ iniciar_ultimo_rodizio =
         & rodizio_atual = []
         & size ( fila_geral ) > 0
         & ultimo_rodizio_iniciado = FALSE
+	& size ( fila_geral ) <= TAMANHO_RODIZIO
     THEN
         rodizio_atual <-- extrair_lote_rodizio
         || boi_turno := 1
@@ -215,11 +217,19 @@ iniciar_nova_rodada_disputa =
         & ( size ( fila_disputa_proxima ) > 0 or size ( eliminados_nesta_rodada ) > 0 )
 	& size ( fila_disputa_proxima ) /= 1
 	/* Garante que tem pelo menos 2 competidores classificados */
-	& #(xx, yy) . (
-            xx : dom(estado_senha) & yy : dom(estado_senha) & 
-            xx /= yy & 
-            estado_senha(xx) = classificada & estado_senha(yy) = classificada &
-            xx : dom(dono_senha) & yy : dom(dono_senha) & dono_senha(xx) /= dono_senha(yy)
+	& (
+            /* Alguém passou (tem senhas classificadas) */
+            (size(fila_disputa_proxima) > 0 & 
+             #(xx, yy) . (
+                xx : dom(estado_senha) & yy : dom(estado_senha) & 
+                xx /= yy & 
+                estado_senha(xx) = classificada & estado_senha(yy) = classificada &
+                xx : dom(dono_senha) & yy : dom(dono_senha) & dono_senha(xx) /= dono_senha(yy)
+             )
+            )
+            or
+            /* NINGUÉM passou (todos tiraram zero_boi). A rodada vai reiniciar. */
+            (size(fila_disputa_proxima) = 0 & size(eliminados_nesta_rodada) > 1)
         )
     THEN
         avancar_rodada_disputa
@@ -231,7 +241,7 @@ finalizar_sem_vencedor =
         fase_atual = classificacao 
         & rodizio_atual = [] 
         & size(fila_geral) = 0 
-        & primeiro_rodizio = FALSE 
+        & ultimo_rodizio_iniciado = TRUE
         /* Garante que NINGUÉM se classificou para a disputa */
         & size(fila_disputa_atual) = 0
     THEN
@@ -305,7 +315,7 @@ observar_torneio_encerrado =
         res := card(dom(dono_senha))
     END;
 
-    res <-- consultar_bois_corridos(ss) =
+    res <-- consultar_bois_derrubados(ss) =
     PRE
         ss : NAT1 &
         ss : dom(bois_corridos)
