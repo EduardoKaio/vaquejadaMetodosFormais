@@ -108,6 +108,7 @@ iniciar_ultimo_rodizio =
         rodizio_atual <-- extrair_lote_rodizio
         || idx_correndo := 1
         || ultimo_rodizio_iniciado := TRUE
+	|| torneio_iniciado := TRUE
     END ;
 
 chamar_para_pista ( ss ) =
@@ -136,7 +137,7 @@ correr_boi_classificacao ( ss, jj ) =
         & ss : NAT1
         & ss = rodizio_atual ( idx_correndo )
         & jj : JULGAMENTO
-        /* é obrigatório que a senha chamada já esteja na pista */
+        /* É obrigatório que a senha chamada já esteja na pista */
         & estado_senha ( rodizio_atual ( idx_correndo ) ) = na_pista
         & rodizio_atual(idx_correndo) : dom(bois_corridos)
     THEN
@@ -180,7 +181,7 @@ iniciar_fase_disputa =
     	fase_atual = classificacao
         & rodizio_atual = []
         & size ( fila_geral ) = 0
-        & size(fila_disputa_atual) > 0 
+        & size(fila_disputa_proxima) > 0 
     THEN
         /* Como a lista já foi montada durante a classificatória, basta checar o seu tamanho! */
         fase_atual := disputa
@@ -191,7 +192,7 @@ correr_boi_disputa ( jj ) =
     	fase_atual = disputa
         & size ( fila_disputa_atual ) > 0
         & jj : JULGAMENTO
-        /* TRAVA: É OBRIGATÓRIO que a senha chamada já esteja na pista! */
+        /* A senha tem que estar na pista */
         & estado_senha ( fila_disputa_atual ( 1 ) ) = na_pista
     THEN
         processar_resultado_disputa ( jj )
@@ -216,7 +217,7 @@ iniciar_nova_rodada_disputa =
              )
             )
             or
-            /* NINGUÉM passou (todos tiraram zero_boi). A rodada vai reiniciar. */
+            /* Ninguém passou (todos tiraram zero_boi). A rodada vai reiniciar. */
             (size(fila_disputa_proxima) = 0 & size(eliminados_nesta_rodada) > 1)
         )
     THEN
@@ -230,8 +231,8 @@ finalizar_sem_vencedor =
         & rodizio_atual = [] 
         & size(fila_geral) = 0 
         & ultimo_rodizio_iniciado = TRUE
-        /* Garante que NINGUÉM se classificou para a disputa */
-        & size(fila_disputa_atual) = 0
+        /* Garante que ninguém se classificou para a disputa */
+	& size(fila_disputa_proxima) = 0
     THEN
         fase_atual := encerrado
     END;
@@ -246,7 +247,6 @@ rachar_premio =
             xx : dom(estado_senha) & yy : dom(estado_senha) & 
             xx /= yy & 
             estado_senha(xx) = classificada & estado_senha(yy) = classificada &
-            /* Trava de segurança: */
             xx : dom(dono_senha) & yy : dom(dono_senha) & dono_senha(xx) /= dono_senha(yy)
         ) 
     THEN
@@ -261,9 +261,9 @@ declarar_campeao_unico =
         /* Existe um vaqueiro que é dono de todas as senhas classificadas restantes */
         & #(vv) . (
             vv : VAQUEIROS &
-            /* 1. Garante que existe pelo menos uma senha classificada (para não dar falso positivo) */
+            /* Garante que existe pelo menos uma senha classificada (para não dar falso positivo) */
             #(xx) . (xx : dom(estado_senha) & estado_senha(xx) = classificada) &
-            /* 2. Garante que qualquer senha classificada obrigatoriamente pertence a 'vv' */
+            /* Garante que qualquer senha classificada obrigatoriamente pertence a 'vv' */
             !(yy) . (yy : dom(estado_senha) & yy : dom(dono_senha) & estado_senha(yy) = classificada => dono_senha(yy) = vv)
         ) 
     THEN
