@@ -1,5 +1,5 @@
 THEORY BalanceX IS
-Gerenciador_Senhas,127,0,0,80,0,0,0;
+Gerenciador_Senhas,132,0,0,85,0,0,0;
 Initialisation,5,0,0,5,0,0,0;
 Operation_atualizar_dono,1,0,0,1,0,0,0;
 Operation_atualizar_status,3,0,0,1,0,0,0;
@@ -20,11 +20,16 @@ WellDefinedness_avancar_rodada_disputa,1,0,0,1,0,0,0;
 WellDefinedness_cadastrar_senha,15,0,0,15,0,0,0;
 WellDefinedness_cancelar_registro_senha,6,0,0,6,0,0,0;
 WellDefinedness_extrair_lote_rodizio,3,0,0,3,0,0,0;
-WellDefinedness_processar_resultado_disputa,11,0,0,11,0,0,0;
+WellDefinedness_processar_resultado_disputa,16,0,0,16,0,0,0;
 WellDefinedness_registrar_julgamento_classificacao,8,0,0,7,0,0,0
 END
 &
 THEORY ProofState IS
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
+Proved(0);
 Proved(0);
 Proved(0);
 Proved(0);
@@ -178,6 +183,11 @@ pr;
 pr;
 pr;
 pr;
+pr;
+pr;
+pr;
+pr;
+pr;
 ?;
 pr;
 pr;
@@ -308,6 +318,11 @@ Force(0),?;
 Force(0),?;
 Force(0),?;
 Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
+Force(0),?;
 Force(0),(?; 0; 1; 2; 3);
 Force(0),?;
 Force(0),?;
@@ -415,7 +430,7 @@ Force(0),?
 END
 &
 THEORY Status IS
-Gerenciador_Senhas,127,0,80,0,0,0;
+Gerenciador_Senhas,132,0,85,0,0,0;
 Initialisation,5,0,5,0,0,0;
 Operation_atualizar_dono,1,0,1,0,0,0;
 Operation_atualizar_status,3,0,1,0,0,0;
@@ -436,6 +451,6 @@ WellDefinedness_avancar_rodada_disputa,1,0,1,0,0,0;
 WellDefinedness_cadastrar_senha,15,0,15,0,0,0;
 WellDefinedness_cancelar_registro_senha,6,0,6,0,0,0;
 WellDefinedness_extrair_lote_rodizio,3,0,3,0,0,0;
-WellDefinedness_processar_resultado_disputa,11,0,11,0,0,0;
+WellDefinedness_processar_resultado_disputa,16,0,16,0,0,0;
 WellDefinedness_registrar_julgamento_classificacao,8,0,7,0,0,0
 END

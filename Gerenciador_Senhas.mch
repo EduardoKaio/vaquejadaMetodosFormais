@@ -50,7 +50,7 @@ cadastrar_senha ( vv , ss , torneio_comecou , ultima_senha ) =
         || bois_corridos ( ss ) := 0
         ||
         IF torneio_comecou = FALSE THEN
-            /* Inserção Ordenada: Acha o ponto exato onde a senha deve entrar */
+            /* Inserção ordenada, acha o ponto exato onde a senha deve entrar */
             ANY f1 , f2 WHERE
                 f1 : iseq ( NAT1 ) & f2 : iseq ( NAT1 )
                 & fila_geral = f1 ^ f2
@@ -90,7 +90,7 @@ cancelar_registro_senha(ss) =
 	& ss : dom(dono_senha) 
 	& ss : ran(fila_geral)
     THEN
-        /* Apaga a senha de todas as variáveis de estado usando Anti-restrição de Domínio */
+        /* Apaga a senha de todas as variáveis de estado */
         dono_senha := {ss} <<| dono_senha
         || estado_senha := {ss} <<| estado_senha
         || bois_corridos := {ss} <<| bois_corridos
@@ -169,12 +169,13 @@ registrar_julgamento_classificacao ( ss , jj ) =
             IF jj = zero_boi THEN
                 estado_senha(ss) := eliminada 
                 || fila_disputa_atual := fila_disputa_atual \|/ 1
+                || eliminados_nesta_rodada := eliminados_nesta_rodada <- ss
                 
             ELSIF jj = valeu_boi THEN
                 estado_senha(ss) := classificada 
                 || fila_disputa_atual := fila_disputa_atual \|/ 1
                 
-                /* Inserção Ordenada na fila da próxima rodada */
+                /* Inserção ordenada na fila da próxima rodada */
                 || ANY f1, f2 WHERE
                     f1 : iseq(NAT1) & f2 : iseq(NAT1)
                     & fila_disputa_proxima = f1 ^ f2
@@ -185,7 +186,7 @@ registrar_julgamento_classificacao ( ss , jj ) =
                 END
                 
             ELSE
-                /* Foi retorno: corre no final da rodada atual */
+                /* Foi retorno, corre no final da rodada atual */
                 estado_senha(ss) := classificada 
                 || fila_disputa_atual := (fila_disputa_atual \|/ 1) <- ss
             END
