@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0">
+    <Define name="B definitions" hash="7128875304803749033">
+        <Exp_Comparison op="=">
+            <Id value="NAT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="INT" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Id value="MININT" typref="1"/>
+                <Id value="MAXINT" typref="1"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ctx" hash="0"/>
+    <Define name="seext" hash="0"/>
+    <Define name="mchcst" hash="0"/>
+    <Define name="aprp" hash="6106968225775138603">
+        <Set>
+            <Id value="FASES" typref="0"/>
+            <Enumerated_Values>
+                <Id value="classificacao" typref="1"/>
+                <Id value="disputa" typref="1"/>
+                <Id value="encerrado" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="STATUS_SENHA" typref="0"/>
+            <Enumerated_Values>
+                <Id value="na_espera" typref="1"/>
+                <Id value="na_pista" typref="1"/>
+                <Id value="classificada" typref="1"/>
+                <Id value="eliminada" typref="1"/>
+                <Id value="campea" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Set>
+            <Id value="JULGAMENTO" typref="0"/>
+            <Enumerated_Values>
+                <Id value="valeu_boi" typref="1"/>
+                <Id value="zero_boi" typref="1"/>
+                <Id value="retorno" typref="1"/>
+            </Enumerated_Values>
+        </Set>
+        <Exp_Comparison op=":">
+            <Id value="TOTAL_SENHAS" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:1:1"/>
+            <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:1:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="TOTAL_SENHAS" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:2:1"/>
+            <Integer_Literal value="20" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:2:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="LIMITE_SENHAS_VAQUEIRO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:3:1"/>
+            <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:3:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="LIMITE_SENHAS_VAQUEIRO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:4:1"/>
+            <Unary_Exp op="imax" typref="1">
+                <Nary_Exp op="{" typref="0">
+                    <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:4:2:1:1"/>
+                    <Binary_Exp op="/i" typref="1">
+                        <Id value="TOTAL_SENHAS" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:4:2:1:2:1"/>
+                        <Integer_Literal value="5" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:4:2:1:2:2"/>
+                    </Binary_Exp>
+                </Nary_Exp>
+            </Unary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="BOIS_PARA_CLASSIFICAR" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:5:1"/>
+            <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:5:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="BOIS_PARA_CLASSIFICAR" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:6:1"/>
+            <Integer_Literal value="2" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:6:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:7:1"/>
+            <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:7:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:8:1"/>
+            <Integer_Literal value="4" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:8:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="&lt;:">
+            <Id value="VAQUEIROS" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:9:1"/>
+            <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:9:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="VAQUEIROS" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:10:1"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:10:2:1"/>
+                <Integer_Literal value="3" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:10:2:2"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="&lt;:">
+            <Id value="SENHAS" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:11:1"/>
+            <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:11:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="SENHAS" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:12:1"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:12:2:1"/>
+                <Id value="TOTAL_SENHAS" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:12:2:2"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="PREMIO_TOTAL" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:13:1"/>
+            <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:13:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="PREMIO_TOTAL" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:14:1"/>
+            <Integer_Literal value="10000" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:14:2"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="abs" hash="0"/>
+    <Define name="inv" hash="0"/>
+    <Define name="ass" hash="0"/>
+    <Define name="sets" hash="0"/>
+    <Define name="imlprp" hash="18066003685065440318">
+        <Exp_Comparison op="=">
+            <Id value="TOTAL_SENHAS" typref="1"/>
+            <Integer_Literal value="20" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:1:1"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="LIMITE_SENHAS_VAQUEIRO" typref="1"/>
+            <Integer_Literal value="4" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:2:1"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="BOIS_PARA_CLASSIFICAR" typref="1"/>
+            <Integer_Literal value="2" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:3:1"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="TAMANHO_RODIZIO" typref="1"/>
+            <Integer_Literal value="4" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:4:1"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="VAQUEIROS" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:5:1:1"/>
+                <Integer_Literal value="3" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:5:1:2"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="SENHAS" typref="0"/>
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:6:1:1"/>
+                <Integer_Literal value="20" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:6:1:2"/>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="PREMIO_TOTAL" typref="1"/>
+            <Integer_Literal value="10000" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:7:1"/>
+        </Exp_Comparison>
+    </Define>
+    <Define name="imprp" hash="0"/>
+    <Define name="imext" hash="0"/>
+    <Proof_Obligation goalHash="362722813322969369">
+        <Tag>ValuesLemmas</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="imprp"/>
+        <Simple_Goal>
+            <Tag>Valuation is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Integer_Literal value="20" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:1:1"/>
+                    <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:1:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Valuation is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Integer_Literal value="4" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:3:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:2:1"/>
+                    <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:3:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Valuation is correct</Tag>
+            <Goal>
+                <Exp_Comparison op="=">
+                    <Integer_Literal value="4" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:4:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:2:1"/>
+                    <Unary_Exp op="imax" typref="1">
+                        <Nary_Exp op="{" typref="0">
+                            <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:4:2:1:1"/>
+                            <Binary_Exp op="/i" typref="1">
+                                <Integer_Literal value="20" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:4:2:1:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:1:1"/>
+                                <Integer_Literal value="5" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:4:2:1:2:2"/>
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Valuation is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Integer_Literal value="2" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:5:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:3:1"/>
+                    <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:5:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Valuation is correct</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;:">
+                    <Binary_Exp op=".." typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:9:1">
+                        <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:5:1:1"/>
+                        <Integer_Literal value="3" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:5:1:2"/>
+                    </Binary_Exp>
+                    <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:9:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Valuation is correct</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;:">
+                    <Binary_Exp op=".." typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:11:1">
+                        <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:6:1:1"/>
+                        <Integer_Literal value="20" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:6:1:2"/>
+                    </Binary_Exp>
+                    <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:11:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Valuation is correct</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Integer_Literal value="10000" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:13:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada_i.bxml:1:2:7:1"/>
+                    <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Contexto_Vaquejada.bxml:1:3:1:13:2"/>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <TypeInfos>
+        <Type id="0">
+            <Unary_Exp op="POW">
+                <Id value="INTEGER"/>
+            </Unary_Exp>
+        </Type>
+        <Type id="1">
+            <Id value="INTEGER"/>
+        </Type>
+    </TypeInfos>
+</Proof_Obligations>

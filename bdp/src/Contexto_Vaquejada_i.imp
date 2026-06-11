@@ -1,0 +1,21 @@
+﻿/* Contexto_Vaquejada_i
+ * Author: kaio
+ * Creation date: 10/06/2026
+ */
+
+IMPLEMENTATION
+    Contexto_Vaquejada_i
+
+REFINES
+    Contexto_Vaquejada
+
+VALUES
+    TOTAL_SENHAS      = 20 ;
+    LIMITE_SENHAS_VAQUEIRO = 4 ;
+    BOIS_PARA_CLASSIFICAR  = 2 ;
+    TAMANHO_RODIZIO   = 4 ;
+    VAQUEIROS         = 1 .. 3 ;
+    SENHAS            = 1 .. 20 ;
+    PREMIO_TOTAL      = 10000
+
+END

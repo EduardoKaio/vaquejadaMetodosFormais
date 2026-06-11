@@ -18,7 +18,7 @@
     </Define>
     <Define name="ctx" hash="0"/>
     <Define name="seext" hash="0"/>
-    <Define name="lprp" hash="6317632313876459626">
+    <Define name="lprp" hash="6106968225775138603">
         <Set>
             <Id value="FASES" typref="0"/>
             <Enumerated_Values>
@@ -107,6 +107,14 @@
                 <Id value="TOTAL_SENHAS" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada.bxml:1:3:1:12:2:2"/>
             </Binary_Exp>
         </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="PREMIO_TOTAL" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada.bxml:1:3:1:13:1"/>
+            <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada.bxml:1:3:1:13:2"/>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="PREMIO_TOTAL" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada.bxml:1:3:1:14:1"/>
+            <Integer_Literal value="10000" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Contexto_Vaquejada.bxml:1:3:1:14:2"/>
+        </Exp_Comparison>
     </Define>
     <Define name="inprp" hash="0"/>
     <Define name="inext" hash="0"/>
@@ -141,7 +149,7 @@
             </Enumerated_Values>
         </Set>
     </Define>
-    <Proof_Obligation goalHash="2308015008495654915">
+    <Proof_Obligation goalHash="15249342113994359144">
         <Tag>WellDefinednessProperties</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>

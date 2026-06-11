@@ -1,0 +1,98 @@
+﻿IMPLEMENTATION
+    Gerenciador_Senhas_i
+
+REFINES
+    Gerenciador_Senhas
+
+SEES
+    Contexto_Vaquejada
+
+CONCRETE_VARIABLES
+    dono_senha_arr
+    , estado_senha_arr
+    , bois_corridos_arr
+    , fila_geral_arr
+    , fila_geral_ini
+    , fila_geral_fim
+    , fila_disputa_atual_arr
+    , fila_disputa_atual_ini
+    , fila_disputa_atual_fim
+    , fila_disputa_proxima_arr
+    , fila_disputa_proxima_ini
+    , fila_disputa_proxima_fim
+    , eliminados_arr
+    , eliminados_ini
+    , eliminados_fim
+
+INVARIANT
+    dono_senha_arr             : 1 .. 20 --> NAT
+    & estado_senha_arr         : 1 .. 20 --> STATUS_SENHA
+    & bois_corridos_arr        : 1 .. 20 --> NAT
+    & fila_geral_arr           : 1 .. 20 --> NAT
+    & fila_geral_ini           : 0 .. 20
+    & fila_geral_fim           : 0 .. 20
+    & fila_disputa_atual_arr   : 1 .. 20 --> NAT
+    & fila_disputa_atual_ini   : 0 .. 20
+    & fila_disputa_atual_fim   : 0 .. 20
+    & fila_disputa_proxima_arr : 1 .. 20 --> NAT
+    & fila_disputa_proxima_ini : 0 .. 20
+    & fila_disputa_proxima_fim : 0 .. 20
+    & eliminados_arr           : 1 .. 20 --> NAT
+    & eliminados_ini           : 0 .. 20
+    & eliminados_fim           : 0 .. 20
+
+    /* ligacao com as variaveis abstratas */
+    & dono_senha = % ss . ( ss : 1 .. 20 & dono_senha_arr ( ss ) /= 0 | dono_senha_arr ( ss ) )
+    & estado_senha = % ss . ( ss : 1 .. 20 & dono_senha_arr ( ss ) /= 0 | estado_senha_arr ( ss ) )
+    & bois_corridos = % ss . ( ss : 1 .. 20 & dono_senha_arr ( ss ) /= 0 | bois_corridos_arr ( ss ) )
+    & fila_geral = % ii . ( ii : 1 .. ( fila_geral_fim - fila_geral_ini ) | fila_geral_arr ( fila_geral_ini + ii ) )
+    & fila_disputa_atual = % ii . ( ii : 1 .. ( fila_disputa_atual_fim - fila_disputa_atual_ini ) | fila_disputa_atual_arr ( fila_disputa_atual_ini + ii ) )
+    & fila_disputa_proxima = % ii . ( ii : 1 .. ( fila_disputa_proxima_fim - fila_disputa_proxima_ini ) | fila_disputa_proxima_arr ( fila_disputa_proxima_ini + ii ) )
+    & eliminados_nesta_rodada = % ii . ( ii : 1 .. ( eliminados_fim - eliminados_ini ) | eliminados_arr ( eliminados_ini + ii ) )
+
+INITIALISATION
+    VAR ii IN
+        ii := 1 ;
+        WHILE ii <= 20 DO
+            dono_senha_arr ( ii )        := 0 ;
+            estado_senha_arr ( ii )      := na_espera ;
+            bois_corridos_arr ( ii )     := 0 ;
+            fila_geral_arr ( ii )        := 0 ;
+            fila_disputa_atual_arr ( ii ) := 0 ;
+            fila_disputa_proxima_arr ( ii ) := 0 ;
+            eliminados_arr ( ii )        := 0 ;
+            ii := ii + 1
+        INVARIANT ii : 1 .. 21
+        VARIANT 21 - ii
+        END
+    END ;
+    fila_geral_ini           := 0 ;
+    fila_geral_fim           := 0 ;
+    fila_disputa_atual_ini   := 0 ;
+    fila_disputa_atual_fim   := 0 ;
+    fila_disputa_proxima_ini := 0 ;
+    fila_disputa_proxima_fim := 0 ;
+    eliminados_ini           := 0 ;
+    eliminados_fim           := 0
+
+OPERATIONS
+
+cadastrar_senha ( vv , ss , torneio_comecou , ultima_senha ) = skip ;
+
+atualizar_status ( ss , novo_status ) = skip ;
+
+cancelar_registro_senha ( ss ) = skip ;
+
+atualizar_dono ( ss , novo_vaqueiro ) = skip ;
+
+lote <-- extrair_lote_rodizio = skip ;
+
+registrar_julgamento_classificacao ( ss , jj ) = skip ;
+
+processar_resultado_disputa ( jj ) = skip ;
+
+avancar_rodada_disputa = skip ;
+
+finalizar_torneio = skip
+
+END

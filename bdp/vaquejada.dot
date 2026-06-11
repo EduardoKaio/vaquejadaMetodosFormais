@@ -1,8 +1,9 @@
 digraph {
-Contexto_Vaquejada [ label=" Contexto_Vaquejada " shape= box ]
-Controle_Torneio [ label=" Controle_Torneio " shape= box ]
-Gerenciador_Senhas [ label=" Gerenciador_Senhas " shape= box ]
+Contexto_Vaquejada_i [ label=" Contexto_Vaquejada\nContexto_Vaquejada_i " shape= box ]
+Controle_Torneio_i [ label=" Controle_Torneio\nControle_Torneio_i " shape= box ]
+Gerenciador_Senhas_i [ label=" Gerenciador_Senhas\nGerenciador_Senhas_i " shape= box ]
 
-"Controle_Torneio" -> "Contexto_Vaquejada" [style= dotted ]
-"Gerenciador_Senhas" -> "Contexto_Vaquejada" [style= dotted ]
+"Controle_Torneio_i" -> "Contexto_Vaquejada_i" [style= dotted ]
+"Controle_Torneio_i" -> "Gerenciador_Senhas_i" []
+"Gerenciador_Senhas_i" -> "Contexto_Vaquejada_i" [style= dotted ]
 }

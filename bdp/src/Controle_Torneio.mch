@@ -13,6 +13,12 @@ ABSTRACT_VARIABLES
     , idx_correndo
     , torneio_iniciado
     , ultimo_rodizio_iniciado
+    , racha_sem_finalizar
+    , premiacao_individual
+    , premiacao_vagas
+    , premiacao_total_atual
+    , colocacao
+    , posicao_atual
 
 INVARIANT
     fase_atual : FASES
@@ -21,7 +27,13 @@ INVARIANT
     & idx_correndo : 1 .. TAMANHO_RODIZIO
     & torneio_iniciado : BOOL
     & ultimo_rodizio_iniciado : BOOL
-    /* Regra do Vencedor, qualquer senha campeã exige que o torneio esteja encerrado 
+    & racha_sem_finalizar : BOOL
+    & premiacao_individual : VAQUEIROS --> NAT
+    & premiacao_vagas : NAT
+    & premiacao_total_atual : NAT
+    & colocacao : SENHAS +-> NAT1
+    & posicao_atual : NAT
+    /* Regra do vencedor, qualquer senha campeã exige que o torneio esteja encerrado 
        e que o vaqueiro tenha batido a cota de bois para classificação */
     & ! ( ss ) . (
         ss : dom ( estado_senha ) & estado_senha ( ss ) = campea
@@ -35,6 +47,12 @@ INITIALISATION
     || idx_correndo := 1
     || torneio_iniciado := FALSE
     || ultimo_rodizio_iniciado := FALSE
+    || racha_sem_finalizar := FALSE
+    || premiacao_individual := VAQUEIROS * { 0 }
+    || premiacao_vagas := 0
+    || premiacao_total_atual := PREMIO_TOTAL
+    || colocacao := {}
+    || posicao_atual := 0
 
 OPERATIONS
 comprar_senha ( vv , ss ) =
@@ -63,7 +81,7 @@ comprar_senha ( vv , ss ) =
         & ss : dom ( estado_senha )
         & estado_senha ( ss ) = na_espera
         & fase_atual /= encerrado
-        & ss : ran ( fila_geral )
+            & ss : ran ( fila_geral )
     THEN
         cancelar_registro_senha ( ss )
     END ;
@@ -90,7 +108,7 @@ iniciar_rodizio =
         & rodizio_atual = <>
         & size ( fila_geral ) > 0
         & size ( fila_geral ) > TAMANHO_RODIZIO
-        & ultimo_rodizio_iniciado = FALSE
+            & ultimo_rodizio_iniciado = FALSE
     THEN
         rodizio_atual <-- extrair_lote_rodizio
         || idx_correndo := 1
@@ -103,12 +121,12 @@ iniciar_ultimo_rodizio =
         & rodizio_atual = <>
         & size ( fila_geral ) > 0
         & ultimo_rodizio_iniciado = FALSE
-        & size ( fila_geral ) <= TAMANHO_RODIZIO
+            & size ( fila_geral ) <= TAMANHO_RODIZIO
     THEN
         rodizio_atual <-- extrair_lote_rodizio
         || idx_correndo := 1
         || ultimo_rodizio_iniciado := TRUE
-        || torneio_iniciado := TRUE
+            || torneio_iniciado := TRUE
     END ;
 
 chamar_para_pista ( ss ) =
@@ -141,39 +159,38 @@ correr_boi_classificacao ( ss , jj ) =
         & estado_senha ( rodizio_atual ( idx_correndo ) ) = na_pista
         & rodizio_atual ( idx_correndo ) : dom ( bois_corridos )
     THEN
-        registrar_julgamento_classificacao ( ss , jj )
-        ||
-        IF jj = zero_boi
-           or ( jj = valeu_boi & bois_corridos ( ss ) + 1 = BOIS_PARA_CLASSIFICAR )
-        THEN
-            ANY novo_rodizio WHERE
-                novo_rodizio = ( rodizio_atual /|\ ( idx_correndo - 1 ) ) ^ ( rodizio_atual \|/ idx_correndo )
+            registrar_julgamento_classificacao ( ss , jj )
+            ||
+            IF jj = zero_boi or ( jj = valeu_boi & bois_corridos ( ss ) + 1 = BOIS_PARA_CLASSIFICAR )
             THEN
-                IF novo_rodizio = <> THEN
-                    /* Todos foram eliminados */
-                    rodizio_atual := <> || idx_correndo := 1
+                ANY novo_rodizio WHERE
+                    novo_rodizio = ( rodizio_atual /|\ ( idx_correndo - 1 ) ) ^ ( rodizio_atual \|/ idx_correndo )
+                THEN
+                    IF novo_rodizio = <> THEN
+                            /* Todos foram retirados */
+                            rodizio_atual := <> || idx_correndo := 1
 
                     ELSIF idx_correndo > size ( novo_rodizio ) THEN
-                    /* O vaqueiro eliminado era o último da fila */
-                    idx_correndo := 1
-                    || rodizio_atual := novo_rodizio
+                            /* O vaqueiro eliminado era o último da fila */
+                            idx_correndo := 1
+                            || rodizio_atual := novo_rodizio
 
-                 ELSE
-                    /* O vaqueiro estava no meio da fila, apenas atualiza a lista (o de trás assume o índice) */
-                    rodizio_atual := novo_rodizio
+                     ELSE
+                            /* O vaqueiro estava no meio da fila, apenas atualiza a lista (o de trás assume o índice) */
+                            rodizio_atual := novo_rodizio
+                    END
                 END
+
+            ELSE
+                /* Foi retorno ou não bateu os de classificar, ele continua no rodízio */
+            IF idx_correndo < size ( rodizio_atual ) THEN
+                /* Não era o último, Apenas passamos a vez para o próximo da fila */
+                idx_correndo := idx_correndo + 1
+            ELSE
+                /* Chegou no último da bateria, dá a volta para a próxima rodada */
+                idx_correndo := 1
             END
-
-        ELSE
-                /* Foi retorno, ele continua no rodízio! */
-                IF idx_correndo < size ( rodizio_atual ) THEN
-                    /* Não era o último, Apenas passamos a vez para o próximo da fila. */
-                    idx_correndo := idx_correndo + 1
-                ELSE
-                    /* Chegou no último da bateria, dá a volta para a próxima rodada! */
-                    idx_correndo := 1
-                END
-        END
+            END
     END ;
 
 iniciar_fase_disputa =
@@ -183,7 +200,7 @@ iniciar_fase_disputa =
         & size ( fila_geral ) = 0
         & size ( fila_disputa_proxima ) > 0
     THEN
-        /* Como a lista já foi montada durante a classificatória, basta checar o seu tamanho! */
+        /* A lista já foi montada durante a classificatória, basta checar o seu tamanho */
         fase_atual := disputa
     END ;
 
@@ -196,6 +213,18 @@ correr_boi_disputa ( jj ) =
         & estado_senha ( fila_disputa_atual ( 1 ) ) = na_pista
     THEN
         processar_resultado_disputa ( jj )
+        ||
+        IF jj = zero_boi & racha_sem_finalizar = TRUE THEN
+            ANY ss , vaqueiro_eliminado WHERE
+                ss = fila_disputa_atual ( 1 )
+                & vaqueiro_eliminado = dono_senha ( ss )
+            THEN
+                premiacao_individual ( vaqueiro_eliminado ) := premiacao_individual ( vaqueiro_eliminado ) + premiacao_vagas
+                || premiacao_total_atual := premiacao_total_atual - premiacao_vagas
+                || colocacao ( ss ) := posicao_atual
+                || posicao_atual := posicao_atual - 1
+            END
+        END
     END ;
 
 iniciar_nova_rodada_disputa =
@@ -204,9 +233,9 @@ iniciar_nova_rodada_disputa =
         & size ( fila_disputa_atual ) = 0
         /* Permite avançar rodada ou reiniciar a atual se todos perderam */
         & ( size ( fila_disputa_proxima ) > 0 or size ( eliminados_nesta_rodada ) > 0 )
-        & size ( fila_disputa_proxima ) /= 1
-        /* Garante que tem pelo menos 2 competidores classificados */
-        & (
+            & size ( fila_disputa_proxima ) /= 1
+            /* Garante que tem pelo menos 2 competidores classificados */
+            & (
             /* Alguém passou (tem senhas classificadas) */
             ( size ( fila_disputa_proxima ) > 0 &
              # ( xx , yy ) . (
@@ -232,25 +261,65 @@ finalizar_sem_vencedor =
         & size ( fila_geral ) = 0
         & ultimo_rodizio_iniciado = TRUE
         /* Garante que ninguém se classificou para a disputa */
-        & size ( fila_disputa_proxima ) = 0
+            & size ( fila_disputa_proxima ) = 0
     THEN
         fase_atual := encerrado
+    END ;
+
+rachar_sem_finalizar =
+    PRE
+        fase_atual = disputa
+        & na_pista /: ran ( estado_senha )
+        & size ( fila_disputa_atual ) = 0
+        /* Garante que existem pelo menos 3 senhas classificadas pertencentes a 3 vaqueiros distintos */
+        & # ( xx , yy , zz ) . (
+            xx : dom ( estado_senha ) & yy : dom ( estado_senha ) & zz : dom ( estado_senha )
+            & xx /= yy & xx /= zz & yy /= zz
+            & estado_senha ( xx ) = classificada & estado_senha ( yy ) = classificada & estado_senha ( zz ) = classificada
+            & xx : dom ( dono_senha ) & yy : dom ( dono_senha ) & zz : dom ( dono_senha )
+            & dono_senha ( xx ) /= dono_senha ( yy ) & dono_senha ( xx ) /= dono_senha ( zz ) & dono_senha ( yy ) /= dono_senha ( zz )
+        )
+    THEN
+        ANY senhas_restantes , qtd WHERE
+            senhas_restantes = dom ( estado_senha |> { classificada } ) &
+            qtd = card ( senhas_restantes )
+        THEN
+            racha_sem_finalizar := TRUE
+            || premiacao_vagas := ( premiacao_total_atual ) / ( 2 * ( qtd - 1 ) )
+            || posicao_atual := qtd
+        END
     END ;
 
 rachar_premio =
     PRE
         fase_atual = disputa
         & na_pista /: ran ( estado_senha )
-        & size ( fila_disputa_atual ) = 0
-        /* Só permite rachar se houver senhas classificadas de vaqueiros diferentes */
-        & # ( xx , yy ) . (
+            & size ( fila_disputa_atual ) = 0
+            /* Só permite rachar se houver senhas classificadas de vaqueiros diferentes */
+            & # ( xx , yy ) . (
             xx : dom ( estado_senha ) & yy : dom ( estado_senha ) &
             xx /= yy &
             estado_senha ( xx ) = classificada & estado_senha ( yy ) = classificada &
             xx : dom ( dono_senha ) & yy : dom ( dono_senha ) & dono_senha ( xx ) /= dono_senha ( yy )
         )
     THEN
-        fase_atual := encerrado || finalizar_torneio
+        ANY senhas_vencedoras , valor_por_senha WHERE
+            /* O conjunto exato de senhas que dividem o prêmio */
+            senhas_vencedoras = dom ( estado_senha |> { classificada } )
+
+            /* Fração do prêmio por senha (divisão inteira do Método B) */
+            & valor_por_senha = premiacao_total_atual / card ( senhas_vencedoras )
+        THEN
+            fase_atual := encerrado
+            || finalizar_torneio
+            /* Substitui a função de premiação inteira de uma vez */
+            || premiacao_individual := % vq . (
+                vq : VAQUEIROS |
+                /* valor * quantidade de senhas que são vencedoras E pertencem a este vaqueiro */
+                valor_por_senha * card ( senhas_vencedoras /\ dono_senha ~ [ { vq } ] )
+            )
+            || colocacao := colocacao <+ ( senhas_vencedoras * { 1 } )
+        END
     END ;
 
 declarar_campeao_unico =
@@ -261,14 +330,23 @@ declarar_campeao_unico =
         /* Existe um vaqueiro que é dono de todas as senhas classificadas restantes */
         & # ( vv ) . (
             vv : VAQUEIROS &
-            /* Garante que existe pelo menos uma senha classificada (para não dar falso positivo) */
+            /* Garante que existe pelo menos uma senha classificada */
             # ( xx ) . ( xx : dom ( estado_senha ) & estado_senha ( xx ) = classificada ) &
-            /* Garante que qualquer senha classificada obrigatoriamente pertence a 'vv' */
+            /* Garante que qualquer senha classificada obrigatoriamente pertence a vv */
             ! ( yy ) . ( yy : dom ( estado_senha ) & yy : dom ( dono_senha ) & estado_senha ( yy ) = classificada => dono_senha ( yy ) = vv )
         )
     THEN
-        fase_atual := encerrado
-        || finalizar_torneio
+        ANY vencedor , senhas_campeas WHERE
+            vencedor : VAQUEIROS
+            & ! ( yy ) . ( yy : dom ( estado_senha ) & estado_senha ( yy ) = classificada => dono_senha ( yy ) = vencedor )
+            /* Capturamos as senhas restantes */
+            & senhas_campeas = dom ( estado_senha |> { classificada } )
+        THEN
+            fase_atual := encerrado
+            || finalizar_torneio
+            || premiacao_individual ( vencedor ) := premiacao_individual ( vencedor ) + premiacao_total_atual
+            || colocacao := colocacao <+ ( senhas_campeas * { 1 } )
+        END
     END ;
 
 observar_torneio_encerrado =
