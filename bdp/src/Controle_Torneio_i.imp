@@ -1,0 +1,137 @@
+﻿/* Controle_Torneio_i
+ * Author: kaio
+ * Creation date: 10/06/2026
+ */
+
+IMPLEMENTATION
+    Controle_Torneio_i
+
+REFINES
+    Controle_Torneio
+
+IMPORTS
+    Gerenciador_Senhas
+
+SEES
+    Contexto_Vaquejada
+
+CONCRETE_VARIABLES
+    fase_atual_v
+    , rodizio_arr
+    , rodizio_size
+    , idx_correndo_v
+    , torneio_iniciado_v
+    , ultimo_rodizio_iniciado_v
+    , racha_sem_finalizar_v
+    , premiacao_individual_arr
+    , premiacao_vagas_v
+    , premiacao_total_atual_v
+    , colocacao_arr
+    , posicao_atual_v
+
+INVARIANT
+    fase_atual_v                : FASES
+    & rodizio_arr               : 1 .. 4 --> NAT
+    & rodizio_size              : 0 .. 4
+    & idx_correndo_v            : NAT1
+    & torneio_iniciado_v        : BOOL
+    & ultimo_rodizio_iniciado_v : BOOL
+    & racha_sem_finalizar_v     : BOOL
+    & premiacao_individual_arr  : 1 .. 3 --> NAT
+    & premiacao_vagas_v         : NAT
+    & premiacao_total_atual_v   : NAT
+    & colocacao_arr             : 1 .. 20 --> NAT
+    & posicao_atual_v           : NAT
+
+    /* ligacao com as variaveis abstratas */
+    & fase_atual               = fase_atual_v
+    & rodizio_atual            = % ii . ( ii : 1 .. rodizio_size | rodizio_arr ( ii ) )
+    & idx_correndo             = idx_correndo_v
+    & torneio_iniciado         = torneio_iniciado_v
+    & ultimo_rodizio_iniciado  = ultimo_rodizio_iniciado_v
+    & racha_sem_finalizar      = racha_sem_finalizar_v
+    & premiacao_individual     = % vq . ( vq : 1 .. 3 | premiacao_individual_arr ( vq ) )
+    & premiacao_vagas          = premiacao_vagas_v
+    & premiacao_total_atual    = premiacao_total_atual_v
+    & colocacao                = % ss . ( ss : 1 .. 20 & colocacao_arr ( ss ) /= 0 | colocacao_arr ( ss ) )
+    & posicao_atual            = posicao_atual_v
+
+INITIALISATION
+    fase_atual_v               := classificacao ;
+    rodizio_size               := 0 ;
+    idx_correndo_v             := 1 ;
+    torneio_iniciado_v         := FALSE ;
+    ultimo_rodizio_iniciado_v  := FALSE ;
+    racha_sem_finalizar_v      := FALSE ;
+    premiacao_vagas_v          := 0 ;
+    premiacao_total_atual_v    := 10000 ;
+    posicao_atual_v            := 0 ;
+    VAR ii IN
+        ii := 1 ;
+        WHILE ii <= 4 DO
+            rodizio_arr ( ii ) := 0 ;
+            ii := ii + 1
+        INVARIANT ii : 1 .. 5
+        VARIANT 5 - ii
+        END
+    END ;
+    VAR ii IN
+        ii := 1 ;
+        WHILE ii <= 3 DO
+            premiacao_individual_arr ( ii ) := 0 ;
+            ii := ii + 1
+        INVARIANT ii : 1 .. 4
+        VARIANT 4 - ii
+        END
+    END ;
+    VAR ii IN
+        ii := 1 ;
+        WHILE ii <= 20 DO
+            colocacao_arr ( ii ) := 0 ;
+            ii := ii + 1
+        INVARIANT ii : 1 .. 21
+        VARIANT 21 - ii
+        END
+    END
+
+OPERATIONS
+
+comprar_senha ( vv , ss ) = skip ;
+
+desistir_senha ( ss ) = skip ;
+
+transferir_senha ( ss , novo_vaqueiro ) = skip ;
+
+iniciar_rodizio = skip ;
+
+iniciar_ultimo_rodizio = skip ;
+
+chamar_para_pista ( ss ) = skip ;
+
+correr_boi_classificacao ( ss , jj ) = skip ;
+
+iniciar_fase_disputa = skip ;
+
+correr_boi_disputa ( jj ) = skip ;
+
+iniciar_nova_rodada_disputa = skip ;
+
+finalizar_sem_vencedor = skip ;
+
+rachar_sem_finalizar = skip ;
+
+rachar_premio = skip ;
+
+declarar_campeao_unico = skip ;
+
+observar_torneio_encerrado = skip ;
+
+res <-- consultar_status_senha ( ss ) = skip ;
+
+res <-- consultar_dono ( ss ) = skip ;
+
+res <-- total_senhas_vendidas = skip ;
+
+res <-- consultar_bois_derrubados ( ss ) = skip
+
+END

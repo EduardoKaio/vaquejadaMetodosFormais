@@ -8,11 +8,20 @@
         <component_file path="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada" name="Contexto_Vaquejada" suffix="mch" user="kaio">
             <component name="Contexto_Vaquejada" type="specification" />
         </component_file>
+        <component_file path="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada" name="Contexto_Vaquejada_i" suffix="imp" user="kaio">
+            <component name="Contexto_Vaquejada_i" type="implementation" />
+        </component_file>
         <component_file path="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada" name="Controle_Torneio" suffix="mch" user="kaio">
             <component name="Controle_Torneio" type="specification" />
         </component_file>
+        <component_file path="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada" name="Controle_Torneio_i" suffix="imp" user="kaio">
+            <component name="Controle_Torneio_i" type="implementation" />
+        </component_file>
         <component_file path="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada" name="Gerenciador_Senhas" suffix="mch" user="kaio">
             <component name="Gerenciador_Senhas" type="specification" />
+        </component_file>
+        <component_file path="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada" name="Gerenciador_Senhas_i" suffix="imp" user="kaio">
+            <component name="Gerenciador_Senhas_i" type="implementation" />
         </component_file>
     </project>
 </db_xml>

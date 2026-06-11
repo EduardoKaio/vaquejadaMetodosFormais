@@ -121,58 +121,48 @@
 <Pos l='15' c='7' s='15'/>
 </Attr>
 </Id>
+<Id value='PREMIO_TOTAL' typref='1'>
+<Attr>
+<Pos l='16' c='7' s='12'/>
+</Attr>
+</Id>
 </Concrete_Constants>
 <Properties>
 <Attr>
-<Pos l='17' c='1' s='10'/>
+<Pos l='18' c='1' s='10'/>
 </Attr>
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='18' c='18' s='1'/>
+<Pos l='19' c='18' s='1'/>
 </Attr>
 <Id value='TOTAL_SENHAS' typref='1'>
 <Attr>
-<Pos l='18' c='5' s='12'/>
+<Pos l='19' c='5' s='12'/>
 </Attr>
 </Id>
 <Id value='NAT1' typref='2'>
 <Attr>
-<Pos l='18' c='20' s='4'/>
+<Pos l='19' c='20' s='4'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='19' c='20' s='1'/>
+<Pos l='20' c='20' s='1'/>
 </Attr>
 <Id value='TOTAL_SENHAS' typref='1'>
 <Attr>
-<Pos l='19' c='7' s='12'/>
+<Pos l='20' c='7' s='12'/>
 </Attr>
 </Id>
 <Integer_Literal value='20' typref='1'>
 <Attr>
-<Pos l='19' c='22' s='2'/>
+<Pos l='20' c='22' s='2'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
 <Exp_Comparison op=':'>
-<Attr>
-<Pos l='21' c='30' s='1'/>
-</Attr>
-<Id value='LIMITE_SENHAS_VAQUEIRO' typref='1'>
-<Attr>
-<Pos l='21' c='7' s='22'/>
-</Attr>
-</Id>
-<Id value='NAT1' typref='2'>
-<Attr>
-<Pos l='21' c='32' s='4'/>
-</Attr>
-</Id>
-</Exp_Comparison>
-<Exp_Comparison op='='>
 <Attr>
 <Pos l='22' c='30' s='1'/>
 </Attr>
@@ -181,31 +171,46 @@
 <Pos l='22' c='7' s='22'/>
 </Attr>
 </Id>
+<Id value='NAT1' typref='2'>
+<Attr>
+<Pos l='22' c='32' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='23' c='30' s='1'/>
+</Attr>
+<Id value='LIMITE_SENHAS_VAQUEIRO' typref='1'>
+<Attr>
+<Pos l='23' c='7' s='22'/>
+</Attr>
+</Id>
 <Unary_Exp op='imax' typref='1'>
 <Attr>
-<Pos l='22' c='32' s='3'/>
+<Pos l='23' c='32' s='3'/>
 </Attr>
 <Nary_Exp op='{' typref='2'>
 <Attr>
-<Pos l='22' c='36' s='1'/>
+<Pos l='23' c='36' s='1'/>
 </Attr>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='22' c='37' s='1'/>
+<Pos l='23' c='37' s='1'/>
 </Attr>
 </Integer_Literal>
 <Binary_Exp op='/i' typref='1'>
 <Attr>
-<Pos l='22' c='53' s='1'/>
+<Pos l='23' c='53' s='1'/>
 </Attr>
 <Id value='TOTAL_SENHAS' typref='1'>
 <Attr>
-<Pos l='22' c='40' s='12'/>
+<Pos l='23' c='40' s='12'/>
 </Attr>
 </Id>
 <Integer_Literal value='5' typref='1'>
 <Attr>
-<Pos l='22' c='55' s='1'/>
+<Pos l='23' c='55' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -214,21 +219,6 @@
 </Exp_Comparison>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='24' c='29' s='1'/>
-</Attr>
-<Id value='BOIS_PARA_CLASSIFICAR' typref='1'>
-<Attr>
-<Pos l='24' c='7' s='21'/>
-</Attr>
-</Id>
-<Id value='NAT1' typref='2'>
-<Attr>
-<Pos l='24' c='31' s='4'/>
-</Attr>
-</Id>
-</Exp_Comparison>
-<Exp_Comparison op='='>
-<Attr>
 <Pos l='25' c='29' s='1'/>
 </Attr>
 <Id value='BOIS_PARA_CLASSIFICAR' typref='1'>
@@ -236,28 +226,28 @@
 <Pos l='25' c='7' s='21'/>
 </Attr>
 </Id>
-<Integer_Literal value='2' typref='1'>
-<Attr>
-<Pos l='25' c='31' s='1'/>
-</Attr>
-</Integer_Literal>
-</Exp_Comparison>
-<Exp_Comparison op=':'>
-<Attr>
-<Pos l='27' c='23' s='1'/>
-</Attr>
-<Id value='TAMANHO_RODIZIO' typref='1'>
-<Attr>
-<Pos l='27' c='7' s='15'/>
-</Attr>
-</Id>
 <Id value='NAT1' typref='2'>
 <Attr>
-<Pos l='27' c='25' s='4'/>
+<Pos l='25' c='31' s='4'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
+<Attr>
+<Pos l='26' c='29' s='1'/>
+</Attr>
+<Id value='BOIS_PARA_CLASSIFICAR' typref='1'>
+<Attr>
+<Pos l='26' c='7' s='21'/>
+</Attr>
+</Id>
+<Integer_Literal value='2' typref='1'>
+<Attr>
+<Pos l='26' c='31' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
 <Attr>
 <Pos l='28' c='23' s='1'/>
 </Attr>
@@ -266,91 +256,136 @@
 <Pos l='28' c='7' s='15'/>
 </Attr>
 </Id>
-<Integer_Literal value='4' typref='1'>
-<Attr>
-<Pos l='28' c='25' s='1'/>
-</Attr>
-</Integer_Literal>
-</Exp_Comparison>
-<Exp_Comparison op='&lt;:'>
-<Attr>
-<Pos l='30' c='17' s='2'/>
-</Attr>
-<Id value='VAQUEIROS' typref='2'>
-<Attr>
-<Pos l='30' c='7' s='9'/>
-</Attr>
-</Id>
 <Id value='NAT1' typref='2'>
 <Attr>
-<Pos l='30' c='20' s='4'/>
+<Pos l='28' c='25' s='4'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='31' c='17' s='1'/>
+<Pos l='29' c='23' s='1'/>
+</Attr>
+<Id value='TAMANHO_RODIZIO' typref='1'>
+<Attr>
+<Pos l='29' c='7' s='15'/>
+</Attr>
+</Id>
+<Integer_Literal value='4' typref='1'>
+<Attr>
+<Pos l='29' c='25' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;:'>
+<Attr>
+<Pos l='31' c='17' s='2'/>
 </Attr>
 <Id value='VAQUEIROS' typref='2'>
 <Attr>
 <Pos l='31' c='7' s='9'/>
 </Attr>
 </Id>
+<Id value='NAT1' typref='2'>
+<Attr>
+<Pos l='31' c='20' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='32' c='17' s='1'/>
+</Attr>
+<Id value='VAQUEIROS' typref='2'>
+<Attr>
+<Pos l='32' c='7' s='9'/>
+</Attr>
+</Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='31' c='20' s='2'/>
+<Pos l='32' c='20' s='2'/>
 </Attr>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='31' c='19' s='1'/>
+<Pos l='32' c='19' s='1'/>
 </Attr>
 </Integer_Literal>
 <Integer_Literal value='3' typref='1'>
 <Attr>
-<Pos l='31' c='22' s='1'/>
+<Pos l='32' c='22' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
 </Exp_Comparison>
 <Exp_Comparison op='&lt;:'>
 <Attr>
-<Pos l='33' c='14' s='2'/>
-</Attr>
-<Id value='SENHAS' typref='2'>
-<Attr>
-<Pos l='33' c='7' s='6'/>
-</Attr>
-</Id>
-<Id value='NAT1' typref='2'>
-<Attr>
-<Pos l='33' c='17' s='4'/>
-</Attr>
-</Id>
-</Exp_Comparison>
-<Exp_Comparison op='='>
-<Attr>
-<Pos l='34' c='14' s='1'/>
+<Pos l='34' c='14' s='2'/>
 </Attr>
 <Id value='SENHAS' typref='2'>
 <Attr>
 <Pos l='34' c='7' s='6'/>
 </Attr>
 </Id>
+<Id value='NAT1' typref='2'>
+<Attr>
+<Pos l='34' c='17' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='35' c='14' s='1'/>
+</Attr>
+<Id value='SENHAS' typref='2'>
+<Attr>
+<Pos l='35' c='7' s='6'/>
+</Attr>
+</Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='34' c='17' s='2'/>
+<Pos l='35' c='17' s='2'/>
 </Attr>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='34' c='16' s='1'/>
+<Pos l='35' c='16' s='1'/>
 </Attr>
 </Integer_Literal>
 <Id value='TOTAL_SENHAS' typref='1'>
 <Attr>
-<Pos l='34' c='19' s='12'/>
+<Pos l='35' c='19' s='12'/>
 </Attr>
 </Id>
 </Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='37' c='20' s='1'/>
+</Attr>
+<Id value='PREMIO_TOTAL' typref='1'>
+<Attr>
+<Pos l='37' c='7' s='12'/>
+</Attr>
+</Id>
+<Id value='NAT1' typref='2'>
+<Attr>
+<Pos l='37' c='22' s='4'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='38' c='20' s='1'/>
+</Attr>
+<Id value='PREMIO_TOTAL' typref='1'>
+<Attr>
+<Pos l='38' c='7' s='12'/>
+</Attr>
+</Id>
+<Integer_Literal value='10000' typref='1'>
+<Attr>
+<Pos l='38' c='22' s='5'/>
+</Attr>
+</Integer_Literal>
 </Exp_Comparison>
 </Nary_Pred>
 </Properties>
