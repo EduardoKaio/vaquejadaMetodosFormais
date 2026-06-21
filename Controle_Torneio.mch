@@ -110,7 +110,10 @@ iniciar_rodizio =
         & size ( fila_geral ) > TAMANHO_RODIZIO
 	    & ultimo_rodizio_iniciado = FALSE
     THEN
-        rodizio_atual <-- extrair_lote_rodizio
+        /* Chama a operação sem esperar retorno */
+        extrair_lote_rodizio
+        /* Copia manualmente os dados da fila para simular o estado abstrato */
+        || rodizio_atual := fila_geral /|\ TAMANHO_RODIZIO
         || idx_correndo := 1
         || torneio_iniciado := TRUE
     END ;
@@ -123,7 +126,8 @@ iniciar_ultimo_rodizio =
         & ultimo_rodizio_iniciado = FALSE
 	    & size ( fila_geral ) <= TAMANHO_RODIZIO
     THEN
-        rodizio_atual <-- extrair_lote_rodizio
+        extrair_lote_rodizio
+        || rodizio_atual := fila_geral
         || idx_correndo := 1
         || ultimo_rodizio_iniciado := TRUE
 	    || torneio_iniciado := TRUE

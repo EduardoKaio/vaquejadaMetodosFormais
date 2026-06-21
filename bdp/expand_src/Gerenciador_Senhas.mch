@@ -12,6 +12,8 @@ ABSTRACT_VARIABLES
     , fila_disputa_atual
     , fila_disputa_proxima
     , eliminados_nesta_rodada
+    , buffer_saida          /* Nova variável */
+    , tamanho_buffer_saida  /* Nova variável */
 
 INVARIANT
     dono_senha : SENHAS +-> VAQUEIROS
@@ -23,6 +25,8 @@ INVARIANT
     & eliminados_nesta_rodada : iseq ( NAT1 )
     /* Ninguém vira classificado sem ter a quantidade exata de bois */
     & ! ( ss ) . ( ( ss : dom ( estado_senha ) & estado_senha ( ss ) = classificada ) => ( ss : dom ( bois_corridos ) & bois_corridos ( ss ) = BOIS_PARA_CLASSIFICAR ) )
+    & buffer_saida : iseq ( NAT1 )
+    & tamanho_buffer_saida : NAT
 
 INITIALISATION
     dono_senha := {}
@@ -32,6 +36,8 @@ INITIALISATION
     || fila_disputa_atual := []
     || fila_disputa_proxima := []
     || eliminados_nesta_rodada := []
+    || buffer_saida := []          /* Nova inicialização */
+    || tamanho_buffer_saida := 0   /* Nova inicialização */
 
 OPERATIONS
 cadastrar_senha ( vv , ss , torneio_comecou , ultima_senha ) =
@@ -117,14 +123,16 @@ atualizar_dono ( ss , novo_vaqueiro ) =
         dono_senha ( ss ) := novo_vaqueiro
     END ;
 
-lote <-- extrair_lote_rodizio =
+extrair_lote_rodizio =
     PRE size ( fila_geral ) > 0
     THEN
         IF size ( fila_geral ) > TAMANHO_RODIZIO THEN
-            lote := fila_geral /|\ TAMANHO_RODIZIO
+            buffer_saida := fila_geral /|\ TAMANHO_RODIZIO
+            || tamanho_buffer_saida := TAMANHO_RODIZIO
             || fila_geral := fila_geral \|/ TAMANHO_RODIZIO
         ELSE
-            lote := fila_geral
+            buffer_saida := fila_geral
+            || tamanho_buffer_saida := size ( fila_geral )
             || fila_geral := []
         END
     END ;
@@ -213,5 +221,38 @@ avancar_rodada_disputa =
 finalizar_torneio =
     BEGIN
         estado_senha := estado_senha <+ ( dom ( estado_senha |> { classificada } ) * { campea } )
+    END ;
+
+val <-- consultar_lote_saida ( ii ) =
+    PRE
+        ii : NAT1
+        & ii <= tamanho_buffer_saida
+    THEN
+        val := buffer_saida ( ii )
+    END ;
+
+tam <-- consultar_tamanho_lote_saida =
+    BEGIN
+        tam := tamanho_buffer_saida
+    END ;
+
+st <-- get_estado_senha ( ss ) =
+    PRE ss : NAT1 & ss : dom ( estado_senha ) THEN
+        st := estado_senha ( ss )
+    END ;
+
+    vq <-- get_dono_senha ( ss ) =
+    PRE ss : NAT1 & ss : dom ( dono_senha ) THEN
+        vq := dono_senha ( ss )
+    END ;
+
+    bc <-- get_bois_corridos ( ss ) =
+    PRE ss : NAT1 & ss : dom ( bois_corridos ) THEN
+        bc := bois_corridos ( ss )
+    END ;
+
+    ss <-- get_primeiro_fila_disputa =
+    PRE size ( fila_disputa_atual ) > 0 THEN
+        ss := fila_disputa_atual ( 1 )
     END
 END
