@@ -117,7 +117,7 @@
     <Define name="seext" hash="0"/>
     <Define name="lprp" hash="0"/>
     <Define name="inprp" hash="0"/>
-    <Define name="inext" hash="892474548880235506">
+    <Define name="inext" hash="2329858049296162815">
         <Exp_Comparison op=":">
             <Id value="dono_senha" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:1:1"/>
             <Binary_Exp op="+-&gt;" typref="3">
@@ -202,6 +202,16 @@
                 </Binary_Pred>
             </Body>
         </Quantified_Pred>
+        <Exp_Comparison op=":">
+            <Id value="buffer_saida" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:9:1"/>
+            <Unary_Exp op="iseq" typref="3">
+                <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:9:2:1"/>
+            </Unary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="tamanho_buffer_saida" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:10:1"/>
+            <Id value="NAT" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:10:2"/>
+        </Exp_Comparison>
     </Define>
     <Define name="inv" hash="3316344021282210032">
         <Exp_Comparison op=":">
@@ -312,7 +322,7 @@
     <Define name="ass" hash="0"/>
     <Define name="cst" hash="0"/>
     <Define name="sets" hash="0"/>
-    <Proof_Obligation goalHash="17170828606093072223">
+    <Proof_Obligation goalHash="4213851903467261002">
         <Tag>Initialisation</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -399,13 +409,19 @@
         </Local_Hyp>
         <Local_Hyp num="6">
             <Exp_Comparison op=":">
+                <Integer_Literal value="0" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:10:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:4:1:9:2:1"/>
+                <Id value="NAT" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:10:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="7">
+            <Exp_Comparison op=":">
                 <Id value="ss" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:13:2:1:1:1:1"/>
                 <Unary_Exp op="dom" typref="0">
                     <EmptySet typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:13:2:1:1:1:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:4:1:2:2:1"/>
                 </Unary_Exp>
             </Exp_Comparison>
         </Local_Hyp>
-        <Local_Hyp num="7">
+        <Local_Hyp num="8">
             <Exp_Comparison op="=">
                 <Binary_Exp op="(" typref="1">
                     <EmptySet typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:13:2:1:1:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:4:1:2:2:1"/>
@@ -421,6 +437,7 @@
             <Ref_Hyp num="3"/>
             <Ref_Hyp num="4"/>
             <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
             <Goal>
                 <Exp_Comparison op="&lt;=i">
                     <Unary_Exp op="size" typref="1">
@@ -437,6 +454,7 @@
             <Ref_Hyp num="3"/>
             <Ref_Hyp num="4"/>
             <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
             <Goal>
                 <Exp_Comparison op=":">
                     <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:5:1:3:2:1"/>
@@ -454,6 +472,7 @@
             <Ref_Hyp num="3"/>
             <Ref_Hyp num="4"/>
             <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
             <Goal>
                 <Exp_Comparison op=":">
                     <Binary_Exp op="*s" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:8:1">
@@ -476,20 +495,7 @@
             <Ref_Hyp num="3"/>
             <Ref_Hyp num="4"/>
             <Ref_Hyp num="5"/>
-            <Goal>
-                <Exp_Comparison op=":">
-                    <Integer_Literal value="0" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:9:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:5:1:8:2:1"/>
-                    <Id value="NAT" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:9:2"/>
-                </Exp_Comparison>
-            </Goal>
-        </Simple_Goal>
-        <Simple_Goal>
-            <Tag>Invariant is preserved</Tag>
-            <Ref_Hyp num="1"/>
-            <Ref_Hyp num="2"/>
-            <Ref_Hyp num="3"/>
-            <Ref_Hyp num="4"/>
-            <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
             <Goal>
                 <Exp_Comparison op=":">
                     <Id value="PREMIO_TOTAL" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:10:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:5:1:9:2:1"/>
@@ -504,6 +510,7 @@
             <Ref_Hyp num="3"/>
             <Ref_Hyp num="4"/>
             <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
             <Goal>
                 <Exp_Comparison op=":">
                     <EmptySet typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:11:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:5:1:10:2:1"/>
@@ -523,6 +530,7 @@
             <Ref_Hyp num="5"/>
             <Ref_Hyp num="6"/>
             <Ref_Hyp num="7"/>
+            <Ref_Hyp num="8"/>
             <Goal>
                 <Exp_Comparison op="=">
                     <Id value="classificacao" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:13:2:1:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:5:1:1:2:1"/>
@@ -539,6 +547,7 @@
             <Ref_Hyp num="5"/>
             <Ref_Hyp num="6"/>
             <Ref_Hyp num="7"/>
+            <Ref_Hyp num="8"/>
             <Goal>
                 <Exp_Comparison op="&gt;=i">
                     <Binary_Exp op="(" typref="1">
@@ -550,7 +559,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="10295835979497868434">
+    <Proof_Obligation goalHash="7530184697554847877">
         <Tag>Operation_comprar_senha</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -1626,7 +1635,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="4852709003831336288">
+    <Proof_Obligation goalHash="6857196169172138212">
         <Tag>Operation_desistir_senha</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -1948,7 +1957,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="6090400977129887877">
+    <Proof_Obligation goalHash="17765838349410561624">
         <Tag>Operation_transferir_senha</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -2075,7 +2084,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="14404241890310241418">
+    <Proof_Obligation goalHash="650811697750099866">
         <Tag>Operation_iniciar_rodizio</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -2123,38 +2132,42 @@
         <Local_Hyp num="1">
             <Exp_Comparison op=":">
                 <Binary_Exp op="\|/" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:4:1">
-                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:2:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:1:1:1"/>
-                    <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:2:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:1:1:1"/>
+                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:2:1:3:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:1:1:1"/>
+                    <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:2:1:3:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:1:1:1"/>
                 </Binary_Exp>
                 <Unary_Exp op="iseq" typref="3">
                     <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:4:2:1"/>
                 </Unary_Exp>
             </Exp_Comparison>
         </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="/|\" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:9:1">
+                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:2:1:1:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:1:1:1"/>
+                    <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:2:1:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:1:1:1"/>
+                </Binary_Exp>
+                <Unary_Exp op="iseq" typref="3">
+                    <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:9:2:1"/>
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op=":">
+                <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:10:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:2:1:2:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:1:1:1"/>
+                <Id value="NAT" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:10:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
         <Simple_Goal>
             <Tag>Invariant is preserved</Tag>
             <Ref_Hyp num="1"/>
-            <Goal>
-                <Exp_Comparison op=":">
-                    <Binary_Exp op="/|\" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:2:1">
-                        <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:1:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:1:1:1"/>
-                        <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:1:1:1"/>
-                    </Binary_Exp>
-                    <Unary_Exp op="iseq" typref="3">
-                        <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:2:2:1"/>
-                    </Unary_Exp>
-                </Exp_Comparison>
-            </Goal>
-        </Simple_Goal>
-        <Simple_Goal>
-            <Tag>Invariant is preserved</Tag>
-            <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
             <Goal>
                 <Exp_Comparison op="&lt;=i">
                     <Unary_Exp op="size" typref="1">
                         <Binary_Exp op="/|\" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:3:1:1">
-                            <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:1:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:1:1:1"/>
-                            <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:1:1:1"/>
+                            <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:2:2:1:1"/>
+                            <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:2:2:1:2"/>
                         </Binary_Exp>
                     </Unary_Exp>
                     <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:3:2"/>
@@ -2164,9 +2177,11 @@
         <Simple_Goal>
             <Tag>Invariant is preserved</Tag>
             <Ref_Hyp num="1"/>
+            <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
             <Goal>
                 <Exp_Comparison op=":">
-                    <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:2:2:1"/>
+                    <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:3:2:1"/>
                     <Binary_Exp op=".." typref="0">
                         <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:2:1"/>
                         <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:2:2"/>
@@ -2175,7 +2190,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="16847768557284716717">
+    <Proof_Obligation goalHash="17829201863174630506">
         <Tag>Operation_iniciar_ultimo_rodizio</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -2223,16 +2238,16 @@
         <Local_Hyp num="1">
             <Exp_Comparison op="&gt;i">
                 <Unary_Exp op="size" typref="1">
-                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
+                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
                 </Unary_Exp>
-                <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:1:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
+                <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:1:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
             </Exp_Comparison>
         </Local_Hyp>
         <Local_Hyp num="2">
             <Exp_Comparison op=":">
                 <Binary_Exp op="\|/" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:4:1">
-                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:2:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
-                    <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:2:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
+                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:2:1:3:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
+                    <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:2:1:3:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
                 </Binary_Exp>
                 <Unary_Exp op="iseq" typref="3">
                     <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:4:2:1"/>
@@ -2240,62 +2255,57 @@
             </Exp_Comparison>
         </Local_Hyp>
         <Local_Hyp num="3">
-            <Unary_Pred op="not">
-                <Exp_Comparison op="&gt;i">
-                    <Unary_Exp op="size" typref="1">
-                        <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
-                    </Unary_Exp>
-                    <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:1:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
-                </Exp_Comparison>
-            </Unary_Pred>
+            <Exp_Comparison op=":">
+                <Binary_Exp op="/|\" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:9:1">
+                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:2:1:1:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
+                    <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:2:1:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
+                </Binary_Exp>
+                <Unary_Exp op="iseq" typref="3">
+                    <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:9:2:1"/>
+                </Unary_Exp>
+            </Exp_Comparison>
         </Local_Hyp>
         <Local_Hyp num="4">
             <Exp_Comparison op=":">
-                <EmptySet typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:4:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:3:1:2:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
+                <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:10:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:2:1:2:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
+                <Id value="NAT" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:10:2"/>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="5">
+            <Unary_Pred op="not">
+                <Exp_Comparison op="&gt;i">
+                    <Unary_Exp op="size" typref="1">
+                        <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
+                    </Unary_Exp>
+                    <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:1:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
+                </Exp_Comparison>
+            </Unary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="6">
+            <Exp_Comparison op=":">
+                <EmptySet typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:4:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:3:1:3:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
                 <Unary_Exp op="iseq" typref="3">
                     <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:4:2:1"/>
                 </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="7">
+            <Exp_Comparison op=":">
+                <Unary_Exp op="size" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:10:1">
+                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:2:1:3:1:2:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
+                </Unary_Exp>
+                <Id value="NAT" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:3:1:10:2"/>
             </Exp_Comparison>
         </Local_Hyp>
         <Simple_Goal>
             <Tag>Invariant is preserved</Tag>
             <Ref_Hyp num="1"/>
             <Ref_Hyp num="2"/>
+            <Ref_Hyp num="3"/>
+            <Ref_Hyp num="4"/>
             <Goal>
                 <Exp_Comparison op=":">
-                    <Binary_Exp op="/|\" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:2:1">
-                        <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:1:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
-                        <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
-                    </Binary_Exp>
-                    <Unary_Exp op="iseq" typref="3">
-                        <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:2:2:1"/>
-                    </Unary_Exp>
-                </Exp_Comparison>
-            </Goal>
-        </Simple_Goal>
-        <Simple_Goal>
-            <Tag>Invariant is preserved</Tag>
-            <Ref_Hyp num="1"/>
-            <Ref_Hyp num="2"/>
-            <Goal>
-                <Exp_Comparison op="&lt;=i">
-                    <Unary_Exp op="size" typref="1">
-                        <Binary_Exp op="/|\" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:3:1:1">
-                            <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:1:2:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
-                            <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:5:3:1:2:1:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:1:1:1"/>
-                        </Binary_Exp>
-                    </Unary_Exp>
-                    <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:3:2"/>
-                </Exp_Comparison>
-            </Goal>
-        </Simple_Goal>
-        <Simple_Goal>
-            <Tag>Invariant is preserved</Tag>
-            <Ref_Hyp num="1"/>
-            <Ref_Hyp num="2"/>
-            <Goal>
-                <Exp_Comparison op=":">
-                    <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:2:2:1"/>
+                    <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:3:2:1"/>
                     <Binary_Exp op=".." typref="0">
                         <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:2:1"/>
                         <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:2:2"/>
@@ -2305,11 +2315,12 @@
         </Simple_Goal>
         <Simple_Goal>
             <Tag>Invariant is preserved</Tag>
-            <Ref_Hyp num="3"/>
-            <Ref_Hyp num="4"/>
+            <Ref_Hyp num="5"/>
+            <Ref_Hyp num="6"/>
+            <Ref_Hyp num="7"/>
             <Goal>
                 <Exp_Comparison op=":">
-                    <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:2:2:1"/>
+                    <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:5:2:1:3:2:1"/>
                     <Binary_Exp op=".." typref="0">
                         <Integer_Literal value="1" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:2:1"/>
                         <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:4:1:4:2:2"/>
@@ -2318,7 +2329,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="15915542615903842292">
+    <Proof_Obligation goalHash="10870018087633405359">
         <Tag>Operation_chamar_para_pista</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -2586,7 +2597,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="6528643512357037756">
+    <Proof_Obligation goalHash="14792910212507706707">
         <Tag>Operation_correr_boi_classificacao</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -5946,7 +5957,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="13123548224377653487">
+    <Proof_Obligation goalHash="8426468227884506534">
         <Tag>Operation_iniciar_fase_disputa</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -6041,7 +6052,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="14072853880271677411">
+    <Proof_Obligation goalHash="7036698949251054157">
         <Tag>Operation_correr_boi_disputa</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -6892,7 +6903,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="17559308952467603972">
+    <Proof_Obligation goalHash="10466728512331851029">
         <Tag>Operation_iniciar_nova_rodada_disputa</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -7229,7 +7240,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="1846479432777531676">
+    <Proof_Obligation goalHash="11054590275054484665">
         <Tag>Operation_finalizar_sem_vencedor</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -7319,7 +7330,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="3893575545101171970">
+    <Proof_Obligation goalHash="7667904157539387118">
         <Tag>Operation_rachar_sem_finalizar</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -7531,7 +7542,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="764318087005737607">
+    <Proof_Obligation goalHash="18308342582471488211">
         <Tag>Operation_rachar_premio</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -7904,7 +7915,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="4843708088076923435">
+    <Proof_Obligation goalHash="5196579890294289255">
         <Tag>Operation_declarar_campeao_unico</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -8992,6 +9003,79 @@
                             <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:1:1:4:1:1"/>
                         </Unary_Exp>
                     </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="9656721607133714401">
+        <Tag>WellDefinedness_iniciar_rodizio</Tag>
+        <Definition name="B definitions"/>
+        <Definition name="ctx"/>
+        <Definition name="cst"/>
+        <Definition name="lprp"/>
+        <Definition name="inprp"/>
+        <Definition name="inext"/>
+        <Definition name="seext"/>
+        <Definition name="inv"/>
+        <Definition name="ass"/>
+        <Hypothesis>
+            <Exp_Comparison op="=">
+                <Id value="fase_atual" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:1:1:1:1"/>
+                <Id value="classificacao" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:1:1:1:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op="=">
+                <Id value="rodizio_atual" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:1:1:2:1"/>
+                <EmptySet typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:1:1:2:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op="&gt;i">
+                <Unary_Exp op="size" typref="1">
+                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:1:1:3:1:1"/>
+                </Unary_Exp>
+                <Integer_Literal value="0" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:1:1:3:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op="&gt;i">
+                <Unary_Exp op="size" typref="1">
+                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:1:1:4:1:1"/>
+                </Unary_Exp>
+                <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:1:1:4:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Hypothesis>
+            <Exp_Comparison op="=">
+                <Id value="ultimo_rodizio_iniciado" typref="4" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:1:1:5:1"/>
+                <Boolean_Literal value="FALSE" typref="4" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:1:1:5:2"/>
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:2:2:1:1"/>
+                    <Unary_Exp op="seq" typref="3">
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:2:2:1:1"/>
+                        </Unary_Exp>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>Operation is well defined</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="TAMANHO_RODIZIO" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:2:2:1:2"/>
+                    <Binary_Exp op=".." typref="0">
+                        <Integer_Literal value="0" typref="1"/>
+                        <Unary_Exp op="size" typref="1">
+                            <Id value="fila_geral" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio.bxml:1:6:4:2:1:2:2:1:1"/>
+                        </Unary_Exp>
+                    </Binary_Exp>
                 </Exp_Comparison>
             </Goal>
         </Simple_Goal>

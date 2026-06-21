@@ -37,9 +37,9 @@ THEORY ListVariablesX IS
   External_Context_List_Variables(Machine(Gerenciador_Senhas))==(?);
   Context_List_Variables(Machine(Gerenciador_Senhas))==(?);
   Abstract_List_Variables(Machine(Gerenciador_Senhas))==(?);
-  Local_List_Variables(Machine(Gerenciador_Senhas))==(eliminados_nesta_rodada,fila_disputa_proxima,fila_disputa_atual,fila_geral,bois_corridos,estado_senha,dono_senha);
-  List_Variables(Machine(Gerenciador_Senhas))==(eliminados_nesta_rodada,fila_disputa_proxima,fila_disputa_atual,fila_geral,bois_corridos,estado_senha,dono_senha);
-  External_List_Variables(Machine(Gerenciador_Senhas))==(eliminados_nesta_rodada,fila_disputa_proxima,fila_disputa_atual,fila_geral,bois_corridos,estado_senha,dono_senha)
+  Local_List_Variables(Machine(Gerenciador_Senhas))==(tamanho_buffer_saida,buffer_saida,eliminados_nesta_rodada,fila_disputa_proxima,fila_disputa_atual,fila_geral,bois_corridos,estado_senha,dono_senha);
+  List_Variables(Machine(Gerenciador_Senhas))==(tamanho_buffer_saida,buffer_saida,eliminados_nesta_rodada,fila_disputa_proxima,fila_disputa_atual,fila_geral,bois_corridos,estado_senha,dono_senha);
+  External_List_Variables(Machine(Gerenciador_Senhas))==(tamanho_buffer_saida,buffer_saida,eliminados_nesta_rodada,fila_disputa_proxima,fila_disputa_atual,fila_geral,bois_corridos,estado_senha,dono_senha)
 END
 &
 THEORY ListVisibleVariablesX IS
@@ -57,7 +57,7 @@ THEORY ListInvariantX IS
   Expanded_List_Invariant(Machine(Gerenciador_Senhas))==(btrue);
   Abstract_List_Invariant(Machine(Gerenciador_Senhas))==(btrue);
   Context_List_Invariant(Machine(Gerenciador_Senhas))==(btrue);
-  List_Invariant(Machine(Gerenciador_Senhas))==(dono_senha: SENHAS +-> VAQUEIROS & estado_senha: SENHAS +-> STATUS_SENHA & bois_corridos: SENHAS +-> NAT & fila_geral: iseq(NAT1) & fila_disputa_atual: iseq(NAT1) & fila_disputa_proxima: iseq(NAT1) & eliminados_nesta_rodada: iseq(NAT1) & !ss.(ss: dom(estado_senha) & estado_senha(ss) = classificada => ss: dom(bois_corridos) & bois_corridos(ss) = BOIS_PARA_CLASSIFICAR))
+  List_Invariant(Machine(Gerenciador_Senhas))==(dono_senha: SENHAS +-> VAQUEIROS & estado_senha: SENHAS +-> STATUS_SENHA & bois_corridos: SENHAS +-> NAT & fila_geral: iseq(NAT1) & fila_disputa_atual: iseq(NAT1) & fila_disputa_proxima: iseq(NAT1) & eliminados_nesta_rodada: iseq(NAT1) & !ss.(ss: dom(estado_senha) & estado_senha(ss) = classificada => ss: dom(bois_corridos) & bois_corridos(ss) = BOIS_PARA_CLASSIFICAR) & buffer_saida: iseq(NAT1) & tamanho_buffer_saida: NAT)
 END
 &
 THEORY ListAssertionsX IS
@@ -76,9 +76,9 @@ THEORY ListExclusivityX IS
 END
 &
 THEORY ListInitialisationX IS
-  Expanded_List_Initialisation(Machine(Gerenciador_Senhas))==(dono_senha,estado_senha,bois_corridos,fila_geral,fila_disputa_atual,fila_disputa_proxima,eliminados_nesta_rodada:={},{},{},<>,<>,<>,<>);
+  Expanded_List_Initialisation(Machine(Gerenciador_Senhas))==(dono_senha,estado_senha,bois_corridos,fila_geral,fila_disputa_atual,fila_disputa_proxima,eliminados_nesta_rodada,buffer_saida,tamanho_buffer_saida:={},{},{},<>,<>,<>,<>,<>,0);
   Context_List_Initialisation(Machine(Gerenciador_Senhas))==(skip);
-  List_Initialisation(Machine(Gerenciador_Senhas))==(dono_senha:={} || estado_senha:={} || bois_corridos:={} || fila_geral:=<> || fila_disputa_atual:=<> || fila_disputa_proxima:=<> || eliminados_nesta_rodada:=<>)
+  List_Initialisation(Machine(Gerenciador_Senhas))==(dono_senha:={} || estado_senha:={} || bois_corridos:={} || fila_geral:=<> || fila_disputa_atual:=<> || fila_disputa_proxima:=<> || eliminados_nesta_rodada:=<> || buffer_saida:=<> || tamanho_buffer_saida:=0)
 END
 &
 THEORY ListParametersX IS
@@ -95,8 +95,8 @@ THEORY ListConstraintsX IS
 END
 &
 THEORY ListOperationsX IS
-  Internal_List_Operations(Machine(Gerenciador_Senhas))==(cadastrar_senha,atualizar_status,cancelar_registro_senha,atualizar_dono,extrair_lote_rodizio,registrar_julgamento_classificacao,processar_resultado_disputa,avancar_rodada_disputa,finalizar_torneio);
-  List_Operations(Machine(Gerenciador_Senhas))==(cadastrar_senha,atualizar_status,cancelar_registro_senha,atualizar_dono,extrair_lote_rodizio,registrar_julgamento_classificacao,processar_resultado_disputa,avancar_rodada_disputa,finalizar_torneio)
+  Internal_List_Operations(Machine(Gerenciador_Senhas))==(cadastrar_senha,atualizar_status,cancelar_registro_senha,atualizar_dono,extrair_lote_rodizio,registrar_julgamento_classificacao,processar_resultado_disputa,avancar_rodada_disputa,finalizar_torneio,consultar_lote_saida,consultar_tamanho_lote_saida,get_estado_senha,get_dono_senha,get_bois_corridos,get_primeiro_fila_disputa);
+  List_Operations(Machine(Gerenciador_Senhas))==(cadastrar_senha,atualizar_status,cancelar_registro_senha,atualizar_dono,extrair_lote_rodizio,registrar_julgamento_classificacao,processar_resultado_disputa,avancar_rodada_disputa,finalizar_torneio,consultar_lote_saida,consultar_tamanho_lote_saida,get_estado_senha,get_dono_senha,get_bois_corridos,get_primeiro_fila_disputa)
 END
 &
 THEORY ListInputX IS
@@ -108,7 +108,13 @@ THEORY ListInputX IS
   List_Input(Machine(Gerenciador_Senhas),registrar_julgamento_classificacao)==(ss,jj);
   List_Input(Machine(Gerenciador_Senhas),processar_resultado_disputa)==(jj);
   List_Input(Machine(Gerenciador_Senhas),avancar_rodada_disputa)==(?);
-  List_Input(Machine(Gerenciador_Senhas),finalizar_torneio)==(?)
+  List_Input(Machine(Gerenciador_Senhas),finalizar_torneio)==(?);
+  List_Input(Machine(Gerenciador_Senhas),consultar_lote_saida)==(ii);
+  List_Input(Machine(Gerenciador_Senhas),consultar_tamanho_lote_saida)==(?);
+  List_Input(Machine(Gerenciador_Senhas),get_estado_senha)==(ss);
+  List_Input(Machine(Gerenciador_Senhas),get_dono_senha)==(ss);
+  List_Input(Machine(Gerenciador_Senhas),get_bois_corridos)==(ss);
+  List_Input(Machine(Gerenciador_Senhas),get_primeiro_fila_disputa)==(?)
 END
 &
 THEORY ListOutputX IS
@@ -116,11 +122,17 @@ THEORY ListOutputX IS
   List_Output(Machine(Gerenciador_Senhas),atualizar_status)==(?);
   List_Output(Machine(Gerenciador_Senhas),cancelar_registro_senha)==(?);
   List_Output(Machine(Gerenciador_Senhas),atualizar_dono)==(?);
-  List_Output(Machine(Gerenciador_Senhas),extrair_lote_rodizio)==(lote);
+  List_Output(Machine(Gerenciador_Senhas),extrair_lote_rodizio)==(?);
   List_Output(Machine(Gerenciador_Senhas),registrar_julgamento_classificacao)==(?);
   List_Output(Machine(Gerenciador_Senhas),processar_resultado_disputa)==(?);
   List_Output(Machine(Gerenciador_Senhas),avancar_rodada_disputa)==(?);
-  List_Output(Machine(Gerenciador_Senhas),finalizar_torneio)==(?)
+  List_Output(Machine(Gerenciador_Senhas),finalizar_torneio)==(?);
+  List_Output(Machine(Gerenciador_Senhas),consultar_lote_saida)==(val);
+  List_Output(Machine(Gerenciador_Senhas),consultar_tamanho_lote_saida)==(tam);
+  List_Output(Machine(Gerenciador_Senhas),get_estado_senha)==(st);
+  List_Output(Machine(Gerenciador_Senhas),get_dono_senha)==(vq);
+  List_Output(Machine(Gerenciador_Senhas),get_bois_corridos)==(bc);
+  List_Output(Machine(Gerenciador_Senhas),get_primeiro_fila_disputa)==(ss)
 END
 &
 THEORY ListHeaderX IS
@@ -128,11 +140,17 @@ THEORY ListHeaderX IS
   List_Header(Machine(Gerenciador_Senhas),atualizar_status)==(atualizar_status(ss,novo_status));
   List_Header(Machine(Gerenciador_Senhas),cancelar_registro_senha)==(cancelar_registro_senha(ss));
   List_Header(Machine(Gerenciador_Senhas),atualizar_dono)==(atualizar_dono(ss,novo_vaqueiro));
-  List_Header(Machine(Gerenciador_Senhas),extrair_lote_rodizio)==(lote <-- extrair_lote_rodizio);
+  List_Header(Machine(Gerenciador_Senhas),extrair_lote_rodizio)==(extrair_lote_rodizio);
   List_Header(Machine(Gerenciador_Senhas),registrar_julgamento_classificacao)==(registrar_julgamento_classificacao(ss,jj));
   List_Header(Machine(Gerenciador_Senhas),processar_resultado_disputa)==(processar_resultado_disputa(jj));
   List_Header(Machine(Gerenciador_Senhas),avancar_rodada_disputa)==(avancar_rodada_disputa);
-  List_Header(Machine(Gerenciador_Senhas),finalizar_torneio)==(finalizar_torneio)
+  List_Header(Machine(Gerenciador_Senhas),finalizar_torneio)==(finalizar_torneio);
+  List_Header(Machine(Gerenciador_Senhas),consultar_lote_saida)==(val <-- consultar_lote_saida(ii));
+  List_Header(Machine(Gerenciador_Senhas),consultar_tamanho_lote_saida)==(tam <-- consultar_tamanho_lote_saida);
+  List_Header(Machine(Gerenciador_Senhas),get_estado_senha)==(st <-- get_estado_senha(ss));
+  List_Header(Machine(Gerenciador_Senhas),get_dono_senha)==(vq <-- get_dono_senha(ss));
+  List_Header(Machine(Gerenciador_Senhas),get_bois_corridos)==(bc <-- get_bois_corridos(ss));
+  List_Header(Machine(Gerenciador_Senhas),get_primeiro_fila_disputa)==(ss <-- get_primeiro_fila_disputa)
 END
 &
 THEORY ListOperationGuardX END
@@ -146,15 +164,27 @@ THEORY ListPreconditionX IS
   List_Precondition(Machine(Gerenciador_Senhas),registrar_julgamento_classificacao)==(ss: NAT1 & ss: dom(estado_senha) & jj: JULGAMENTO);
   List_Precondition(Machine(Gerenciador_Senhas),processar_resultado_disputa)==(size(fila_disputa_atual)>0 & jj: JULGAMENTO);
   List_Precondition(Machine(Gerenciador_Senhas),avancar_rodada_disputa)==(size(fila_disputa_atual) = 0 & (size(fila_disputa_proxima)>0 or size(eliminados_nesta_rodada)>0));
-  List_Precondition(Machine(Gerenciador_Senhas),finalizar_torneio)==(btrue)
+  List_Precondition(Machine(Gerenciador_Senhas),finalizar_torneio)==(btrue);
+  List_Precondition(Machine(Gerenciador_Senhas),consultar_lote_saida)==(ii: NAT1 & ii<=tamanho_buffer_saida);
+  List_Precondition(Machine(Gerenciador_Senhas),consultar_tamanho_lote_saida)==(btrue);
+  List_Precondition(Machine(Gerenciador_Senhas),get_estado_senha)==(ss: NAT1 & ss: dom(estado_senha));
+  List_Precondition(Machine(Gerenciador_Senhas),get_dono_senha)==(ss: NAT1 & ss: dom(dono_senha));
+  List_Precondition(Machine(Gerenciador_Senhas),get_bois_corridos)==(ss: NAT1 & ss: dom(bois_corridos));
+  List_Precondition(Machine(Gerenciador_Senhas),get_primeiro_fila_disputa)==(size(fila_disputa_atual)>0)
 END
 &
 THEORY ListSubstitutionX IS
+  Expanded_List_Substitution(Machine(Gerenciador_Senhas),get_primeiro_fila_disputa)==(size(fila_disputa_atual)>0 | ss:=fila_disputa_atual(1));
+  Expanded_List_Substitution(Machine(Gerenciador_Senhas),get_bois_corridos)==(ss: NAT1 & ss: dom(bois_corridos) | bc:=bois_corridos(ss));
+  Expanded_List_Substitution(Machine(Gerenciador_Senhas),get_dono_senha)==(ss: NAT1 & ss: dom(dono_senha) | vq:=dono_senha(ss));
+  Expanded_List_Substitution(Machine(Gerenciador_Senhas),get_estado_senha)==(ss: NAT1 & ss: dom(estado_senha) | st:=estado_senha(ss));
+  Expanded_List_Substitution(Machine(Gerenciador_Senhas),consultar_tamanho_lote_saida)==(btrue | tam:=tamanho_buffer_saida);
+  Expanded_List_Substitution(Machine(Gerenciador_Senhas),consultar_lote_saida)==(ii: NAT1 & ii<=tamanho_buffer_saida | val:=buffer_saida(ii));
   Expanded_List_Substitution(Machine(Gerenciador_Senhas),finalizar_torneio)==(btrue | estado_senha:=estado_senha<+dom(estado_senha|>{classificada})*{campea});
   Expanded_List_Substitution(Machine(Gerenciador_Senhas),avancar_rodada_disputa)==(size(fila_disputa_atual) = 0 & (size(fila_disputa_proxima)>0 or size(eliminados_nesta_rodada)>0) | size(fila_disputa_proxima)>0 ==> fila_disputa_atual,fila_disputa_proxima,eliminados_nesta_rodada:=fila_disputa_proxima,<>,<> [] not(size(fila_disputa_proxima)>0) ==> fila_disputa_atual,estado_senha,eliminados_nesta_rodada:=eliminados_nesta_rodada,estado_senha<+ran(eliminados_nesta_rodada)*{classificada},<>);
   Expanded_List_Substitution(Machine(Gerenciador_Senhas),processar_resultado_disputa)==(size(fila_disputa_atual)>0 & jj: JULGAMENTO | @ss.(ss = fila_disputa_atual(1) ==> (jj = zero_boi ==> estado_senha,fila_disputa_atual,eliminados_nesta_rodada:=estado_senha<+{ss|->eliminada},fila_disputa_atual\|/1,eliminados_nesta_rodada<-ss [] not(jj = zero_boi) ==> (jj = valeu_boi ==> (estado_senha,fila_disputa_atual:=estado_senha<+{ss|->classificada},fila_disputa_atual\|/1 || @(f1,f2).(f1: iseq(NAT1) & f2: iseq(NAT1) & fila_disputa_proxima = f1^f2 & !xx.(xx: ran(f1) => xx<ss) & !yy.(yy: ran(f2) => yy>ss) ==> fila_disputa_proxima:=f1^[ss]^f2)) [] not(jj = valeu_boi) ==> estado_senha,fila_disputa_atual:=estado_senha<+{ss|->classificada},fila_disputa_atual\|/1<-ss))));
   Expanded_List_Substitution(Machine(Gerenciador_Senhas),registrar_julgamento_classificacao)==(ss: NAT1 & ss: dom(estado_senha) & jj: JULGAMENTO | jj = zero_boi ==> estado_senha:=estado_senha<+{ss|->eliminada} [] not(jj = zero_boi) ==> (jj = valeu_boi ==> (bois_corridos:=bois_corridos<+{ss|->bois_corridos(ss)+1} || (bois_corridos(ss)+1 = BOIS_PARA_CLASSIFICAR ==> (estado_senha:=estado_senha<+{ss|->classificada} || @(f1,f2).(f1: iseq(NAT1) & f2: iseq(NAT1) & fila_disputa_proxima = f1^f2 & !xx.(xx: ran(f1) => xx<ss) & !yy.(yy: ran(f2) => yy>ss) ==> fila_disputa_proxima:=f1^[ss]^f2)) [] not(bois_corridos(ss)+1 = BOIS_PARA_CLASSIFICAR) ==> estado_senha:=estado_senha<+{ss|->na_espera})) [] not(jj = valeu_boi) ==> estado_senha:=estado_senha<+{ss|->na_espera}));
-  Expanded_List_Substitution(Machine(Gerenciador_Senhas),extrair_lote_rodizio)==(size(fila_geral)>0 | size(fila_geral)>TAMANHO_RODIZIO ==> lote,fila_geral:=fila_geral/|\TAMANHO_RODIZIO,fila_geral\|/TAMANHO_RODIZIO [] not(size(fila_geral)>TAMANHO_RODIZIO) ==> lote,fila_geral:=fila_geral,<>);
+  Expanded_List_Substitution(Machine(Gerenciador_Senhas),extrair_lote_rodizio)==(size(fila_geral)>0 | size(fila_geral)>TAMANHO_RODIZIO ==> buffer_saida,tamanho_buffer_saida,fila_geral:=fila_geral/|\TAMANHO_RODIZIO,TAMANHO_RODIZIO,fila_geral\|/TAMANHO_RODIZIO [] not(size(fila_geral)>TAMANHO_RODIZIO) ==> buffer_saida,tamanho_buffer_saida,fila_geral:=fila_geral,size(fila_geral),<>);
   Expanded_List_Substitution(Machine(Gerenciador_Senhas),atualizar_dono)==(novo_vaqueiro: VAQUEIROS & novo_vaqueiro: NAT1 & ss: SENHAS & ss: NAT1 & ss: dom(dono_senha) & card(dom(dono_senha|>{novo_vaqueiro}))<LIMITE_SENHAS_VAQUEIRO & ss: dom(bois_corridos) & bois_corridos(ss) = 0 | dono_senha:=dono_senha<+{ss|->novo_vaqueiro});
   Expanded_List_Substitution(Machine(Gerenciador_Senhas),cancelar_registro_senha)==(ss: SENHAS & ss: NAT1 & ss: dom(dono_senha) & ss: ran(fila_geral) | dono_senha,estado_senha,bois_corridos:={ss}<<|dono_senha,{ss}<<|estado_senha,{ss}<<|bois_corridos || @(f1,f2).(f1: iseq(NAT1) & f2: iseq(NAT1) & fila_geral = f1^[ss]^f2 ==> fila_geral:=f1^f2));
   Expanded_List_Substitution(Machine(Gerenciador_Senhas),atualizar_status)==(ss: SENHAS & ss: NAT1 & ss: dom(estado_senha) & novo_status: STATUS_SENHA | estado_senha:=estado_senha<+{ss|->novo_status});
@@ -163,11 +193,17 @@ THEORY ListSubstitutionX IS
   List_Substitution(Machine(Gerenciador_Senhas),atualizar_status)==(estado_senha(ss):=novo_status);
   List_Substitution(Machine(Gerenciador_Senhas),cancelar_registro_senha)==(dono_senha:={ss}<<|dono_senha || estado_senha:={ss}<<|estado_senha || bois_corridos:={ss}<<|bois_corridos || ANY f1,f2 WHERE f1: iseq(NAT1) & f2: iseq(NAT1) & fila_geral = f1^[ss]^f2 THEN fila_geral:=f1^f2 END);
   List_Substitution(Machine(Gerenciador_Senhas),atualizar_dono)==(dono_senha(ss):=novo_vaqueiro);
-  List_Substitution(Machine(Gerenciador_Senhas),extrair_lote_rodizio)==(IF size(fila_geral)>TAMANHO_RODIZIO THEN lote:=fila_geral/|\TAMANHO_RODIZIO || fila_geral:=fila_geral\|/TAMANHO_RODIZIO ELSE lote:=fila_geral || fila_geral:=<> END);
+  List_Substitution(Machine(Gerenciador_Senhas),extrair_lote_rodizio)==(IF size(fila_geral)>TAMANHO_RODIZIO THEN buffer_saida:=fila_geral/|\TAMANHO_RODIZIO || tamanho_buffer_saida:=TAMANHO_RODIZIO || fila_geral:=fila_geral\|/TAMANHO_RODIZIO ELSE buffer_saida:=fila_geral || tamanho_buffer_saida:=size(fila_geral) || fila_geral:=<> END);
   List_Substitution(Machine(Gerenciador_Senhas),registrar_julgamento_classificacao)==(IF jj = zero_boi THEN estado_senha(ss):=eliminada ELSIF jj = valeu_boi THEN bois_corridos(ss):=bois_corridos(ss)+1 || IF bois_corridos(ss)+1 = BOIS_PARA_CLASSIFICAR THEN estado_senha(ss):=classificada || ANY f1,f2 WHERE f1: iseq(NAT1) & f2: iseq(NAT1) & fila_disputa_proxima = f1^f2 & !xx.(xx: ran(f1) => xx<ss) & !yy.(yy: ran(f2) => yy>ss) THEN fila_disputa_proxima:=f1^[ss]^f2 END ELSE estado_senha(ss):=na_espera END ELSE estado_senha(ss):=na_espera END);
   List_Substitution(Machine(Gerenciador_Senhas),processar_resultado_disputa)==(ANY ss WHERE ss = fila_disputa_atual(1) THEN IF jj = zero_boi THEN estado_senha(ss):=eliminada || fila_disputa_atual:=fila_disputa_atual\|/1 || eliminados_nesta_rodada:=eliminados_nesta_rodada<-ss ELSIF jj = valeu_boi THEN estado_senha(ss):=classificada || fila_disputa_atual:=fila_disputa_atual\|/1 || ANY f1,f2 WHERE f1: iseq(NAT1) & f2: iseq(NAT1) & fila_disputa_proxima = f1^f2 & !xx.(xx: ran(f1) => xx<ss) & !yy.(yy: ran(f2) => yy>ss) THEN fila_disputa_proxima:=f1^[ss]^f2 END ELSE estado_senha(ss):=classificada || fila_disputa_atual:=fila_disputa_atual\|/1<-ss END END);
   List_Substitution(Machine(Gerenciador_Senhas),avancar_rodada_disputa)==(IF size(fila_disputa_proxima)>0 THEN fila_disputa_atual:=fila_disputa_proxima || fila_disputa_proxima:=<> || eliminados_nesta_rodada:=<> ELSE fila_disputa_atual:=eliminados_nesta_rodada || estado_senha:=estado_senha<+ran(eliminados_nesta_rodada)*{classificada} || eliminados_nesta_rodada:=<> END);
-  List_Substitution(Machine(Gerenciador_Senhas),finalizar_torneio)==(estado_senha:=estado_senha<+dom(estado_senha|>{classificada})*{campea})
+  List_Substitution(Machine(Gerenciador_Senhas),finalizar_torneio)==(estado_senha:=estado_senha<+dom(estado_senha|>{classificada})*{campea});
+  List_Substitution(Machine(Gerenciador_Senhas),consultar_lote_saida)==(val:=buffer_saida(ii));
+  List_Substitution(Machine(Gerenciador_Senhas),consultar_tamanho_lote_saida)==(tam:=tamanho_buffer_saida);
+  List_Substitution(Machine(Gerenciador_Senhas),get_estado_senha)==(st:=estado_senha(ss));
+  List_Substitution(Machine(Gerenciador_Senhas),get_dono_senha)==(vq:=dono_senha(ss));
+  List_Substitution(Machine(Gerenciador_Senhas),get_bois_corridos)==(bc:=bois_corridos(ss));
+  List_Substitution(Machine(Gerenciador_Senhas),get_primeiro_fila_disputa)==(ss:=fila_disputa_atual(1))
 END
 &
 THEORY ListConstantsX IS
@@ -226,11 +262,17 @@ THEORY ListANYVarX IS
   List_ANY_Var(Machine(Gerenciador_Senhas),registrar_julgamento_classificacao)==((Var(f1) == SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?))),(Var(f2) == SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?))));
   List_ANY_Var(Machine(Gerenciador_Senhas),processar_resultado_disputa)==((Var(ss) == btype(INTEGER,?,?)),(Var(f1) == SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?))),(Var(f2) == SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?))));
   List_ANY_Var(Machine(Gerenciador_Senhas),avancar_rodada_disputa)==(?);
-  List_ANY_Var(Machine(Gerenciador_Senhas),finalizar_torneio)==(?)
+  List_ANY_Var(Machine(Gerenciador_Senhas),finalizar_torneio)==(?);
+  List_ANY_Var(Machine(Gerenciador_Senhas),consultar_lote_saida)==(?);
+  List_ANY_Var(Machine(Gerenciador_Senhas),consultar_tamanho_lote_saida)==(?);
+  List_ANY_Var(Machine(Gerenciador_Senhas),get_estado_senha)==(?);
+  List_ANY_Var(Machine(Gerenciador_Senhas),get_dono_senha)==(?);
+  List_ANY_Var(Machine(Gerenciador_Senhas),get_bois_corridos)==(?);
+  List_ANY_Var(Machine(Gerenciador_Senhas),get_primeiro_fila_disputa)==(?)
 END
 &
 THEORY ListOfIdsX IS
-  List_Of_Ids(Machine(Gerenciador_Senhas)) == (? | ? | eliminados_nesta_rodada,fila_disputa_proxima,fila_disputa_atual,fila_geral,bois_corridos,estado_senha,dono_senha | ? | cadastrar_senha,atualizar_status,cancelar_registro_senha,atualizar_dono,extrair_lote_rodizio,registrar_julgamento_classificacao,processar_resultado_disputa,avancar_rodada_disputa,finalizar_torneio | ? | seen(Machine(Contexto_Vaquejada)) | ? | Gerenciador_Senhas);
+  List_Of_Ids(Machine(Gerenciador_Senhas)) == (? | ? | tamanho_buffer_saida,buffer_saida,eliminados_nesta_rodada,fila_disputa_proxima,fila_disputa_atual,fila_geral,bois_corridos,estado_senha,dono_senha | ? | cadastrar_senha,atualizar_status,cancelar_registro_senha,atualizar_dono,extrair_lote_rodizio,registrar_julgamento_classificacao,processar_resultado_disputa,avancar_rodada_disputa,finalizar_torneio,consultar_lote_saida,consultar_tamanho_lote_saida,get_estado_senha,get_dono_senha,get_bois_corridos,get_primeiro_fila_disputa | ? | seen(Machine(Contexto_Vaquejada)) | ? | Gerenciador_Senhas);
   List_Of_HiddenCst_Ids(Machine(Gerenciador_Senhas)) == (? | ?);
   List_Of_VisibleCst_Ids(Machine(Gerenciador_Senhas)) == (?);
   List_Of_VisibleVar_Ids(Machine(Gerenciador_Senhas)) == (? | ?);
@@ -243,11 +285,12 @@ THEORY ListOfIdsX IS
 END
 &
 THEORY VariablesEnvX IS
-  Variables(Machine(Gerenciador_Senhas)) == (Type(eliminados_nesta_rodada) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));Type(fila_disputa_proxima) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));Type(fila_disputa_atual) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));Type(fila_geral) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));Type(bois_corridos) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));Type(estado_senha) == Mvl(SetOf(btype(INTEGER,?,?)*etype(STATUS_SENHA,?,?)));Type(dono_senha) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?))))
+  Variables(Machine(Gerenciador_Senhas)) == (Type(tamanho_buffer_saida) == Mvl(btype(INTEGER,?,?));Type(buffer_saida) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));Type(eliminados_nesta_rodada) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));Type(fila_disputa_proxima) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));Type(fila_disputa_atual) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));Type(fila_geral) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));Type(bois_corridos) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)));Type(estado_senha) == Mvl(SetOf(btype(INTEGER,?,?)*etype(STATUS_SENHA,?,?)));Type(dono_senha) == Mvl(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?))))
 END
 &
 THEORY OperationsEnvX IS
-  Operations(Machine(Gerenciador_Senhas)) == (Type(finalizar_torneio) == Cst(No_type,No_type);Type(avancar_rodada_disputa) == Cst(No_type,No_type);Type(processar_resultado_disputa) == Cst(No_type,etype(JULGAMENTO,?,?));Type(registrar_julgamento_classificacao) == Cst(No_type,btype(INTEGER,?,?)*etype(JULGAMENTO,?,?));Type(extrair_lote_rodizio) == Cst(SetOf(btype(INTEGER,?,?)*btype(INTEGER,?,?)),No_type);Type(atualizar_dono) == Cst(No_type,btype(INTEGER,?,?)*btype(INTEGER,?,?));Type(cancelar_registro_senha) == Cst(No_type,btype(INTEGER,?,?));Type(atualizar_status) == Cst(No_type,btype(INTEGER,?,?)*etype(STATUS_SENHA,?,?));Type(cadastrar_senha) == Cst(No_type,btype(INTEGER,?,?)*btype(INTEGER,?,?)*btype(BOOL,?,?)*btype(INTEGER,?,?)))
+  Operations(Machine(Gerenciador_Senhas)) == (Type(get_primeiro_fila_disputa) == Cst(btype(INTEGER,?,?),No_type);Type(get_bois_corridos) == Cst(btype(INTEGER,?,?),btype(INTEGER,?,?));Type(get_dono_senha) == Cst(btype(INTEGER,?,?),btype(INTEGER,?,?));Type(get_estado_senha) == Cst(etype(STATUS_SENHA,?,?),btype(INTEGER,?,?));Type(consultar_tamanho_lote_saida) == Cst(btype(INTEGER,?,?),No_type);Type(consultar_lote_saida) == Cst(btype(INTEGER,?,?),btype(INTEGER,?,?));Type(finalizar_torneio) == Cst(No_type,No_type);Type(avancar_rodada_disputa) == Cst(No_type,No_type);Type(processar_resultado_disputa) == Cst(No_type,etype(JULGAMENTO,?,?));Type(registrar_julgamento_classificacao) == Cst(No_type,btype(INTEGER,?,?)*etype(JULGAMENTO,?,?));Type(extrair_lote_rodizio) == Cst(No_type,No_type);Type(atualizar_dono) == Cst(No_type,btype(INTEGER,?,?)*btype(INTEGER,?,?));Type(cancelar_registro_senha) == Cst(No_type,btype(INTEGER,?,?));Type(atualizar_status) == Cst(No_type,btype(INTEGER,?,?)*etype(STATUS_SENHA,?,?));Type(cadastrar_senha) == Cst(No_type,btype(INTEGER,?,?)*btype(INTEGER,?,?)*btype(BOOL,?,?)*btype(INTEGER,?,?)));
+  Observers(Machine(Gerenciador_Senhas)) == (Type(get_primeiro_fila_disputa) == Cst(btype(INTEGER,?,?),No_type);Type(get_bois_corridos) == Cst(btype(INTEGER,?,?),btype(INTEGER,?,?));Type(get_dono_senha) == Cst(btype(INTEGER,?,?),btype(INTEGER,?,?));Type(get_estado_senha) == Cst(etype(STATUS_SENHA,?,?),btype(INTEGER,?,?));Type(consultar_tamanho_lote_saida) == Cst(btype(INTEGER,?,?),No_type);Type(consultar_lote_saida) == Cst(btype(INTEGER,?,?),btype(INTEGER,?,?)))
 END
 &
 THEORY TCIntRdX IS

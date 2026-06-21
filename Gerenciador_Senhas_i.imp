@@ -12,44 +12,42 @@ CONCRETE_VARIABLES
     , estado_senha_arr
     , bois_corridos_arr
     , fila_geral_arr
-    , fila_geral_ini
     , fila_geral_fim
     , fila_disputa_atual_arr
-    , fila_disputa_atual_ini
     , fila_disputa_atual_fim
     , fila_disputa_proxima_arr
-    , fila_disputa_proxima_ini
     , fila_disputa_proxima_fim
     , eliminados_arr
-    , eliminados_ini
     , eliminados_fim
-
+    , lote_saida_arr
+    , lote_saida_size
+    
 INVARIANT
-    dono_senha_arr             : 0..19 --> NAT
-    & estado_senha_arr         : 0..19 --> STATUS_SENHA
-    & bois_corridos_arr        : 0..19 --> NAT
-    & fila_geral_arr           : 0..19 --> NAT
-    & fila_geral_ini           : 0..20
-    & fila_geral_fim           : 0..20
-    & fila_disputa_atual_arr   : 0..19 --> NAT
-    & fila_disputa_atual_ini   : 0..20
-    & fila_disputa_atual_fim   : 0..20
+    dono_senha_arr : 0..19 --> NAT
+    & estado_senha_arr : 0..19 --> STATUS_SENHA
+    & bois_corridos_arr : 0..19 --> NAT
+    & fila_geral_arr : 0..19 --> NAT
+    & fila_geral_fim : 0..20
+    & fila_disputa_atual_arr : 0..19 --> NAT
+    & fila_disputa_atual_fim : 0..20
     & fila_disputa_proxima_arr : 0..19 --> NAT
-    & fila_disputa_proxima_ini : 0..20
     & fila_disputa_proxima_fim : 0..20
-    & eliminados_arr           : 0..19 --> NAT
-    & eliminados_ini           : 0..20
-    & eliminados_fim           : 0..20
-
+    & eliminados_arr : 0..19 --> NAT
+    & eliminados_fim : 0..20
+    & lote_saida_arr : 0..3 --> NAT
+    & lote_saida_size : 0..4
+    
     /* ligacao com as variaveis abstratas */
-    & dono_senha = %ss . ( ss : 0..19 & dono_senha_arr(ss) /= 0 | dono_senha_arr(ss) )
-    & estado_senha = %ss . ( ss : 0..19 & dono_senha_arr(ss) /= 0 | estado_senha_arr(ss) )
-    & bois_corridos = %ss . ( ss : 0..19 & dono_senha_arr(ss) /= 0 | bois_corridos_arr(ss) )
-    & fila_geral = %ii . ( ii : 0..(fila_geral_fim - fila_geral_ini) | fila_geral_arr(fila_geral_ini + ii) )
-    & fila_disputa_atual = %ii . ( ii : 0..(fila_disputa_atual_fim - fila_disputa_atual_ini) | fila_disputa_atual_arr(fila_disputa_atual_ini + ii) )
-    & fila_disputa_proxima = %ii . ( ii : 0..(fila_disputa_proxima_fim - fila_disputa_proxima_ini) | fila_disputa_proxima_arr(fila_disputa_proxima_ini + ii) )
-    & eliminados_nesta_rodada = %ii . ( ii : 0..(eliminados_fim - eliminados_ini) | eliminados_arr(eliminados_ini + ii) )
-
+    & dono_senha = %ss . ( ss : 1..20 & dono_senha_arr(ss-1) /= 0 | dono_senha_arr(ss-1) )
+    & estado_senha = %ss . ( ss : 1..20 & dono_senha_arr(ss-1) /= 0 | estado_senha_arr(ss-1) )
+    & bois_corridos = %ss . ( ss : 1..20 & dono_senha_arr(ss-1) /= 0 | bois_corridos_arr(ss-1) )
+    & fila_geral = %ii . ( ii : 0..(fila_geral_fim - 1) | fila_geral_arr(ii) )
+    & fila_disputa_atual = %ii . ( ii : 0..(fila_disputa_atual_fim - 1) | fila_disputa_atual_arr(ii) )
+    & fila_disputa_proxima = %ii . ( ii : 0..(fila_disputa_proxima_fim - 1) | fila_disputa_proxima_arr(ii) )
+    & eliminados_nesta_rodada = %ii . ( ii : 0..(eliminados_fim - 1) | eliminados_arr(ii) )
+    & buffer_saida = %ii . ( ii : 1..lote_saida_size | lote_saida_arr ( ii - 1 ) )
+    & tamanho_buffer_saida = lote_saida_size
+    
 INITIALISATION
     VAR ii IN
         ii := 0 ;
@@ -66,33 +64,359 @@ INITIALISATION
         VARIANT 20 - ii
         END
     END ;
-    fila_geral_ini           := 0 ;
+
+    VAR ii IN
+        ii := 0 ;
+        WHILE ii <= 3 DO
+            lote_saida_arr ( ii ) := 0 ;
+            ii := ii + 1
+        INVARIANT ii : 0..4
+        VARIANT 4 - ii
+        END
+    END ;
+
+    lote_saida_size          := 0 ;
     fila_geral_fim           := 0 ;
-    fila_disputa_atual_ini   := 0 ;
     fila_disputa_atual_fim   := 0 ;
-    fila_disputa_proxima_ini := 0 ;
     fila_disputa_proxima_fim := 0 ;
-    eliminados_ini           := 0 ;
     eliminados_fim           := 0
+
 
 OPERATIONS
 
-cadastrar_senha ( vv , ss , torneio_comecou , ultima_senha ) = skip ;
+cadastrar_senha ( vv , ss , torneio_comecou , ultima_senha ) =
+    VAR pos, ii, idx, prev, tmp_val IN
+        idx := ss - 1 ;
+        dono_senha_arr ( idx ) := vv ;
+        estado_senha_arr ( idx ) := na_espera ;
+        bois_corridos_arr ( idx ) := 0 ;
 
-atualizar_status ( ss , novo_status ) = skip ;
+        IF torneio_comecou = FALSE THEN
+            pos := 0 ;
+            IF pos < fila_geral_fim THEN
+                tmp_val := fila_geral_arr ( pos ) ;
+                WHILE pos < fila_geral_fim & tmp_val < ss DO
+                    pos := pos + 1 ;
+                    IF pos < fila_geral_fim THEN
+                        tmp_val := fila_geral_arr ( pos )
+                    END
+                INVARIANT pos : 0..fila_geral_fim
+                VARIANT fila_geral_fim - pos
+                END
+            END ;
 
-cancelar_registro_senha ( ss ) = skip ;
+            ii := fila_geral_fim ;
+            WHILE ii > pos DO
+                prev := ii - 1 ;
+                tmp_val := fila_geral_arr ( prev ) ;
+                fila_geral_arr ( ii ) := tmp_val ;
+                ii := ii - 1
+            INVARIANT ii : pos..fila_geral_fim
+            VARIANT ii - pos
+            END ;
 
-atualizar_dono ( ss , novo_vaqueiro ) = skip ;
+            fila_geral_arr ( pos ) := ss ;
+            fila_geral_fim := fila_geral_fim + 1
 
-lote <-- extrair_lote_rodizio = skip ;
+        ELSE
+            IF ss < ultima_senha THEN
+                fila_geral_arr ( fila_geral_fim ) := ss ;
+                fila_geral_fim := fila_geral_fim + 1
+            ELSE
+                pos := 0 ;
+                IF pos < fila_geral_fim THEN
+                    tmp_val := fila_geral_arr ( pos ) ;
+                    /* Expressao plana, sem parenteses de agrupamento logico */
+                    WHILE pos < fila_geral_fim & tmp_val < ss & tmp_val > ultima_senha DO
+                        pos := pos + 1 ;
+                        IF pos < fila_geral_fim THEN
+                            tmp_val := fila_geral_arr ( pos )
+                        END
+                    INVARIANT pos : 0..fila_geral_fim
+                    VARIANT fila_geral_fim - pos
+                    END
+                END ;
 
-registrar_julgamento_classificacao ( ss , jj ) = skip ;
+                ii := fila_geral_fim ;
+                WHILE ii > pos DO
+                    prev := ii - 1 ;
+                    tmp_val := fila_geral_arr ( prev ) ;
+                    fila_geral_arr ( ii ) := tmp_val ;
+                    ii := ii - 1
+                INVARIANT ii : pos..fila_geral_fim
+                VARIANT ii - pos
+                END ;
 
-processar_resultado_disputa ( jj ) = skip ;
+                fila_geral_arr ( pos ) := ss ;
+                fila_geral_fim := fila_geral_fim + 1
+            END
+        END
+    END ;
 
-avancar_rodada_disputa = skip ;
+atualizar_status ( ss , novo_status ) =
+    VAR idx IN
+        idx := ss - 1 ;
+        estado_senha_arr ( idx ) := novo_status
+    END ;
 
-finalizar_torneio = skip
+cancelar_registro_senha ( ss ) =
+    VAR pos, ii, idx, prox, tmp_val, lim IN
+        idx := ss - 1 ;
+        dono_senha_arr ( idx ) := 0 ;
+        estado_senha_arr ( idx ) := na_espera ;
+        bois_corridos_arr ( idx ) := 0 ;
+
+        pos := 0 ;
+        IF pos < fila_geral_fim THEN
+            tmp_val := fila_geral_arr ( pos ) ;
+            WHILE pos < fila_geral_fim & tmp_val /= ss DO
+                pos := pos + 1 ;
+                IF pos < fila_geral_fim THEN
+                    tmp_val := fila_geral_arr ( pos )
+                END
+            INVARIANT pos : 0..fila_geral_fim
+            VARIANT fila_geral_fim - pos
+            END
+        END ;
+
+        /* Calculo aritmetico extraido para fora da condicao do WHILE */
+        lim := fila_geral_fim - 1 ;
+        ii := pos ;
+        WHILE ii < lim DO
+            prox := ii + 1 ;
+            tmp_val := fila_geral_arr ( prox ) ;
+            fila_geral_arr ( ii ) := tmp_val ;
+            ii := ii + 1
+        INVARIANT ii : pos..(fila_geral_fim - 1)
+        VARIANT ( fila_geral_fim - 1 ) - ii
+        END ;
+
+        fila_geral_fim := fila_geral_fim - 1
+    END ;
+
+atualizar_dono ( ss , novo_vaqueiro ) =
+    VAR idx IN
+        idx := ss - 1 ;
+        dono_senha_arr ( idx ) := novo_vaqueiro
+    END ;
+
+extrair_lote_rodizio =
+    VAR qtd, ii, offset, tmp_val, lim IN
+        IF fila_geral_fim > TAMANHO_RODIZIO THEN
+            qtd := TAMANHO_RODIZIO
+        ELSE
+            qtd := fila_geral_fim
+        END ;
+
+        ii := 0 ;
+        WHILE ii < qtd DO
+            tmp_val := fila_geral_arr ( ii ) ;
+            lote_saida_arr ( ii ) := tmp_val ;
+            ii := ii + 1
+        INVARIANT ii : 0..qtd
+        VARIANT qtd - ii
+        END ;
+        lote_saida_size := qtd ;
+
+        /* Calculo aritmetico extraido para fora da condicao do WHILE */
+        lim := fila_geral_fim - qtd ;
+        ii := 0 ;
+        WHILE ii < lim DO
+            offset := ii + qtd ;
+            tmp_val := fila_geral_arr ( offset ) ;
+            fila_geral_arr ( ii ) := tmp_val ;
+            ii := ii + 1
+        INVARIANT ii : 0..(fila_geral_fim - qtd)
+        VARIANT ( fila_geral_fim - qtd ) - ii
+        END ;
+        fila_geral_fim := fila_geral_fim - qtd
+    END ;
+
+registrar_julgamento_classificacao ( ss , jj ) =
+    VAR idx, bc, pos, ii, prev, tmp_val, nbc IN
+        idx := ss - 1 ;
+        IF jj = zero_boi THEN
+            estado_senha_arr ( idx ) := eliminada
+        ELSIF jj = valeu_boi THEN
+            bc := bois_corridos_arr ( idx ) ;
+            
+            /* Calculo aritmetico extraido para fora da condicao do IF */
+            nbc := bc + 1 ;
+            bois_corridos_arr ( idx ) := nbc ;
+            
+            IF nbc = BOIS_PARA_CLASSIFICAR THEN
+                estado_senha_arr ( idx ) := classificada ;
+                
+                pos := 0 ;
+                IF pos < fila_disputa_proxima_fim THEN
+                    tmp_val := fila_disputa_proxima_arr ( pos ) ;
+                    WHILE pos < fila_disputa_proxima_fim & tmp_val < ss DO
+                        pos := pos + 1 ;
+                        IF pos < fila_disputa_proxima_fim THEN
+                            tmp_val := fila_disputa_proxima_arr ( pos )
+                        END
+                    INVARIANT pos : 0..fila_disputa_proxima_fim
+                    VARIANT fila_disputa_proxima_fim - pos
+                    END
+                END ;
+
+                ii := fila_disputa_proxima_fim ;
+                WHILE ii > pos DO
+                    prev := ii - 1 ;
+                    tmp_val := fila_disputa_proxima_arr ( prev ) ;
+                    fila_disputa_proxima_arr ( ii ) := tmp_val ;
+                    ii := ii - 1
+                INVARIANT ii : pos..fila_disputa_proxima_fim
+                VARIANT ii - pos
+                END ;
+
+                fila_disputa_proxima_arr ( pos ) := ss ;
+                fila_disputa_proxima_fim := fila_disputa_proxima_fim + 1
+            ELSE
+                estado_senha_arr ( idx ) := na_espera
+            END
+        ELSE
+            estado_senha_arr ( idx ) := na_espera
+        END
+    END ;
+
+processar_resultado_disputa ( jj ) =
+    VAR ss_val, idx, pos, ii, prev, prox, tmp_val, lim IN
+        ss_val := fila_disputa_atual_arr ( 0 ) ;
+        idx := ss_val - 1 ;
+        
+        /* Calculo aritmetico extraido para fora da condicao do WHILE */
+        lim := fila_disputa_atual_fim - 1 ;
+        ii := 0 ;
+        WHILE ii < lim DO
+            prox := ii + 1 ;
+            tmp_val := fila_disputa_atual_arr ( prox ) ;
+            fila_disputa_atual_arr ( ii ) := tmp_val ;
+            ii := ii + 1
+        INVARIANT ii : 0..(fila_disputa_atual_fim - 1)
+        VARIANT (fila_disputa_atual_fim - 1) - ii
+        END ;
+        fila_disputa_atual_fim := fila_disputa_atual_fim - 1 ;
+        
+        IF jj = zero_boi THEN
+            estado_senha_arr ( idx ) := eliminada ;
+            eliminados_arr ( eliminados_fim ) := ss_val ;
+            eliminados_fim := eliminados_fim + 1
+            
+        ELSIF jj = valeu_boi THEN
+            estado_senha_arr ( idx ) := classificada ;
+            
+            pos := 0 ;
+            IF pos < fila_disputa_proxima_fim THEN
+                tmp_val := fila_disputa_proxima_arr ( pos ) ;
+                WHILE pos < fila_disputa_proxima_fim & tmp_val < ss_val DO
+                    pos := pos + 1 ;
+                    IF pos < fila_disputa_proxima_fim THEN
+                        tmp_val := fila_disputa_proxima_arr ( pos )
+                    END
+                INVARIANT pos : 0..fila_disputa_proxima_fim
+                VARIANT fila_disputa_proxima_fim - pos
+                END
+            END ;
+
+            ii := fila_disputa_proxima_fim ;
+            WHILE ii > pos DO
+                prev := ii - 1 ;
+                tmp_val := fila_disputa_proxima_arr ( prev ) ;
+                fila_disputa_proxima_arr ( ii ) := tmp_val ;
+                ii := ii - 1
+            INVARIANT ii : pos..fila_disputa_proxima_fim
+            VARIANT ii - pos
+            END ;
+
+            fila_disputa_proxima_arr ( pos ) := ss_val ;
+            fila_disputa_proxima_fim := fila_disputa_proxima_fim + 1
+            
+        ELSE
+            estado_senha_arr ( idx ) := classificada ;
+            fila_disputa_atual_arr ( fila_disputa_atual_fim ) := ss_val ;
+            fila_disputa_atual_fim := fila_disputa_atual_fim + 1
+        END
+    END ;
+
+avancar_rodada_disputa =
+    IF fila_disputa_proxima_fim > 0 THEN
+        VAR ii, tmp_val IN
+            ii := 0 ;
+            WHILE ii < fila_disputa_proxima_fim DO
+                tmp_val := fila_disputa_proxima_arr ( ii ) ;
+                fila_disputa_atual_arr ( ii ) := tmp_val ;
+                ii := ii + 1
+            INVARIANT ii : 0..fila_disputa_proxima_fim
+            VARIANT fila_disputa_proxima_fim - ii
+            END
+        END ;
+        fila_disputa_atual_fim := fila_disputa_proxima_fim ;
+        fila_disputa_proxima_fim := 0 ;
+        eliminados_fim := 0
+    ELSE
+        VAR ii, ss_val, idx IN
+            ii := 0 ;
+            WHILE ii < eliminados_fim DO
+                ss_val := eliminados_arr ( ii ) ;
+                fila_disputa_atual_arr ( ii ) := ss_val ;
+                idx := ss_val - 1 ;
+                estado_senha_arr ( idx ) := classificada ;
+                ii := ii + 1
+            INVARIANT ii : 0..eliminados_fim
+            VARIANT eliminados_fim - ii
+            END
+        END ;
+        fila_disputa_atual_fim := eliminados_fim ;
+        eliminados_fim := 0
+    END ;
+
+finalizar_torneio =
+    VAR ii, st IN
+        ii := 0 ;
+        WHILE ii <= 19 DO
+            st := estado_senha_arr ( ii ) ;
+            IF st = classificada THEN
+                estado_senha_arr ( ii ) := campea
+            END ;
+            ii := ii + 1
+        INVARIANT ii : 0..20
+        VARIANT 20 - ii
+        END
+    END ;
+
+val <-- consultar_lote_saida ( ii ) =
+    VAR idx IN
+        idx := ii - 1 ;
+        val := lote_saida_arr ( idx )
+    END ;
+
+tam <-- consultar_tamanho_lote_saida =
+    BEGIN
+        tam := lote_saida_size
+    END;
+
+st <-- get_estado_senha(ss) =
+    VAR idx IN
+        idx := ss - 1 ;
+        st := estado_senha_arr(idx)
+    END;
+
+    vq <-- get_dono_senha(ss) =
+    VAR idx IN
+        idx := ss - 1 ;
+        vq := dono_senha_arr(idx)
+    END;
+
+    bc <-- get_bois_corridos(ss) =
+    VAR idx IN
+        idx := ss - 1 ;
+        bc := bois_corridos_arr(idx)
+    END;
+
+    ss <-- get_primeiro_fila_disputa =
+    BEGIN
+        ss := fila_disputa_atual_arr(0)
+    END
 
 END

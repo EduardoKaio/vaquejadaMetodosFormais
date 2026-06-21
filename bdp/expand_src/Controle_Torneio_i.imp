@@ -31,29 +31,29 @@ CONCRETE_VARIABLES
 
 INVARIANT
     fase_atual_v                : FASES
-    & rodizio_arr               : 1 .. 4 --> NAT
+    & rodizio_arr               : 0 .. 3 --> NAT
     & rodizio_size              : 0 .. 4
     & idx_correndo_v            : NAT1
     & torneio_iniciado_v        : BOOL
     & ultimo_rodizio_iniciado_v : BOOL
     & racha_sem_finalizar_v     : BOOL
-    & premiacao_individual_arr  : 1 .. 3 --> NAT
+    & premiacao_individual_arr  : 0 .. 2 --> NAT
     & premiacao_vagas_v         : NAT
     & premiacao_total_atual_v   : NAT
-    & colocacao_arr             : 1 .. 20 --> NAT
+    & colocacao_arr             : 0 .. 19 --> NAT
     & posicao_atual_v           : NAT
 
     /* ligacao com as variaveis abstratas */
     & fase_atual               = fase_atual_v
-    & rodizio_atual            = % ii . ( ii : 1 .. rodizio_size | rodizio_arr ( ii ) )
+    & rodizio_atual = % ii . ( ii : 0 .. ( rodizio_size - 1 ) | rodizio_arr ( ii ) )
     & idx_correndo             = idx_correndo_v
     & torneio_iniciado         = torneio_iniciado_v
     & ultimo_rodizio_iniciado  = ultimo_rodizio_iniciado_v
     & racha_sem_finalizar      = racha_sem_finalizar_v
-    & premiacao_individual     = % vq . ( vq : 1 .. 3 | premiacao_individual_arr ( vq ) )
+    & premiacao_individual = % vq . ( vq : 1 .. 3 | premiacao_individual_arr ( vq - 1 ) )
     & premiacao_vagas          = premiacao_vagas_v
     & premiacao_total_atual    = premiacao_total_atual_v
-    & colocacao                = % ss . ( ss : 1 .. 20 & colocacao_arr ( ss ) /= 0 | colocacao_arr ( ss ) )
+    & colocacao = % ss . ( ss : 1 .. 20 & colocacao_arr ( ss - 1 ) /= 0 | colocacao_arr ( ss - 1 ) )
     & posicao_atual            = posicao_atual_v
 
 INITIALISATION
@@ -67,71 +67,267 @@ INITIALISATION
     premiacao_total_atual_v    := 10000 ;
     posicao_atual_v            := 0 ;
     VAR ii IN
-        ii := 1 ;
-        WHILE ii <= 4 DO
+        ii := 0 ;
+        WHILE ii <= 3 DO
             rodizio_arr ( ii ) := 0 ;
             ii := ii + 1
-        INVARIANT ii : 1 .. 5
-        VARIANT 5 - ii
-        END
-    END ;
-    VAR ii IN
-        ii := 1 ;
-        WHILE ii <= 3 DO
-            premiacao_individual_arr ( ii ) := 0 ;
-            ii := ii + 1
-        INVARIANT ii : 1 .. 4
+        INVARIANT ii : 0 .. 4
         VARIANT 4 - ii
         END
     END ;
     VAR ii IN
-        ii := 1 ;
-        WHILE ii <= 20 DO
+        ii := 0 ;
+        WHILE ii <= 2 DO
+            premiacao_individual_arr ( ii ) := 0 ;
+            ii := ii + 1
+        INVARIANT ii : 0 .. 3
+        VARIANT 3 - ii
+        END
+    END ;
+    VAR ii IN
+        ii := 0 ;
+        WHILE ii <= 19 DO
             colocacao_arr ( ii ) := 0 ;
             ii := ii + 1
-        INVARIANT ii : 1 .. 21
-        VARIANT 21 - ii
+        INVARIANT ii : 0 .. 20
+        VARIANT 20 - ii
         END
     END
 
 OPERATIONS
 
-comprar_senha ( vv , ss ) = skip ;
+comprar_senha ( vv , ss ) =
+    VAR last_val , idx IN
+        IF rodizio_size > 0 THEN
+            idx := rodizio_size - 1 ;
+            last_val := rodizio_arr ( idx ) ;
+            cadastrar_senha ( vv , ss , torneio_iniciado_v , last_val )
+        ELSE
+            cadastrar_senha ( vv , ss , torneio_iniciado_v , 0 )
+        END
+    END ;
 
-desistir_senha ( ss ) = skip ;
+desistir_senha ( ss ) =
+    cancelar_registro_senha ( ss ) ;
 
-transferir_senha ( ss , novo_vaqueiro ) = skip ;
+transferir_senha ( ss , novo_vaqueiro ) =
+    atualizar_dono ( ss , novo_vaqueiro ) ;
 
-iniciar_rodizio = skip ;
+iniciar_rodizio =
+    VAR tam , ii , tmp_val IN
+        extrair_lote_rodizio ;
+        tam <-- consultar_tamanho_lote_saida ;
+        ii := 0 ;
+        WHILE ii < tam DO
+            tmp_val <-- consultar_lote_saida ( ii + 1 ) ;
+            rodizio_arr ( ii ) := tmp_val ;
+            ii := ii + 1
+        INVARIANT ii : 0 .. tam
+        VARIANT tam - ii
+        END ;
+        rodizio_size := tam ;
+        idx_correndo_v := 1 ;
+        torneio_iniciado_v := TRUE
+    END ;
 
-iniciar_ultimo_rodizio = skip ;
+iniciar_ultimo_rodizio =
+    VAR tam , ii , tmp_val IN
+        extrair_lote_rodizio ;
+        tam <-- consultar_tamanho_lote_saida ;
+        ii := 0 ;
+        WHILE ii < tam DO
+            tmp_val <-- consultar_lote_saida ( ii + 1 ) ;
+            rodizio_arr ( ii ) := tmp_val ;
+            ii := ii + 1
+        INVARIANT ii : 0 .. tam
+        VARIANT tam - ii
+        END ;
+        rodizio_size := tam ;
+        idx_correndo_v := 1 ;
+        ultimo_rodizio_iniciado_v := TRUE ;
+        torneio_iniciado_v := TRUE
+    END ;
 
-chamar_para_pista ( ss ) = skip ;
+chamar_para_pista ( ss ) =
+    atualizar_status ( ss , na_pista ) ;
 
-correr_boi_classificacao ( ss , jj ) = skip ;
+correr_boi_classificacao ( ss , jj ) =
+    VAR bc , lim , ii , prox , tmp_val , nbc IN
+        registrar_julgamento_classificacao ( ss , jj ) ;
 
-iniciar_fase_disputa = skip ;
+        /* Usa o getter que acabamos de criar */
+        bc <-- get_bois_corridos ( ss ) ;
+        nbc := bc + 1 ;
 
-correr_boi_disputa ( jj ) = skip ;
+        IF jj = zero_boi or ( jj = valeu_boi & nbc = BOIS_PARA_CLASSIFICAR ) THEN
+            ii := idx_correndo_v - 1 ;
+            lim := rodizio_size - 1 ;
+            WHILE ii < lim DO
+                prox := ii + 1 ;
+                tmp_val := rodizio_arr ( prox ) ;
+                rodizio_arr ( ii ) := tmp_val ;
+                ii := ii + 1
+            INVARIANT ii : ( idx_correndo_v - 1 ) .. lim
+            VARIANT lim - ii
+            END ;
+            rodizio_size := rodizio_size - 1 ;
 
-iniciar_nova_rodada_disputa = skip ;
+            IF rodizio_size = 0 THEN
+                idx_correndo_v := 1
+            ELSIF idx_correndo_v > rodizio_size THEN
+                idx_correndo_v := 1
+            END
+        ELSE
+            IF idx_correndo_v < rodizio_size THEN
+                idx_correndo_v := idx_correndo_v + 1
+            ELSE
+                idx_correndo_v := 1
+            END
+        END
+    END ;
 
-finalizar_sem_vencedor = skip ;
+iniciar_fase_disputa =
+    fase_atual_v := disputa ;
 
-rachar_sem_finalizar = skip ;
+correr_boi_disputa ( jj ) =
+    VAR ss_val , vaqueiro_eliminado , calc_premio IN
+        IF jj = zero_boi & racha_sem_finalizar_v = TRUE THEN
+            ss_val <-- get_primeiro_fila_disputa ;
+            vaqueiro_eliminado <-- get_dono_senha ( ss_val ) ;
 
-rachar_premio = skip ;
+            calc_premio := premiacao_individual_arr ( vaqueiro_eliminado - 1 ) ;
+            calc_premio := calc_premio + premiacao_vagas_v ;
+            premiacao_individual_arr ( vaqueiro_eliminado - 1 ) := calc_premio ;
 
-declarar_campeao_unico = skip ;
+            premiacao_total_atual_v := premiacao_total_atual_v - premiacao_vagas_v ;
+            colocacao_arr ( ss_val - 1 ) := posicao_atual_v ;
+            posicao_atual_v := posicao_atual_v - 1
+        END ;
+        processar_resultado_disputa ( jj )
+    END ;
+
+iniciar_nova_rodada_disputa =
+    avancar_rodada_disputa ;
+
+finalizar_sem_vencedor =
+    fase_atual_v := encerrado ;
+
+rachar_sem_finalizar =
+    VAR ii , qtd , st , div_base , prize_calc IN
+        qtd := 0 ;
+        ii := 1 ;
+        WHILE ii <= 20 DO
+            st <-- get_estado_senha ( ii ) ;
+            IF st = classificada THEN
+                qtd := qtd + 1
+            END ;
+            ii := ii + 1
+        INVARIANT ii : 1 .. 21
+        VARIANT 21 - ii
+        END ;
+
+        racha_sem_finalizar_v := TRUE ;
+        posicao_atual_v := qtd ;
+
+        div_base := qtd - 1 ;
+        div_base := 2 * div_base ;
+        IF div_base > 0 THEN
+            prize_calc := premiacao_total_atual_v / div_base ;
+            premiacao_vagas_v := prize_calc
+        END
+    END ;
+
+rachar_premio =
+    VAR ii , qtd , st , vq , prize_per_senha , cur_prize IN
+        qtd := 0 ;
+        ii := 1 ;
+        WHILE ii <= 20 DO
+            st <-- get_estado_senha ( ii ) ;
+            IF st = classificada THEN
+                qtd := qtd + 1
+            END ;
+            ii := ii + 1
+        INVARIANT ii : 1 .. 21
+        VARIANT 21 - ii
+        END ;
+
+        IF qtd > 0 THEN
+            prize_per_senha := premiacao_total_atual_v / qtd ;
+            ii := 1 ;
+            WHILE ii <= 20 DO
+                st <-- get_estado_senha ( ii ) ;
+                IF st = classificada THEN
+                    vq <-- get_dono_senha ( ii ) ;
+                    cur_prize := premiacao_individual_arr ( vq - 1 ) ;
+                    cur_prize := cur_prize + prize_per_senha ;
+                    premiacao_individual_arr ( vq - 1 ) := cur_prize ;
+                    colocacao_arr ( ii - 1 ) := 1
+                END ;
+                ii := ii + 1
+            INVARIANT ii : 1 .. 21
+            VARIANT 21 - ii
+            END
+        END ;
+
+        fase_atual_v := encerrado ;
+        finalizar_torneio
+    END ;
+
+declarar_campeao_unico =
+    VAR ii , st , vq , cur_prize IN
+        ii := 1 ;
+        WHILE ii <= 20 DO
+            st <-- get_estado_senha ( ii ) ;
+            IF st = classificada THEN
+                vq <-- get_dono_senha ( ii ) ;
+                colocacao_arr ( ii - 1 ) := 1
+            END ;
+            ii := ii + 1
+        INVARIANT ii : 1 .. 21
+        VARIANT 21 - ii
+        END ;
+
+        /* vq manterá o ID do vaqueiro rastreado ao final do loop */
+        cur_prize := premiacao_individual_arr ( vq - 1 ) ;
+        cur_prize := cur_prize + premiacao_total_atual_v ;
+        premiacao_individual_arr ( vq - 1 ) := cur_prize ;
+
+        fase_atual_v := encerrado ;
+        finalizar_torneio
+    END ;
 
 observar_torneio_encerrado = skip ;
 
-res <-- consultar_status_senha ( ss ) = skip ;
+res <-- consultar_status_senha ( ss ) =
+    BEGIN
+        res <-- get_estado_senha ( ss )
+    END ;
 
-res <-- consultar_dono ( ss ) = skip ;
+res <-- consultar_dono ( ss ) =
+    BEGIN
+        res <-- get_dono_senha ( ss )
+    END ;
 
-res <-- total_senhas_vendidas = skip ;
+res <-- total_senhas_vendidas =
+    VAR ii , st , count IN
+        count := 0 ;
+        ii := 1 ;
+        WHILE ii <= 20 DO
+            st <-- get_estado_senha ( ii ) ;
+            /* Verificamos se NÃO é o estado nulo/inicial. Ajuste os enums se precisar */
+            IF st = eliminada or st = classificada or st = na_pista or st = campea or st = na_espera THEN
+                count := count + 1
+            END ;
+            ii := ii + 1
+        INVARIANT ii : 1 .. 21
+        VARIANT 21 - ii
+        END ;
+        res := count
+    END ;
 
-res <-- consultar_bois_derrubados ( ss ) = skip
+res <-- consultar_bois_derrubados ( ss ) =
+    BEGIN
+        res <-- get_bois_corridos ( ss )
+    END
 
 END
