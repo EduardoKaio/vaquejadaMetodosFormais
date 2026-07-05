@@ -240,7 +240,7 @@ registrar_julgamento_classificacao ( ss , jj ) =
         ELSIF jj = valeu_boi THEN
             bc := bois_corridos_arr ( idx ) ;
             
-            /* Calculo aritmetico extraido para fora da condicao do IF */
+            /* Calculo aritmetico extraido para fora do IF */
             nbc := bc + 1 ;
             bois_corridos_arr ( idx ) := nbc ;
             

@@ -346,19 +346,15 @@ void Controle_Torneio__consultar_dono(int32_t ss, int32_t *res)
 void Controle_Torneio__total_senhas_vendidas(int32_t *res)
 {
     int32_t ii;
-    Contexto_Vaquejada__STATUS_SENHA st;
+    int32_t dono;
     int32_t count;
     
     count = 0;
     ii = 1;
     while((ii) <= (20))
     {
-        Gerenciador_Senhas__get_estado_senha(ii, &st);
-        if(((((st == Contexto_Vaquejada__eliminada) ||
-                    (st == Contexto_Vaquejada__classificada)) ||
-                (st == Contexto_Vaquejada__na_pista)) ||
-            (st == Contexto_Vaquejada__campea)) ||
-        (st == Contexto_Vaquejada__na_espera))
+        Gerenciador_Senhas__get_dono_senha(ii, &dono);
+        if((dono) != (0))
         {
             count = count+1;
         }

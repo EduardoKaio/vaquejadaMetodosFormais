@@ -206,7 +206,7 @@ END
 &
 THEORY ListSubstitutionX IS
   Expanded_List_Substitution(Implementation(Controle_Torneio_i),consultar_bois_derrubados)==(ss: NAT1 & ss: dom(bois_corridos) | res:=bois_corridos(ss));
-  Expanded_List_Substitution(Implementation(Controle_Torneio_i),total_senhas_vendidas)==(btrue | @(ii,st,count).((0: INT | count:=0);(1: INT | ii:=1);WHILE ii<=20 DO (ii: NAT1 & ii: dom(estado_senha) | st:=estado_senha(ii));(st = eliminada or st = classificada or st = na_pista or st = campea or st = na_espera ==> (count+1: INT & count: INT & 1: INT | count:=count+1) [] not(st = eliminada or st = classificada or st = na_pista or st = campea or st = na_espera) ==> skip);(ii+1: INT & ii: INT & 1: INT | ii:=ii+1) INVARIANT ii: 1..21 VARIANT 21-ii END;(count: INT | res:=count)));
+  Expanded_List_Substitution(Implementation(Controle_Torneio_i),total_senhas_vendidas)==(btrue | @(ii,dono,count).((0: INT | count:=0);(1: INT | ii:=1);WHILE ii<=20 DO (ii: NAT1 & ii: dom(dono_senha) | dono:=dono_senha(ii));(dono/=0 ==> (count+1: INT & count: INT & 1: INT | count:=count+1) [] not(dono/=0) ==> skip);(ii+1: INT & ii: INT & 1: INT | ii:=ii+1) INVARIANT ii: 1..21 VARIANT 21-ii END;(count: INT | res:=count)));
   Expanded_List_Substitution(Implementation(Controle_Torneio_i),consultar_dono)==(ss: NAT1 & ss: dom(dono_senha) | res:=dono_senha(ss));
   Expanded_List_Substitution(Implementation(Controle_Torneio_i),consultar_status_senha)==(ss: NAT1 & ss: dom(estado_senha) | res:=estado_senha(ss));
   Expanded_List_Substitution(Implementation(Controle_Torneio_i),observar_torneio_encerrado)==(fase_atual = encerrado | skip);
@@ -241,7 +241,7 @@ THEORY ListSubstitutionX IS
   List_Substitution(Implementation(Controle_Torneio_i),observar_torneio_encerrado)==(skip);
   List_Substitution(Implementation(Controle_Torneio_i),consultar_status_senha)==(res <-- get_estado_senha(ss));
   List_Substitution(Implementation(Controle_Torneio_i),consultar_dono)==(res <-- get_dono_senha(ss));
-  List_Substitution(Implementation(Controle_Torneio_i),total_senhas_vendidas)==(VAR ii,st,count IN count:=0;ii:=1;WHILE ii<=20 DO st <-- get_estado_senha(ii);IF st = eliminada or st = classificada or st = na_pista or st = campea or st = na_espera THEN count:=count+1 END;ii:=ii+1 INVARIANT ii: 1..21 VARIANT 21-ii END;res:=count END);
+  List_Substitution(Implementation(Controle_Torneio_i),total_senhas_vendidas)==(VAR ii,dono,count IN count:=0;ii:=1;WHILE ii<=20 DO dono <-- get_dono_senha(ii);IF dono/=0 THEN count:=count+1 END;ii:=ii+1 INVARIANT ii: 1..21 VARIANT 21-ii END;res:=count END);
   List_Substitution(Implementation(Controle_Torneio_i),consultar_bois_derrubados)==(res <-- get_bois_corridos(ss))
 END
 &
@@ -349,7 +349,7 @@ THEORY VariablesLocEnvX IS
   Variables_Loc(Implementation(Controle_Torneio_i),rachar_sem_finalizar, 1) == (Type(ii) == Lvl(btype(INTEGER,?,?));Type(qtd) == Lvl(btype(INTEGER,?,?));Type(st) == Lvl(etype(STATUS_SENHA,?,?));Type(div_base) == Lvl(btype(INTEGER,?,?));Type(prize_calc) == Lvl(btype(INTEGER,?,?)));
   Variables_Loc(Implementation(Controle_Torneio_i),rachar_premio, 1) == (Type(ii) == Lvl(btype(INTEGER,?,?));Type(qtd) == Lvl(btype(INTEGER,?,?));Type(st) == Lvl(etype(STATUS_SENHA,?,?));Type(vq) == Lvl(btype(INTEGER,?,?));Type(prize_per_senha) == Lvl(btype(INTEGER,?,?));Type(cur_prize) == Lvl(btype(INTEGER,?,?)));
   Variables_Loc(Implementation(Controle_Torneio_i),declarar_campeao_unico, 1) == (Type(ii) == Lvl(btype(INTEGER,?,?));Type(st) == Lvl(etype(STATUS_SENHA,?,?));Type(vq) == Lvl(btype(INTEGER,?,?));Type(cur_prize) == Lvl(btype(INTEGER,?,?)));
-  Variables_Loc(Implementation(Controle_Torneio_i),total_senhas_vendidas, 1) == (Type(ii) == Lvl(btype(INTEGER,?,?));Type(st) == Lvl(etype(STATUS_SENHA,?,?));Type(count) == Lvl(btype(INTEGER,?,?)))
+  Variables_Loc(Implementation(Controle_Torneio_i),total_senhas_vendidas, 1) == (Type(ii) == Lvl(btype(INTEGER,?,?));Type(dono) == Lvl(btype(INTEGER,?,?));Type(count) == Lvl(btype(INTEGER,?,?)))
 END
 &
 THEORY TCIntRdX IS

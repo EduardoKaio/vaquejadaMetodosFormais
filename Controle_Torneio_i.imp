@@ -155,7 +155,7 @@ correr_boi_classificacao ( ss , jj ) =
     VAR bc, lim, ii, prox, tmp_val, nbc IN
         registrar_julgamento_classificacao ( ss , jj ) ;
         
-        /* Usa o getter que acabamos de criar */
+        /* Usa o getter */
         bc <-- get_bois_corridos ( ss ) ;
         nbc := bc + 1 ;
         

@@ -311,7 +311,7 @@ rachar_premio =
             /* O conjunto exato de senhas que dividem o prêmio */
             senhas_vencedoras = dom ( estado_senha |> { classificada } )
 
-            /* Fração do prêmio por senha (divisão inteira do Método B) */
+            /* Fração do prêmio por senha */
             & valor_por_senha = premiacao_total_atual / card ( senhas_vencedoras )
         THEN
             fase_atual := encerrado

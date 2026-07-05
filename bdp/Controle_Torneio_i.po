@@ -26,12 +26,12 @@ _f(1) & _f(2) & _f(3) & _f(44) & WellDefinednessInvariant.3,(_f(314) & _f(315) &
 _f(1) & _f(2) & _f(3) & _f(44) & WellDefinednessInvariant.2,(_f(314) & _f(315) & _f(316) & _f(317) & _f(318) & _f(319) & _f(320) & _f(321) & _f(322) & _f(323) & _f(324) & _f(325) & _f(326) & _f(327) & _f(328) & _f(329) & _f(330) & _f(331) & _f(332) & _f(333) & _f(334) & _f(335) & _f(336) & _f(348) => _f(350));
 _f(1) & _f(2) & _f(3) & _f(44) & WellDefinednessInvariant.1,(_f(314) & _f(315) & _f(316) & _f(317) & _f(318) & _f(319) & _f(320) & _f(321) & _f(322) & _f(323) & _f(324) & _f(325) & _f(326) & _f(327) & _f(328) & _f(329) & _f(330) & _f(331) & _f(332) & _f(333) & _f(334) & _f(335) & _f(336) & _f(348) => _f(349));
 _f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.9,(_f(267) & _f(273) & _f(35) => _f(313));
-_f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.8,(_f(267) & _f(268) & _f(269) & _f(270) & _f(312) & _f(25) => _f(279));
-_f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.7,(_f(267) & _f(268) & _f(269) & _f(270) & _f(311) & _f(25) => _f(279));
+_f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.8,(_f(267) & _f(268) & _f(269) & _f(308) & _f(312) & _f(25) => _f(279));
+_f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.7,(_f(267) & _f(268) & _f(269) & _f(308) & _f(311) & _f(25) => _f(279));
 _f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.6,(_f(267) & _f(23) => _f(278));
-_f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.5,(_f(267) & _f(268) & _f(269) & _f(270) & _f(312) & _f(21) => _f(277));
-_f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.4,(_f(267) & _f(268) & _f(269) & _f(270) & _f(311) & _f(21) => _f(277));
-_f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.3,(_f(267) & _f(268) & _f(79) => _f(270));
+_f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.5,(_f(267) & _f(268) & _f(269) & _f(308) & _f(312) & _f(21) => _f(277));
+_f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.4,(_f(267) & _f(268) & _f(269) & _f(308) & _f(311) & _f(21) => _f(277));
+_f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.3,(_f(267) & _f(268) & _f(79) => _f(308));
 _f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.2,(_f(267) & _f(268) & _f(79) => _f(269));
 _f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_total_senhas_vendidas.1,(_f(19) => _f(276));
 _f(1) & _f(2) & _f(3) & _f(44) & _f(45) & Operation_declarar_campeao_unico.14,(_f(212) & _f(140) & _f(253) & _f(307) & _f(267) & _f(273) & _f(35) => _f(310));
@@ -1232,8 +1232,8 @@ not(((card(dom(((((estado_senha$1) <+ ((dom(((estado_senha$1) |> (({(3|->STATUS_
 ((ii) : (dom(dono_senha$1)));
 ((((premiacao_individual_arr$1) <+ (({(((vq - 1)) |-> (((premiacao_individual_arr$1 )((vq - 1)) + premiacao_total_atual_v$1)))})))) : (((((0) .. (2))) --> (NAT))));
 #(vencedor).(((vencedor) : (VAQUEIROS)) & !(yy).(((((yy) : (dom(((estado_senha$1) <+ ((dom(((estado_senha$1) |> (({(3|->STATUS_SENHA)})))) * ({(5|->STATUS_SENHA)}))))))) & (((((estado_senha$1) <+ ((dom(((estado_senha$1) |> (({(3|->STATUS_SENHA)})))) * ({(5|->STATUS_SENHA)})))) )(yy)) = ((3|->STATUS_SENHA)))) => ((((dono_senha$1 )(yy)) = (vencedor))))) & ((((premiacao_individual) <+ (({((vencedor) |-> (((premiacao_individual )(vencedor) + premiacao_total_atual)))})))) = (%(vq$3).(((vq$3) : (((1) .. (3)))) | (((premiacao_individual_arr$1) <+ (({(((vq - 1)) |-> (((premiacao_individual_arr$1 )((vq - 1)) + premiacao_total_atual_v$1)))}))) )((vq$3 - 1))))));
-(((((estado_senha$1 )(ii)) = ((4|->STATUS_SENHA)))) or ((((estado_senha$1 )(ii)) = ((3|->STATUS_SENHA)))) or ((((estado_senha$1 )(ii)) = ((2|->STATUS_SENHA)))) or ((((estado_senha$1 )(ii)) = ((5|->STATUS_SENHA)))) or ((((estado_senha$1 )(ii)) = ((1|->STATUS_SENHA)))));
-not((((((estado_senha$1 )(ii)) = ((4|->STATUS_SENHA)))) or ((((estado_senha$1 )(ii)) = ((3|->STATUS_SENHA)))) or ((((estado_senha$1 )(ii)) = ((2|->STATUS_SENHA)))) or ((((estado_senha$1 )(ii)) = ((5|->STATUS_SENHA)))) or ((((estado_senha$1 )(ii)) = ((1|->STATUS_SENHA))))));
+not((((dono_senha$1 )(ii)) = (0)));
+(((dono_senha$1 )(ii)) = (0));
 ((count) = (card(dom(dono_senha$1))));
 ((dono_senha) = (dono_senha$1));
 ((estado_senha) = (estado_senha$1));

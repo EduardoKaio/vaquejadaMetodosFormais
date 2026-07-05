@@ -57383,7 +57383,7 @@
             </Goal>
         </Simple_Goal>
     </Proof_Obligation>
-    <Proof_Obligation goalHash="3338210228287077887">
+    <Proof_Obligation goalHash="2264562588225758322">
         <Tag>Operation_total_senhas_vendidas</Tag>
         <Definition name="B definitions"/>
         <Definition name="ctx"/>
@@ -57413,97 +57413,37 @@
         </Local_Hyp>
         <Local_Hyp num="3">
             <Exp_Comparison op=":">
-                <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:3:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
-                <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:3:1:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
+                <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:3:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
+                <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:3:1:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
             </Exp_Comparison>
         </Local_Hyp>
         <Local_Hyp num="4">
             <Exp_Comparison op=":">
-                <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:3:1:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
+                <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:3:1:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
                 <Unary_Exp op="dom" typref="0">
-                    <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:3:1:2:2:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
+                    <Id value="dono_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:3:1:2:2:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
                 </Unary_Exp>
             </Exp_Comparison>
         </Local_Hyp>
         <Local_Hyp num="5">
-            <Nary_Pred op="or">
+            <Unary_Pred op="not">
                 <Exp_Comparison op="=">
-                    <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:1:1">
-                        <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
-                        <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
+                    <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:1">
+                        <Id value="dono_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
+                        <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
                     </Binary_Exp>
-                    <Id value="eliminada" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:1:2"/>
+                    <Integer_Literal value="0" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:2"/>
                 </Exp_Comparison>
-                <Exp_Comparison op="=">
-                    <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:2:1">
-                        <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
-                        <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
-                    </Binary_Exp>
-                    <Id value="classificada" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:2:2"/>
-                </Exp_Comparison>
-                <Exp_Comparison op="=">
-                    <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:3:1">
-                        <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
-                        <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
-                    </Binary_Exp>
-                    <Id value="na_pista" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:3:2"/>
-                </Exp_Comparison>
-                <Exp_Comparison op="=">
-                    <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:4:1">
-                        <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
-                        <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
-                    </Binary_Exp>
-                    <Id value="campea" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:4:2"/>
-                </Exp_Comparison>
-                <Exp_Comparison op="=">
-                    <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:5:1">
-                        <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
-                        <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
-                    </Binary_Exp>
-                    <Id value="na_espera" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:5:2"/>
-                </Exp_Comparison>
-            </Nary_Pred>
+            </Unary_Pred>
         </Local_Hyp>
         <Local_Hyp num="6">
-            <Unary_Pred op="not">
-                <Nary_Pred op="or">
-                    <Exp_Comparison op="=">
-                        <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:1:1">
-                            <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
-                            <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
-                        </Binary_Exp>
-                        <Id value="eliminada" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:1:2"/>
-                    </Exp_Comparison>
-                    <Exp_Comparison op="=">
-                        <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:2:1">
-                            <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
-                            <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
-                        </Binary_Exp>
-                        <Id value="classificada" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:2:2"/>
-                    </Exp_Comparison>
-                    <Exp_Comparison op="=">
-                        <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:3:1">
-                            <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
-                            <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
-                        </Binary_Exp>
-                        <Id value="na_pista" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:3:2"/>
-                    </Exp_Comparison>
-                    <Exp_Comparison op="=">
-                        <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:4:1">
-                            <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
-                            <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
-                        </Binary_Exp>
-                        <Id value="campea" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:4:2"/>
-                    </Exp_Comparison>
-                    <Exp_Comparison op="=">
-                        <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:5:1">
-                            <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
-                            <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
-                        </Binary_Exp>
-                        <Id value="na_espera" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:5:2"/>
-                    </Exp_Comparison>
-                </Nary_Pred>
-            </Unary_Pred>
+            <Exp_Comparison op="=">
+                <Binary_Exp op="(" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:1">
+                    <Id value="dono_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:4:1:2:1:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
+                    <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:4:1:2:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
+                </Binary_Exp>
+                <Integer_Literal value="0" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:2:1:1:2"/>
+            </Exp_Comparison>
         </Local_Hyp>
         <Local_Hyp num="7">
             <Unary_Pred op="not">
@@ -57531,8 +57471,8 @@
             <Ref_Hyp num="2"/>
             <Goal>
                 <Exp_Comparison op=":">
-                    <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:3:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
-                    <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:3:1:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
+                    <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:3:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
+                    <Id value="NAT1" typref="0" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:3:1:1:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
                 </Exp_Comparison>
             </Goal>
         </Simple_Goal>
@@ -57542,9 +57482,9 @@
             <Ref_Hyp num="2"/>
             <Goal>
                 <Exp_Comparison op=":">
-                    <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:3:1:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
+                    <Id value="ii" typref="1" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:3:1:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:2:1"/>
                     <Unary_Exp op="dom" typref="0">
-                        <Id value="estado_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:2,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:12:3:1:2:2:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
+                        <Id value="dono_senha" suffix="1" typref="2" tag="/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:2:1,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp//Gerenciador_Senhas.bxml:1:5:13:3:1:2:2:1,,/home/kaio/Documentos/ufrn/7 periodo/MetodosFormais/vaquejada/bdp/Controle_Torneio_i.bxml:1:7:18:2:1:2:1:3:2:1:1:1:1"/>
                     </Unary_Exp>
                 </Exp_Comparison>
             </Goal>

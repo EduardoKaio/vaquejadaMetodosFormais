@@ -12,8 +12,8 @@ VARIABLES
     , fila_disputa_atual
     , fila_disputa_proxima
     , eliminados_nesta_rodada
-    , buffer_saida          /* Nova variável */
-    , tamanho_buffer_saida  /* Nova variável */
+    , buffer_saida          
+    , tamanho_buffer_saida 
 
 INVARIANT
     dono_senha : SENHAS +-> VAQUEIROS
@@ -36,8 +36,8 @@ INITIALISATION
     || fila_disputa_atual := []
     || fila_disputa_proxima := []
     || eliminados_nesta_rodada := []
-    || buffer_saida := []          /* Nova inicialização */
-    || tamanho_buffer_saida := 0   /* Nova inicialização */
+    || buffer_saida := []       
+    || tamanho_buffer_saida := 0 
 
 OPERATIONS
 cadastrar_senha ( vv , ss , torneio_comecou , ultima_senha ) =
