@@ -309,13 +309,15 @@ res <-- consultar_dono ( ss ) =
     END ;
 
 res <-- total_senhas_vendidas =
-    VAR ii, st, count IN
+    VAR ii, dono, count IN
         count := 0 ;
         ii := 1 ;
         WHILE ii <= 20 DO
-            st <-- get_estado_senha ( ii ) ;
-            /* Verificamos se NÃO é o estado nulo/inicial. Ajuste os enums se precisar */
-            IF st = eliminada or st = classificada or st = na_pista or st = campea or st = na_espera THEN
+            dono <-- get_dono_senha ( ii ) ;
+            /* Uma senha foi vendida se e somente se possui dono registrado (dono /= 0).
+               Isso e consistente com o invariante:
+               dono_senha = %ss.(ss:1..20 & dono_senha_arr(ss-1)/=0 | dono_senha_arr(ss-1)) */
+            IF dono /= 0 THEN
                 count := count + 1
             END ;
             ii := ii + 1
