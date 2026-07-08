@@ -6,7 +6,7 @@ Máquinas implementadas: `Contexto_Vaquejada`, `Gerenciador_Senhas`, `Controle_T
 
 ```bash
 gcc -Wall -Wextra -o teste_torneio \
-    main.c Contexto_Vaquejada_i.c Gerenciador_Senhas_i.c \
+    main_testes.c Contexto_Vaquejada_i.c Gerenciador_Senhas_i.c \
     Controle_Torneio_i.c teste1.c teste2.c teste3.c teste4.c teste5.c
 ```
 
