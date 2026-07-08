@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
 /* Clause SEES */
 #include "Contexto_Vaquejada.h"
 

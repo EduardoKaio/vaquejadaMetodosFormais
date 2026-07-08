@@ -60,7 +60,17 @@ INITIALISATION
             fila_disputa_proxima_arr(ii) := 0 ;
             eliminados_arr(ii)           := 0 ;
             ii := ii + 1
-        INVARIANT ii : 0..20
+        INVARIANT
+            ii : 0..20
+            & !(jj).(jj : 0..19 & jj < ii =>
+                dono_senha_arr(jj) = 0 &
+                estado_senha_arr(jj) = na_espera &
+                bois_corridos_arr(jj) = 0 &
+                fila_geral_arr(jj) = 0 &
+                fila_disputa_atual_arr(jj) = 0 &
+                fila_disputa_proxima_arr(jj) = 0 &
+                eliminados_arr(jj) = 0
+            )
         VARIANT 20 - ii
         END
     END ;
@@ -70,7 +80,9 @@ INITIALISATION
         WHILE ii <= 3 DO
             lote_saida_arr ( ii ) := 0 ;
             ii := ii + 1
-        INVARIANT ii : 0..4
+        INVARIANT
+            ii : 0..4
+            & !(jj).(jj : 0..3 & jj < ii => lote_saida_arr(jj) = 0)
         VARIANT 4 - ii
         END
     END ;
@@ -85,7 +97,7 @@ INITIALISATION
 OPERATIONS
 
 cadastrar_senha ( vv , ss , torneio_comecou , ultima_senha ) =
-    VAR pos, ii, idx, prev, tmp_val IN
+    VAR pos, ii, idx, prev, tmp_val, old_geral IN
         idx := ss - 1 ;
         dono_senha_arr ( idx ) := vv ;
         estado_senha_arr ( idx ) := na_espera ;
@@ -100,18 +112,25 @@ cadastrar_senha ( vv , ss , torneio_comecou , ultima_senha ) =
                     IF pos < fila_geral_fim THEN
                         tmp_val := fila_geral_arr ( pos )
                     END
-                INVARIANT pos : 0..fila_geral_fim
+                INVARIANT
+                    pos : 0..fila_geral_fim
+                    & !(jj).(jj : 0..(fila_geral_fim-1) & jj < pos => fila_geral_arr(jj) < ss)
+                    & (pos < fila_geral_fim => tmp_val = fila_geral_arr(pos))
                 VARIANT fila_geral_fim - pos
                 END
             END ;
 
+            old_geral := fila_geral_arr ;
             ii := fila_geral_fim ;
             WHILE ii > pos DO
                 prev := ii - 1 ;
                 tmp_val := fila_geral_arr ( prev ) ;
                 fila_geral_arr ( ii ) := tmp_val ;
                 ii := ii - 1
-            INVARIANT ii : pos..fila_geral_fim
+            INVARIANT
+                ii : pos..fila_geral_fim
+                & !(jj).(jj : 0..fila_geral_fim & jj <= ii => fila_geral_arr(jj) = old_geral(jj))
+                & !(jj).(jj : 0..fila_geral_fim & jj > ii => fila_geral_arr(jj) = old_geral(jj-1))
             VARIANT ii - pos
             END ;
 
@@ -132,18 +151,25 @@ cadastrar_senha ( vv , ss , torneio_comecou , ultima_senha ) =
                         IF pos < fila_geral_fim THEN
                             tmp_val := fila_geral_arr ( pos )
                         END
-                    INVARIANT pos : 0..fila_geral_fim
+                    INVARIANT
+                        pos : 0..fila_geral_fim
+                        & !(jj).(jj : 0..(fila_geral_fim-1) & jj < pos => fila_geral_arr(jj) < ss & fila_geral_arr(jj) > ultima_senha)
+                        & (pos < fila_geral_fim => tmp_val = fila_geral_arr(pos))
                     VARIANT fila_geral_fim - pos
                     END
                 END ;
 
+                old_geral := fila_geral_arr ;
                 ii := fila_geral_fim ;
                 WHILE ii > pos DO
                     prev := ii - 1 ;
                     tmp_val := fila_geral_arr ( prev ) ;
                     fila_geral_arr ( ii ) := tmp_val ;
                     ii := ii - 1
-                INVARIANT ii : pos..fila_geral_fim
+                INVARIANT
+                    ii : pos..fila_geral_fim
+                    & !(jj).(jj : 0..fila_geral_fim & jj <= ii => fila_geral_arr(jj) = old_geral(jj))
+                    & !(jj).(jj : 0..fila_geral_fim & jj > ii => fila_geral_arr(jj) = old_geral(jj-1))
                 VARIANT ii - pos
                 END ;
 
@@ -160,7 +186,7 @@ atualizar_status ( ss , novo_status ) =
     END ;
 
 cancelar_registro_senha ( ss ) =
-    VAR pos, ii, idx, prox, tmp_val, lim IN
+    VAR pos, ii, idx, prox, tmp_val, lim, old_geral IN
         idx := ss - 1 ;
         dono_senha_arr ( idx ) := 0 ;
         estado_senha_arr ( idx ) := na_espera ;
@@ -174,12 +200,16 @@ cancelar_registro_senha ( ss ) =
                 IF pos < fila_geral_fim THEN
                     tmp_val := fila_geral_arr ( pos )
                 END
-            INVARIANT pos : 0..fila_geral_fim
+            INVARIANT
+                pos : 0..fila_geral_fim
+                & !(jj).(jj : 0..(fila_geral_fim-1) & jj < pos => fila_geral_arr(jj) /= ss)
+                & (pos < fila_geral_fim => tmp_val = fila_geral_arr(pos))
             VARIANT fila_geral_fim - pos
             END
         END ;
 
         /* Calculo aritmetico extraido para fora da condicao do WHILE */
+        old_geral := fila_geral_arr ;
         lim := fila_geral_fim - 1 ;
         ii := pos ;
         WHILE ii < lim DO
@@ -187,7 +217,10 @@ cancelar_registro_senha ( ss ) =
             tmp_val := fila_geral_arr ( prox ) ;
             fila_geral_arr ( ii ) := tmp_val ;
             ii := ii + 1
-        INVARIANT ii : pos..(fila_geral_fim - 1)
+        INVARIANT
+            ii : pos..(fila_geral_fim - 1)
+            & !(jj).(jj : pos..(fila_geral_fim-1) & jj < ii => fila_geral_arr(jj) = old_geral(jj+1))
+            & !(jj).(jj : pos..(fila_geral_fim-1) & jj >= ii => fila_geral_arr(jj) = old_geral(jj))
         VARIANT ( fila_geral_fim - 1 ) - ii
         END ;
 
@@ -201,19 +234,23 @@ atualizar_dono ( ss , novo_vaqueiro ) =
     END ;
 
 extrair_lote_rodizio =
-    VAR qtd, ii, offset, tmp_val, lim IN
+    VAR qtd, ii, offset, tmp_val, lim, old_geral IN
         IF fila_geral_fim > TAMANHO_RODIZIO THEN
             qtd := TAMANHO_RODIZIO
         ELSE
             qtd := fila_geral_fim
         END ;
 
+        old_geral := fila_geral_arr ;
+
         ii := 0 ;
         WHILE ii < qtd DO
             tmp_val := fila_geral_arr ( ii ) ;
             lote_saida_arr ( ii ) := tmp_val ;
             ii := ii + 1
-        INVARIANT ii : 0..qtd
+        INVARIANT
+            ii : 0..qtd
+            & !(jj).(jj : 0..(qtd-1) & jj < ii => lote_saida_arr(jj) = old_geral(jj))
         VARIANT qtd - ii
         END ;
         lote_saida_size := qtd ;
@@ -226,14 +263,17 @@ extrair_lote_rodizio =
             tmp_val := fila_geral_arr ( offset ) ;
             fila_geral_arr ( ii ) := tmp_val ;
             ii := ii + 1
-        INVARIANT ii : 0..(fila_geral_fim - qtd)
+        INVARIANT
+            ii : 0..(fila_geral_fim - qtd)
+            & !(jj).(jj : 0..(fila_geral_fim-qtd-1) & jj < ii => fila_geral_arr(jj) = old_geral(jj+qtd))
+            & !(jj).(jj : 0..(fila_geral_fim-qtd-1) & jj >= ii => fila_geral_arr(jj) = old_geral(jj))
         VARIANT ( fila_geral_fim - qtd ) - ii
         END ;
         fila_geral_fim := fila_geral_fim - qtd
     END ;
 
 registrar_julgamento_classificacao ( ss , jj ) =
-    VAR idx, bc, pos, ii, prev, tmp_val, nbc IN
+    VAR idx, bc, pos, ii, prev, tmp_val, nbc, old_proxima IN
         idx := ss - 1 ;
         IF jj = zero_boi THEN
             estado_senha_arr ( idx ) := eliminada
@@ -255,18 +295,25 @@ registrar_julgamento_classificacao ( ss , jj ) =
                         IF pos < fila_disputa_proxima_fim THEN
                             tmp_val := fila_disputa_proxima_arr ( pos )
                         END
-                    INVARIANT pos : 0..fila_disputa_proxima_fim
+                    INVARIANT
+                        pos : 0..fila_disputa_proxima_fim
+                        & !(jj2).(jj2 : 0..(fila_disputa_proxima_fim-1) & jj2 < pos => fila_disputa_proxima_arr(jj2) < ss)
+                        & (pos < fila_disputa_proxima_fim => tmp_val = fila_disputa_proxima_arr(pos))
                     VARIANT fila_disputa_proxima_fim - pos
                     END
                 END ;
 
+                old_proxima := fila_disputa_proxima_arr ;
                 ii := fila_disputa_proxima_fim ;
                 WHILE ii > pos DO
                     prev := ii - 1 ;
                     tmp_val := fila_disputa_proxima_arr ( prev ) ;
                     fila_disputa_proxima_arr ( ii ) := tmp_val ;
                     ii := ii - 1
-                INVARIANT ii : pos..fila_disputa_proxima_fim
+                INVARIANT
+                    ii : pos..fila_disputa_proxima_fim
+                    & !(jj2).(jj2 : 0..fila_disputa_proxima_fim & jj2 <= ii => fila_disputa_proxima_arr(jj2) = old_proxima(jj2))
+                    & !(jj2).(jj2 : 0..fila_disputa_proxima_fim & jj2 > ii => fila_disputa_proxima_arr(jj2) = old_proxima(jj2-1))
                 VARIANT ii - pos
                 END ;
 
@@ -281,11 +328,12 @@ registrar_julgamento_classificacao ( ss , jj ) =
     END ;
 
 processar_resultado_disputa ( jj ) =
-    VAR ss_val, idx, pos, ii, prev, prox, tmp_val, lim IN
+    VAR ss_val, idx, pos, ii, prev, prox, tmp_val, lim, old_atual, old_proxima IN
         ss_val := fila_disputa_atual_arr ( 0 ) ;
         idx := ss_val - 1 ;
         
         /* Calculo aritmetico extraido para fora da condicao do WHILE */
+        old_atual := fila_disputa_atual_arr ;
         lim := fila_disputa_atual_fim - 1 ;
         ii := 0 ;
         WHILE ii < lim DO
@@ -293,7 +341,10 @@ processar_resultado_disputa ( jj ) =
             tmp_val := fila_disputa_atual_arr ( prox ) ;
             fila_disputa_atual_arr ( ii ) := tmp_val ;
             ii := ii + 1
-        INVARIANT ii : 0..(fila_disputa_atual_fim - 1)
+        INVARIANT
+            ii : 0..(fila_disputa_atual_fim - 1)
+            & !(jj2).(jj2 : 0..(fila_disputa_atual_fim-1) & jj2 < ii => fila_disputa_atual_arr(jj2) = old_atual(jj2+1))
+            & !(jj2).(jj2 : 0..(fila_disputa_atual_fim-1) & jj2 >= ii => fila_disputa_atual_arr(jj2) = old_atual(jj2))
         VARIANT (fila_disputa_atual_fim - 1) - ii
         END ;
         fila_disputa_atual_fim := fila_disputa_atual_fim - 1 ;
@@ -314,18 +365,25 @@ processar_resultado_disputa ( jj ) =
                     IF pos < fila_disputa_proxima_fim THEN
                         tmp_val := fila_disputa_proxima_arr ( pos )
                     END
-                INVARIANT pos : 0..fila_disputa_proxima_fim
+                INVARIANT
+                    pos : 0..fila_disputa_proxima_fim
+                    & !(jj2).(jj2 : 0..(fila_disputa_proxima_fim-1) & jj2 < pos => fila_disputa_proxima_arr(jj2) < ss_val)
+                    & (pos < fila_disputa_proxima_fim => tmp_val = fila_disputa_proxima_arr(pos))
                 VARIANT fila_disputa_proxima_fim - pos
                 END
             END ;
 
+            old_proxima := fila_disputa_proxima_arr ;
             ii := fila_disputa_proxima_fim ;
             WHILE ii > pos DO
                 prev := ii - 1 ;
                 tmp_val := fila_disputa_proxima_arr ( prev ) ;
                 fila_disputa_proxima_arr ( ii ) := tmp_val ;
                 ii := ii - 1
-            INVARIANT ii : pos..fila_disputa_proxima_fim
+            INVARIANT
+                ii : pos..fila_disputa_proxima_fim
+                & !(jj2).(jj2 : 0..fila_disputa_proxima_fim & jj2 <= ii => fila_disputa_proxima_arr(jj2) = old_proxima(jj2))
+                & !(jj2).(jj2 : 0..fila_disputa_proxima_fim & jj2 > ii => fila_disputa_proxima_arr(jj2) = old_proxima(jj2-1))
             VARIANT ii - pos
             END ;
 
@@ -347,7 +405,9 @@ avancar_rodada_disputa =
                 tmp_val := fila_disputa_proxima_arr ( ii ) ;
                 fila_disputa_atual_arr ( ii ) := tmp_val ;
                 ii := ii + 1
-            INVARIANT ii : 0..fila_disputa_proxima_fim
+            INVARIANT
+                ii : 0..fila_disputa_proxima_fim
+                & !(jj).(jj : 0..(fila_disputa_proxima_fim-1) & jj < ii => fila_disputa_atual_arr(jj) = fila_disputa_proxima_arr(jj))
             VARIANT fila_disputa_proxima_fim - ii
             END
         END ;
@@ -363,7 +423,10 @@ avancar_rodada_disputa =
                 idx := ss_val - 1 ;
                 estado_senha_arr ( idx ) := classificada ;
                 ii := ii + 1
-            INVARIANT ii : 0..eliminados_fim
+            INVARIANT
+                ii : 0..eliminados_fim
+                & !(jj).(jj : 0..(eliminados_fim-1) & jj < ii => fila_disputa_atual_arr(jj) = eliminados_arr(jj))
+                & !(jj).(jj : 0..(eliminados_fim-1) & jj < ii => estado_senha_arr(eliminados_arr(jj)-1) = classificada)
             VARIANT eliminados_fim - ii
             END
         END ;
@@ -372,7 +435,8 @@ avancar_rodada_disputa =
     END ;
 
 finalizar_torneio =
-    VAR ii, st IN
+    VAR ii, st, old_estado IN
+        old_estado := estado_senha_arr ;
         ii := 0 ;
         WHILE ii <= 19 DO
             st := estado_senha_arr ( ii ) ;
@@ -380,7 +444,10 @@ finalizar_torneio =
                 estado_senha_arr ( ii ) := campea
             END ;
             ii := ii + 1
-        INVARIANT ii : 0..20
+        INVARIANT
+            ii : 0..20
+            & !(jj).(jj : 0..19 & jj < ii & old_estado(jj) = classificada => estado_senha_arr(jj) = campea)
+            & !(jj).(jj : 0..19 & jj < ii & old_estado(jj) /= classificada => estado_senha_arr(jj) = old_estado(jj))
         VARIANT 20 - ii
         END
     END ;

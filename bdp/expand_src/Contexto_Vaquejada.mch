@@ -6,7 +6,7 @@ SETS
     STATUS_SENHA = { na_espera , na_pista , classificada , eliminada , campea } ;
     JULGAMENTO = { valeu_boi , zero_boi , retorno }
 
-CONCRETE_CONSTANTS
+CONSTANTS
     TOTAL_SENHAS
     , LIMITE_SENHAS_VAQUEIRO
     , BOIS_PARA_CLASSIFICAR
@@ -34,7 +34,7 @@ PROPERTIES
     & SENHAS <: NAT1
     & SENHAS = 1 .. TOTAL_SENHAS
 
-    & PREMIO_TOTAL : NAT1
+    & PREMIO_TOTAL : NAT
     & PREMIO_TOTAL = 10000
 
 END

@@ -155,6 +155,7 @@ void Controle_Torneio__correr_boi_classificacao(int32_t ss, Contexto_Vaquejada__
     int32_t prox;
     int32_t tmp_val;
     int32_t nbc;
+    int32_t old_rodizio[4];
     
     Gerenciador_Senhas__registrar_julgamento_classificacao(ss, jj);
     Gerenciador_Senhas__get_bois_corridos(ss, &bc);
@@ -163,6 +164,7 @@ void Controle_Torneio__correr_boi_classificacao(int32_t ss, Contexto_Vaquejada__
     (((jj == Contexto_Vaquejada__valeu_boi) &&
             (nbc == Contexto_Vaquejada__BOIS_PARA_CLASSIFICAR))))
     {
+        memmove(old_rodizio,Controle_Torneio__rodizio_arr,(4)* sizeof(int32_t));
         ii = Controle_Torneio__idx_correndo_v-1;
         lim = Controle_Torneio__rodizio_size-1;
         while((ii) < (lim))
@@ -269,6 +271,7 @@ void Controle_Torneio__rachar_premio(void)
     int32_t vq;
     int32_t prize_per_senha;
     int32_t cur_prize;
+    int32_t old_premio[3];
     
     qtd = 0;
     ii = 1;
@@ -284,6 +287,7 @@ void Controle_Torneio__rachar_premio(void)
     if((qtd) > (0))
     {
         prize_per_senha = Controle_Torneio__premiacao_total_atual_v / qtd;
+        memmove(old_premio,Controle_Torneio__premiacao_individual_arr,(3)* sizeof(int32_t));
         ii = 1;
         while((ii) <= (20))
         {

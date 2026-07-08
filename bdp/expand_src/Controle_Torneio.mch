@@ -7,7 +7,7 @@ INCLUDES
 SEES
     Contexto_Vaquejada
 
-ABSTRACT_VARIABLES
+VARIABLES
     fase_atual
     , rodizio_atual
     , idx_correndo

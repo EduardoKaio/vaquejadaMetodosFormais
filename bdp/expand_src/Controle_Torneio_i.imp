@@ -71,7 +71,9 @@ INITIALISATION
         WHILE ii <= 3 DO
             rodizio_arr ( ii ) := 0 ;
             ii := ii + 1
-        INVARIANT ii : 0 .. 4
+        INVARIANT
+            ii : 0 .. 4
+            & ! ( jj ) . ( jj : 0 .. 3 & jj < ii => rodizio_arr ( jj ) = 0 )
         VARIANT 4 - ii
         END
     END ;
@@ -80,7 +82,9 @@ INITIALISATION
         WHILE ii <= 2 DO
             premiacao_individual_arr ( ii ) := 0 ;
             ii := ii + 1
-        INVARIANT ii : 0 .. 3
+        INVARIANT
+            ii : 0 .. 3
+            & ! ( jj ) . ( jj : 0 .. 2 & jj < ii => premiacao_individual_arr ( jj ) = 0 )
         VARIANT 3 - ii
         END
     END ;
@@ -89,7 +93,9 @@ INITIALISATION
         WHILE ii <= 19 DO
             colocacao_arr ( ii ) := 0 ;
             ii := ii + 1
-        INVARIANT ii : 0 .. 20
+        INVARIANT
+            ii : 0 .. 20
+            & ! ( jj ) . ( jj : 0 .. 19 & jj < ii => colocacao_arr ( jj ) = 0 )
         VARIANT 20 - ii
         END
     END
@@ -122,7 +128,9 @@ iniciar_rodizio =
             tmp_val <-- consultar_lote_saida ( ii + 1 ) ;
             rodizio_arr ( ii ) := tmp_val ;
             ii := ii + 1
-        INVARIANT ii : 0 .. tam
+        INVARIANT
+            ii : 0 .. tam
+            & ! ( jj ) . ( jj : 0 .. ( tam - 1 ) & jj < ii => rodizio_arr ( jj ) = buffer_saida ( jj + 1 ) )
         VARIANT tam - ii
         END ;
         rodizio_size := tam ;
@@ -139,7 +147,9 @@ iniciar_ultimo_rodizio =
             tmp_val <-- consultar_lote_saida ( ii + 1 ) ;
             rodizio_arr ( ii ) := tmp_val ;
             ii := ii + 1
-        INVARIANT ii : 0 .. tam
+        INVARIANT
+            ii : 0 .. tam
+            & ! ( jj ) . ( jj : 0 .. ( tam - 1 ) & jj < ii => rodizio_arr ( jj ) = buffer_saida ( jj + 1 ) )
         VARIANT tam - ii
         END ;
         rodizio_size := tam ;
@@ -152,7 +162,7 @@ chamar_para_pista ( ss ) =
     atualizar_status ( ss , na_pista ) ;
 
 correr_boi_classificacao ( ss , jj ) =
-    VAR bc , lim , ii , prox , tmp_val , nbc IN
+    VAR bc , lim , ii , prox , tmp_val , nbc , old_rodizio IN
         registrar_julgamento_classificacao ( ss , jj ) ;
 
         /* Usa o getter */
@@ -160,6 +170,7 @@ correr_boi_classificacao ( ss , jj ) =
         nbc := bc + 1 ;
 
         IF jj = zero_boi or ( jj = valeu_boi & nbc = BOIS_PARA_CLASSIFICAR ) THEN
+            old_rodizio := rodizio_arr ;
             ii := idx_correndo_v - 1 ;
             lim := rodizio_size - 1 ;
             WHILE ii < lim DO
@@ -167,7 +178,10 @@ correr_boi_classificacao ( ss , jj ) =
                 tmp_val := rodizio_arr ( prox ) ;
                 rodizio_arr ( ii ) := tmp_val ;
                 ii := ii + 1
-            INVARIANT ii : ( idx_correndo_v - 1 ) .. lim
+            INVARIANT
+                ii : ( idx_correndo_v - 1 ) .. lim
+                & ! ( jj2 ) . ( jj2 : ( idx_correndo_v - 1 ) .. lim & jj2 < ii => rodizio_arr ( jj2 ) = old_rodizio ( jj2 + 1 ) )
+                & ! ( jj2 ) . ( jj2 : ( idx_correndo_v - 1 ) .. lim & jj2 >= ii => rodizio_arr ( jj2 ) = old_rodizio ( jj2 ) )
             VARIANT lim - ii
             END ;
             rodizio_size := rodizio_size - 1 ;
@@ -222,7 +236,9 @@ rachar_sem_finalizar =
                 qtd := qtd + 1
             END ;
             ii := ii + 1
-        INVARIANT ii : 1 .. 21
+        INVARIANT
+            ii : 1 .. 21
+            & qtd = card ( { jj | jj : 1 .. ( ii - 1 ) & jj : dom ( estado_senha ) & estado_senha ( jj ) = classificada } )
         VARIANT 21 - ii
         END ;
 
@@ -238,7 +254,7 @@ rachar_sem_finalizar =
     END ;
 
 rachar_premio =
-    VAR ii , qtd , st , vq , prize_per_senha , cur_prize IN
+    VAR ii , qtd , st , vq , prize_per_senha , cur_prize , old_premio IN
         qtd := 0 ;
         ii := 1 ;
         WHILE ii <= 20 DO
@@ -247,12 +263,15 @@ rachar_premio =
                 qtd := qtd + 1
             END ;
             ii := ii + 1
-        INVARIANT ii : 1 .. 21
+        INVARIANT
+            ii : 1 .. 21
+            & qtd = card ( { jj | jj : 1 .. ( ii - 1 ) & jj : dom ( estado_senha ) & estado_senha ( jj ) = classificada } )
         VARIANT 21 - ii
         END ;
 
         IF qtd > 0 THEN
             prize_per_senha := premiacao_total_atual_v / qtd ;
+            old_premio := premiacao_individual_arr ;
             ii := 1 ;
             WHILE ii <= 20 DO
                 st <-- get_estado_senha ( ii ) ;
@@ -264,7 +283,16 @@ rachar_premio =
                     colocacao_arr ( ii - 1 ) := 1
                 END ;
                 ii := ii + 1
-            INVARIANT ii : 1 .. 21
+            INVARIANT
+                ii : 1 .. 21
+                & ! ( vq2 ) . ( vq2 : 1 .. 3 =>
+                    premiacao_individual_arr ( vq2 - 1 ) =
+                        old_premio ( vq2 - 1 ) + prize_per_senha * card (
+                            { jj | jj : 1 .. ( ii - 1 ) & jj : dom ( estado_senha ) & estado_senha ( jj ) = classificada
+                                   & jj : dom ( dono_senha ) & dono_senha ( jj ) = vq2 }
+                        )
+                  )
+                & ! ( jj ) . ( jj : 1 .. ( ii - 1 ) & jj : dom ( estado_senha ) & estado_senha ( jj ) = classificada => colocacao_arr ( jj - 1 ) = 1 )
             VARIANT 21 - ii
             END
         END ;
@@ -283,7 +311,9 @@ declarar_campeao_unico =
                 colocacao_arr ( ii - 1 ) := 1
             END ;
             ii := ii + 1
-        INVARIANT ii : 1 .. 21
+        INVARIANT
+            ii : 1 .. 21
+            & ! ( jj ) . ( jj : 1 .. ( ii - 1 ) & jj : dom ( estado_senha ) & estado_senha ( jj ) = classificada => colocacao_arr ( jj - 1 ) = 1 )
         VARIANT 21 - ii
         END ;
 
@@ -314,14 +344,13 @@ res <-- total_senhas_vendidas =
         ii := 1 ;
         WHILE ii <= 20 DO
             dono <-- get_dono_senha ( ii ) ;
-            /* Uma senha foi vendida se e somente se possui dono registrado (dono /= 0).
-               Isso e consistente com o invariante:
-               dono_senha = %ss.(ss:1..20 & dono_senha_arr(ss-1)/=0 | dono_senha_arr(ss-1)) */
             IF dono /= 0 THEN
                 count := count + 1
             END ;
             ii := ii + 1
-        INVARIANT ii : 1 .. 21
+        INVARIANT
+            ii : 1 .. 21
+            & count = card ( { jj | jj : 1 .. ( ii - 1 ) & jj : dom ( dono_senha ) } )
         VARIANT 21 - ii
         END ;
         res := count

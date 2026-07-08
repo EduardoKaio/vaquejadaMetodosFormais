@@ -4,7 +4,7 @@
 SEES
     Contexto_Vaquejada
 
-ABSTRACT_VARIABLES
+VARIABLES
     dono_senha
     , estado_senha
     , bois_corridos

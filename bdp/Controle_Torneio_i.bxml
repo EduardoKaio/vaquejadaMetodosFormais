@@ -1022,45 +1022,133 @@
 </Nary_Sub>
 </Body>
 <Invariant>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='74' c='22' s='1'/>
+<Pos l='75' c='16' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='74' c='19' s='2'/>
+<Pos l='75' c='13' s='2'/>
 </Attr>
 </Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='74' c='25' s='2'/>
+<Pos l='75' c='19' s='2'/>
 </Attr>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='74' c='24' s='1'/>
+<Pos l='75' c='18' s='1'/>
 </Attr>
 </Integer_Literal>
 <Integer_Literal value='4' typref='1'>
 <Attr>
-<Pos l='74' c='27' s='1'/>
+<Pos l='75' c='21' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
 </Exp_Comparison>
+<Quantified_Pred type='!'>
+<Attr>
+<Pos l='76' c='20' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='76' c='17' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='76' c='42' s='2'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='76' c='25' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='76' c='22' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='76' c='28' s='2'/>
+</Attr>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='76' c='27' s='1'/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value='3' typref='1'>
+<Attr>
+<Pos l='76' c='30' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;i'>
+<Attr>
+<Pos l='76' c='37' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='76' c='34' s='2'/>
+</Attr>
+</Id>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='76' c='39' s='2'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='76' c='61' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='76' c='56' s='0'/>
+</Attr>
+<Id value='rodizio_arr' typref='5'>
+<Attr>
+<Pos l='76' c='45' s='11'/>
+</Attr>
+</Id>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='76' c='57' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='76' c='63' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+</Nary_Pred>
 </Invariant>
 <Variant>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='75' c='19' s='1'/>
+<Pos l='77' c='19' s='1'/>
 </Attr>
 <Integer_Literal value='4' typref='1'>
 <Attr>
-<Pos l='75' c='17' s='1'/>
+<Pos l='77' c='17' s='1'/>
 </Attr>
 </Integer_Literal>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='75' c='21' s='2'/>
+<Pos l='77' c='21' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -1071,12 +1159,12 @@
 </VAR_IN>
 <VAR_IN>
 <Attr>
-<Pos l='78' c='5' s='3'/>
+<Pos l='80' c='5' s='3'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='78' c='9' s='2'/>
+<Pos l='80' c='9' s='2'/>
 </Attr>
 </Id>
 </Variables>
@@ -1084,40 +1172,40 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='79' c='12' s='2'/>
+<Pos l='81' c='12' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='79' c='9' s='2'/>
+<Pos l='81' c='9' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='79' c='15' s='1'/>
+<Pos l='81' c='15' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <While>
 <Attr>
-<Pos l='80' c='9' s='5'/>
+<Pos l='82' c='9' s='5'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&lt;=i'>
 <Attr>
-<Pos l='80' c='18' s='2'/>
+<Pos l='82' c='18' s='2'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='80' c='15' s='2'/>
+<Pos l='82' c='15' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='2' typref='1'>
 <Attr>
-<Pos l='80' c='21' s='1'/>
+<Pos l='82' c='21' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -1126,21 +1214,21 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='81' c='42' s='2'/>
+<Pos l='83' c='42' s='2'/>
 </Attr>
 <Variables>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='81' c='37' s='0'/>
+<Pos l='83' c='37' s='0'/>
 </Attr>
 <Id value='premiacao_individual_arr' typref='5'>
 <Attr>
-<Pos l='81' c='13' s='24'/>
+<Pos l='83' c='13' s='24'/>
 </Attr>
 </Id>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='81' c='38' s='2'/>
+<Pos l='83' c='38' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -1148,35 +1236,35 @@
 <Values>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='81' c='45' s='1'/>
+<Pos l='83' c='45' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='82' c='16' s='2'/>
+<Pos l='84' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='82' c='13' s='2'/>
+<Pos l='84' c='13' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='82' c='22' s='1'/>
+<Pos l='84' c='22' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='82' c='19' s='2'/>
+<Pos l='84' c='19' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='82' c='24' s='1'/>
+<Pos l='84' c='24' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -1185,45 +1273,133 @@
 </Nary_Sub>
 </Body>
 <Invariant>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='83' c='22' s='1'/>
+<Pos l='86' c='16' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='83' c='19' s='2'/>
+<Pos l='86' c='13' s='2'/>
 </Attr>
 </Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='83' c='25' s='2'/>
+<Pos l='86' c='19' s='2'/>
 </Attr>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='83' c='24' s='1'/>
+<Pos l='86' c='18' s='1'/>
 </Attr>
 </Integer_Literal>
 <Integer_Literal value='3' typref='1'>
 <Attr>
-<Pos l='83' c='27' s='1'/>
+<Pos l='86' c='21' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
 </Exp_Comparison>
+<Quantified_Pred type='!'>
+<Attr>
+<Pos l='87' c='20' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='87' c='17' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='87' c='42' s='2'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='87' c='25' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='87' c='22' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='87' c='28' s='2'/>
+</Attr>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='87' c='27' s='1'/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value='2' typref='1'>
+<Attr>
+<Pos l='87' c='30' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;i'>
+<Attr>
+<Pos l='87' c='37' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='87' c='34' s='2'/>
+</Attr>
+</Id>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='87' c='39' s='2'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='87' c='74' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='87' c='69' s='0'/>
+</Attr>
+<Id value='premiacao_individual_arr' typref='5'>
+<Attr>
+<Pos l='87' c='45' s='24'/>
+</Attr>
+</Id>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='87' c='70' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='87' c='76' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+</Nary_Pred>
 </Invariant>
 <Variant>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='84' c='19' s='1'/>
+<Pos l='88' c='19' s='1'/>
 </Attr>
 <Integer_Literal value='3' typref='1'>
 <Attr>
-<Pos l='84' c='17' s='1'/>
+<Pos l='88' c='17' s='1'/>
 </Attr>
 </Integer_Literal>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='84' c='21' s='2'/>
+<Pos l='88' c='21' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -1234,12 +1410,12 @@
 </VAR_IN>
 <VAR_IN>
 <Attr>
-<Pos l='87' c='5' s='3'/>
+<Pos l='91' c='5' s='3'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='87' c='9' s='2'/>
+<Pos l='91' c='9' s='2'/>
 </Attr>
 </Id>
 </Variables>
@@ -1247,40 +1423,40 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='88' c='12' s='2'/>
+<Pos l='92' c='12' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='88' c='9' s='2'/>
+<Pos l='92' c='9' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='88' c='15' s='1'/>
+<Pos l='92' c='15' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <While>
 <Attr>
-<Pos l='89' c='9' s='5'/>
+<Pos l='93' c='9' s='5'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&lt;=i'>
 <Attr>
-<Pos l='89' c='18' s='2'/>
+<Pos l='93' c='18' s='2'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='89' c='15' s='2'/>
+<Pos l='93' c='15' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='19' typref='1'>
 <Attr>
-<Pos l='89' c='21' s='2'/>
+<Pos l='93' c='21' s='2'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -1289,21 +1465,21 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='90' c='31' s='2'/>
+<Pos l='94' c='31' s='2'/>
 </Attr>
 <Variables>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='90' c='26' s='0'/>
+<Pos l='94' c='26' s='0'/>
 </Attr>
 <Id value='colocacao_arr' typref='5'>
 <Attr>
-<Pos l='90' c='13' s='13'/>
+<Pos l='94' c='13' s='13'/>
 </Attr>
 </Id>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='90' c='27' s='2'/>
+<Pos l='94' c='27' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -1311,35 +1487,35 @@
 <Values>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='90' c='34' s='1'/>
+<Pos l='94' c='34' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='91' c='16' s='2'/>
+<Pos l='95' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='91' c='13' s='2'/>
+<Pos l='95' c='13' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='91' c='22' s='1'/>
+<Pos l='95' c='22' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='91' c='19' s='2'/>
+<Pos l='95' c='19' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='91' c='24' s='1'/>
+<Pos l='95' c='24' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -1348,45 +1524,133 @@
 </Nary_Sub>
 </Body>
 <Invariant>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='92' c='22' s='1'/>
+<Pos l='97' c='16' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='92' c='19' s='2'/>
+<Pos l='97' c='13' s='2'/>
 </Attr>
 </Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='92' c='25' s='2'/>
+<Pos l='97' c='19' s='2'/>
 </Attr>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='92' c='24' s='1'/>
+<Pos l='97' c='18' s='1'/>
 </Attr>
 </Integer_Literal>
 <Integer_Literal value='20' typref='1'>
 <Attr>
-<Pos l='92' c='27' s='2'/>
+<Pos l='97' c='21' s='2'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
 </Exp_Comparison>
+<Quantified_Pred type='!'>
+<Attr>
+<Pos l='98' c='20' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='98' c='17' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='98' c='43' s='2'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='98' c='25' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='98' c='22' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='98' c='28' s='2'/>
+</Attr>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='98' c='27' s='1'/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value='19' typref='1'>
+<Attr>
+<Pos l='98' c='30' s='2'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;i'>
+<Attr>
+<Pos l='98' c='38' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='98' c='35' s='2'/>
+</Attr>
+</Id>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='98' c='40' s='2'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='98' c='64' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='98' c='59' s='0'/>
+</Attr>
+<Id value='colocacao_arr' typref='5'>
+<Attr>
+<Pos l='98' c='46' s='13'/>
+</Attr>
+</Id>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='98' c='60' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='98' c='66' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+</Nary_Pred>
 </Invariant>
 <Variant>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='93' c='20' s='1'/>
+<Pos l='99' c='20' s='1'/>
 </Attr>
 <Integer_Literal value='20' typref='1'>
 <Attr>
-<Pos l='93' c='17' s='2'/>
+<Pos l='99' c='17' s='2'/>
 </Attr>
 </Integer_Literal>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='93' c='22' s='2'/>
+<Pos l='99' c='22' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -1400,55 +1664,55 @@
 <Operations>
 <Operation name='comprar_senha'>
 <Attr>
-<Pos l='99' c='1' s='13' endLine='108'/>
+<Pos l='105' c='1' s='13' endLine='114'/>
 </Attr>
 <Input_Parameters>
 <Id value='vv' typref='1'>
 <Attr>
-<Pos l='99' c='17' s='2'/>
+<Pos l='105' c='17' s='2'/>
 </Attr>
 </Id>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='99' c='22' s='2'/>
+<Pos l='105' c='22' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Body>
 <VAR_IN>
 <Attr>
-<Pos l='100' c='5' s='3'/>
+<Pos l='106' c='5' s='3'/>
 </Attr>
 <Variables>
 <Id value='last_val' typref='1'>
 <Attr>
-<Pos l='100' c='9' s='8'/>
+<Pos l='106' c='9' s='8'/>
 </Attr>
 </Id>
 <Id value='idx' typref='1'>
 <Attr>
-<Pos l='100' c='19' s='3'/>
+<Pos l='106' c='19' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Body>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='101' c='9' s='2'/>
+<Pos l='107' c='9' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&gt;i'>
 <Attr>
-<Pos l='101' c='25' s='1'/>
+<Pos l='107' c='25' s='1'/>
 </Attr>
 <Id value='rodizio_size' typref='1'>
 <Attr>
-<Pos l='101' c='12' s='12'/>
+<Pos l='107' c='12' s='12'/>
 </Attr>
 </Id>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='101' c='27' s='1'/>
+<Pos l='107' c='27' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -1457,28 +1721,28 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='102' c='17' s='2'/>
+<Pos l='108' c='17' s='2'/>
 </Attr>
 <Variables>
 <Id value='idx' typref='1'>
 <Attr>
-<Pos l='102' c='13' s='3'/>
+<Pos l='108' c='13' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='102' c='33' s='1'/>
+<Pos l='108' c='33' s='1'/>
 </Attr>
 <Id value='rodizio_size' typref='1'>
 <Attr>
-<Pos l='102' c='20' s='12'/>
+<Pos l='108' c='20' s='12'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='102' c='35' s='1'/>
+<Pos l='108' c='35' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -1486,28 +1750,28 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='103' c='22' s='2'/>
+<Pos l='109' c='22' s='2'/>
 </Attr>
 <Variables>
 <Id value='last_val' typref='1'>
 <Attr>
-<Pos l='103' c='13' s='8'/>
+<Pos l='109' c='13' s='8'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='103' c='37' s='0'/>
+<Pos l='109' c='37' s='0'/>
 </Attr>
 <Id value='rodizio_arr' typref='5'>
 <Attr>
-<Pos l='103' c='25' s='11'/>
+<Pos l='109' c='25' s='11'/>
 </Attr>
 </Id>
 <Id value='idx' typref='1'>
 <Attr>
-<Pos l='103' c='39' s='3'/>
+<Pos l='109' c='39' s='3'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -1515,34 +1779,34 @@
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='104' c='29' s='0'/>
+<Pos l='110' c='29' s='0'/>
 </Attr>
 <Name>
 <Id value='cadastrar_senha'>
 <Attr>
-<Pos l='104' c='13' s='15'/>
+<Pos l='110' c='13' s='15'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='vv' typref='1'>
 <Attr>
-<Pos l='104' c='31' s='2'/>
+<Pos l='110' c='31' s='2'/>
 </Attr>
 </Id>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='104' c='36' s='2'/>
+<Pos l='110' c='36' s='2'/>
 </Attr>
 </Id>
 <Id value='torneio_iniciado_v' typref='0'>
 <Attr>
-<Pos l='104' c='41' s='18'/>
+<Pos l='110' c='41' s='18'/>
 </Attr>
 </Id>
 <Id value='last_val' typref='1'>
 <Attr>
-<Pos l='104' c='62' s='8'/>
+<Pos l='110' c='62' s='8'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -1552,34 +1816,34 @@
 <Else>
 <Operation_Call>
 <Attr>
-<Pos l='106' c='29' s='0'/>
+<Pos l='112' c='29' s='0'/>
 </Attr>
 <Name>
 <Id value='cadastrar_senha'>
 <Attr>
-<Pos l='106' c='13' s='15'/>
+<Pos l='112' c='13' s='15'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='vv' typref='1'>
 <Attr>
-<Pos l='106' c='31' s='2'/>
+<Pos l='112' c='31' s='2'/>
 </Attr>
 </Id>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='106' c='36' s='2'/>
+<Pos l='112' c='36' s='2'/>
 </Attr>
 </Id>
 <Id value='torneio_iniciado_v' typref='0'>
 <Attr>
-<Pos l='106' c='41' s='18'/>
+<Pos l='112' c='41' s='18'/>
 </Attr>
 </Id>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='106' c='62' s='1'/>
+<Pos l='112' c='62' s='1'/>
 </Attr>
 </Integer_Literal>
 </Input_Parameters>
@@ -1592,31 +1856,31 @@
 </Operation>
 <Operation name='desistir_senha'>
 <Attr>
-<Pos l='110' c='1' s='14'/>
+<Pos l='116' c='1' s='14'/>
 </Attr>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='110' c='18' s='2'/>
+<Pos l='116' c='18' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Body>
 <Operation_Call>
 <Attr>
-<Pos l='111' c='29' s='0'/>
+<Pos l='117' c='29' s='0'/>
 </Attr>
 <Name>
 <Id value='cancelar_registro_senha'>
 <Attr>
-<Pos l='111' c='5' s='23'/>
+<Pos l='117' c='5' s='23'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='111' c='31' s='2'/>
+<Pos l='117' c='31' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -1625,41 +1889,41 @@
 </Operation>
 <Operation name='transferir_senha'>
 <Attr>
-<Pos l='113' c='1' s='16'/>
+<Pos l='119' c='1' s='16'/>
 </Attr>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='113' c='20' s='2'/>
+<Pos l='119' c='20' s='2'/>
 </Attr>
 </Id>
 <Id value='novo_vaqueiro' typref='1'>
 <Attr>
-<Pos l='113' c='25' s='13'/>
+<Pos l='119' c='25' s='13'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Body>
 <Operation_Call>
 <Attr>
-<Pos l='114' c='20' s='0'/>
+<Pos l='120' c='20' s='0'/>
 </Attr>
 <Name>
 <Id value='atualizar_dono'>
 <Attr>
-<Pos l='114' c='5' s='14'/>
+<Pos l='120' c='5' s='14'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='114' c='22' s='2'/>
+<Pos l='120' c='22' s='2'/>
 </Attr>
 </Id>
 <Id value='novo_vaqueiro' typref='1'>
 <Attr>
-<Pos l='114' c='27' s='13'/>
+<Pos l='120' c='27' s='13'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -1668,27 +1932,27 @@
 </Operation>
 <Operation name='iniciar_rodizio'>
 <Attr>
-<Pos l='116' c='1' s='15' endLine='131'/>
+<Pos l='122' c='1' s='15' endLine='139'/>
 </Attr>
 <Body>
 <VAR_IN>
 <Attr>
-<Pos l='117' c='5' s='3'/>
+<Pos l='123' c='5' s='3'/>
 </Attr>
 <Variables>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='117' c='9' s='3'/>
+<Pos l='123' c='9' s='3'/>
 </Attr>
 </Id>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='117' c='14' s='2'/>
+<Pos l='123' c='14' s='2'/>
 </Attr>
 </Id>
 <Id value='tmp_val' typref='1'>
 <Attr>
-<Pos l='117' c='18' s='7'/>
+<Pos l='123' c='18' s='7'/>
 </Attr>
 </Id>
 </Variables>
@@ -1696,71 +1960,71 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='118' c='9' s='20'/>
+<Pos l='124' c='9' s='20'/>
 </Attr>
 <Name>
 <Id value='extrair_lote_rodizio'>
 <Attr>
-<Pos l='118' c='9' s='20'/>
+<Pos l='124' c='9' s='20'/>
 </Attr>
 </Id>
 </Name>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='119' c='13' s='3'/>
+<Pos l='125' c='13' s='3'/>
 </Attr>
 <Name>
 <Id value='consultar_tamanho_lote_saida'>
 <Attr>
-<Pos l='119' c='17' s='28'/>
+<Pos l='125' c='17' s='28'/>
 </Attr>
 </Id>
 </Name>
 <Output_Parameters>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='119' c='9' s='3'/>
+<Pos l='125' c='9' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <Assignement_Sub>
 <Attr>
-<Pos l='120' c='12' s='2'/>
+<Pos l='126' c='12' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='120' c='9' s='2'/>
+<Pos l='126' c='9' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='120' c='15' s='1'/>
+<Pos l='126' c='15' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <While>
 <Attr>
-<Pos l='121' c='9' s='5'/>
+<Pos l='127' c='9' s='5'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&lt;i'>
 <Attr>
-<Pos l='121' c='18' s='1'/>
+<Pos l='127' c='18' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='121' c='15' s='2'/>
+<Pos l='127' c='15' s='2'/>
 </Attr>
 </Id>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='121' c='20' s='3'/>
+<Pos l='127' c='20' s='3'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -1769,28 +2033,28 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='122' c='21' s='3'/>
+<Pos l='128' c='21' s='3'/>
 </Attr>
 <Name>
 <Id value='consultar_lote_saida'>
 <Attr>
-<Pos l='122' c='25' s='20'/>
+<Pos l='128' c='25' s='20'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='122' c='51' s='1'/>
+<Pos l='128' c='51' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='122' c='48' s='2'/>
+<Pos l='128' c='48' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='122' c='53' s='1'/>
+<Pos l='128' c='53' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -1798,28 +2062,28 @@
 <Output_Parameters>
 <Id value='tmp_val' typref='1'>
 <Attr>
-<Pos l='122' c='13' s='7'/>
+<Pos l='128' c='13' s='7'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <Assignement_Sub>
 <Attr>
-<Pos l='123' c='32' s='2'/>
+<Pos l='129' c='32' s='2'/>
 </Attr>
 <Variables>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='123' c='25' s='0'/>
+<Pos l='129' c='25' s='0'/>
 </Attr>
 <Id value='rodizio_arr' typref='5'>
 <Attr>
-<Pos l='123' c='13' s='11'/>
+<Pos l='129' c='13' s='11'/>
 </Attr>
 </Id>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='123' c='27' s='2'/>
+<Pos l='129' c='27' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -1827,35 +2091,35 @@
 <Values>
 <Id value='tmp_val' typref='1'>
 <Attr>
-<Pos l='123' c='35' s='7'/>
+<Pos l='129' c='35' s='7'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='124' c='16' s='2'/>
+<Pos l='130' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='124' c='13' s='2'/>
+<Pos l='130' c='13' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='124' c='22' s='1'/>
+<Pos l='130' c='22' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='124' c='19' s='2'/>
+<Pos l='130' c='19' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='124' c='24' s='1'/>
+<Pos l='130' c='24' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -1864,45 +2128,163 @@
 </Nary_Sub>
 </Body>
 <Invariant>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='125' c='22' s='1'/>
+<Pos l='132' c='16' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='125' c='19' s='2'/>
+<Pos l='132' c='13' s='2'/>
 </Attr>
 </Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='125' c='25' s='2'/>
+<Pos l='132' c='19' s='2'/>
 </Attr>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='125' c='24' s='1'/>
+<Pos l='132' c='18' s='1'/>
 </Attr>
 </Integer_Literal>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='125' c='27' s='3'/>
+<Pos l='132' c='21' s='3'/>
 </Attr>
 </Id>
 </Binary_Exp>
 </Exp_Comparison>
-</Invariant>
-<Variant>
+<Quantified_Pred type='!'>
+<Attr>
+<Pos l='133' c='20' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='133' c='17' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='133' c='48' s='2'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='133' c='25' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='133' c='22' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='133' c='28' s='2'/>
+</Attr>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='133' c='27' s='1'/>
+</Attr>
+</Integer_Literal>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='126' c='21' s='1'/>
+<Pos l='133' c='34' s='1'/>
 </Attr>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='126' c='17' s='3'/>
+<Pos l='133' c='31' s='3'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='133' c='35' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;i'>
+<Attr>
+<Pos l='133' c='43' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='133' c='40' s='2'/>
 </Attr>
 </Id>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='126' c='23' s='2'/>
+<Pos l='133' c='45' s='2'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='133' c='67' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='133' c='62' s='0'/>
+</Attr>
+<Id value='rodizio_arr' typref='5'>
+<Attr>
+<Pos l='133' c='51' s='11'/>
+</Attr>
+</Id>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='133' c='63' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='133' c='81' s='0'/>
+</Attr>
+<Id value='buffer_saida' typref='5'>
+<Attr>
+<Pos l='133' c='69' s='12'/>
+</Attr>
+</Id>
+<Binary_Exp op='+i' typref='1'>
+<Attr>
+<Pos l='133' c='84' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='133' c='82' s='2'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='133' c='85' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+</Nary_Pred>
+</Invariant>
+<Variant>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='134' c='21' s='1'/>
+</Attr>
+<Id value='tam' typref='1'>
+<Attr>
+<Pos l='134' c='17' s='3'/>
+</Attr>
+</Id>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='134' c='23' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -1910,57 +2292,57 @@
 </While>
 <Assignement_Sub>
 <Attr>
-<Pos l='128' c='22' s='2'/>
+<Pos l='136' c='22' s='2'/>
 </Attr>
 <Variables>
 <Id value='rodizio_size' typref='1'>
 <Attr>
-<Pos l='128' c='9' s='12'/>
+<Pos l='136' c='9' s='12'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='128' c='25' s='3'/>
+<Pos l='136' c='25' s='3'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='129' c='24' s='2'/>
+<Pos l='137' c='24' s='2'/>
 </Attr>
 <Variables>
 <Id value='idx_correndo_v' typref='1'>
 <Attr>
-<Pos l='129' c='9' s='14'/>
+<Pos l='137' c='9' s='14'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='129' c='27' s='1'/>
+<Pos l='137' c='27' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='130' c='28' s='2'/>
+<Pos l='138' c='28' s='2'/>
 </Attr>
 <Variables>
 <Id value='torneio_iniciado_v' typref='0'>
 <Attr>
-<Pos l='130' c='9' s='18'/>
+<Pos l='138' c='9' s='18'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Boolean_Literal value='TRUE' typref='0'>
 <Attr>
-<Pos l='130' c='31' s='4'/>
+<Pos l='138' c='31' s='4'/>
 </Attr>
 </Boolean_Literal>
 </Values>
@@ -1972,27 +2354,27 @@
 </Operation>
 <Operation name='iniciar_ultimo_rodizio'>
 <Attr>
-<Pos l='133' c='1' s='22' endLine='149'/>
+<Pos l='141' c='1' s='22' endLine='159'/>
 </Attr>
 <Body>
 <VAR_IN>
 <Attr>
-<Pos l='134' c='5' s='3'/>
+<Pos l='142' c='5' s='3'/>
 </Attr>
 <Variables>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='134' c='9' s='3'/>
+<Pos l='142' c='9' s='3'/>
 </Attr>
 </Id>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='134' c='14' s='2'/>
+<Pos l='142' c='14' s='2'/>
 </Attr>
 </Id>
 <Id value='tmp_val' typref='1'>
 <Attr>
-<Pos l='134' c='18' s='7'/>
+<Pos l='142' c='18' s='7'/>
 </Attr>
 </Id>
 </Variables>
@@ -2000,71 +2382,71 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='135' c='9' s='20'/>
+<Pos l='143' c='9' s='20'/>
 </Attr>
 <Name>
 <Id value='extrair_lote_rodizio'>
 <Attr>
-<Pos l='135' c='9' s='20'/>
+<Pos l='143' c='9' s='20'/>
 </Attr>
 </Id>
 </Name>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='136' c='13' s='3'/>
+<Pos l='144' c='13' s='3'/>
 </Attr>
 <Name>
 <Id value='consultar_tamanho_lote_saida'>
 <Attr>
-<Pos l='136' c='17' s='28'/>
+<Pos l='144' c='17' s='28'/>
 </Attr>
 </Id>
 </Name>
 <Output_Parameters>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='136' c='9' s='3'/>
+<Pos l='144' c='9' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <Assignement_Sub>
 <Attr>
-<Pos l='137' c='12' s='2'/>
+<Pos l='145' c='12' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='137' c='9' s='2'/>
+<Pos l='145' c='9' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='137' c='15' s='1'/>
+<Pos l='145' c='15' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <While>
 <Attr>
-<Pos l='138' c='9' s='5'/>
+<Pos l='146' c='9' s='5'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&lt;i'>
 <Attr>
-<Pos l='138' c='18' s='1'/>
+<Pos l='146' c='18' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='138' c='15' s='2'/>
+<Pos l='146' c='15' s='2'/>
 </Attr>
 </Id>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='138' c='20' s='3'/>
+<Pos l='146' c='20' s='3'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -2073,28 +2455,28 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='139' c='21' s='3'/>
+<Pos l='147' c='21' s='3'/>
 </Attr>
 <Name>
 <Id value='consultar_lote_saida'>
 <Attr>
-<Pos l='139' c='25' s='20'/>
+<Pos l='147' c='25' s='20'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='139' c='51' s='1'/>
+<Pos l='147' c='51' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='139' c='48' s='2'/>
+<Pos l='147' c='48' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='139' c='53' s='1'/>
+<Pos l='147' c='53' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -2102,28 +2484,28 @@
 <Output_Parameters>
 <Id value='tmp_val' typref='1'>
 <Attr>
-<Pos l='139' c='13' s='7'/>
+<Pos l='147' c='13' s='7'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <Assignement_Sub>
 <Attr>
-<Pos l='140' c='32' s='2'/>
+<Pos l='148' c='32' s='2'/>
 </Attr>
 <Variables>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='140' c='25' s='0'/>
+<Pos l='148' c='25' s='0'/>
 </Attr>
 <Id value='rodizio_arr' typref='5'>
 <Attr>
-<Pos l='140' c='13' s='11'/>
+<Pos l='148' c='13' s='11'/>
 </Attr>
 </Id>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='140' c='27' s='2'/>
+<Pos l='148' c='27' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -2131,35 +2513,35 @@
 <Values>
 <Id value='tmp_val' typref='1'>
 <Attr>
-<Pos l='140' c='35' s='7'/>
+<Pos l='148' c='35' s='7'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='141' c='16' s='2'/>
+<Pos l='149' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='141' c='13' s='2'/>
+<Pos l='149' c='13' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='141' c='22' s='1'/>
+<Pos l='149' c='22' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='141' c='19' s='2'/>
+<Pos l='149' c='19' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='141' c='24' s='1'/>
+<Pos l='149' c='24' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -2168,45 +2550,163 @@
 </Nary_Sub>
 </Body>
 <Invariant>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='142' c='22' s='1'/>
+<Pos l='151' c='16' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='142' c='19' s='2'/>
+<Pos l='151' c='13' s='2'/>
 </Attr>
 </Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='142' c='25' s='2'/>
+<Pos l='151' c='19' s='2'/>
 </Attr>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='142' c='24' s='1'/>
+<Pos l='151' c='18' s='1'/>
 </Attr>
 </Integer_Literal>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='142' c='27' s='3'/>
+<Pos l='151' c='21' s='3'/>
 </Attr>
 </Id>
 </Binary_Exp>
 </Exp_Comparison>
-</Invariant>
-<Variant>
+<Quantified_Pred type='!'>
+<Attr>
+<Pos l='152' c='20' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='152' c='17' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='152' c='48' s='2'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='152' c='25' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='152' c='22' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='152' c='28' s='2'/>
+</Attr>
+<Integer_Literal value='0' typref='1'>
+<Attr>
+<Pos l='152' c='27' s='1'/>
+</Attr>
+</Integer_Literal>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='143' c='21' s='1'/>
+<Pos l='152' c='34' s='1'/>
 </Attr>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='143' c='17' s='3'/>
+<Pos l='152' c='31' s='3'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='152' c='35' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;i'>
+<Attr>
+<Pos l='152' c='43' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='152' c='40' s='2'/>
 </Attr>
 </Id>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='143' c='23' s='2'/>
+<Pos l='152' c='45' s='2'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='152' c='67' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='152' c='62' s='0'/>
+</Attr>
+<Id value='rodizio_arr' typref='5'>
+<Attr>
+<Pos l='152' c='51' s='11'/>
+</Attr>
+</Id>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='152' c='63' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='152' c='81' s='0'/>
+</Attr>
+<Id value='buffer_saida' typref='5'>
+<Attr>
+<Pos l='152' c='69' s='12'/>
+</Attr>
+</Id>
+<Binary_Exp op='+i' typref='1'>
+<Attr>
+<Pos l='152' c='84' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='152' c='82' s='2'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='152' c='85' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+</Nary_Pred>
+</Invariant>
+<Variant>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='153' c='21' s='1'/>
+</Attr>
+<Id value='tam' typref='1'>
+<Attr>
+<Pos l='153' c='17' s='3'/>
+</Attr>
+</Id>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='153' c='23' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -2214,76 +2714,76 @@
 </While>
 <Assignement_Sub>
 <Attr>
-<Pos l='145' c='22' s='2'/>
+<Pos l='155' c='22' s='2'/>
 </Attr>
 <Variables>
 <Id value='rodizio_size' typref='1'>
 <Attr>
-<Pos l='145' c='9' s='12'/>
+<Pos l='155' c='9' s='12'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='tam' typref='1'>
 <Attr>
-<Pos l='145' c='25' s='3'/>
+<Pos l='155' c='25' s='3'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='146' c='24' s='2'/>
+<Pos l='156' c='24' s='2'/>
 </Attr>
 <Variables>
 <Id value='idx_correndo_v' typref='1'>
 <Attr>
-<Pos l='146' c='9' s='14'/>
+<Pos l='156' c='9' s='14'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='146' c='27' s='1'/>
+<Pos l='156' c='27' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='147' c='35' s='2'/>
+<Pos l='157' c='35' s='2'/>
 </Attr>
 <Variables>
 <Id value='ultimo_rodizio_iniciado_v' typref='0'>
 <Attr>
-<Pos l='147' c='9' s='25'/>
+<Pos l='157' c='9' s='25'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Boolean_Literal value='TRUE' typref='0'>
 <Attr>
-<Pos l='147' c='38' s='4'/>
+<Pos l='157' c='38' s='4'/>
 </Attr>
 </Boolean_Literal>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='148' c='28' s='2'/>
+<Pos l='158' c='28' s='2'/>
 </Attr>
 <Variables>
 <Id value='torneio_iniciado_v' typref='0'>
 <Attr>
-<Pos l='148' c='9' s='18'/>
+<Pos l='158' c='9' s='18'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Boolean_Literal value='TRUE' typref='0'>
 <Attr>
-<Pos l='148' c='31' s='4'/>
+<Pos l='158' c='31' s='4'/>
 </Attr>
 </Boolean_Literal>
 </Values>
@@ -2295,36 +2795,36 @@
 </Operation>
 <Operation name='chamar_para_pista'>
 <Attr>
-<Pos l='151' c='1' s='17'/>
+<Pos l='161' c='1' s='17'/>
 </Attr>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='151' c='21' s='2'/>
+<Pos l='161' c='21' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Body>
 <Operation_Call>
 <Attr>
-<Pos l='152' c='22' s='0'/>
+<Pos l='162' c='22' s='0'/>
 </Attr>
 <Name>
 <Id value='atualizar_status'>
 <Attr>
-<Pos l='152' c='5' s='16'/>
+<Pos l='162' c='5' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='152' c='24' s='2'/>
+<Pos l='162' c='24' s='2'/>
 </Attr>
 </Id>
 <Id value='na_pista' typref='9'>
 <Attr>
-<Pos l='152' c='29' s='8'/>
+<Pos l='162' c='29' s='8'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -2333,54 +2833,59 @@
 </Operation>
 <Operation name='correr_boi_classificacao'>
 <Attr>
-<Pos l='154' c='1' s='24' endLine='187'/>
+<Pos l='164' c='1' s='24' endLine='201'/>
 </Attr>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='154' c='28' s='2'/>
+<Pos l='164' c='28' s='2'/>
 </Attr>
 </Id>
 <Id value='jj' typref='10'>
 <Attr>
-<Pos l='154' c='33' s='2'/>
+<Pos l='164' c='33' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Body>
 <VAR_IN>
 <Attr>
-<Pos l='155' c='5' s='3'/>
+<Pos l='165' c='5' s='3'/>
 </Attr>
 <Variables>
 <Id value='bc' typref='1'>
 <Attr>
-<Pos l='155' c='9' s='2'/>
+<Pos l='165' c='9' s='2'/>
 </Attr>
 </Id>
 <Id value='lim' typref='1'>
 <Attr>
-<Pos l='155' c='13' s='3'/>
+<Pos l='165' c='13' s='3'/>
 </Attr>
 </Id>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='155' c='18' s='2'/>
+<Pos l='165' c='18' s='2'/>
 </Attr>
 </Id>
 <Id value='prox' typref='1'>
 <Attr>
-<Pos l='155' c='22' s='4'/>
+<Pos l='165' c='22' s='4'/>
 </Attr>
 </Id>
 <Id value='tmp_val' typref='1'>
 <Attr>
-<Pos l='155' c='28' s='7'/>
+<Pos l='165' c='28' s='7'/>
 </Attr>
 </Id>
 <Id value='nbc' typref='1'>
 <Attr>
-<Pos l='155' c='37' s='3'/>
+<Pos l='165' c='37' s='3'/>
+</Attr>
+</Id>
+<Id value='old_rodizio' typref='5'>
+<Attr>
+<Pos l='165' c='42' s='11'/>
 </Attr>
 </Id>
 </Variables>
@@ -2388,78 +2893,78 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='156' c='44' s='0'/>
+<Pos l='166' c='44' s='0'/>
 </Attr>
 <Name>
 <Id value='registrar_julgamento_classificacao'>
 <Attr>
-<Pos l='156' c='9' s='34'/>
+<Pos l='166' c='9' s='34'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='156' c='46' s='2'/>
+<Pos l='166' c='46' s='2'/>
 </Attr>
 </Id>
 <Id value='jj' typref='10'>
 <Attr>
-<Pos l='156' c='51' s='2'/>
+<Pos l='166' c='51' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='159' c='12' s='3'/>
+<Pos l='169' c='12' s='3'/>
 </Attr>
 <Name>
 <Id value='get_bois_corridos'>
 <Attr>
-<Pos l='159' c='16' s='17'/>
+<Pos l='169' c='16' s='17'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='159' c='36' s='2'/>
+<Pos l='169' c='36' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='bc' typref='1'>
 <Attr>
-<Pos l='159' c='9' s='2'/>
+<Pos l='169' c='9' s='2'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <Assignement_Sub>
 <Attr>
-<Pos l='160' c='13' s='2'/>
+<Pos l='170' c='13' s='2'/>
 </Attr>
 <Variables>
 <Id value='nbc' typref='1'>
 <Attr>
-<Pos l='160' c='9' s='3'/>
+<Pos l='170' c='9' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='160' c='19' s='1'/>
+<Pos l='170' c='19' s='1'/>
 </Attr>
 <Id value='bc' typref='1'>
 <Attr>
-<Pos l='160' c='16' s='2'/>
+<Pos l='170' c='16' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='160' c='21' s='1'/>
+<Pos l='170' c='21' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -2467,53 +2972,53 @@
 </Assignement_Sub>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='162' c='9' s='2'/>
+<Pos l='172' c='9' s='2'/>
 </Attr>
 <Condition>
 <Nary_Pred op='or'>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='162' c='15' s='1'/>
+<Pos l='172' c='15' s='1'/>
 </Attr>
 <Id value='jj' typref='10'>
 <Attr>
-<Pos l='162' c='12' s='2'/>
+<Pos l='172' c='12' s='2'/>
 </Attr>
 </Id>
 <Id value='zero_boi' typref='10'>
 <Attr>
-<Pos l='162' c='17' s='8'/>
+<Pos l='172' c='17' s='8'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='162' c='33' s='1'/>
+<Pos l='172' c='33' s='1'/>
 </Attr>
 <Id value='jj' typref='10'>
 <Attr>
-<Pos l='162' c='30' s='2'/>
+<Pos l='172' c='30' s='2'/>
 </Attr>
 </Id>
 <Id value='valeu_boi' typref='10'>
 <Attr>
-<Pos l='162' c='35' s='9'/>
+<Pos l='172' c='35' s='9'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='162' c='51' s='1'/>
+<Pos l='172' c='51' s='1'/>
 </Attr>
 <Id value='nbc' typref='1'>
 <Attr>
-<Pos l='162' c='47' s='3'/>
+<Pos l='172' c='47' s='3'/>
 </Attr>
 </Id>
 <Id value='BOIS_PARA_CLASSIFICAR' typref='1'>
 <Attr>
-<Pos l='162' c='53' s='21'/>
+<Pos l='172' c='53' s='21'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -2524,28 +3029,47 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='163' c='16' s='2'/>
+<Pos l='173' c='25' s='2'/>
+</Attr>
+<Variables>
+<Id value='old_rodizio' typref='5'>
+<Attr>
+<Pos l='173' c='13' s='11'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='rodizio_arr' typref='5'>
+<Attr>
+<Pos l='173' c='28' s='11'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='174' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='163' c='13' s='2'/>
+<Pos l='174' c='13' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='163' c='34' s='1'/>
+<Pos l='174' c='34' s='1'/>
 </Attr>
 <Id value='idx_correndo_v' typref='1'>
 <Attr>
-<Pos l='163' c='19' s='14'/>
+<Pos l='174' c='19' s='14'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='163' c='36' s='1'/>
+<Pos l='174' c='36' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -2553,28 +3077,28 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='164' c='17' s='2'/>
+<Pos l='175' c='17' s='2'/>
 </Attr>
 <Variables>
 <Id value='lim' typref='1'>
 <Attr>
-<Pos l='164' c='13' s='3'/>
+<Pos l='175' c='13' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='164' c='33' s='1'/>
+<Pos l='175' c='33' s='1'/>
 </Attr>
 <Id value='rodizio_size' typref='1'>
 <Attr>
-<Pos l='164' c='20' s='12'/>
+<Pos l='175' c='20' s='12'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='164' c='35' s='1'/>
+<Pos l='175' c='35' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -2582,21 +3106,21 @@
 </Assignement_Sub>
 <While>
 <Attr>
-<Pos l='165' c='13' s='5'/>
+<Pos l='176' c='13' s='5'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&lt;i'>
 <Attr>
-<Pos l='165' c='22' s='1'/>
+<Pos l='176' c='22' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='165' c='19' s='2'/>
+<Pos l='176' c='19' s='2'/>
 </Attr>
 </Id>
 <Id value='lim' typref='1'>
 <Attr>
-<Pos l='165' c='24' s='3'/>
+<Pos l='176' c='24' s='3'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -2605,28 +3129,28 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='166' c='22' s='2'/>
+<Pos l='177' c='22' s='2'/>
 </Attr>
 <Variables>
 <Id value='prox' typref='1'>
 <Attr>
-<Pos l='166' c='17' s='4'/>
+<Pos l='177' c='17' s='4'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='166' c='28' s='1'/>
+<Pos l='177' c='28' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='166' c='25' s='2'/>
+<Pos l='177' c='25' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='166' c='30' s='1'/>
+<Pos l='177' c='30' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -2634,28 +3158,28 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='167' c='25' s='2'/>
+<Pos l='178' c='25' s='2'/>
 </Attr>
 <Variables>
 <Id value='tmp_val' typref='1'>
 <Attr>
-<Pos l='167' c='17' s='7'/>
+<Pos l='178' c='17' s='7'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='167' c='40' s='0'/>
+<Pos l='178' c='40' s='0'/>
 </Attr>
 <Id value='rodizio_arr' typref='5'>
 <Attr>
-<Pos l='167' c='28' s='11'/>
+<Pos l='178' c='28' s='11'/>
 </Attr>
 </Id>
 <Id value='prox' typref='1'>
 <Attr>
-<Pos l='167' c='42' s='4'/>
+<Pos l='178' c='42' s='4'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -2663,21 +3187,21 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='168' c='36' s='2'/>
+<Pos l='179' c='36' s='2'/>
 </Attr>
 <Variables>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='168' c='29' s='0'/>
+<Pos l='179' c='29' s='0'/>
 </Attr>
 <Id value='rodizio_arr' typref='5'>
 <Attr>
-<Pos l='168' c='17' s='11'/>
+<Pos l='179' c='17' s='11'/>
 </Attr>
 </Id>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='168' c='31' s='2'/>
+<Pos l='179' c='31' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -2685,35 +3209,35 @@
 <Values>
 <Id value='tmp_val' typref='1'>
 <Attr>
-<Pos l='168' c='39' s='7'/>
+<Pos l='179' c='39' s='7'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='169' c='20' s='2'/>
+<Pos l='180' c='20' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='169' c='17' s='2'/>
+<Pos l='180' c='17' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='169' c='26' s='1'/>
+<Pos l='180' c='26' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='169' c='23' s='2'/>
+<Pos l='180' c='23' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='169' c='28' s='1'/>
+<Pos l='180' c='28' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -2722,55 +3246,279 @@
 </Nary_Sub>
 </Body>
 <Invariant>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='170' c='26' s='1'/>
+<Pos l='182' c='20' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='170' c='23' s='2'/>
+<Pos l='182' c='17' s='2'/>
 </Attr>
 </Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='170' c='48' s='2'/>
+<Pos l='182' c='42' s='2'/>
 </Attr>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='170' c='44' s='1'/>
+<Pos l='182' c='38' s='1'/>
 </Attr>
 <Id value='idx_correndo_v' typref='1'>
 <Attr>
-<Pos l='170' c='29' s='14'/>
+<Pos l='182' c='23' s='14'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='170' c='46' s='1'/>
+<Pos l='182' c='40' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
 <Id value='lim' typref='1'>
 <Attr>
-<Pos l='170' c='50' s='3'/>
+<Pos l='182' c='44' s='3'/>
 </Attr>
 </Id>
 </Binary_Exp>
 </Exp_Comparison>
-</Invariant>
-<Variant>
+<Quantified_Pred type='!'>
+<Attr>
+<Pos l='183' c='25' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj2' typref='1'>
+<Attr>
+<Pos l='183' c='21' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='183' c='70' s='2'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='183' c='31' s='1'/>
+</Attr>
+<Id value='jj2' typref='1'>
+<Attr>
+<Pos l='183' c='27' s='3'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='183' c='53' s='2'/>
+</Attr>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='171' c='25' s='1'/>
+<Pos l='183' c='49' s='1'/>
 </Attr>
+<Id value='idx_correndo_v' typref='1'>
+<Attr>
+<Pos l='183' c='34' s='14'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='183' c='51' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
 <Id value='lim' typref='1'>
 <Attr>
-<Pos l='171' c='21' s='3'/>
+<Pos l='183' c='55' s='3'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='&lt;i'>
+<Attr>
+<Pos l='183' c='65' s='1'/>
+</Attr>
+<Id value='jj2' typref='1'>
+<Attr>
+<Pos l='183' c='61' s='3'/>
 </Attr>
 </Id>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='171' c='27' s='2'/>
+<Pos l='183' c='67' s='2'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='183' c='90' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='183' c='84' s='0'/>
+</Attr>
+<Id value='rodizio_arr' typref='5'>
+<Attr>
+<Pos l='183' c='73' s='11'/>
+</Attr>
+</Id>
+<Id value='jj2' typref='1'>
+<Attr>
+<Pos l='183' c='85' s='3'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='183' c='103' s='0'/>
+</Attr>
+<Id value='old_rodizio' typref='5'>
+<Attr>
+<Pos l='183' c='92' s='11'/>
+</Attr>
+</Id>
+<Binary_Exp op='+i' typref='1'>
+<Attr>
+<Pos l='183' c='107' s='1'/>
+</Attr>
+<Id value='jj2' typref='1'>
+<Attr>
+<Pos l='183' c='104' s='3'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='183' c='108' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+<Quantified_Pred type='!'>
+<Attr>
+<Pos l='184' c='25' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj2' typref='1'>
+<Attr>
+<Pos l='184' c='21' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='184' c='71' s='2'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='184' c='31' s='1'/>
+</Attr>
+<Id value='jj2' typref='1'>
+<Attr>
+<Pos l='184' c='27' s='3'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='184' c='53' s='2'/>
+</Attr>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='184' c='49' s='1'/>
+</Attr>
+<Id value='idx_correndo_v' typref='1'>
+<Attr>
+<Pos l='184' c='34' s='14'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='184' c='51' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+<Id value='lim' typref='1'>
+<Attr>
+<Pos l='184' c='55' s='3'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='&gt;=i'>
+<Attr>
+<Pos l='184' c='65' s='2'/>
+</Attr>
+<Id value='jj2' typref='1'>
+<Attr>
+<Pos l='184' c='61' s='3'/>
+</Attr>
+</Id>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='184' c='68' s='2'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='184' c='91' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='184' c='85' s='0'/>
+</Attr>
+<Id value='rodizio_arr' typref='5'>
+<Attr>
+<Pos l='184' c='74' s='11'/>
+</Attr>
+</Id>
+<Id value='jj2' typref='1'>
+<Attr>
+<Pos l='184' c='86' s='3'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='184' c='104' s='0'/>
+</Attr>
+<Id value='old_rodizio' typref='5'>
+<Attr>
+<Pos l='184' c='93' s='11'/>
+</Attr>
+</Id>
+<Id value='jj2' typref='1'>
+<Attr>
+<Pos l='184' c='105' s='3'/>
+</Attr>
+</Id>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+</Nary_Pred>
+</Invariant>
+<Variant>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='185' c='25' s='1'/>
+</Attr>
+<Id value='lim' typref='1'>
+<Attr>
+<Pos l='185' c='21' s='3'/>
+</Attr>
+</Id>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='185' c='27' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -2778,28 +3526,28 @@
 </While>
 <Assignement_Sub>
 <Attr>
-<Pos l='173' c='26' s='2'/>
+<Pos l='187' c='26' s='2'/>
 </Attr>
 <Variables>
 <Id value='rodizio_size' typref='1'>
 <Attr>
-<Pos l='173' c='13' s='12'/>
+<Pos l='187' c='13' s='12'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='173' c='42' s='1'/>
+<Pos l='187' c='42' s='1'/>
 </Attr>
 <Id value='rodizio_size' typref='1'>
 <Attr>
-<Pos l='173' c='29' s='12'/>
+<Pos l='187' c='29' s='12'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='173' c='44' s='1'/>
+<Pos l='187' c='44' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -2807,21 +3555,21 @@
 </Assignement_Sub>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='175' c='13' s='2'/>
+<Pos l='189' c='13' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='175' c='29' s='1'/>
+<Pos l='189' c='29' s='1'/>
 </Attr>
 <Id value='rodizio_size' typref='1'>
 <Attr>
-<Pos l='175' c='16' s='12'/>
+<Pos l='189' c='16' s='12'/>
 </Attr>
 </Id>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='175' c='31' s='1'/>
+<Pos l='189' c='31' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -2829,19 +3577,19 @@
 <Then>
 <Assignement_Sub>
 <Attr>
-<Pos l='176' c='32' s='2'/>
+<Pos l='190' c='32' s='2'/>
 </Attr>
 <Variables>
 <Id value='idx_correndo_v' typref='1'>
 <Attr>
-<Pos l='176' c='17' s='14'/>
+<Pos l='190' c='17' s='14'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='176' c='35' s='1'/>
+<Pos l='190' c='35' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
@@ -2852,16 +3600,16 @@
 <Condition>
 <Exp_Comparison op='&gt;i'>
 <Attr>
-<Pos l='177' c='34' s='1'/>
+<Pos l='191' c='34' s='1'/>
 </Attr>
 <Id value='idx_correndo_v' typref='1'>
 <Attr>
-<Pos l='177' c='19' s='14'/>
+<Pos l='191' c='19' s='14'/>
 </Attr>
 </Id>
 <Id value='rodizio_size' typref='1'>
 <Attr>
-<Pos l='177' c='36' s='12'/>
+<Pos l='191' c='36' s='12'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -2869,19 +3617,19 @@
 <Then>
 <Assignement_Sub>
 <Attr>
-<Pos l='178' c='32' s='2'/>
+<Pos l='192' c='32' s='2'/>
 </Attr>
 <Variables>
 <Id value='idx_correndo_v' typref='1'>
 <Attr>
-<Pos l='178' c='17' s='14'/>
+<Pos l='192' c='17' s='14'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='178' c='35' s='1'/>
+<Pos l='192' c='35' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
@@ -2895,21 +3643,21 @@
 <Else>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='181' c='13' s='2'/>
+<Pos l='195' c='13' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&lt;i'>
 <Attr>
-<Pos l='181' c='31' s='1'/>
+<Pos l='195' c='31' s='1'/>
 </Attr>
 <Id value='idx_correndo_v' typref='1'>
 <Attr>
-<Pos l='181' c='16' s='14'/>
+<Pos l='195' c='16' s='14'/>
 </Attr>
 </Id>
 <Id value='rodizio_size' typref='1'>
 <Attr>
-<Pos l='181' c='33' s='12'/>
+<Pos l='195' c='33' s='12'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -2917,28 +3665,28 @@
 <Then>
 <Assignement_Sub>
 <Attr>
-<Pos l='182' c='32' s='2'/>
+<Pos l='196' c='32' s='2'/>
 </Attr>
 <Variables>
 <Id value='idx_correndo_v' typref='1'>
 <Attr>
-<Pos l='182' c='17' s='14'/>
+<Pos l='196' c='17' s='14'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='182' c='50' s='1'/>
+<Pos l='196' c='50' s='1'/>
 </Attr>
 <Id value='idx_correndo_v' typref='1'>
 <Attr>
-<Pos l='182' c='35' s='14'/>
+<Pos l='196' c='35' s='14'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='182' c='52' s='1'/>
+<Pos l='196' c='52' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -2948,19 +3696,19 @@
 <Else>
 <Assignement_Sub>
 <Attr>
-<Pos l='184' c='32' s='2'/>
+<Pos l='198' c='32' s='2'/>
 </Attr>
 <Variables>
 <Id value='idx_correndo_v' typref='1'>
 <Attr>
-<Pos l='184' c='17' s='14'/>
+<Pos l='198' c='17' s='14'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='184' c='35' s='1'/>
+<Pos l='198' c='35' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
@@ -2976,24 +3724,24 @@
 </Operation>
 <Operation name='iniciar_fase_disputa'>
 <Attr>
-<Pos l='189' c='1' s='20'/>
+<Pos l='203' c='1' s='20'/>
 </Attr>
 <Body>
 <Assignement_Sub>
 <Attr>
-<Pos l='190' c='18' s='2'/>
+<Pos l='204' c='18' s='2'/>
 </Attr>
 <Variables>
 <Id value='fase_atual_v' typref='4'>
 <Attr>
-<Pos l='190' c='5' s='12'/>
+<Pos l='204' c='5' s='12'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='disputa' typref='4'>
 <Attr>
-<Pos l='190' c='21' s='7'/>
+<Pos l='204' c='21' s='7'/>
 </Attr>
 </Id>
 </Values>
@@ -3002,34 +3750,34 @@
 </Operation>
 <Operation name='correr_boi_disputa'>
 <Attr>
-<Pos l='192' c='1' s='18' endLine='207'/>
+<Pos l='206' c='1' s='18' endLine='221'/>
 </Attr>
 <Input_Parameters>
 <Id value='jj' typref='10'>
 <Attr>
-<Pos l='192' c='22' s='2'/>
+<Pos l='206' c='22' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Body>
 <VAR_IN>
 <Attr>
-<Pos l='193' c='5' s='3'/>
+<Pos l='207' c='5' s='3'/>
 </Attr>
 <Variables>
 <Id value='ss_val' typref='1'>
 <Attr>
-<Pos l='193' c='9' s='6'/>
+<Pos l='207' c='9' s='6'/>
 </Attr>
 </Id>
 <Id value='vaqueiro_eliminado' typref='1'>
 <Attr>
-<Pos l='193' c='17' s='18'/>
+<Pos l='207' c='17' s='18'/>
 </Attr>
 </Id>
 <Id value='calc_premio' typref='1'>
 <Attr>
-<Pos l='193' c='37' s='11'/>
+<Pos l='207' c='37' s='11'/>
 </Attr>
 </Id>
 </Variables>
@@ -3037,37 +3785,37 @@
 <Nary_Sub op=';'>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='194' c='9' s='2'/>
+<Pos l='208' c='9' s='2'/>
 </Attr>
 <Condition>
 <Nary_Pred op='&amp;'>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='194' c='15' s='1'/>
+<Pos l='208' c='15' s='1'/>
 </Attr>
 <Id value='jj' typref='10'>
 <Attr>
-<Pos l='194' c='12' s='2'/>
+<Pos l='208' c='12' s='2'/>
 </Attr>
 </Id>
 <Id value='zero_boi' typref='10'>
 <Attr>
-<Pos l='194' c='17' s='8'/>
+<Pos l='208' c='17' s='8'/>
 </Attr>
 </Id>
 </Exp_Comparison>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='194' c='50' s='1'/>
+<Pos l='208' c='50' s='1'/>
 </Attr>
 <Id value='racha_sem_finalizar_v' typref='0'>
 <Attr>
-<Pos l='194' c='28' s='21'/>
+<Pos l='208' c='28' s='21'/>
 </Attr>
 </Id>
 <Boolean_Literal value='TRUE' typref='0'>
 <Attr>
-<Pos l='194' c='52' s='4'/>
+<Pos l='208' c='52' s='4'/>
 </Attr>
 </Boolean_Literal>
 </Exp_Comparison>
@@ -3077,82 +3825,82 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='195' c='20' s='3'/>
+<Pos l='209' c='20' s='3'/>
 </Attr>
 <Name>
 <Id value='get_primeiro_fila_disputa'>
 <Attr>
-<Pos l='195' c='24' s='25'/>
+<Pos l='209' c='24' s='25'/>
 </Attr>
 </Id>
 </Name>
 <Output_Parameters>
 <Id value='ss_val' typref='1'>
 <Attr>
-<Pos l='195' c='13' s='6'/>
+<Pos l='209' c='13' s='6'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <Operation_Call>
 <Attr>
-<Pos l='196' c='32' s='3'/>
+<Pos l='210' c='32' s='3'/>
 </Attr>
 <Name>
 <Id value='get_dono_senha'>
 <Attr>
-<Pos l='196' c='36' s='14'/>
+<Pos l='210' c='36' s='14'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ss_val' typref='1'>
 <Attr>
-<Pos l='196' c='53' s='6'/>
+<Pos l='210' c='53' s='6'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='vaqueiro_eliminado' typref='1'>
 <Attr>
-<Pos l='196' c='13' s='18'/>
+<Pos l='210' c='13' s='18'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <Assignement_Sub>
 <Attr>
-<Pos l='198' c='25' s='2'/>
+<Pos l='212' c='25' s='2'/>
 </Attr>
 <Variables>
 <Id value='calc_premio' typref='1'>
 <Attr>
-<Pos l='198' c='13' s='11'/>
+<Pos l='212' c='13' s='11'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='198' c='53' s='0'/>
+<Pos l='212' c='53' s='0'/>
 </Attr>
 <Id value='premiacao_individual_arr' typref='5'>
 <Attr>
-<Pos l='198' c='28' s='24'/>
+<Pos l='212' c='28' s='24'/>
 </Attr>
 </Id>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='198' c='74' s='1'/>
+<Pos l='212' c='74' s='1'/>
 </Attr>
 <Id value='vaqueiro_eliminado' typref='1'>
 <Attr>
-<Pos l='198' c='55' s='18'/>
+<Pos l='212' c='55' s='18'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='198' c='76' s='1'/>
+<Pos l='212' c='76' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -3161,28 +3909,28 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='199' c='25' s='2'/>
+<Pos l='213' c='25' s='2'/>
 </Attr>
 <Variables>
 <Id value='calc_premio' typref='1'>
 <Attr>
-<Pos l='199' c='13' s='11'/>
+<Pos l='213' c='13' s='11'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='199' c='40' s='1'/>
+<Pos l='213' c='40' s='1'/>
 </Attr>
 <Id value='calc_premio' typref='1'>
 <Attr>
-<Pos l='199' c='28' s='11'/>
+<Pos l='213' c='28' s='11'/>
 </Attr>
 </Id>
 <Id value='premiacao_vagas_v' typref='1'>
 <Attr>
-<Pos l='199' c='42' s='17'/>
+<Pos l='213' c='42' s='17'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -3190,30 +3938,30 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='200' c='65' s='2'/>
+<Pos l='214' c='65' s='2'/>
 </Attr>
 <Variables>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='200' c='38' s='0'/>
+<Pos l='214' c='38' s='0'/>
 </Attr>
 <Id value='premiacao_individual_arr' typref='5'>
 <Attr>
-<Pos l='200' c='13' s='24'/>
+<Pos l='214' c='13' s='24'/>
 </Attr>
 </Id>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='200' c='59' s='1'/>
+<Pos l='214' c='59' s='1'/>
 </Attr>
 <Id value='vaqueiro_eliminado' typref='1'>
 <Attr>
-<Pos l='200' c='40' s='18'/>
+<Pos l='214' c='40' s='18'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='200' c='61' s='1'/>
+<Pos l='214' c='61' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -3222,35 +3970,35 @@
 <Values>
 <Id value='calc_premio' typref='1'>
 <Attr>
-<Pos l='200' c='68' s='11'/>
+<Pos l='214' c='68' s='11'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='202' c='37' s='2'/>
+<Pos l='216' c='37' s='2'/>
 </Attr>
 <Variables>
 <Id value='premiacao_total_atual_v' typref='1'>
 <Attr>
-<Pos l='202' c='13' s='23'/>
+<Pos l='216' c='13' s='23'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='202' c='64' s='1'/>
+<Pos l='216' c='64' s='1'/>
 </Attr>
 <Id value='premiacao_total_atual_v' typref='1'>
 <Attr>
-<Pos l='202' c='40' s='23'/>
+<Pos l='216' c='40' s='23'/>
 </Attr>
 </Id>
 <Id value='premiacao_vagas_v' typref='1'>
 <Attr>
-<Pos l='202' c='66' s='17'/>
+<Pos l='216' c='66' s='17'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -3258,30 +4006,30 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='203' c='42' s='2'/>
+<Pos l='217' c='42' s='2'/>
 </Attr>
 <Variables>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='203' c='27' s='0'/>
+<Pos l='217' c='27' s='0'/>
 </Attr>
 <Id value='colocacao_arr' typref='5'>
 <Attr>
-<Pos l='203' c='13' s='13'/>
+<Pos l='217' c='13' s='13'/>
 </Attr>
 </Id>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='203' c='36' s='1'/>
+<Pos l='217' c='36' s='1'/>
 </Attr>
 <Id value='ss_val' typref='1'>
 <Attr>
-<Pos l='203' c='29' s='6'/>
+<Pos l='217' c='29' s='6'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='203' c='38' s='1'/>
+<Pos l='217' c='38' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -3290,35 +4038,35 @@
 <Values>
 <Id value='posicao_atual_v' typref='1'>
 <Attr>
-<Pos l='203' c='45' s='15'/>
+<Pos l='217' c='45' s='15'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='204' c='29' s='2'/>
+<Pos l='218' c='29' s='2'/>
 </Attr>
 <Variables>
 <Id value='posicao_atual_v' typref='1'>
 <Attr>
-<Pos l='204' c='13' s='15'/>
+<Pos l='218' c='13' s='15'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='204' c='48' s='1'/>
+<Pos l='218' c='48' s='1'/>
 </Attr>
 <Id value='posicao_atual_v' typref='1'>
 <Attr>
-<Pos l='204' c='32' s='15'/>
+<Pos l='218' c='32' s='15'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='204' c='50' s='1'/>
+<Pos l='218' c='50' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -3329,19 +4077,19 @@
 </If_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='206' c='37' s='0'/>
+<Pos l='220' c='37' s='0'/>
 </Attr>
 <Name>
 <Id value='processar_resultado_disputa'>
 <Attr>
-<Pos l='206' c='9' s='27'/>
+<Pos l='220' c='9' s='27'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='jj' typref='10'>
 <Attr>
-<Pos l='206' c='39' s='2'/>
+<Pos l='220' c='39' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
@@ -3353,17 +4101,17 @@
 </Operation>
 <Operation name='iniciar_nova_rodada_disputa'>
 <Attr>
-<Pos l='209' c='1' s='27'/>
+<Pos l='223' c='1' s='27'/>
 </Attr>
 <Body>
 <Operation_Call>
 <Attr>
-<Pos l='210' c='5' s='22'/>
+<Pos l='224' c='5' s='22'/>
 </Attr>
 <Name>
 <Id value='avancar_rodada_disputa'>
 <Attr>
-<Pos l='210' c='5' s='22'/>
+<Pos l='224' c='5' s='22'/>
 </Attr>
 </Id>
 </Name>
@@ -3372,24 +4120,24 @@
 </Operation>
 <Operation name='finalizar_sem_vencedor'>
 <Attr>
-<Pos l='212' c='1' s='22'/>
+<Pos l='226' c='1' s='22'/>
 </Attr>
 <Body>
 <Assignement_Sub>
 <Attr>
-<Pos l='213' c='18' s='2'/>
+<Pos l='227' c='18' s='2'/>
 </Attr>
 <Variables>
 <Id value='fase_atual_v' typref='4'>
 <Attr>
-<Pos l='213' c='5' s='12'/>
+<Pos l='227' c='5' s='12'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='encerrado' typref='4'>
 <Attr>
-<Pos l='213' c='21' s='9'/>
+<Pos l='227' c='21' s='9'/>
 </Attr>
 </Id>
 </Values>
@@ -3398,37 +4146,37 @@
 </Operation>
 <Operation name='rachar_sem_finalizar'>
 <Attr>
-<Pos l='215' c='1' s='20' endLine='238'/>
+<Pos l='229' c='1' s='20' endLine='254'/>
 </Attr>
 <Body>
 <VAR_IN>
 <Attr>
-<Pos l='216' c='5' s='3'/>
+<Pos l='230' c='5' s='3'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='216' c='9' s='2'/>
+<Pos l='230' c='9' s='2'/>
 </Attr>
 </Id>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='216' c='13' s='3'/>
+<Pos l='230' c='13' s='3'/>
 </Attr>
 </Id>
 <Id value='st' typref='9'>
 <Attr>
-<Pos l='216' c='18' s='2'/>
+<Pos l='230' c='18' s='2'/>
 </Attr>
 </Id>
 <Id value='div_base' typref='1'>
 <Attr>
-<Pos l='216' c='22' s='8'/>
+<Pos l='230' c='22' s='8'/>
 </Attr>
 </Id>
 <Id value='prize_calc' typref='1'>
 <Attr>
-<Pos l='216' c='32' s='10'/>
+<Pos l='230' c='32' s='10'/>
 </Attr>
 </Id>
 </Variables>
@@ -3436,59 +4184,59 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='217' c='13' s='2'/>
+<Pos l='231' c='13' s='2'/>
 </Attr>
 <Variables>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='217' c='9' s='3'/>
+<Pos l='231' c='9' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='217' c='16' s='1'/>
+<Pos l='231' c='16' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='218' c='12' s='2'/>
+<Pos l='232' c='12' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='218' c='9' s='2'/>
+<Pos l='232' c='9' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='218' c='15' s='1'/>
+<Pos l='232' c='15' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <While>
 <Attr>
-<Pos l='219' c='9' s='5'/>
+<Pos l='233' c='9' s='5'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&lt;=i'>
 <Attr>
-<Pos l='219' c='18' s='2'/>
+<Pos l='233' c='18' s='2'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='219' c='15' s='2'/>
+<Pos l='233' c='15' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='20' typref='1'>
 <Attr>
-<Pos l='219' c='21' s='2'/>
+<Pos l='233' c='21' s='2'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -3497,47 +4245,47 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='220' c='16' s='3'/>
+<Pos l='234' c='16' s='3'/>
 </Attr>
 <Name>
 <Id value='get_estado_senha'>
 <Attr>
-<Pos l='220' c='20' s='16'/>
+<Pos l='234' c='20' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='220' c='39' s='2'/>
+<Pos l='234' c='39' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='st' typref='9'>
 <Attr>
-<Pos l='220' c='13' s='2'/>
+<Pos l='234' c='13' s='2'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='221' c='13' s='2'/>
+<Pos l='235' c='13' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='221' c='19' s='1'/>
+<Pos l='235' c='19' s='1'/>
 </Attr>
 <Id value='st' typref='9'>
 <Attr>
-<Pos l='221' c='16' s='2'/>
+<Pos l='235' c='16' s='2'/>
 </Attr>
 </Id>
 <Id value='classificada' typref='9'>
 <Attr>
-<Pos l='221' c='21' s='12'/>
+<Pos l='235' c='21' s='12'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -3545,28 +4293,28 @@
 <Then>
 <Assignement_Sub>
 <Attr>
-<Pos l='222' c='21' s='2'/>
+<Pos l='236' c='21' s='2'/>
 </Attr>
 <Variables>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='222' c='17' s='3'/>
+<Pos l='236' c='17' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='222' c='28' s='1'/>
+<Pos l='236' c='28' s='1'/>
 </Attr>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='222' c='24' s='3'/>
+<Pos l='236' c='24' s='3'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='222' c='30' s='1'/>
+<Pos l='236' c='30' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -3576,28 +4324,28 @@
 </If_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='224' c='16' s='2'/>
+<Pos l='238' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='224' c='13' s='2'/>
+<Pos l='238' c='13' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='224' c='22' s='1'/>
+<Pos l='238' c='22' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='224' c='19' s='2'/>
+<Pos l='238' c='19' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='224' c='24' s='1'/>
+<Pos l='238' c='24' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -3606,45 +4354,158 @@
 </Nary_Sub>
 </Body>
 <Invariant>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='225' c='22' s='1'/>
+<Pos l='240' c='16' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='225' c='19' s='2'/>
+<Pos l='240' c='13' s='2'/>
 </Attr>
 </Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='225' c='25' s='2'/>
+<Pos l='240' c='19' s='2'/>
 </Attr>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='225' c='24' s='1'/>
+<Pos l='240' c='18' s='1'/>
 </Attr>
 </Integer_Literal>
 <Integer_Literal value='21' typref='1'>
 <Attr>
-<Pos l='225' c='27' s='2'/>
+<Pos l='240' c='21' s='2'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
 </Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='241' c='19' s='1'/>
+</Attr>
+<Id value='qtd' typref='1'>
+<Attr>
+<Pos l='241' c='15' s='3'/>
+</Attr>
+</Id>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='241' c='21' s='4'/>
+</Attr>
+<Quantified_Set typref='2'>
+<Attr>
+<Pos l='241' c='27' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='241' c='29' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='241' c='37' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='241' c='34' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='241' c='40' s='2'/>
+</Attr>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='241' c='39' s='1'/>
+</Attr>
+</Integer_Literal>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='241' c='45' s='1'/>
+</Attr>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='241' c='43' s='2'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='241' c='46' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='241' c='54' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='241' c='51' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='241' c='56' s='3'/>
+</Attr>
+<Id value='estado_senha' typref='11'>
+<Attr>
+<Pos l='241' c='60' s='12'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='241' c='93' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='9'>
+<Attr>
+<Pos l='241' c='88' s='0'/>
+</Attr>
+<Id value='estado_senha' typref='11'>
+<Attr>
+<Pos l='241' c='76' s='12'/>
+</Attr>
+</Id>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='241' c='89' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Id value='classificada' typref='9'>
+<Attr>
+<Pos l='241' c='95' s='12'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Body>
+</Quantified_Set>
+</Unary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
 </Invariant>
 <Variant>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='226' c='20' s='1'/>
+<Pos l='242' c='20' s='1'/>
 </Attr>
 <Integer_Literal value='21' typref='1'>
 <Attr>
-<Pos l='226' c='17' s='2'/>
+<Pos l='242' c='17' s='2'/>
 </Attr>
 </Integer_Literal>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='226' c='22' s='2'/>
+<Pos l='242' c='22' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -3652,66 +4513,66 @@
 </While>
 <Assignement_Sub>
 <Attr>
-<Pos l='229' c='31' s='2'/>
+<Pos l='245' c='31' s='2'/>
 </Attr>
 <Variables>
 <Id value='racha_sem_finalizar_v' typref='0'>
 <Attr>
-<Pos l='229' c='9' s='21'/>
+<Pos l='245' c='9' s='21'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Boolean_Literal value='TRUE' typref='0'>
 <Attr>
-<Pos l='229' c='34' s='4'/>
+<Pos l='245' c='34' s='4'/>
 </Attr>
 </Boolean_Literal>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='230' c='25' s='2'/>
+<Pos l='246' c='25' s='2'/>
 </Attr>
 <Variables>
 <Id value='posicao_atual_v' typref='1'>
 <Attr>
-<Pos l='230' c='9' s='15'/>
+<Pos l='246' c='9' s='15'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='230' c='28' s='3'/>
+<Pos l='246' c='28' s='3'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='232' c='18' s='2'/>
+<Pos l='248' c='18' s='2'/>
 </Attr>
 <Variables>
 <Id value='div_base' typref='1'>
 <Attr>
-<Pos l='232' c='9' s='8'/>
+<Pos l='248' c='9' s='8'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='232' c='25' s='1'/>
+<Pos l='248' c='25' s='1'/>
 </Attr>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='232' c='21' s='3'/>
+<Pos l='248' c='21' s='3'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='232' c='27' s='1'/>
+<Pos l='248' c='27' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -3719,28 +4580,28 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='233' c='18' s='2'/>
+<Pos l='249' c='18' s='2'/>
 </Attr>
 <Variables>
 <Id value='div_base' typref='1'>
 <Attr>
-<Pos l='233' c='9' s='8'/>
+<Pos l='249' c='9' s='8'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='*i' typref='1'>
 <Attr>
-<Pos l='233' c='23' s='1'/>
+<Pos l='249' c='23' s='1'/>
 </Attr>
 <Integer_Literal value='2' typref='1'>
 <Attr>
-<Pos l='233' c='21' s='1'/>
+<Pos l='249' c='21' s='1'/>
 </Attr>
 </Integer_Literal>
 <Id value='div_base' typref='1'>
 <Attr>
-<Pos l='233' c='25' s='8'/>
+<Pos l='249' c='25' s='8'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -3748,21 +4609,21 @@
 </Assignement_Sub>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='234' c='9' s='2'/>
+<Pos l='250' c='9' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&gt;i'>
 <Attr>
-<Pos l='234' c='21' s='1'/>
+<Pos l='250' c='21' s='1'/>
 </Attr>
 <Id value='div_base' typref='1'>
 <Attr>
-<Pos l='234' c='12' s='8'/>
+<Pos l='250' c='12' s='8'/>
 </Attr>
 </Id>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='234' c='23' s='1'/>
+<Pos l='250' c='23' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -3771,28 +4632,28 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='235' c='24' s='2'/>
+<Pos l='251' c='24' s='2'/>
 </Attr>
 <Variables>
 <Id value='prize_calc' typref='1'>
 <Attr>
-<Pos l='235' c='13' s='10'/>
+<Pos l='251' c='13' s='10'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='/i' typref='1'>
 <Attr>
-<Pos l='235' c='51' s='1'/>
+<Pos l='251' c='51' s='1'/>
 </Attr>
 <Id value='premiacao_total_atual_v' typref='1'>
 <Attr>
-<Pos l='235' c='27' s='23'/>
+<Pos l='251' c='27' s='23'/>
 </Attr>
 </Id>
 <Id value='div_base' typref='1'>
 <Attr>
-<Pos l='235' c='53' s='8'/>
+<Pos l='251' c='53' s='8'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -3800,19 +4661,19 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='236' c='31' s='2'/>
+<Pos l='252' c='31' s='2'/>
 </Attr>
 <Variables>
 <Id value='premiacao_vagas_v' typref='1'>
 <Attr>
-<Pos l='236' c='13' s='17'/>
+<Pos l='252' c='13' s='17'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='prize_calc' typref='1'>
 <Attr>
-<Pos l='236' c='34' s='10'/>
+<Pos l='252' c='34' s='10'/>
 </Attr>
 </Id>
 </Values>
@@ -3827,42 +4688,47 @@
 </Operation>
 <Operation name='rachar_premio'>
 <Attr>
-<Pos l='240' c='1' s='13' endLine='274'/>
+<Pos l='256' c='1' s='13' endLine='302'/>
 </Attr>
 <Body>
 <VAR_IN>
 <Attr>
-<Pos l='241' c='5' s='3'/>
+<Pos l='257' c='5' s='3'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='241' c='9' s='2'/>
+<Pos l='257' c='9' s='2'/>
 </Attr>
 </Id>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='241' c='13' s='3'/>
+<Pos l='257' c='13' s='3'/>
 </Attr>
 </Id>
 <Id value='st' typref='9'>
 <Attr>
-<Pos l='241' c='18' s='2'/>
+<Pos l='257' c='18' s='2'/>
 </Attr>
 </Id>
 <Id value='vq' typref='1'>
 <Attr>
-<Pos l='241' c='22' s='2'/>
+<Pos l='257' c='22' s='2'/>
 </Attr>
 </Id>
 <Id value='prize_per_senha' typref='1'>
 <Attr>
-<Pos l='241' c='26' s='15'/>
+<Pos l='257' c='26' s='15'/>
 </Attr>
 </Id>
 <Id value='cur_prize' typref='1'>
 <Attr>
-<Pos l='241' c='43' s='9'/>
+<Pos l='257' c='43' s='9'/>
+</Attr>
+</Id>
+<Id value='old_premio' typref='5'>
+<Attr>
+<Pos l='257' c='54' s='10'/>
 </Attr>
 </Id>
 </Variables>
@@ -3870,59 +4736,59 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='242' c='13' s='2'/>
+<Pos l='258' c='13' s='2'/>
 </Attr>
 <Variables>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='242' c='9' s='3'/>
+<Pos l='258' c='9' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='242' c='16' s='1'/>
+<Pos l='258' c='16' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='243' c='12' s='2'/>
+<Pos l='259' c='12' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='243' c='9' s='2'/>
+<Pos l='259' c='9' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='243' c='15' s='1'/>
+<Pos l='259' c='15' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <While>
 <Attr>
-<Pos l='244' c='9' s='5'/>
+<Pos l='260' c='9' s='5'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&lt;=i'>
 <Attr>
-<Pos l='244' c='18' s='2'/>
+<Pos l='260' c='18' s='2'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='244' c='15' s='2'/>
+<Pos l='260' c='15' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='20' typref='1'>
 <Attr>
-<Pos l='244' c='21' s='2'/>
+<Pos l='260' c='21' s='2'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -3931,47 +4797,47 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='245' c='16' s='3'/>
+<Pos l='261' c='16' s='3'/>
 </Attr>
 <Name>
 <Id value='get_estado_senha'>
 <Attr>
-<Pos l='245' c='20' s='16'/>
+<Pos l='261' c='20' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='245' c='39' s='2'/>
+<Pos l='261' c='39' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='st' typref='9'>
 <Attr>
-<Pos l='245' c='13' s='2'/>
+<Pos l='261' c='13' s='2'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='246' c='13' s='2'/>
+<Pos l='262' c='13' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='246' c='19' s='1'/>
+<Pos l='262' c='19' s='1'/>
 </Attr>
 <Id value='st' typref='9'>
 <Attr>
-<Pos l='246' c='16' s='2'/>
+<Pos l='262' c='16' s='2'/>
 </Attr>
 </Id>
 <Id value='classificada' typref='9'>
 <Attr>
-<Pos l='246' c='21' s='12'/>
+<Pos l='262' c='21' s='12'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -3979,28 +4845,28 @@
 <Then>
 <Assignement_Sub>
 <Attr>
-<Pos l='247' c='21' s='2'/>
+<Pos l='263' c='21' s='2'/>
 </Attr>
 <Variables>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='247' c='17' s='3'/>
+<Pos l='263' c='17' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='247' c='28' s='1'/>
+<Pos l='263' c='28' s='1'/>
 </Attr>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='247' c='24' s='3'/>
+<Pos l='263' c='24' s='3'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='247' c='30' s='1'/>
+<Pos l='263' c='30' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -4010,28 +4876,28 @@
 </If_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='249' c='16' s='2'/>
+<Pos l='265' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='249' c='13' s='2'/>
+<Pos l='265' c='13' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='249' c='22' s='1'/>
+<Pos l='265' c='22' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='249' c='19' s='2'/>
+<Pos l='265' c='19' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='249' c='24' s='1'/>
+<Pos l='265' c='24' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -4040,45 +4906,158 @@
 </Nary_Sub>
 </Body>
 <Invariant>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='250' c='22' s='1'/>
+<Pos l='267' c='16' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='250' c='19' s='2'/>
+<Pos l='267' c='13' s='2'/>
 </Attr>
 </Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='250' c='25' s='2'/>
+<Pos l='267' c='19' s='2'/>
 </Attr>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='250' c='24' s='1'/>
+<Pos l='267' c='18' s='1'/>
 </Attr>
 </Integer_Literal>
 <Integer_Literal value='21' typref='1'>
 <Attr>
-<Pos l='250' c='27' s='2'/>
+<Pos l='267' c='21' s='2'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
 </Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='268' c='19' s='1'/>
+</Attr>
+<Id value='qtd' typref='1'>
+<Attr>
+<Pos l='268' c='15' s='3'/>
+</Attr>
+</Id>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='268' c='21' s='4'/>
+</Attr>
+<Quantified_Set typref='2'>
+<Attr>
+<Pos l='268' c='27' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='268' c='29' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='268' c='37' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='268' c='34' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='268' c='40' s='2'/>
+</Attr>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='268' c='39' s='1'/>
+</Attr>
+</Integer_Literal>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='268' c='45' s='1'/>
+</Attr>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='268' c='43' s='2'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='268' c='46' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='268' c='54' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='268' c='51' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='268' c='56' s='3'/>
+</Attr>
+<Id value='estado_senha' typref='11'>
+<Attr>
+<Pos l='268' c='60' s='12'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='268' c='93' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='9'>
+<Attr>
+<Pos l='268' c='88' s='0'/>
+</Attr>
+<Id value='estado_senha' typref='11'>
+<Attr>
+<Pos l='268' c='76' s='12'/>
+</Attr>
+</Id>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='268' c='89' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Id value='classificada' typref='9'>
+<Attr>
+<Pos l='268' c='95' s='12'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Body>
+</Quantified_Set>
+</Unary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
 </Invariant>
 <Variant>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='251' c='20' s='1'/>
+<Pos l='269' c='20' s='1'/>
 </Attr>
 <Integer_Literal value='21' typref='1'>
 <Attr>
-<Pos l='251' c='17' s='2'/>
+<Pos l='269' c='17' s='2'/>
 </Attr>
 </Integer_Literal>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='251' c='22' s='2'/>
+<Pos l='269' c='22' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -4086,21 +5065,21 @@
 </While>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='254' c='9' s='2'/>
+<Pos l='272' c='9' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&gt;i'>
 <Attr>
-<Pos l='254' c='16' s='1'/>
+<Pos l='272' c='16' s='1'/>
 </Attr>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='254' c='12' s='3'/>
+<Pos l='272' c='12' s='3'/>
 </Attr>
 </Id>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='254' c='18' s='1'/>
+<Pos l='272' c='18' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -4109,28 +5088,28 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='255' c='29' s='2'/>
+<Pos l='273' c='29' s='2'/>
 </Attr>
 <Variables>
 <Id value='prize_per_senha' typref='1'>
 <Attr>
-<Pos l='255' c='13' s='15'/>
+<Pos l='273' c='13' s='15'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='/i' typref='1'>
 <Attr>
-<Pos l='255' c='56' s='1'/>
+<Pos l='273' c='56' s='1'/>
 </Attr>
 <Id value='premiacao_total_atual_v' typref='1'>
 <Attr>
-<Pos l='255' c='32' s='23'/>
+<Pos l='273' c='32' s='23'/>
 </Attr>
 </Id>
 <Id value='qtd' typref='1'>
 <Attr>
-<Pos l='255' c='58' s='3'/>
+<Pos l='273' c='58' s='3'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -4138,40 +5117,59 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='256' c='16' s='2'/>
+<Pos l='274' c='24' s='2'/>
+</Attr>
+<Variables>
+<Id value='old_premio' typref='5'>
+<Attr>
+<Pos l='274' c='13' s='10'/>
+</Attr>
+</Id>
+</Variables>
+<Values>
+<Id value='premiacao_individual_arr' typref='5'>
+<Attr>
+<Pos l='274' c='27' s='24'/>
+</Attr>
+</Id>
+</Values>
+</Assignement_Sub>
+<Assignement_Sub>
+<Attr>
+<Pos l='275' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='256' c='13' s='2'/>
+<Pos l='275' c='13' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='256' c='19' s='1'/>
+<Pos l='275' c='19' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <While>
 <Attr>
-<Pos l='257' c='13' s='5'/>
+<Pos l='276' c='13' s='5'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&lt;=i'>
 <Attr>
-<Pos l='257' c='22' s='2'/>
+<Pos l='276' c='22' s='2'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='257' c='19' s='2'/>
+<Pos l='276' c='19' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='20' typref='1'>
 <Attr>
-<Pos l='257' c='25' s='2'/>
+<Pos l='276' c='25' s='2'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -4180,47 +5178,47 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='258' c='20' s='3'/>
+<Pos l='277' c='20' s='3'/>
 </Attr>
 <Name>
 <Id value='get_estado_senha'>
 <Attr>
-<Pos l='258' c='24' s='16'/>
+<Pos l='277' c='24' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='258' c='43' s='2'/>
+<Pos l='277' c='43' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='st' typref='9'>
 <Attr>
-<Pos l='258' c='17' s='2'/>
+<Pos l='277' c='17' s='2'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='259' c='17' s='2'/>
+<Pos l='278' c='17' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='259' c='23' s='1'/>
+<Pos l='278' c='23' s='1'/>
 </Attr>
 <Id value='st' typref='9'>
 <Attr>
-<Pos l='259' c='20' s='2'/>
+<Pos l='278' c='20' s='2'/>
 </Attr>
 </Id>
 <Id value='classificada' typref='9'>
 <Attr>
-<Pos l='259' c='25' s='12'/>
+<Pos l='278' c='25' s='12'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -4229,63 +5227,63 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='260' c='24' s='3'/>
+<Pos l='279' c='24' s='3'/>
 </Attr>
 <Name>
 <Id value='get_dono_senha'>
 <Attr>
-<Pos l='260' c='28' s='14'/>
+<Pos l='279' c='28' s='14'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='260' c='45' s='2'/>
+<Pos l='279' c='45' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='vq' typref='1'>
 <Attr>
-<Pos l='260' c='21' s='2'/>
+<Pos l='279' c='21' s='2'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <Assignement_Sub>
 <Attr>
-<Pos l='261' c='31' s='2'/>
+<Pos l='280' c='31' s='2'/>
 </Attr>
 <Variables>
 <Id value='cur_prize' typref='1'>
 <Attr>
-<Pos l='261' c='21' s='9'/>
+<Pos l='280' c='21' s='9'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='261' c='59' s='0'/>
+<Pos l='280' c='59' s='0'/>
 </Attr>
 <Id value='premiacao_individual_arr' typref='5'>
 <Attr>
-<Pos l='261' c='34' s='24'/>
+<Pos l='280' c='34' s='24'/>
 </Attr>
 </Id>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='261' c='64' s='1'/>
+<Pos l='280' c='64' s='1'/>
 </Attr>
 <Id value='vq' typref='1'>
 <Attr>
-<Pos l='261' c='61' s='2'/>
+<Pos l='280' c='61' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='261' c='66' s='1'/>
+<Pos l='280' c='66' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -4294,28 +5292,28 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='262' c='31' s='2'/>
+<Pos l='281' c='31' s='2'/>
 </Attr>
 <Variables>
 <Id value='cur_prize' typref='1'>
 <Attr>
-<Pos l='262' c='21' s='9'/>
+<Pos l='281' c='21' s='9'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='262' c='44' s='1'/>
+<Pos l='281' c='44' s='1'/>
 </Attr>
 <Id value='cur_prize' typref='1'>
 <Attr>
-<Pos l='262' c='34' s='9'/>
+<Pos l='281' c='34' s='9'/>
 </Attr>
 </Id>
 <Id value='prize_per_senha' typref='1'>
 <Attr>
-<Pos l='262' c='46' s='15'/>
+<Pos l='281' c='46' s='15'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -4323,30 +5321,30 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='263' c='57' s='2'/>
+<Pos l='282' c='57' s='2'/>
 </Attr>
 <Variables>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='263' c='46' s='0'/>
+<Pos l='282' c='46' s='0'/>
 </Attr>
 <Id value='premiacao_individual_arr' typref='5'>
 <Attr>
-<Pos l='263' c='21' s='24'/>
+<Pos l='282' c='21' s='24'/>
 </Attr>
 </Id>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='263' c='51' s='1'/>
+<Pos l='282' c='51' s='1'/>
 </Attr>
 <Id value='vq' typref='1'>
 <Attr>
-<Pos l='263' c='48' s='2'/>
+<Pos l='282' c='48' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='263' c='53' s='1'/>
+<Pos l='282' c='53' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -4355,37 +5353,37 @@
 <Values>
 <Id value='cur_prize' typref='1'>
 <Attr>
-<Pos l='263' c='60' s='9'/>
+<Pos l='282' c='60' s='9'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='264' c='46' s='2'/>
+<Pos l='283' c='46' s='2'/>
 </Attr>
 <Variables>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='264' c='35' s='0'/>
+<Pos l='283' c='35' s='0'/>
 </Attr>
 <Id value='colocacao_arr' typref='5'>
 <Attr>
-<Pos l='264' c='21' s='13'/>
+<Pos l='283' c='21' s='13'/>
 </Attr>
 </Id>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='264' c='40' s='1'/>
+<Pos l='283' c='40' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='264' c='37' s='2'/>
+<Pos l='283' c='37' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='264' c='42' s='1'/>
+<Pos l='283' c='42' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -4394,7 +5392,7 @@
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='264' c='49' s='1'/>
+<Pos l='283' c='49' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
@@ -4404,28 +5402,28 @@
 </If_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='266' c='20' s='2'/>
+<Pos l='285' c='20' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='266' c='17' s='2'/>
+<Pos l='285' c='17' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='266' c='26' s='1'/>
+<Pos l='285' c='26' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='266' c='23' s='2'/>
+<Pos l='285' c='23' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='266' c='28' s='1'/>
+<Pos l='285' c='28' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -4434,45 +5432,443 @@
 </Nary_Sub>
 </Body>
 <Invariant>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='267' c='26' s='1'/>
+<Pos l='287' c='20' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='267' c='23' s='2'/>
+<Pos l='287' c='17' s='2'/>
 </Attr>
 </Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='267' c='29' s='2'/>
+<Pos l='287' c='23' s='2'/>
 </Attr>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='267' c='28' s='1'/>
+<Pos l='287' c='22' s='1'/>
 </Attr>
 </Integer_Literal>
 <Integer_Literal value='21' typref='1'>
 <Attr>
-<Pos l='267' c='31' s='2'/>
+<Pos l='287' c='25' s='2'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
 </Exp_Comparison>
+<Quantified_Pred type='!'>
+<Attr>
+<Pos l='288' c='25' s='1'/>
+</Attr>
+<Variables>
+<Id value='vq2' typref='1'>
+<Attr>
+<Pos l='288' c='21' s='3'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='288' c='38' s='2'/>
+</Attr>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='288' c='31' s='1'/>
+</Attr>
+<Id value='vq2' typref='1'>
+<Attr>
+<Pos l='288' c='27' s='3'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='288' c='34' s='2'/>
+</Attr>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='288' c='33' s='1'/>
+</Attr>
+</Integer_Literal>
+<Integer_Literal value='3' typref='1'>
+<Attr>
+<Pos l='288' c='36' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='289' c='53' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='289' c='45' s='0'/>
+</Attr>
+<Id value='premiacao_individual_arr' typref='5'>
+<Attr>
+<Pos l='289' c='21' s='24'/>
+</Attr>
+</Id>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='289' c='49' s='1'/>
+</Attr>
+<Id value='vq2' typref='1'>
+<Attr>
+<Pos l='289' c='46' s='3'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='289' c='50' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+<Binary_Exp op='+i' typref='1'>
+<Attr>
+<Pos l='290' c='43' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='290' c='35' s='0'/>
+</Attr>
+<Id value='old_premio' typref='5'>
+<Attr>
+<Pos l='290' c='25' s='10'/>
+</Attr>
+</Id>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='290' c='39' s='1'/>
+</Attr>
+<Id value='vq2' typref='1'>
+<Attr>
+<Pos l='290' c='36' s='3'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='290' c='40' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+<Binary_Exp op='*i' typref='1'>
+<Attr>
+<Pos l='290' c='61' s='1'/>
+</Attr>
+<Id value='prize_per_senha' typref='1'>
+<Attr>
+<Pos l='290' c='45' s='15'/>
+</Attr>
+</Id>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='290' c='63' s='4'/>
+</Attr>
+<Quantified_Set typref='2'>
+<Attr>
+<Pos l='291' c='29' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='291' c='31' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='291' c='39' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='291' c='36' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='291' c='42' s='2'/>
+</Attr>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='291' c='41' s='1'/>
+</Attr>
+</Integer_Literal>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='291' c='47' s='1'/>
+</Attr>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='291' c='45' s='2'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='291' c='48' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='291' c='56' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='291' c='53' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='291' c='58' s='3'/>
+</Attr>
+<Id value='estado_senha' typref='11'>
+<Attr>
+<Pos l='291' c='62' s='12'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='291' c='95' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='9'>
+<Attr>
+<Pos l='291' c='90' s='0'/>
+</Attr>
+<Id value='estado_senha' typref='11'>
+<Attr>
+<Pos l='291' c='78' s='12'/>
+</Attr>
+</Id>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='291' c='91' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Id value='classificada' typref='9'>
+<Attr>
+<Pos l='291' c='97' s='12'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='292' c='41' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='292' c='38' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='292' c='43' s='3'/>
+</Attr>
+<Id value='dono_senha' typref='5'>
+<Attr>
+<Pos l='292' c='47' s='10'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='292' c='76' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='292' c='71' s='0'/>
+</Attr>
+<Id value='dono_senha' typref='5'>
+<Attr>
+<Pos l='292' c='61' s='10'/>
+</Attr>
+</Id>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='292' c='72' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Id value='vq2' typref='1'>
+<Attr>
+<Pos l='292' c='78' s='3'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+</Body>
+</Quantified_Set>
+</Unary_Exp>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+<Quantified_Pred type='!'>
+<Attr>
+<Pos l='295' c='24' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='295' c='21' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='295' c='100' s='2'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='295' c='29' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='295' c='26' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='295' c='32' s='2'/>
+</Attr>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='295' c='31' s='1'/>
+</Attr>
+</Integer_Literal>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='295' c='37' s='1'/>
+</Attr>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='295' c='35' s='2'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='295' c='38' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='295' c='46' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='295' c='43' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='295' c='48' s='3'/>
+</Attr>
+<Id value='estado_senha' typref='11'>
+<Attr>
+<Pos l='295' c='52' s='12'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='295' c='85' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='9'>
+<Attr>
+<Pos l='295' c='80' s='0'/>
+</Attr>
+<Id value='estado_senha' typref='11'>
+<Attr>
+<Pos l='295' c='68' s='12'/>
+</Attr>
+</Id>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='295' c='81' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Id value='classificada' typref='9'>
+<Attr>
+<Pos l='295' c='87' s='12'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='295' c='123' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='295' c='116' s='0'/>
+</Attr>
+<Id value='colocacao_arr' typref='5'>
+<Attr>
+<Pos l='295' c='103' s='13'/>
+</Attr>
+</Id>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='295' c='119' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='295' c='117' s='2'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='295' c='120' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='295' c='125' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+</Nary_Pred>
 </Invariant>
 <Variant>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='268' c='24' s='1'/>
+<Pos l='296' c='24' s='1'/>
 </Attr>
 <Integer_Literal value='21' typref='1'>
 <Attr>
-<Pos l='268' c='21' s='2'/>
+<Pos l='296' c='21' s='2'/>
 </Attr>
 </Integer_Literal>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='268' c='26' s='2'/>
+<Pos l='296' c='26' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -4483,31 +5879,31 @@
 </If_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='272' c='22' s='2'/>
+<Pos l='300' c='22' s='2'/>
 </Attr>
 <Variables>
 <Id value='fase_atual_v' typref='4'>
 <Attr>
-<Pos l='272' c='9' s='12'/>
+<Pos l='300' c='9' s='12'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='encerrado' typref='4'>
 <Attr>
-<Pos l='272' c='25' s='9'/>
+<Pos l='300' c='25' s='9'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='273' c='9' s='17'/>
+<Pos l='301' c='9' s='17'/>
 </Attr>
 <Name>
 <Id value='finalizar_torneio'>
 <Attr>
-<Pos l='273' c='9' s='17'/>
+<Pos l='301' c='9' s='17'/>
 </Attr>
 </Id>
 </Name>
@@ -4519,32 +5915,32 @@
 </Operation>
 <Operation name='declarar_campeao_unico'>
 <Attr>
-<Pos l='276' c='1' s='22' endLine='297'/>
+<Pos l='304' c='1' s='22' endLine='327'/>
 </Attr>
 <Body>
 <VAR_IN>
 <Attr>
-<Pos l='277' c='5' s='3'/>
+<Pos l='305' c='5' s='3'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='277' c='9' s='2'/>
+<Pos l='305' c='9' s='2'/>
 </Attr>
 </Id>
 <Id value='st' typref='9'>
 <Attr>
-<Pos l='277' c='13' s='2'/>
+<Pos l='305' c='13' s='2'/>
 </Attr>
 </Id>
 <Id value='vq' typref='1'>
 <Attr>
-<Pos l='277' c='17' s='2'/>
+<Pos l='305' c='17' s='2'/>
 </Attr>
 </Id>
 <Id value='cur_prize' typref='1'>
 <Attr>
-<Pos l='277' c='21' s='9'/>
+<Pos l='305' c='21' s='9'/>
 </Attr>
 </Id>
 </Variables>
@@ -4552,40 +5948,40 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='278' c='12' s='2'/>
+<Pos l='306' c='12' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='278' c='9' s='2'/>
+<Pos l='306' c='9' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='278' c='15' s='1'/>
+<Pos l='306' c='15' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <While>
 <Attr>
-<Pos l='279' c='9' s='5'/>
+<Pos l='307' c='9' s='5'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&lt;=i'>
 <Attr>
-<Pos l='279' c='18' s='2'/>
+<Pos l='307' c='18' s='2'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='279' c='15' s='2'/>
+<Pos l='307' c='15' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='20' typref='1'>
 <Attr>
-<Pos l='279' c='21' s='2'/>
+<Pos l='307' c='21' s='2'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -4594,47 +5990,47 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='280' c='16' s='3'/>
+<Pos l='308' c='16' s='3'/>
 </Attr>
 <Name>
 <Id value='get_estado_senha'>
 <Attr>
-<Pos l='280' c='20' s='16'/>
+<Pos l='308' c='20' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='280' c='39' s='2'/>
+<Pos l='308' c='39' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='st' typref='9'>
 <Attr>
-<Pos l='280' c='13' s='2'/>
+<Pos l='308' c='13' s='2'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='281' c='13' s='2'/>
+<Pos l='309' c='13' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='='>
 <Attr>
-<Pos l='281' c='19' s='1'/>
+<Pos l='309' c='19' s='1'/>
 </Attr>
 <Id value='st' typref='9'>
 <Attr>
-<Pos l='281' c='16' s='2'/>
+<Pos l='309' c='16' s='2'/>
 </Attr>
 </Id>
 <Id value='classificada' typref='9'>
 <Attr>
-<Pos l='281' c='21' s='12'/>
+<Pos l='309' c='21' s='12'/>
 </Attr>
 </Id>
 </Exp_Comparison>
@@ -4643,56 +6039,56 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='282' c='20' s='3'/>
+<Pos l='310' c='20' s='3'/>
 </Attr>
 <Name>
 <Id value='get_dono_senha'>
 <Attr>
-<Pos l='282' c='24' s='14'/>
+<Pos l='310' c='24' s='14'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='282' c='41' s='2'/>
+<Pos l='310' c='41' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='vq' typref='1'>
 <Attr>
-<Pos l='282' c='17' s='2'/>
+<Pos l='310' c='17' s='2'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <Assignement_Sub>
 <Attr>
-<Pos l='283' c='42' s='2'/>
+<Pos l='311' c='42' s='2'/>
 </Attr>
 <Variables>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='283' c='31' s='0'/>
+<Pos l='311' c='31' s='0'/>
 </Attr>
 <Id value='colocacao_arr' typref='5'>
 <Attr>
-<Pos l='283' c='17' s='13'/>
+<Pos l='311' c='17' s='13'/>
 </Attr>
 </Id>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='283' c='36' s='1'/>
+<Pos l='311' c='36' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='283' c='33' s='2'/>
+<Pos l='311' c='33' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='283' c='38' s='1'/>
+<Pos l='311' c='38' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -4701,7 +6097,7 @@
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='283' c='45' s='1'/>
+<Pos l='311' c='45' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
@@ -4711,28 +6107,28 @@
 </If_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='285' c='16' s='2'/>
+<Pos l='313' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='285' c='13' s='2'/>
+<Pos l='313' c='13' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='285' c='22' s='1'/>
+<Pos l='313' c='22' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='285' c='19' s='2'/>
+<Pos l='313' c='19' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='285' c='24' s='1'/>
+<Pos l='313' c='24' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -4741,45 +6137,183 @@
 </Nary_Sub>
 </Body>
 <Invariant>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='286' c='22' s='1'/>
+<Pos l='315' c='16' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='286' c='19' s='2'/>
+<Pos l='315' c='13' s='2'/>
 </Attr>
 </Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='286' c='25' s='2'/>
+<Pos l='315' c='19' s='2'/>
 </Attr>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='286' c='24' s='1'/>
+<Pos l='315' c='18' s='1'/>
 </Attr>
 </Integer_Literal>
 <Integer_Literal value='21' typref='1'>
 <Attr>
-<Pos l='286' c='27' s='2'/>
+<Pos l='315' c='21' s='2'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
 </Exp_Comparison>
+<Quantified_Pred type='!'>
+<Attr>
+<Pos l='316' c='20' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='316' c='17' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Binary_Pred op='=&gt;'>
+<Attr>
+<Pos l='316' c='96' s='2'/>
+</Attr>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='316' c='25' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='316' c='22' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='316' c='28' s='2'/>
+</Attr>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='316' c='27' s='1'/>
+</Attr>
+</Integer_Literal>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='316' c='33' s='1'/>
+</Attr>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='316' c='31' s='2'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='316' c='34' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='316' c='42' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='316' c='39' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='316' c='44' s='3'/>
+</Attr>
+<Id value='estado_senha' typref='11'>
+<Attr>
+<Pos l='316' c='48' s='12'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='316' c='81' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='9'>
+<Attr>
+<Pos l='316' c='76' s='0'/>
+</Attr>
+<Id value='estado_senha' typref='11'>
+<Attr>
+<Pos l='316' c='64' s='12'/>
+</Attr>
+</Id>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='316' c='77' s='2'/>
+</Attr>
+</Id>
+</Binary_Exp>
+<Id value='classificada' typref='9'>
+<Attr>
+<Pos l='316' c='83' s='12'/>
+</Attr>
+</Id>
+</Exp_Comparison>
+</Nary_Pred>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='316' c='119' s='1'/>
+</Attr>
+<Binary_Exp op='(' typref='1'>
+<Attr>
+<Pos l='316' c='112' s='0'/>
+</Attr>
+<Id value='colocacao_arr' typref='5'>
+<Attr>
+<Pos l='316' c='99' s='13'/>
+</Attr>
+</Id>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='316' c='115' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='316' c='113' s='2'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='316' c='116' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='316' c='121' s='1'/>
+</Attr>
+</Integer_Literal>
+</Exp_Comparison>
+</Binary_Pred>
+</Body>
+</Quantified_Pred>
+</Nary_Pred>
 </Invariant>
 <Variant>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='287' c='20' s='1'/>
+<Pos l='317' c='20' s='1'/>
 </Attr>
 <Integer_Literal value='21' typref='1'>
 <Attr>
-<Pos l='287' c='17' s='2'/>
+<Pos l='317' c='17' s='2'/>
 </Attr>
 </Integer_Literal>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='287' c='22' s='2'/>
+<Pos l='317' c='22' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -4787,37 +6321,37 @@
 </While>
 <Assignement_Sub>
 <Attr>
-<Pos l='291' c='19' s='2'/>
+<Pos l='321' c='19' s='2'/>
 </Attr>
 <Variables>
 <Id value='cur_prize' typref='1'>
 <Attr>
-<Pos l='291' c='9' s='9'/>
+<Pos l='321' c='9' s='9'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='291' c='47' s='0'/>
+<Pos l='321' c='47' s='0'/>
 </Attr>
 <Id value='premiacao_individual_arr' typref='5'>
 <Attr>
-<Pos l='291' c='22' s='24'/>
+<Pos l='321' c='22' s='24'/>
 </Attr>
 </Id>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='291' c='52' s='1'/>
+<Pos l='321' c='52' s='1'/>
 </Attr>
 <Id value='vq' typref='1'>
 <Attr>
-<Pos l='291' c='49' s='2'/>
+<Pos l='321' c='49' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='291' c='54' s='1'/>
+<Pos l='321' c='54' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -4826,28 +6360,28 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='292' c='19' s='2'/>
+<Pos l='322' c='19' s='2'/>
 </Attr>
 <Variables>
 <Id value='cur_prize' typref='1'>
 <Attr>
-<Pos l='292' c='9' s='9'/>
+<Pos l='322' c='9' s='9'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='292' c='32' s='1'/>
+<Pos l='322' c='32' s='1'/>
 </Attr>
 <Id value='cur_prize' typref='1'>
 <Attr>
-<Pos l='292' c='22' s='9'/>
+<Pos l='322' c='22' s='9'/>
 </Attr>
 </Id>
 <Id value='premiacao_total_atual_v' typref='1'>
 <Attr>
-<Pos l='292' c='34' s='23'/>
+<Pos l='322' c='34' s='23'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -4855,30 +6389,30 @@
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='293' c='45' s='2'/>
+<Pos l='323' c='45' s='2'/>
 </Attr>
 <Variables>
 <Binary_Exp op='(' typref='1'>
 <Attr>
-<Pos l='293' c='34' s='0'/>
+<Pos l='323' c='34' s='0'/>
 </Attr>
 <Id value='premiacao_individual_arr' typref='5'>
 <Attr>
-<Pos l='293' c='9' s='24'/>
+<Pos l='323' c='9' s='24'/>
 </Attr>
 </Id>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='293' c='39' s='1'/>
+<Pos l='323' c='39' s='1'/>
 </Attr>
 <Id value='vq' typref='1'>
 <Attr>
-<Pos l='293' c='36' s='2'/>
+<Pos l='323' c='36' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='293' c='41' s='1'/>
+<Pos l='323' c='41' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -4887,38 +6421,38 @@
 <Values>
 <Id value='cur_prize' typref='1'>
 <Attr>
-<Pos l='293' c='48' s='9'/>
+<Pos l='323' c='48' s='9'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='295' c='22' s='2'/>
+<Pos l='325' c='22' s='2'/>
 </Attr>
 <Variables>
 <Id value='fase_atual_v' typref='4'>
 <Attr>
-<Pos l='295' c='9' s='12'/>
+<Pos l='325' c='9' s='12'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='encerrado' typref='4'>
 <Attr>
-<Pos l='295' c='25' s='9'/>
+<Pos l='325' c='25' s='9'/>
 </Attr>
 </Id>
 </Values>
 </Assignement_Sub>
 <Operation_Call>
 <Attr>
-<Pos l='296' c='9' s='17'/>
+<Pos l='326' c='9' s='17'/>
 </Attr>
 <Name>
 <Id value='finalizar_torneio'>
 <Attr>
-<Pos l='296' c='9' s='17'/>
+<Pos l='326' c='9' s='17'/>
 </Attr>
 </Id>
 </Name>
@@ -4930,57 +6464,57 @@
 </Operation>
 <Operation name='observar_torneio_encerrado'>
 <Attr>
-<Pos l='299' c='1' s='26'/>
+<Pos l='329' c='1' s='26'/>
 </Attr>
 <Body>
 <Skip>
 <Attr>
-<Pos l='299' c='30' s='4'/>
+<Pos l='329' c='30' s='4'/>
 </Attr>
 </Skip>
 </Body>
 </Operation>
 <Operation name='consultar_status_senha'>
 <Attr>
-<Pos l='301' c='1' s='3' endLine='304'/>
+<Pos l='331' c='1' s='3' endLine='334'/>
 </Attr>
 <Output_Parameters>
 <Id value='res' typref='9'>
 <Attr>
-<Pos l='301' c='1' s='3'/>
+<Pos l='331' c='1' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='301' c='34' s='2'/>
+<Pos l='331' c='34' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Body>
 <Operation_Call>
 <Attr>
-<Pos l='303' c='13' s='3'/>
+<Pos l='333' c='13' s='3'/>
 </Attr>
 <Name>
 <Id value='get_estado_senha'>
 <Attr>
-<Pos l='303' c='17' s='16'/>
+<Pos l='333' c='17' s='16'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='303' c='34' s='2'/>
+<Pos l='333' c='34' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='res' typref='9'>
 <Attr>
-<Pos l='303' c='9' s='3'/>
+<Pos l='333' c='9' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
@@ -4989,45 +6523,45 @@
 </Operation>
 <Operation name='consultar_dono'>
 <Attr>
-<Pos l='306' c='1' s='3' endLine='309'/>
+<Pos l='336' c='1' s='3' endLine='339'/>
 </Attr>
 <Output_Parameters>
 <Id value='res' typref='1'>
 <Attr>
-<Pos l='306' c='1' s='3'/>
+<Pos l='336' c='1' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='306' c='26' s='2'/>
+<Pos l='336' c='26' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Body>
 <Operation_Call>
 <Attr>
-<Pos l='308' c='13' s='3'/>
+<Pos l='338' c='13' s='3'/>
 </Attr>
 <Name>
 <Id value='get_dono_senha'>
 <Attr>
-<Pos l='308' c='17' s='14'/>
+<Pos l='338' c='17' s='14'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='308' c='32' s='2'/>
+<Pos l='338' c='32' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='res' typref='1'>
 <Attr>
-<Pos l='308' c='9' s='3'/>
+<Pos l='338' c='9' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
@@ -5036,34 +6570,34 @@
 </Operation>
 <Operation name='total_senhas_vendidas'>
 <Attr>
-<Pos l='311' c='1' s='3' endLine='328'/>
+<Pos l='341' c='1' s='3' endLine='357'/>
 </Attr>
 <Output_Parameters>
 <Id value='res' typref='1'>
 <Attr>
-<Pos l='311' c='1' s='3'/>
+<Pos l='341' c='1' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
 <Body>
 <VAR_IN>
 <Attr>
-<Pos l='312' c='5' s='3'/>
+<Pos l='342' c='5' s='3'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='312' c='9' s='2'/>
+<Pos l='342' c='9' s='2'/>
 </Attr>
 </Id>
 <Id value='dono' typref='1'>
 <Attr>
-<Pos l='312' c='13' s='4'/>
+<Pos l='342' c='13' s='4'/>
 </Attr>
 </Id>
 <Id value='count' typref='1'>
 <Attr>
-<Pos l='312' c='19' s='5'/>
+<Pos l='342' c='19' s='5'/>
 </Attr>
 </Id>
 </Variables>
@@ -5071,59 +6605,59 @@
 <Nary_Sub op=';'>
 <Assignement_Sub>
 <Attr>
-<Pos l='313' c='15' s='2'/>
+<Pos l='343' c='15' s='2'/>
 </Attr>
 <Variables>
 <Id value='count' typref='1'>
 <Attr>
-<Pos l='313' c='9' s='5'/>
+<Pos l='343' c='9' s='5'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='313' c='18' s='1'/>
+<Pos l='343' c='18' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='314' c='12' s='2'/>
+<Pos l='344' c='12' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='314' c='9' s='2'/>
+<Pos l='344' c='9' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='314' c='15' s='1'/>
+<Pos l='344' c='15' s='1'/>
 </Attr>
 </Integer_Literal>
 </Values>
 </Assignement_Sub>
 <While>
 <Attr>
-<Pos l='315' c='9' s='5'/>
+<Pos l='345' c='9' s='5'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='&lt;=i'>
 <Attr>
-<Pos l='315' c='18' s='2'/>
+<Pos l='345' c='18' s='2'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='315' c='15' s='2'/>
+<Pos l='345' c='15' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='20' typref='1'>
 <Attr>
-<Pos l='315' c='21' s='2'/>
+<Pos l='345' c='21' s='2'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -5132,47 +6666,47 @@
 <Nary_Sub op=';'>
 <Operation_Call>
 <Attr>
-<Pos l='316' c='18' s='3'/>
+<Pos l='346' c='18' s='3'/>
 </Attr>
 <Name>
 <Id value='get_dono_senha'>
 <Attr>
-<Pos l='316' c='22' s='14'/>
+<Pos l='346' c='22' s='14'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='316' c='39' s='2'/>
+<Pos l='346' c='39' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='dono' typref='1'>
 <Attr>
-<Pos l='316' c='13' s='4'/>
+<Pos l='346' c='13' s='4'/>
 </Attr>
 </Id>
 </Output_Parameters>
 </Operation_Call>
 <If_Sub elseif='no'>
 <Attr>
-<Pos l='320' c='13' s='2'/>
+<Pos l='347' c='13' s='2'/>
 </Attr>
 <Condition>
 <Exp_Comparison op='/='>
 <Attr>
-<Pos l='320' c='21' s='2'/>
+<Pos l='347' c='21' s='2'/>
 </Attr>
 <Id value='dono' typref='1'>
 <Attr>
-<Pos l='320' c='16' s='4'/>
+<Pos l='347' c='16' s='4'/>
 </Attr>
 </Id>
 <Integer_Literal value='0' typref='1'>
 <Attr>
-<Pos l='320' c='24' s='1'/>
+<Pos l='347' c='24' s='1'/>
 </Attr>
 </Integer_Literal>
 </Exp_Comparison>
@@ -5180,28 +6714,28 @@
 <Then>
 <Assignement_Sub>
 <Attr>
-<Pos l='321' c='23' s='2'/>
+<Pos l='348' c='23' s='2'/>
 </Attr>
 <Variables>
 <Id value='count' typref='1'>
 <Attr>
-<Pos l='321' c='17' s='5'/>
+<Pos l='348' c='17' s='5'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='321' c='32' s='1'/>
+<Pos l='348' c='32' s='1'/>
 </Attr>
 <Id value='count' typref='1'>
 <Attr>
-<Pos l='321' c='26' s='5'/>
+<Pos l='348' c='26' s='5'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='321' c='34' s='1'/>
+<Pos l='348' c='34' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -5211,28 +6745,28 @@
 </If_Sub>
 <Assignement_Sub>
 <Attr>
-<Pos l='323' c='16' s='2'/>
+<Pos l='350' c='16' s='2'/>
 </Attr>
 <Variables>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='323' c='13' s='2'/>
+<Pos l='350' c='13' s='2'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Binary_Exp op='+i' typref='1'>
 <Attr>
-<Pos l='323' c='22' s='1'/>
+<Pos l='350' c='22' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='323' c='19' s='2'/>
+<Pos l='350' c='19' s='2'/>
 </Attr>
 </Id>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='323' c='24' s='1'/>
+<Pos l='350' c='24' s='1'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
@@ -5241,45 +6775,133 @@
 </Nary_Sub>
 </Body>
 <Invariant>
+<Nary_Pred op='&amp;'>
 <Exp_Comparison op=':'>
 <Attr>
-<Pos l='324' c='22' s='1'/>
+<Pos l='352' c='16' s='1'/>
 </Attr>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='324' c='19' s='2'/>
+<Pos l='352' c='13' s='2'/>
 </Attr>
 </Id>
 <Binary_Exp op='..' typref='2'>
 <Attr>
-<Pos l='324' c='25' s='2'/>
+<Pos l='352' c='19' s='2'/>
 </Attr>
 <Integer_Literal value='1' typref='1'>
 <Attr>
-<Pos l='324' c='24' s='1'/>
+<Pos l='352' c='18' s='1'/>
 </Attr>
 </Integer_Literal>
 <Integer_Literal value='21' typref='1'>
 <Attr>
-<Pos l='324' c='27' s='2'/>
+<Pos l='352' c='21' s='2'/>
 </Attr>
 </Integer_Literal>
 </Binary_Exp>
 </Exp_Comparison>
+<Exp_Comparison op='='>
+<Attr>
+<Pos l='353' c='21' s='1'/>
+</Attr>
+<Id value='count' typref='1'>
+<Attr>
+<Pos l='353' c='15' s='5'/>
+</Attr>
+</Id>
+<Unary_Exp op='card' typref='1'>
+<Attr>
+<Pos l='353' c='23' s='4'/>
+</Attr>
+<Quantified_Set typref='2'>
+<Attr>
+<Pos l='353' c='29' s='1'/>
+</Attr>
+<Variables>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='353' c='31' s='2'/>
+</Attr>
+</Id>
+</Variables>
+<Body>
+<Nary_Pred op='&amp;'>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='353' c='39' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='353' c='36' s='2'/>
+</Attr>
+</Id>
+<Binary_Exp op='..' typref='2'>
+<Attr>
+<Pos l='353' c='42' s='2'/>
+</Attr>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='353' c='41' s='1'/>
+</Attr>
+</Integer_Literal>
+<Binary_Exp op='-i' typref='1'>
+<Attr>
+<Pos l='353' c='47' s='1'/>
+</Attr>
+<Id value='ii' typref='1'>
+<Attr>
+<Pos l='353' c='45' s='2'/>
+</Attr>
+</Id>
+<Integer_Literal value='1' typref='1'>
+<Attr>
+<Pos l='353' c='48' s='1'/>
+</Attr>
+</Integer_Literal>
+</Binary_Exp>
+</Binary_Exp>
+</Exp_Comparison>
+<Exp_Comparison op=':'>
+<Attr>
+<Pos l='353' c='56' s='1'/>
+</Attr>
+<Id value='jj' typref='1'>
+<Attr>
+<Pos l='353' c='53' s='2'/>
+</Attr>
+</Id>
+<Unary_Exp op='dom' typref='2'>
+<Attr>
+<Pos l='353' c='58' s='3'/>
+</Attr>
+<Id value='dono_senha' typref='5'>
+<Attr>
+<Pos l='353' c='62' s='10'/>
+</Attr>
+</Id>
+</Unary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
+</Body>
+</Quantified_Set>
+</Unary_Exp>
+</Exp_Comparison>
+</Nary_Pred>
 </Invariant>
 <Variant>
 <Binary_Exp op='-i' typref='1'>
 <Attr>
-<Pos l='325' c='20' s='1'/>
+<Pos l='354' c='20' s='1'/>
 </Attr>
 <Integer_Literal value='21' typref='1'>
 <Attr>
-<Pos l='325' c='17' s='2'/>
+<Pos l='354' c='17' s='2'/>
 </Attr>
 </Integer_Literal>
 <Id value='ii' typref='1'>
 <Attr>
-<Pos l='325' c='22' s='2'/>
+<Pos l='354' c='22' s='2'/>
 </Attr>
 </Id>
 </Binary_Exp>
@@ -5287,19 +6909,19 @@
 </While>
 <Assignement_Sub>
 <Attr>
-<Pos l='327' c='13' s='2'/>
+<Pos l='356' c='13' s='2'/>
 </Attr>
 <Variables>
 <Id value='res' typref='1'>
 <Attr>
-<Pos l='327' c='9' s='3'/>
+<Pos l='356' c='9' s='3'/>
 </Attr>
 </Id>
 </Variables>
 <Values>
 <Id value='count' typref='1'>
 <Attr>
-<Pos l='327' c='16' s='5'/>
+<Pos l='356' c='16' s='5'/>
 </Attr>
 </Id>
 </Values>
@@ -5311,45 +6933,45 @@
 </Operation>
 <Operation name='consultar_bois_derrubados'>
 <Attr>
-<Pos l='330' c='1' s='3' endLine='333'/>
+<Pos l='359' c='1' s='3' endLine='362'/>
 </Attr>
 <Output_Parameters>
 <Id value='res' typref='1'>
 <Attr>
-<Pos l='330' c='1' s='3'/>
+<Pos l='359' c='1' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='330' c='37' s='2'/>
+<Pos l='359' c='37' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Body>
 <Operation_Call>
 <Attr>
-<Pos l='332' c='13' s='3'/>
+<Pos l='361' c='13' s='3'/>
 </Attr>
 <Name>
 <Id value='get_bois_corridos'>
 <Attr>
-<Pos l='332' c='17' s='17'/>
+<Pos l='361' c='17' s='17'/>
 </Attr>
 </Id>
 </Name>
 <Input_Parameters>
 <Id value='ss' typref='1'>
 <Attr>
-<Pos l='332' c='35' s='2'/>
+<Pos l='361' c='35' s='2'/>
 </Attr>
 </Id>
 </Input_Parameters>
 <Output_Parameters>
 <Id value='res' typref='1'>
 <Attr>
-<Pos l='332' c='9' s='3'/>
+<Pos l='361' c='9' s='3'/>
 </Attr>
 </Id>
 </Output_Parameters>
@@ -5412,6 +7034,14 @@
 </Type>
 <Type id='10'>
 <Id value='JULGAMENTO'/>
+</Type>
+<Type id='11'>
+<Unary_Exp op='POW'>
+<Binary_Exp op='*'>
+<Id value='INTEGER'/>
+<Id value='STATUS_SENHA'/>
+</Binary_Exp>
+</Unary_Exp>
 </Type>
 </TypeInfos>
 
