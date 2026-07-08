@@ -12,6 +12,10 @@
  *   - Verificar que todas as senhas permanecem eliminadas e torneio encerrado
  *
  * Tambem testa a operacao observar_torneio_encerrado (no-op, nao deve crashar).
+ *
+ * IMPORTANTE: apos S5 receber "retorno", o ponteiro do rodizio avanca
+ * para S6 -- por isso S6 precisa ser chamada em seguida (e nao S5 de
+ * novo), respeitando a posicao real de idx_correndo.
  */
 #include "Contexto_Vaquejada.h"
 #include "Controle_Torneio.h"
@@ -77,23 +81,24 @@ void executar_teste_5(void) {
   Controle_Torneio__iniciar_ultimo_rodizio();
   printf("  [INFO] 2o rodizio iniciado (S5-S6, ultimo)\n");
 
-  /* S5: retorno (julgamento neutro) -> na_espera de volta */
+  /* S5: retorno (julgamento neutro) -> na_espera de volta, e o
+     ponteiro do rodizio avanca para S6 */
   Controle_Torneio__chamar_para_pista(5);
   Controle_Torneio__correr_boi_classificacao(5, Contexto_Vaquejada__retorno);
   Controle_Torneio__consultar_status_senha(5, &st);
   checar("S5 em na_espera apos retorno", st == Contexto_Vaquejada__na_espera);
 
-  /* S5: segundo julgamento zero_boi -> eliminada */
-  Controle_Torneio__chamar_para_pista(5);
-  Controle_Torneio__correr_boi_classificacao(5, Contexto_Vaquejada__zero_boi);
-  Controle_Torneio__consultar_status_senha(5, &st);
-  checar("S5 eliminada apos zero_boi", st == Contexto_Vaquejada__eliminada);
-
-  /* S6: zero_boi direto */
+  /* S6 e quem esta de fato na vez agora (idx_correndo avancou) */
   Controle_Torneio__chamar_para_pista(6);
   Controle_Torneio__correr_boi_classificacao(6, Contexto_Vaquejada__zero_boi);
   Controle_Torneio__consultar_status_senha(6, &st);
   checar("S6 eliminada (2o rodizio)", st == Contexto_Vaquejada__eliminada);
+
+  /* Com S6 fora, o rodizio volta pra S5 */
+  Controle_Torneio__chamar_para_pista(5);
+  Controle_Torneio__correr_boi_classificacao(5, Contexto_Vaquejada__zero_boi);
+  Controle_Torneio__consultar_status_senha(5, &st);
+  checar("S5 eliminada apos zero_boi", st == Contexto_Vaquejada__eliminada);
 
   /* Nenhuma senha se classificou -> encerrar sem vencedor */
   Controle_Torneio__finalizar_sem_vencedor();

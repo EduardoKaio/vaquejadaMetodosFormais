@@ -12,6 +12,11 @@
  *   - Apos varias rodadas sem eliminacao, chama-se rachar_premio:
  *     o premio e dividido igualmente entre as senhas ainda classificadas
  *   - Verificar que todas ficam com status campea apos rachar_premio
+ *
+ * IMPORTANTE: na classificatoria, cada senha so pode ser chamada quando
+ * esta de fato na posicao idx_correndo -- por isso a segunda volta de
+ * valeu_boi de cada senha vem depois que todas passaram pela primeira,
+ * seguindo a ordem real do rodizio.
  */
 #include <stdio.h>
 #include "Controle_Torneio.h"
@@ -45,18 +50,19 @@ void executar_teste_3(void) {
     /* Classificatoria: todas as 3 se classificam (2 valeu_boi cada) */
     Controle_Torneio__iniciar_ultimo_rodizio();
 
+    /* Primeira volta: S1, S2, S3 correm uma vez cada, na ordem do rodizio */
     Controle_Torneio__chamar_para_pista(1);
     Controle_Torneio__correr_boi_classificacao(1, Contexto_Vaquejada__valeu_boi);
-    Controle_Torneio__chamar_para_pista(1);
-    Controle_Torneio__correr_boi_classificacao(1, Contexto_Vaquejada__valeu_boi);
-
     Controle_Torneio__chamar_para_pista(2);
     Controle_Torneio__correr_boi_classificacao(2, Contexto_Vaquejada__valeu_boi);
-    Controle_Torneio__chamar_para_pista(2);
-    Controle_Torneio__correr_boi_classificacao(2, Contexto_Vaquejada__valeu_boi);
-
     Controle_Torneio__chamar_para_pista(3);
     Controle_Torneio__correr_boi_classificacao(3, Contexto_Vaquejada__valeu_boi);
+
+    /* Segunda volta: mesma ordem, agora todas classificam */
+    Controle_Torneio__chamar_para_pista(1);
+    Controle_Torneio__correr_boi_classificacao(1, Contexto_Vaquejada__valeu_boi);
+    Controle_Torneio__chamar_para_pista(2);
+    Controle_Torneio__correr_boi_classificacao(2, Contexto_Vaquejada__valeu_boi);
     Controle_Torneio__chamar_para_pista(3);
     Controle_Torneio__correr_boi_classificacao(3, Contexto_Vaquejada__valeu_boi);
 
@@ -108,9 +114,9 @@ void executar_teste_3(void) {
     Controle_Torneio__consultar_status_senha(3, &st);
     checar("Senha 3 campea apos rachar_premio", st == Contexto_Vaquejada__campea);
 
-    /* Senhas que nao participaram devem continuar na_espera */
-    Controle_Torneio__consultar_status_senha(4, &st);
-    checar("Senha 4 (nao registrada) permanece na_espera", st == Contexto_Vaquejada__na_espera);
+    /* Nao da pra consultar a senha 4 aqui: ela nunca foi comprada, entao
+       nunca teve dono e nunca entrou no dominio de estado_senha (mesma
+       razao do ajuste no teste1.c). */
 
     printf("\nTeste 3: %d/%d verificacoes passaram.\n", total - falhas, total);
     falhas = 0; total = 0;
